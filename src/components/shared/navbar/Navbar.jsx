@@ -3,7 +3,7 @@
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
 import { createContext, useState } from "react";
-import SearchBar from "./SearchBar";
+import SearchBar from "./search/SearchBar";
 import Container from "../container/Container";
 import MenuContents from "./menu/menu-contents/MenuContents";
 export const navbarContext = createContext(null)

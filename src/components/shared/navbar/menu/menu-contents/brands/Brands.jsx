@@ -37,12 +37,12 @@ const Brands = () => {
                 onMouseLeave={() => setIsBrandsHover(false)}
                 className={`
                ${isBrandHover ?
-                        'top-32 visible opacity-100 cursor-pointer' :
-                        'invisible top-0 opacity-0'}
+                        ' visible translate-y-[320px] opacity-100 cursor-pointer' :
+                        'invisible opacity-0 z-10 -translate-y-[320px]'}
                  
                         text-9xl absolute w-full
-                        transition-all duration-500 
-                        h-32 z-10 top-0
+                        transition-all duration-700
+                        h-32 z-10 -top-44
                 
                     `}>
                 <Container {...{ style }}>
