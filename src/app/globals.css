@@ -4,6 +4,12 @@
 
 @layer utilities {
     .smooth-transition {
-        @apply transition-all duration-100;
+        @apply transition-all duration-500;
     }
+}
+
+
+body{
+    overflow-x: hidden;
+    min-width: 320px;
 }
