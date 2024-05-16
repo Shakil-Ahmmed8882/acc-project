@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+    body{
+        @apply bg-main-bg-clr
+    }
     .smooth-transition {
         @apply transition-all duration-100;
     }
