@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { navbarContext } from "../Navbar";
 
-const MenuIcon = ({ setIsMenuOpen, isMenuOpen, label }) => {
+const MenuIcon = ({label}) => {
+
+    const { setIsMenuOpen, isMenuOpen} = useContext(navbarContext)
+
     return (
-
         <div>
             <button className={`${label && 'flex gap-3 items-center'}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
