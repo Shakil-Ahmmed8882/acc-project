@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'hover-txt-clr':'#FFD700'
+      }
+    },
   },
   plugins: [],
 }
