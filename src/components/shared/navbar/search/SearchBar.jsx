@@ -8,7 +8,8 @@ const SearchBar = () => {
   const [isSwap, setIsSwap] = useState(false);
 
   return (
-    <div className='text-[#ffffffda] w-80 cursor-pointer flex gap-2 items-center'>
+    <div className='text-[#ffffffda] hidden cursor-pointer
+     md:flex gap-2 items-center'>
       <SearchIcon isSwap={isSwap} onClick={() => setIsSwap(!isSwap)} />
       <span
         onClick={() => setIsSwap(!isSwap)}
