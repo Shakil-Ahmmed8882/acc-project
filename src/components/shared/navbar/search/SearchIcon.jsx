@@ -6,7 +6,7 @@ const SearchIcon = ({ isSwap, onClick }) => {
   return (
     <Search
       onClick={onClick}
-      className={`${isSwap ? 'translate-x-32 mb-2' : '-translate-x-0'} pb-1 z-30 transition-all duration-1000`}
+      className={`${isSwap ? 'translate-x-36 mb-2' : '-translate-x-0'} pb-1 z-30 transition-all duration-1000`}
     />
   );
 };
