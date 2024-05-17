@@ -1,31 +1,6 @@
 import React from "react";
 import Container from "../container/Container";
 
-const Newsletter1 = () => {
-  return (
-    <div className="bg-black  text-white py-8">
-      <Container style="flex justify-between">
-        <div>
-          <h2 className="text-lg font-semibold border-b-2 mb-4">NEWSLETTER</h2>
-          <p className="mb-6">
-            Sign up to stay updated with A&C, and receive our latest news.
-          </p>
-        </div>
-        <div className="">
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            className="border border-r-0 border-light-white-clr px-8 py-2 rounded-l-full bg-black  text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-600"
-          />
-          <button className="bg-black border border-l-0 border-light-white-clr hover:bg-gray-700 text-white font-semibold py-2 px-14 rounded-r-full">
-            SIGN UP
-          </button>
-        </div>
-      </Container>
-    </div>
-  );
-};
-
 
 
 

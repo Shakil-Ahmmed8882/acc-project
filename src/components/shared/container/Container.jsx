@@ -1,10 +1,16 @@
+import React from "react";
 
-const Container= ({children,className}) => {
+const Container = ({ children, className, ...props }) => {
+  const containerClasses = `
+   max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8
+    ${className || ""}
+  `;
+
   return (
-    <section className={`${className} max-w-[1220px] px-8 mx-auto`}>
-     {children}
-    </section>
+    <div className={containerClasses} {...props}>
+      {children}
+    </div>
   );
 };
 
-export default Container; 
+export default Container;
