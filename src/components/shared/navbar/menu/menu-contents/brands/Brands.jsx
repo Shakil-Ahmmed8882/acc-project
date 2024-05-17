@@ -23,8 +23,8 @@ const Brands = () => {
 
     // this state defined in main navbar
     const { isBrandHover, setIsBrandsHover } = useContext(navbarContext)
+    
     const style = 'hidden md:grid grid-cols-2 mx-auto justify-center  lg:flex gap0-4 md:gap-8 md:justify-around mt-44 lg:mt-32 '
-
     const [isClicked, setIsClicked] = useState(false)
 
 
@@ -56,7 +56,7 @@ const Brands = () => {
                 
                     `}>
                 {/* Large device  */}
-                <Container {...{ style }}>
+                <Container className={style}>
                     <BrandsCollection title={'LIQURE'} img={liqure} />
                     <BrandsCollection title={'CIGAR COLLECTION'} img={cigar_collection} />
                     <BrandsCollection title={'ACCESSORIES'} img={accessories} />
