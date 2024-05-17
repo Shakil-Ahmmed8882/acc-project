@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+
 const accLifestyleContent = [
   {
     id: 1,
@@ -22,25 +23,40 @@ const accLifestyleContent = [
     image: "/Rectangle2.png",
   },
 ];
+
 const AccLifestyle = () => {
+  const containerClass = "bg-black text-white py-16 px-4";
+  const headerClass = "text-center text-3xl font-bold mb-8";
+  const subHeaderClass = "text-center text-lg mb-16";
+  const gridClass =
+    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1220px] mx-auto";
+  const cardClass = "flex flex-col overflow-hidden";
+  const imageContainerClass = "relative overflow-hidden gap-6";
+  const imageClass =
+    "w-full h-64 object-cover hover-grow hover:opacity-50 transition duration-300";
+  const cardContentClass = "border-l-2 border-[#FAFAFA99] p-4";
+  const titleClass = "text-xl font-semibold mb-2";
+
   return (
-    <div className="bg-black text-white py-16 px-4">
-      <h2 className="text-center text-3xl font-bold mb-8">
-        Explore ACC Lifestyle
-      </h2>
-      <p className="text-center text-lg mb-16">Continue Your Journey</p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1220px] mx-auto">
+    <div className={containerClass}>
+      <h2 className={headerClass}>Explore ACC Lifestyle</h2>
+      <p className={subHeaderClass}>Continue Your Journey</p>
+      <div className={gridClass}>
         {accLifestyleContent.map((item) => (
-          <div key={item.id} className="flex flex-col items-center text-center">
-            <Image
-              width={500}
-              height={500}
-              src={item.image}
-              alt={item.title}
-              className="w-full h-64 object-cover mb-4"
-            />
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p>{item.description}</p>
+          <div key={item.id} className={cardClass}>
+            <div className={imageContainerClass}>
+              <Image
+                width={600}
+                height={600}
+                src={item.image}
+                alt={item.title}
+                className={imageClass}
+              />
+            </div>
+            <div className={cardContentClass}>
+              <h3 className={titleClass}>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
           </div>
         ))}
       </div>

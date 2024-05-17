@@ -4,21 +4,19 @@ import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
 
 const Home = () => {
-  return <>
-    <main className="min-h-[calc(100vh)]">
-<<<<<<< HEAD
-      <section>
-        {/* <Banner /> */}
-        <AccLifestyle />
-        <Craftsmanship />
-      </section>
-      <Newsletter />
-=======
-      <Banner />
-{/* <Newsletter/> */}
->>>>>>> origin/dev
-    </main>
-  </>
-
-}
+  return (
+    <>
+      <main className="min-h-[calc(100vh)]">
+        <section>
+          {/* <Banner /> */}
+          <AccLifestyle />
+          <Craftsmanship />
+        </section>
+        <Newsletter />
+        <Banner />
+        <Newsletter />
+      </main>
+    </>
+  );
+};
 export default Home;

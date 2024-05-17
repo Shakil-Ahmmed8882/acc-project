@@ -15,7 +15,20 @@ module.exports = {
         "main-bg-clr": "#222222",
         "light-white-clr": "#FAFAFA;",
       },
+      transform: ["hover", "focus"],
+      scale: ["hover", "focus"],
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".hover-grow": {
+          transition: "transform 0.3s",
+          "&:hover": {
+            transform: "scale(1.1)",
+          },
+        },
+      });
+    },
+  ],
 };
