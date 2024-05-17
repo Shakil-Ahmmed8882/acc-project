@@ -1,4 +1,4 @@
-import ScrollParallax from "@/components/shared/parallax/Parallax";
+import ScrollParallax from "@/components/shared/parallax/ScrollParallax";
 
 const Banner= () => {
   return (

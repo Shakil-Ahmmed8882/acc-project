@@ -33,12 +33,12 @@ const Navbar = () => {
     return (
         <navbarContext.Provider value={navInfo}>
             {/* // increase paddiing bottom once menu reveals */}
-            <header className={`${isMenuOpen ? 'py-11 min-h-screen md:h-32 lg:h-64' : 'pt-3 h-36 lg:h-40 '} 
+            <header className={`${isMenuOpen ? 'py-11 min-h-screen md:min-h-32 lg:h-64' : 'pt-3 h-36 lg:h-40 '} 
         bg-[#00000086]  relative z-50 transition-all duration-700`}>
 
 
                 {/* bg blur overlay : hover on brands */}
-                {/* <div className={`fixed -z-10 top-0 right-0 bottom-0 left-0 w-full h-full ${isBrandHover ? 'backdrop-blur-[5px] bg-[#0a09035f]' : ''} transition-all duration-700`}></div> */}
+                <div className={`fixed -z-10 top-0 right-0 bottom-0 left-0 w-full h-full ${isBrandHover ? 'backdrop-blur-[5px] bg-[#0a09035f]' : ''} transition-all duration-700`}></div>
 
                 {/* hambargar menu, logo and searchbar */}
                 <Container {...{ style }}>
