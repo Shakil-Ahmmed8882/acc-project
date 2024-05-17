@@ -3,13 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
-    .smooth-transition {
-        @apply transition-all duration-500;
-    }
-}
-
-
-body{
-    overflow-x: hidden;
-    min-width: 320px;
+  body {
+    @apply bg-main-bg-clr min-w-[320px] overflow-x-hidden;
+  }
+  .smooth-transition {
+    @apply transition-all duration-500;
+  }
 }

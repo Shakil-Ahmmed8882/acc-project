@@ -1,11 +1,13 @@
 import Banner from "@/components/page/home/banner/Banner";
+import Newsletter from "@/components/shared/newsletter/Newsletter";
 
 const Home = () => {
-  return <>
-    <section>
-      <Banner />
-    </section>;
-  </>
+  return (
+    <main className="min-h-[calc(100vh)]">
+      {/* <Banner /> */}
+<Newsletter/>
+    </main>
+  );
 };
 
 export default Home;
