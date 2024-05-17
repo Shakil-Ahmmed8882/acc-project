@@ -4,8 +4,8 @@ import Newsletter from "@/components/shared/newsletter/Newsletter";
 const Home = () => {
   return (
     <main className="min-h-[calc(100vh)]">
-      {/* <Banner /> */}
-<Newsletter/>
+      <Banner />
+{/* <Newsletter/> */}
     </main>
   );
 };
