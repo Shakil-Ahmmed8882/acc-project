@@ -56,8 +56,8 @@ const Brands = () => {
                 
                     `}>
                 {/* Large device  */}
-                    <BrandsCollection title={'LIQURE'} img={liqure} />
                 <Container className={style}>
+                    <BrandsCollection title={'LIQURE'} img={liqure} />
                     <BrandsCollection title={'CIGAR COLLECTION'} img={cigar_collection} />
                     <BrandsCollection title={'ACCESSORIES'} img={accessories} />
                     <BrandsCollection title={'LUXURY'} img={luxury_storage} />

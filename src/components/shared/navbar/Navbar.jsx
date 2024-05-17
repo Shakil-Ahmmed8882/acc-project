@@ -38,8 +38,7 @@ const Navbar = () => {
 
 
                 {/* bg blur overlay : hover on brands */}
-                <div className={`fixed -z-10 top-0 right-0 bottom-0 left-0 w-full h-full ${isBrandHover ? 'backdrop-blur-[5px] bg-[#0a09035f]' : ''} transition-all duration-700`}></div>
-
+                <div className={`fixed -z-10 top-0 right-0 bottom-0 left-0 w-full h-full ${isBrandHover ? 'backdrop-blur-[5px] bg-[#0a09035f]' : 'hidden'} transition-all  duration-700`}></div>
                 {/* hambargar menu, logo and searchbar */}
                 <Container className={style}>
                     <MenuIcon label={"menu"} />
