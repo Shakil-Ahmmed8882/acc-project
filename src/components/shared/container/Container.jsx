@@ -1,7 +1,7 @@
 
-const Container= ({children,style}) => {
+const Container= ({children,className}) => {
   return (
-    <section className={`${style} max-w-[1220px] px-8 mx-auto`}>
+    <section className={`${className} max-w-[1220px] px-8 mx-auto`}>
      {children}
     </section>
   );
