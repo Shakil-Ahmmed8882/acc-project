@@ -8,10 +8,11 @@ import Newsletter from "@/components/shared/newsletter/Newsletter";
 import Fslider from "@/components/test/Fslider";
 import Fslider2 from "@/components/test/Fslider2/Fslider2";
 
+
 const Home = () => {
   return (
     <>
-      <main className="min-h-[calc(100vh)]">
+      <main className="relative z-40 min-h-[calc(100vh)]">
         <section>
           <Banner />
         </section>

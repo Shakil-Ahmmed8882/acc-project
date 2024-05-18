@@ -11,9 +11,10 @@ import BgBlur from "@/components/ui/bg-blur/BgBlur";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
-  // state management
-  const [isBrandHover, setIsBrandsHover] = useState(false);
-  const { isMenuOpen, setIsMenuOpen } = useGlobalContext();
+  
+    // state management 
+    const [isBrandHover, setIsBrandsHover] = useState(false);
+    const {isMenuOpen,setIsMenuOpen} = useGlobalContext()
 
   // container styls
   const style = "flex justify-between gap-0 items-center px-8";
@@ -36,10 +37,10 @@ const Navbar = () => {
             ? "py-11 min-h-screen md:min-h-32 lg:h-64"
             : "pt-3 h-36 lg:h-40 "
         } 
-        bg-[#00000086]  relative z-50 transition-all duration-700`}
+        bg-[#0000005a]  relative z-50 transition-all duration-700`}
       >
         {/* bg blur overlay : hover on brands */}
-        <BgBlur isTrue={isBrandHover} />
+          <BgBlur isTrue={isBrandHover}/>
         {/* hambargar menu, logo and searchbar */}
         <Container className={style}>
           <MenuIcon label={"menu"} />
