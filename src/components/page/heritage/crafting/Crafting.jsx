@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import Button from "./Button";
 
-const Craftsmanship = () => {
+const Crafting = () => {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto">
       <div className="flex flex-col lg:flex-row gap-16">
@@ -23,7 +22,6 @@ const Craftsmanship = () => {
             Rings&quot; end caps to avoid unraveling wrapper leaf during
             smoking.
           </p>
-          <Button />
         </div>
         <div className="grid md:grid-cols-2 gap-4 lg:w-1/2">
           <div className="flex justify-center col-span-2 md:col-span-1">
@@ -59,4 +57,4 @@ const Craftsmanship = () => {
   );
 };
 
-export default Craftsmanship;
+export default Crafting;

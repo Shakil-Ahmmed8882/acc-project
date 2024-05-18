@@ -1,8 +1,10 @@
-//
+import Crafting from "@/components/page/heritage/crafting/Crafting";
 
 
 const Heritage = () => {
-    return <div className="text-red-500">acc Heritage!</div>;
+  return <>
+    <Crafting/>
+  </>;
   };
   
   export default Heritage;
