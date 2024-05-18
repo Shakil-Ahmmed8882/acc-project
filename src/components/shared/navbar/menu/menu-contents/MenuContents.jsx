@@ -7,8 +7,6 @@ import SearchBar from "../../search/SearchBar";
 
 const MenuContents = ({ isMenuOpen }) => {
 
-  // brands hover state 
-
 
 
   return (

@@ -14,7 +14,7 @@ const SearchBar = () => {
       <SearchIcon isSwap={isSwap} onClick={() => setIsSwap(!isSwap)} />
       <span
         onClick={() => setIsSwap(!isSwap)}
-        className={`${isSwap ? ' -translate-x-32 opacity-0 pl-8 invisible' : '-translate-x-0 visible opacity-100'} transition-all duration-1000 justify-self-end`}
+        className={`${isSwap ? ' -translate-x-32 opacity-0 pl-8 invisible' : '-translate-x-1 visible opacity-100'} transition-all duration-1000 justify-self-end`}
       >
         Search
       </span>
