@@ -8,12 +8,10 @@ const Home = () => {
     <>
       <main className="min-h-[calc(100vh)]">
         <section>
-          {/* <Banner /> */}
-          <AccLifestyle />
-          <Craftsmanship />
+          <Banner />
         </section>
-        <Newsletter />
-        <Banner />
+        <AccLifestyle />
+        <Craftsmanship />
         <Newsletter />
       </main>
     </>

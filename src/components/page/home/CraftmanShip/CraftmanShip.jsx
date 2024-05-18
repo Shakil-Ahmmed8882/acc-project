@@ -1,15 +1,17 @@
-// src/components/Craftsmanship.js
-import Button from "@/components/shared/button/Button";
+
 import Image from "next/image";
 import React from "react";
+import Button from "./Button";
 
 const Craftsmanship = () => {
   return (
-    <div className="py-12 max-w-[1220px] mx-auto">
-      <div className="flex gap-16">
-        <div className="text-center text-white mb-8">
-          <h2 className="text-6xl font-bold whitespace-nowrap mb-28">ACC Craftsmanship</h2>
-          <p className="max-w-2xl mx-auto text-lg">
+    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto">
+      <div className="flex flex-col lg:flex-row gap-16">
+        <div className=" text-white mb-8 lg:mb-0 lg:w-1/2">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-28 whitespace-nowrap mt-8">
+            ACC Craftsmanship
+          </h2>
+          <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-lg">
             The Entubado (Entubar) method employed in the construction of each
             ACC cigar is almost a lost art in cigar making. While a few faster
             methods of cigar construction dominate most cigar production, ACC
@@ -22,25 +24,25 @@ const Craftsmanship = () => {
             Rings&quot; end caps to avoid unraveling wrapper leaf during
             smoking.
           </p>
-          <Button/>
+          <Button />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:w-1/2">
           <div className="flex justify-center">
             <Image
               width={500}
               height={500}
               src="/Rectangle4.png"
               alt="Image 1"
-              className="w-full h-auto rounded shadow-md"
+              className="w-full h-80 rounded shadow-md"
             />
           </div>
-          <div className="flex justify-center h-full md:h-4/6">
+          <div className="flex justify-center h-full">
             <Image
               width={500}
               height={500}
               src="/Rectangle5.png"
               alt="Image 2"
-              className="w-full h-auto rounded shadow-md"
+              className="rounded shadow-md lg:h-5/6"
             />
           </div>
           <div className="flex justify-center col-span-2">
@@ -49,7 +51,7 @@ const Craftsmanship = () => {
               height={500}
               src="/Rectangle6.png"
               alt="Image 3"
-              className="w-full h-auto rounded shadow-md"
+              className="w-full h-72 rounded shadow-md"
             />
           </div>
         </div>
