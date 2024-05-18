@@ -1,26 +1,28 @@
 import Image from "next/image";
 import React from "react";
-
+import lifestyle1 from "@/assets/img/home/lifestyle/lifestyle1.png";
+import lifestyle2 from "@/assets/img/home/lifestyle/lifestyle2.png";
+import lifestyle3 from "@/assets/img/home/lifestyle/lifestyle3.png";
 const accLifestyleContent = [
   {
     id: 1,
     title: "Unparalleled Luxury",
     description:
       "Indulge in the world's finest luxury spirits in hand crafted crystal with ACC Spirits.",
-    image: "/Rectangle1.png",
+    image: lifestyle1,
   },
   {
     id: 2,
     title: "Ignite Your Senses",
     description: "Enjoy the world's most exclusive cigar with ACC.",
-    image: "/Rectangle3.png",
+    image: lifestyle2,
   },
   {
     id: 3,
     title: "Unwind in Style",
     description:
       "Elevate your relaxation to a sophisticated experience with ACC.",
-    image: "/Rectangle2.png",
+    image: lifestyle3,
   },
 ];
 

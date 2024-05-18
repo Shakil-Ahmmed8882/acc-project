@@ -1,16 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import Button from "./Button";
-
+import craftsmanship1 from "@/assets/img/home/craftsmanship/craftsmanship1.png";
+import craftsmanship2 from "@/assets/img/home/craftsmanship/craftsmanship3.png";
+import craftsmanship3 from "@/assets/img/home/craftsmanship/craftsmanship2.png";
 const Craftsmanship = () => {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto">
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-28 whitespace-nowrap mt-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
             ACC Craftsmanship
           </h2>
-          <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-lg">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-lg mb-10">
             The Entubado (Entubar) method employed in the construction of each
             ACC cigar is almost a lost art in cigar making. While a few faster
             methods of cigar construction dominate most cigar production, ACC
@@ -30,7 +32,7 @@ const Craftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src="/Rectangle4.png"
+              src={craftsmanship1}
               alt="Image 1"
               className="w-full rounded shadow-md object-cover"
             />
@@ -39,7 +41,7 @@ const Craftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src="/Rectangle5.png"
+              src={craftsmanship2}
               alt="Image 2"
               className="w-full rounded shadow-md object-cover lg:h-5/6"
             />
@@ -48,9 +50,9 @@ const Craftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src="/Rectangle6.png"
+              src={craftsmanship3}
               alt="Image 3"
-              className="w-full rounded shadow-md object-cover"
+              className="w-full rounded shadow-md object-cover h-fit"
             />
           </div>
         </div>
