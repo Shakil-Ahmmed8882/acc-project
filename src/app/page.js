@@ -19,13 +19,13 @@ const Home = () => {
         <Newsletter />
       </main>
     </>
-    <main className="min-h-[calc(100vh)]">
-      {/* <Banner /> */}
-{/* <Newsletter/> */}
-{/* <FlagshipProducts/> */}
-{/* <Fslider2/> */}
-<ProductSlider/>
-    </main>
+//     <main className="min-h-[calc(100vh)]">
+//       {/* <Banner /> */}
+// {/* <Newsletter/> */}
+// {/* <FlagshipProducts/> */}
+// {/* <Fslider2/> */}
+// <ProductSlider/>
+//     </main>
   );
 };
 export default Home;
