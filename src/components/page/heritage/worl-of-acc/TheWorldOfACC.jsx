@@ -1,28 +1,45 @@
 import Container from "@/components/shared/container/Container";
 import Button from "@/components/shared/parallax/Button";
-import img1 from '@/assets/img/heritage/world-of-acc/img1.png'
-import img2 from '@/assets/img/heritage/world-of-acc/img2.png'
-import img3 from '@/assets/img/heritage/world-of-acc/img3.png'
-import img4 from '@/assets/img/heritage/world-of-acc/img4.png'
-import img5 from '@/assets/img/heritage/world-of-acc/img5.png'
+// C:\Users\shakil\OneDrive\Documents\project\Acc-Project\src\
+import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
+import img2 from "@/assets/img/heritage/world-of-acc/img2.png";
+import img3 from "@/assets/img/heritage/world-of-acc/img3.png";
+import img4 from "@/assets/img/heritage/world-of-acc/img4.png";
+import img5 from "@/assets/img/heritage/world-of-acc/img5.png";
+import Image from "next/image";
+import Link from "next/link";
 
-
-const TheWorldOfACC= () => {
+const TheWorldOfACC = () => {
   return (
-
+    <section className="pt-9 bg-[#121212]">
     <Container>
-    <section className="text-white grid grid-rows-3 grid-cols-1 md:grid-cols-2 gap-16 md:gap-28 mt-32">
-        <div className="  grid md:grid-cols-2 gap-8 space-y-2"> 
-        <div className=" h-full p-8 md:mt-16 rounded-lg text-center text-3xl"><img className="w-full h-full" src={img1} alt="" /></div>
-        <div className="bg-[red] h-full p-8 md:-mt-16 rounded-lg text-center text-3xl">2</div>
+      <Link href={'/stories'} className="border-b pb-2 border-[#bfbfbf]  text-2xl text-white font-thin">STORIES</Link>
+      <h1 className="text-3xl pt-11 text-white">THE WORLD OF ACC</h1>
+      <section className="text-white  grid   grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        <div className=" flex flex-col  md:flex-row gap-8">
+          <div className="  rounded-lg text-center ">
+            <Image className=" w-full object-top object-cover" src={img1} alt="" />
+          </div>
+          <div className="  md:mt-24 overflow-hidden rounded-lg text-center ">
+            <Image className=" w-full object-top object-cover " src={img2} alt="" />
+          </div>
         </div>
-        <div className="bg-[black] md:row-span-2 p-8 rounded-lg text-center text-3xl">3</div>
-        <div className="bg-[black] md:row-span-2 p-8 rounded-lg text-center text-3xl">4</div>
-        <div className="bg-[black] p-8 rounded-lg text-center text-3xl">5</div>
-    </section>
-        <div className="flex justify-center mt-32 w-[50%] mx-auto"><Button/></div>
+        <div className="bg-[black] h-[80vh] md:h-full md:row-span-2  rounded-lg text-center ">
+          <Image className=" object-top w-full h-full object-cover " src={img3} alt="" />
+        </div>
+        <div className="bg-[black]  md:row-span-2  rounded-lg text-center ">
+          <Image className=" object-top object-cover" src={img4} alt="" />
+        </div>
+        <div className="bg-[black]  rounded-lg text-center ">
+          <Image className=" object-top object-cover" src={img5} alt="" />
+        </div>
+      </section>
+      <div className="flex justify-center mt-32 w-[50%] mx-auto">
+        <Button />
+      </div>
     </Container>
+    </section>
   );
 };
 
-export default TheWorldOfACC; 
+export default TheWorldOfACC;

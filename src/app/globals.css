@@ -4,13 +4,12 @@
 
 @layer utilities {
   body {
-    @apply bg-main-bg-clr min-w-[320px] overflow-x-hidden;
+    @apply bg-main-bg-clr min-w-[320px] max-w-[1920px] mx-auto overflow-x-hidden;
   }
   .smooth-transition {
     @apply transition-all duration-500;
   }
 }
-
 
 /* Scroll bar style */
 ::-webkit-scrollbar {
@@ -32,3 +31,28 @@
         background: rgb(54, 54, 54);
         border-radius: 1px;
  }
+
+.btnGradient {
+  display: flex;
+  padding: 16px 80px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 71px;
+  border: 1px solid var(--GOLD-2, #f9f295);
+  background: var(
+    --GOLD-2,
+    linear-gradient(
+      90deg,
+      #f9f295 -6.63%,
+      #e0aa3e 27.32%,
+      #faf398 71.21%,
+      #b88a44 96.3%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
