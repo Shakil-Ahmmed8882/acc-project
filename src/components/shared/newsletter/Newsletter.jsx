@@ -9,7 +9,7 @@ const Newsletter = () => {
   return (
     <section className="bg-[#121212] py-20">
       <Container className="items-center mt-12  gap-4 md:flex justify-between  xl:gap-12">
-        <div className=" space-y-3">
+        <div className="w-1/2 space-y-3">
           <h3 className="text-sm text-light-white-clr  uppercase border-b-2 border-light-white-clr max-w-fit pb-8">
             newsletter
           </h3>
@@ -17,7 +17,7 @@ const Newsletter = () => {
             Sign up to stay updated with ACC and receive our latest news.
           </p>
         </div>
-        <div className=" mt-10 flex-1 ">
+        <div className="mt-10 w-1/2 ">
           <form
             // onSubmit={(e) => e.preventDefault()}
             className="flex items-center justify-center bg-black rounded-full border-2 overflow-hidden  sm:max-w-md sm:mx-auto"

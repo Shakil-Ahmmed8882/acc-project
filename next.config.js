@@ -4,5 +4,14 @@ const nextConfig = {
         domains: ['globalintergold.info'], 
          }
 }
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
