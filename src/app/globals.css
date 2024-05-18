@@ -11,6 +11,27 @@
   }
 }
 
+/* Scroll bar style */
+::-webkit-scrollbar {
+  width: 5px;
+  border: 1px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgb(79, 79, 79);
+}
+
+ ::-webkit-scrollbar-thumb:horizontal{
+        background: rgb(54, 54, 54);
+        border-radius: 1px;
+ }
+
 .btnGradient {
   display: flex;
   padding: 16px 80px;
@@ -34,3 +55,4 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
