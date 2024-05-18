@@ -2,8 +2,8 @@
 
 import ScrollParallax from "@/components/shared/parallax/ScrollParallax";
 import Pagination from "./pagination";
-import { useEffect } from "react";
 import useScrollObserver from "@/hooks/useScrollObserver";
+
 
 const Banner = () => {
   // it's for active pagination marking

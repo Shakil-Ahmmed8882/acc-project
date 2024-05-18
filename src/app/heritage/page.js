@@ -1,8 +1,13 @@
 //
 
+import TheWorldOfACC from "@/components/page/heritage/worl-of-acc/TheWorldOfACC";
 
 const Heritage = () => {
-    return <div className="text-red-500">acc Heritage!</div>;
-  };
-  
-  export default Heritage;
+  return (
+    <section>
+      <TheWorldOfACC />
+    </section>
+  );
+};
+
+export default Heritage;
