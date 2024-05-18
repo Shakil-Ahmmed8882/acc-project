@@ -7,26 +7,28 @@ const Crafting = () => {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto">
       <div className="flex flex-col lg:flex-row gap-16">
-        <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
-            ACC Craftsmanship
+        <div className="text-white lg:w-1/2">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-8 lg:mb-10 mt-8">
+            Crafting EXCELLENCE SINCE 1952
           </h2>
-          <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-lg mb-10">
-            The Entubado (Entubar) method employed in the construction of each
-            ACC cigar is almost a lost art in cigar making. While a few faster
-            methods of cigar construction dominate most cigar production, ACC
-            refuses to settle for second best. ACC forgoes the use of
-            hand-operated machines and quick bunching methods to speed
-            production, because they reduce tobacco distribution within the
-            cigar, consistency of draw, and overall construction strength. The
-            evidence is in the ash and within the hand of an experienced smoker.
-            ACC cigars are hand-bunched and are capped with &quot;Triple
-            Rings&quot; end caps to avoid unraveling wrapper leaf during
-            smoking.
+          <p className="mx-auto text-base">
+            The heritage of ACC began in 1952 with Jose Aray on a small tobacco
+            field in Ecuador. Starting with simple planting, harvesting, and
+            local trading, Mr. Aray, seeing the opportunity, began to purchase
+            several agricultural properties in the Province of Guayas in
+            Ecuador. In 1954 Mr. Aray then met Guillermo de la Portilla, who had
+            migrated from Cuba, bringing with him generations of Cuban expertise
+            as well as precious varieties of Cubano seed and leaf. Mr. Portilla
+            and the Aray family began planting on their hacienda Paulina, which
+            had the perfect weather, soil and luminosity needed for the growth
+            of first class tobacco. In 1967, Jose Aray successfully crossbred
+            Cubano and Sumatra varieties developing what now is the standard
+            Ecuadoran Sumatra breed, sought after for cigar wrapper leaf
+            worldwide.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="grid gap-4">
             <div className="flex justify-center">
               <Image
                 width={600}
@@ -46,13 +48,13 @@ const Crafting = () => {
               />
             </div>
           </div>
-          <div className="flex justify-center ">
+          <div className="">
             <Image
               width={600}
               height={600}
               src={img3}
               alt="Image 1"
-              className="w-full h-auto rounded shadow-md object-cover"
+              className="w-full rounded shadow-md object-cover"
             />
           </div>
         </div>
