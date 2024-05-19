@@ -8,6 +8,7 @@ import MenuContents from "./menu/menu-contents/MenuContents";
 import SearchBar from "./search/SearchBar";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import BgBlur from "@/components/ui/bg-blur/BgBlur";
+import { useScrollDirection } from "@/hooks/useScrollDirection";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
@@ -28,6 +29,13 @@ const Navbar = () => {
     isBrandHover,
   };
 
+  const scrollDirection = useScrollDirection();
+  const isScrollingUp = scrollDirection === 'up';
+
+  
+
+
+
   return (
     <navbarContext.Provider value={navInfo}>
       {/* // increase paddiing bottom once menu reveals */}
@@ -35,9 +43,12 @@ const Navbar = () => {
         className={`${
           isMenuOpen
             ? "py-11 min-h-screen md:min-h-32 lg:h-64"
-            : "pt-3 h-36 lg:h-40 "
+            : "pt-3 h-36 lg:h-40"
         } 
-        bg-[#0000005a]  relative z-50 transition-all duration-700`}
+        bg-[#0000005a]  ${isScrollingUp?'visible opacity-100 translate-y-0 ':' invisible opacity-0 -translate-y-8'}  fixed left-0 right-0 top-0  z-50 transition-all duration-700
+        
+        
+        `}
       >
         {/* bg blur overlay : hover on brands */}
           <BgBlur isTrue={isBrandHover}/>
