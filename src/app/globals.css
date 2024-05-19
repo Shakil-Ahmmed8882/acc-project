@@ -26,10 +26,10 @@
   background: rgb(79, 79, 79);
 }
 
- ::-webkit-scrollbar-thumb:horizontal{
-        background: rgb(54, 54, 54);
-        border-radius: 1px;
- }
+::-webkit-scrollbar-thumb:horizontal {
+  background: rgb(54, 54, 54);
+  border-radius: 1px;
+}
 
 .btnGradient {
   display: flex;
