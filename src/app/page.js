@@ -21,7 +21,7 @@ const Home = () => {
       <Craftsmanship />
       <Newsletter />
       
-      #0E0E0E33  {/* <ProductCard/> */}
+      {/* <ProductCard/> */}
       </main>
     </>
   );
