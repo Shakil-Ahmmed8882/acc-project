@@ -10,6 +10,7 @@
     @apply transition-all duration-500;
   }
 }
+
 /* Scroll bar style */
 ::-webkit-scrollbar {
   width: 5px;
@@ -31,26 +32,17 @@
   border-radius: 1px;
 }
 
-.btnGradient {
-  display: flex;
-  padding: 16px 80px;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  align-self: stretch;
-  border-radius: 71px;
-  border: 1px solid var(--GOLD-2, #f9f295);
-  background: var(
-    --GOLD-2,
-    linear-gradient(
-      90deg,
-      #f9f295 -6.63%,
-      #e0aa3e 27.32%,
-      #faf398 71.21%,
-      #b88a44 96.3%
-    )
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* button gradient style */
+.gradient-text-gold {
+    background: var(--GOLD-2, linear-gradient(90deg, #f9f295 -6.63%, #e0aa3e 27.32%, #faf398 71.21%, #b88a44 96.3%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* gradient border  */
+
+.rounded-gold-border {
+    border-radius: 71px;
+    border: 1px solid var(--GOLD-2, #F9F295);
 }

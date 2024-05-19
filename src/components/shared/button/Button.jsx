@@ -11,9 +11,7 @@ const Button = ({
   ...props
 }) => {
   const variantClasses = {
-    primary: "btnGradient",
-    secondary: "bg-gray-300 hover:bg-gray-400 text-gray-800",
-    danger: "bg-red-500 hover:bg-red-600 text-white",
+    primary: "gradient-text-gold rounded-gold-border",
   };
 
   const sizeClasses = {
