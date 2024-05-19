@@ -1,23 +1,26 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navbar from '@/components/shared/navbar/Navbar'
-import Footer from '@/components/shared/footer/Footer'
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/shared/navbar/Navbar";
+import Footer from "@/components/shared/footer/Footer";
+import GlobalContext from "@/providers/GlobalContext";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'ACC',
-  description: 'Acc-business project',
-}
+  title: "ACC",
+  description: "Acc-business project",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar/>
-        {children}
-        <Footer/>
+        <GlobalContext>
+          <Navbar/>
+            {children}
+          <Footer />
+        </GlobalContext>
       </body>
     </html>
-  )
+  );
 }

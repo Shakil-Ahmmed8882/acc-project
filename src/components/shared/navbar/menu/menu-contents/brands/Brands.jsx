@@ -24,11 +24,11 @@ const Brands = () => {
     // this state defined in main navbar
     const { isBrandHover, setIsBrandsHover } = useContext(navbarContext)
     
-    const style = 'hidden md:grid grid-cols-2 mx-auto justify-center  lg:flex gap0-4 md:gap-8 md:justify-around mt-44 lg:mt-32 '
+    const  style = 'hidden md:grid grid-cols-2 mx-auto justify-center  lg:flex gap0-4 md:gap-8 md:justify-around mt-44 lg:mt-32 '
     const [isClicked, setIsClicked] = useState(false)
 
-
-    return (
+ 
+    return (       
 
         <>
             <article
@@ -47,12 +47,12 @@ const Brands = () => {
                 onMouseLeave={() => setIsBrandsHover(false)}
                 className={`
                ${isBrandHover ?
-                        ' visible ease-out  translate-y-[320px] opacity-100 cursor-pointer' :
+                        'visible ease-out  translate-y-[320px] opacity-100 cursor-pointer' :
                         'ease-in  invisible opacity-0 z-10 -translate-y-[320px]'}
                  
                         text-9xl absolute w-full
                         transition-all duration-700
-                          h-32 z-10 -top-44
+                        h-32 z-10 -top-44
                 
                     `}>
                 {/* Large device  */}
@@ -69,12 +69,11 @@ const Brands = () => {
 
             {/* Small device  */}
             <SmBrandLink {...{ isClicked, setIsClicked }} />
-            <div className={`${isClicked ? 'h-24' : 'h-0'} md:hidden smooth-transition`}>
+            <div className={`${isClicked ? 'h-28' : 'h-0'} md:hidden smooth-transition`}>
 
                 <ul className={`
                         
-                        ${isClicked ? 'visible opacity-100 translate-y-4' : 'invisible opacity-0 translate-y-0'}
-                        
+                        ${isClicked ? 'visible opacity-100 translate-y-7' : 'invisible opacity-0 translate-y-0'}                        
                         smooth-transition 
                         grid grid-cols-2 gap-3
                         `}>
