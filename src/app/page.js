@@ -8,6 +8,7 @@ import Newsletter from "@/components/shared/newsletter/Newsletter";
 import Fslider from "@/components/test/Fslider";
 import Fslider2 from "@/components/test/Fslider2/Fslider2";
 import ProductCard from "@/components/shared/product/product-card/ProductCard";
+import HeroSection from "@/components/shared/hero/Hero";
 
 const Home = () => {
   return (
@@ -16,10 +17,11 @@ const Home = () => {
         {/* <section>
           <Banner />
         </section>
-      */}
       <AccLifestyle />
       <Craftsmanship />
       <Newsletter />
+      */}
+      <HeroSection/>
       
       {/* <ProductCard/> */}
       </main>
