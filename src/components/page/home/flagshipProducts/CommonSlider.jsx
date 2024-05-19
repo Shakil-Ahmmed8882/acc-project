@@ -98,7 +98,7 @@ const CommonSlider = ({
         },
         "@1.50": {
           slidesPerView: slidesPerView,
-          spaceBetween: 10,
+          spaceBetween: 30,
         },
       }}
     >

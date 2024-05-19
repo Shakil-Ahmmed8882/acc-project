@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('../styles/fonts/font.css');
 
 @layer utilities {
   body {
@@ -33,16 +34,22 @@
 }
 
 /* button gradient style */
-.gradient-text-gold {
-    background: var(--GOLD-2, linear-gradient(90deg, #f9f295 -6.63%, #e0aa3e 27.32%, #faf398 71.21%, #b88a44 96.3%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* .gradient-text-gold {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(90deg, #f9f295 -6.63%, #e0aa3e 27.32%, #faf398 71.21%, #b88a44 96.3%);
 }
 
-/* gradient border  */
+.group:hover .gradient-text-gold {
+  background-image: linear-gradient(180deg, #ffd700 -71%, #ac7c00 100%);
+}
 
 .rounded-gold-border {
-    border-radius: 71px;
-    border: 1px solid var(--GOLD-2, #F9F295);
+  @apply inline-flex p-4 justify-center items-center gap-4 rounded-full border transition-all duration-200;
+  border-color: #f9f295;
 }
+
+.group:hover .rounded-gold-border {
+  @apply bg-gray-100;
+} */
+
+

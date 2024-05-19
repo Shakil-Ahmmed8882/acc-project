@@ -13,17 +13,18 @@ import product2 from "@/assets/img/products/product2.png";
 import product3 from "@/assets/img/products/product3.png";
 import product4 from "@/assets/img/products/product4.png";
 import product5 from "@/assets/img/products/product4.png";
+import SliderAction from "./SliderAction";
 
 const FlagshipProducts = () => {
   const products = [product1, product2, product3, product4, product5];
 
   return (
     <div className="bg-[#1C1C1C] py-10">
-      <div className="ml-[180px] grid grid-cols-1 lg:grid-cols-3 lg:gap-16">
-        <div className="col-span-1">
+      <div className="lg:ml-[180px] grid grid-cols-1 lg:grid-cols-5 place-self-center  lg:gap-16">
+        <div className="md:col-span-2 mb-10 md:mb-0 self-center">
           <FlagshipProductsLeft />
         </div>
-        <div className="col-span-2">
+        <div className="md:col-span-3 max-w-[1140px]">
           <FlagshipProductsRight />
         </div>
       </div>
@@ -35,46 +36,49 @@ export default FlagshipProducts;
 
 const FlagshipProductsLeft = () => {
   return (
+    <div className=" w-full   lg:text-left text-center ">
+      <h4 className="text-[30px]  md:text-[40px]  mb-10 md:mb-[96px]  text-light-white-clr tracking-[5px] font-cailyne italic font-ultralight ">
+        Explore ACC&apos;s Flagship products
+      </h4>
 
-      <div className="max-w-lg w-full mt-[74px]">
-        <SectionTitle
-          className="text-[40px] font-normal uppercase"
-          title="Explore ACC's Flagship Products"
-        />
-        <Button variant="primary" size="lg">
-          DISCOVER
-        </Button>
-      </div>
+      <Button size="large">Discover now</Button>
+    </div>
   );
 };
 
 const FlagshipProductsRight = () => {
   const slideItems = Array.from({ length: 180 });
   return (
-    <CommonSlider
-      slidesPerView={4}
-      slidesPerGroup={Math.ceil(slideItems.length / 4)}
-      className="FlagshipSlider"
-      freeMode={true}
-    >
-      {slideItems.map((_, index) => (
-        <SlideItem key={index} index={index} />
-      ))}
-    </CommonSlider>
+    <div className="relative ">
+      <CommonSlider
+        slidesPerView={4}
+        spaceBetween={10}
+        slidesPerGroup={Math.ceil(slideItems.length / 4)}
+        sliderId="flagship"
+        className="FlagshipSlider"
+        freeMode={true}
+      >
+        {slideItems.map((_, index) => (
+          <SlideItem key={index} index={index} />
+        ))}
+      </CommonSlider>
+        {/* slider control */}
+        <SliderAction sliderId="flagship" />
+    </div>
   );
 };
 
 const SlideItem = ({ index }) => {
   return (
-    <div className="max-w-60">
+    <div className="">
       <Image
         src={`https://source.unsplash.com/random/${index}`}
-        className="object-cover h-[260px] w-[240px]"
+        className="object-cover h-[260px] w-full"
         width={240}
         height={300}
         alt="product image"
       />
-      <div>
+      <div className="md:mx-0 mx-4">
         <h5 className="text-base text-light-white-clr font-semibold mt-4">
           Vintage Cigar
         </h5>

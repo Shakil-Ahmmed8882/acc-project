@@ -16,7 +16,7 @@ const Home = () => {
         <AccLifestyle />
         <Craftsmanship />
         <Newsletter />
-        <ProductSlider/>
+        {/* <ProductSlider/> */}
         <FlagshipProducts/>
       </main>
     </>

@@ -1,5 +1,6 @@
+import { ArrowIconLeft, ArrowIconRight } from "@/components/icons/Icons";
 import classNames from "classnames";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, CircleChevronLeft } from "lucide-react";
 
 /**
  * SliderAction Component
@@ -13,33 +14,23 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const SliderAction = ({
   pagination,
   sliderId,
-  variant = "square",
-  className,
   wrapperBorder = true,
 }) => {
-  // Define variant specific classes
-  const variantClasses = {
-    circle: "bg-[#1A1A1A] p-[14px] rounded-full border-2 border-[#1F1F1F]",
-    square: "bg-[#141414] p-[14px] rounded-[8px] border-2 border-[#262626]",
-  };
 
-  // Combine common and variant specific classes
-  const buttonClasses = classNames(
-    "transition-colors duration-200 font-semibold",
-    variantClasses[variant],
-    className
-  );
+
 
   return (
     <div
       className={classNames(
-        "flex items-center justify-center",
+        "flex items-center justify-between",
         wrapperBorder && "border border-[#1F1F1F] rounded-xl p-4 mr-10"
       )}
     >
       {/* Previous Button */}
-      <div className={`common-swiper-button-prev-${sliderId} ${buttonClasses}`}>
-        <ArrowLeft size={28} className="text-white cursor-pointer" />
+      <div
+        className={`common-swiper-button-prev-${sliderId}  absolute bottom-56 z-10 left-0`}
+      >
+        <ArrowIconLeft />
       </div>
 
       {/* Pagination */}
@@ -50,8 +41,10 @@ const SliderAction = ({
       )}
 
       {/* Next Button */}
-      <div className={`common-swiper-button-next-${sliderId} ${buttonClasses}`}>
-        <ArrowRight size={28} className="text-white cursor-pointer" />
+      <div
+        className={`common-swiper-button-next-${sliderId} absolute bottom-56 z-10 right-0`}
+      >
+        <ArrowIconRight />
       </div>
     </div>
   );
