@@ -8,11 +8,8 @@ import Fslider2 from "@/components/test/Fslider2/Fslider2";
 const Home = () => {
   return (
     <main className="min-h-[calc(100vh)]">
-      {/* <Banner /> */}
+      <Banner />
 {/* <Newsletter/> */}
-{/* <FlagshipProducts/> */}
-{/* <Fslider2/> */}
-<ProductSlider/>
     </main>
   );
 };
