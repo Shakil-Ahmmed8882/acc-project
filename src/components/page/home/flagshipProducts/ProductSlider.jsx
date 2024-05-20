@@ -13,6 +13,7 @@ import Image from "next/image";
 import Button from "@/components/shared/button/Button";
 import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
+import Container from "@/components/shared/container/Container";
 
 export default function ProductSlider() {
   //Add a state that will force a re-render
@@ -101,7 +102,7 @@ const SlideItem = ({ index }) => {
 
 const SlideLeft = () => {
   return (
-    <div className="flex-1  max-w-[528px] w-full mt-[74px]">
+    <Container className={'flex-1  max-w-[528px] w-full mt-[74px]'}>
       <SectionTitle
         className="text-[50px]  font-normal uppercase"
         title="Explore ACc's Flagship products"
@@ -109,6 +110,6 @@ const SlideLeft = () => {
       <Button variant="primary" size="lg">
         DISCOVER
       </Button>
-    </div>
+    </Container>
   );
 };

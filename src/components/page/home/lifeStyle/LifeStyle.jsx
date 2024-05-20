@@ -1,3 +1,4 @@
+import Container from "@/components/shared/container/Container";
 import Image from "next/image";
 import React from "react";
 import lifestyle1 from "@/assets/img/home/lifestyle/lifestyle1.png";
@@ -40,7 +41,8 @@ const AccLifestyle = () => {
   const titleClass = "text-xl font-semibold mb-2";
 
   return (
-    <div className={containerClass}>
+    <div className="bg-black w-full">
+    <Container className={containerClass}>
       <h2 className={headerClass}>Explore ACC Lifestyle</h2>
       <p className={subHeaderClass}>Continue Your Journey</p>
       <div className={gridClass}>
@@ -62,6 +64,8 @@ const AccLifestyle = () => {
           </div>
         ))}
       </div>
+    </Container>
+
     </div>
   );
 };

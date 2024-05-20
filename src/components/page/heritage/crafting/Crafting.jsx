@@ -3,16 +3,22 @@ import React from "react";
 import img1 from "@/assets/img/heritage/crafting/crafting1.png";
 import img2 from "@/assets/img/heritage/crafting/crafting2.png";
 import img3 from "@/assets/img/heritage/crafting/crafting3.png";
+import Description from "@/components/ui/content/Description";
+import Container from "@/components/shared/container/Container";
 const Crafting = () => {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-black">
+
+
+  <div className="bg-black">
+    <Container className={'py-32'}>
       <div className="flex flex-col lg:flex-row gap-16 max-w-[1220px] mx-auto">
         <div className="text-white lg:w-1/2">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-8 lg:mb-10 mt-8">
             Crafting EXCELLENCE SINCE 1952
           </h2>
-          <p className="mx-auto text-base">
-            The heritage of ACC began in 1952 with Jose Aray on a small tobacco
+
+            <Description
+            text={` The heritage of ACC began in 1952 with Jose Aray on a small tobacco
             field in Ecuador. Starting with simple planting, harvesting, and
             local trading, Mr. Aray, seeing the opportunity, began to purchase
             several agricultural properties in the Province of Guayas in
@@ -24,8 +30,8 @@ const Crafting = () => {
             of first class tobacco. In 1967, Jose Aray successfully crossbred
             Cubano and Sumatra varieties developing what now is the standard
             Ecuadoran Sumatra breed, sought after for cigar wrapper leaf
-            worldwide.
-          </p>
+            worldwide.`}
+            />  
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="grid gap-4">
@@ -59,7 +65,10 @@ const Crafting = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
+
+  </div>
+    
   );
 };
 

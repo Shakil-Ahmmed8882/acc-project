@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "./Button";
 import Description from "@/components/ui/content/Description";
+import Container from "@/components/shared/container/Container";
 
 import craftsmanship1 from "@/assets/img/home/craftsmanship/craftsmanship1.png";
 import craftsmanship2 from "@/assets/img/home/craftsmanship/craftsmanship3.png";
@@ -20,7 +21,8 @@ const Craftsmanship = () => {
   smoking.`
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto">
+    
+    <Container className={'py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto'}>
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
@@ -59,7 +61,8 @@ const Craftsmanship = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
+
   );
 };
 
