@@ -21,7 +21,7 @@ export default function ProductSlider() {
   const nextRef = useRef(null);
 
   return (
-    <div className="flex gap-16 py-40  justify-between mx-[180px] max-w-[1740px]">
+    <div className="flex gap-16  py-40  justify-between mx-[180px] max-w-[1740px]">
       <SlideLeft />
 
       <div className="w-full max-w-[960px]">
