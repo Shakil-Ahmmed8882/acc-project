@@ -8,23 +8,14 @@ import Description from "@/components/ui/content/Description";
 import Button from "./Button";
 
 const UnCraftsmanship = () => {
-  const text = ` The Entubado (Entubar) method employed in the construction of each ACC
-  cigar is almost a lost art in cigar making. While a few faster methods of
-  cigar construction dominate most cigar production, ACC refuses to settle
-  for second best. ACC forgoes the use of hand-operated machines and quick
-  bunching methods to speed production, because they reduce tobacco
-  distribution within the cigar, consistency of draw, and overall
-  construction strength. The evidence is in the ash and within the hand of
-  an experienced smoker. ACC cigars are hand-bunched and are capped with
-  &quot;Triple Rings&quot; end caps to avoid unraveling wrapper leaf during
-  smoking.`;
+  const text = `At ACC, cigar craftsmanship is not merely a process. It's an art form meticulously honed over generations. From the selection of the finest tobacco leaves to the skilled hands of our master blenders, every step in crafting our cigars is infused with dedication and passion. Each cigar is a testament to our unwavering commitment to excellence, ensuring that every draw delivers a symphony of flavors and an experience unlike any other. With a reverence for tradition and a relentless pursuit of perfection, we invite you to indulge in the unparalleled craftsmanship that defines ACC's legacy.`;
 
   return (
     <Container className={"py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto"}>
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
-            ACC Craftsmanship
+            Unparalleled Craftsmanship
           </h2>
           <Description {...{ text }} />
           <Button />
