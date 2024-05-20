@@ -28,28 +28,32 @@
   background: rgb(79, 79, 79);
 }
 
-::-webkit-scrollbar-thumb:horizontal {
-  background: rgb(54, 54, 54);
-  border-radius: 1px;
+::-webkit-scrollbar-thumb:horizontal{
+        background: rgb(54, 54, 54);
+        border-radius: 1px;
+ }
+
+.btnGradient {
+  display: flex;
+  padding: 16px 80px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 71px;
+  border: 1px solid var(--GOLD-2, #f9f295);
+  background: var(
+    --GOLD-2,
+    linear-gradient(
+      90deg,
+      #f9f295 -6.63%,
+      #e0aa3e 27.32%,
+      #faf398 71.21%,
+      #b88a44 96.3%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
-/* button gradient style */
-/* .gradient-text-gold {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(90deg, #f9f295 -6.63%, #e0aa3e 27.32%, #faf398 71.21%, #b88a44 96.3%);
-}
-
-.group:hover .gradient-text-gold {
-  background-image: linear-gradient(180deg, #ffd700 -71%, #ac7c00 100%);
-}
-
-.rounded-gold-border {
-  @apply inline-flex p-4 justify-center items-center gap-4 rounded-full border transition-all duration-200;
-  border-color: #f9f295;
-}
-
-.group:hover .rounded-gold-border {
-  @apply bg-gray-100;
-} */
-
 

@@ -2,14 +2,17 @@ import ParallaxContents from "./ParallaxContents";
 import parallaxImg1 from "@/assets/img/home/hero/parallax1.jpg";
 import parallaxImg2 from "@/assets/img/home/hero/parallax2.jpg";
 import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
+import useGlobalContext from "@/hooks/useGlobalContext";
 
 
 const ScrollParallax = () => {
+
+  const {isMenuOpen} = useGlobalContext()
   return (
     <section>
-      <div className="relative ">
+      <div className="relative ">0
         <div
-          className={`  -mt-96 filter  transition-all h-screen duration-1000 section text-8xl bg-[#089193] overflow-hidden sticky top-0`}
+          className={`  ${isMenuOpen?'-mt-[800px] md:-mt-96':'-mt-96'} filter  transition-all h-[125vh] duration-1000 section text-8xl bg-[#089193] overflow-hidden sticky top-0`}
         >
           <AnimatedVideo/>
           <ParallaxContents
