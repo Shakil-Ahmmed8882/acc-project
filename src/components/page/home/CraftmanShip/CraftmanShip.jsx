@@ -4,6 +4,9 @@ import Button from "./Button";
 import Description from "@/components/ui/content/Description";
 import Container from "@/components/shared/container/Container";
 
+import craftsmanship1 from "@/assets/img/home/craftsmanship/craftsmanship1.png";
+import craftsmanship2 from "@/assets/img/home/craftsmanship/craftsmanship3.png";
+import craftsmanship3 from "@/assets/img/home/craftsmanship/craftsmanship2.png";
 const Craftsmanship = () => {
 
   const text = ` The Entubado (Entubar) method employed in the construction of each ACC
@@ -22,7 +25,7 @@ const Craftsmanship = () => {
     <Container className={'py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto'}>
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-28 whitespace-nowrap mt-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
             ACC Craftsmanship
           </h2>
           <Description {...{text}}/>
@@ -33,7 +36,7 @@ const Craftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src="/Rectangle4.png"
+              src={craftsmanship1}
               alt="Image 1"
               className="w-full rounded shadow-md object-cover"
             />
@@ -42,18 +45,18 @@ const Craftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src="/Rectangle5.png"
+              src={craftsmanship2}
               alt="Image 2"
               className="w-full rounded shadow-md object-cover lg:h-5/6"
             />
           </div>
           <div className="flex justify-center col-span-2">
             <Image
-              width={600}
-              height={400}
-              src="/Rectangle6.png"
+              width={500}
+              height={500}
+              src={craftsmanship3}
               alt="Image 3"
-              className="w-full rounded shadow-md object-cover"
+              className="w-full rounded shadow-md object-cover h-fit"
             />
           </div>
         </div>

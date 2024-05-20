@@ -14,12 +14,12 @@ const MenuContents = ({ isMenuOpen }) => {
       <ul className=" md:flex gap-20 justify-center">
         <div className="md:hidden -ml-12 flex"><SearchBar/></div>
         <MenuItem path={'/'} label={'HOME'} />
-        <MenuItem path={'/'} label={'HERITAGE'} />
-        <MenuItem path={'/'} label={'CRAFTSMANSHIP'} />
+        <MenuItem path={'/heritage'} label={'HERITAGE'} />
+        <MenuItem path={'/craftsmanship'} label={'CRAFTSMANSHIP'} />
 
         {/* Brands hover and unhover */}
         <Brands/>
-        <MenuItem path={'/'} label={'CONTACT'} />
+        <MenuItem path={'/contact'} label={'CONTACT'} />
       </ul>
     </article>
   );

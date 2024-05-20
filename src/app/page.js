@@ -1,8 +1,7 @@
-import TheWorldOfACC from "@/components/page/heritage/worl-of-acc/TheWorldOfACC";
 import Banner from "@/components/page/home/banner/Banner";
 import Craftsmanship from "@/components/page/home/CraftmanShip/CraftmanShip";
-import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import FlagshipProducts from "@/components/page/home/flagshipProducts/FlagshipProducts";
+ import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
 
 const Home = () => {
@@ -15,7 +14,7 @@ const Home = () => {
         <FlagshipProducts />
         <AccLifestyle />
         <Craftsmanship />
-        <Newsletter />
+        <Newsletter /> 
       </main>
     </>
   );
