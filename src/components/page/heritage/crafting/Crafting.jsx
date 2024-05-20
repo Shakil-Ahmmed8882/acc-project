@@ -5,8 +5,8 @@ import img2 from "@/assets/img/heritage/crafting/crafting2.png";
 import img3 from "@/assets/img/heritage/crafting/crafting3.png";
 const Crafting = () => {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto">
-      <div className="flex flex-col lg:flex-row gap-16">
+    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-black">
+      <div className="flex flex-col lg:flex-row gap-16 max-w-[1220px] mx-auto">
         <div className="text-white lg:w-1/2">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-8 lg:mb-10 mt-8">
             Crafting EXCELLENCE SINCE 1952
