@@ -27,19 +27,6 @@ const Craftsmanship = () => {
             ACC Craftsmanship
           </h2>
           <Description {...{text}}/>
-          <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-lg mb-10">
-            The Entubado (Entubar) method employed in the construction of each
-            ACC cigar is almost a lost art in cigar making. While a few faster
-            methods of cigar construction dominate most cigar production, ACC
-            refuses to settle for second best. ACC forgoes the use of
-            hand-operated machines and quick bunching methods to speed
-            production, because they reduce tobacco distribution within the
-            cigar, consistency of draw, and overall construction strength. The
-            evidence is in the ash and within the hand of an experienced smoker.
-            ACC cigars are hand-bunched and are capped with &quot;Triple
-            Rings&quot; end caps to avoid unraveling wrapper leaf during
-            smoking.
-          </p>
           <Button />
         </div>
         <div className="grid md:grid-cols-2 gap-4 lg:w-1/2">
