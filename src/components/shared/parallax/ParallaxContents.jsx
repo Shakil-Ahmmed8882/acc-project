@@ -12,7 +12,7 @@ const ParallaxContents = ({ img, title}) => {
         alt="HOME | hero parallax images "
       />
       <div  className=" absolute inset-0 flex flex-col justify-center items-center text-white  z-40">
-        <h1 className=" text-3xl md:text-4xl lg:text-5xl font-thin  relative z-40">{title}</h1>
+        <h1 className=" text-[red] text-3xl md:text-4xl lg:text-5xl font-thin  relative z-40">{title}</h1>
         <Button/>
       </div>
     </>
