@@ -4,22 +4,17 @@ import classNames from "classnames";
 const SectionTitle = ({
   title,
   subtitle,
-  centered = false,
   className,
+  titleStyle = "text-4xl", 
+  subtitleStyle = "text-lg", 
   ...props
 }) => {
-  const titleClasses = classNames(
-    "text-4xl font-bold mb-2 text-white",
-    centered ? "text-center" : "text-left"
-  );
+  const titleClasses = classNames(titleStyle, "font-bold mb-2 text-white");
 
-  const subtitleClasses = classNames(
-    "text-lg text-gray-500",
-    centered ? "text-center" : "text-left"
-  );
+  const subtitleClasses = classNames(subtitleStyle, "text-gray-500");
 
   return (
-    <div className={`mb-8 ${className}`} {...props}>
+    <div className={classNames("mb-8", className)} {...props}>
       <h2 className={titleClasses}>{title}</h2>
       {subtitle && <p className={subtitleClasses}>{subtitle}</p>}
     </div>

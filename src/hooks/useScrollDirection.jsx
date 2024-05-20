@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 export const useScrollDirection = () => {
-  const [scrollDirection, setScrollDirection] = useState(null);
+  const [scrollDirection, setScrollDirection] = useState('up');
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
