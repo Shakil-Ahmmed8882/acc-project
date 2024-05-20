@@ -19,7 +19,7 @@ const SearchInput = ({ isSwap }) => {
   return (
     <input
       ref={inputRef}
-      className={`${isSwap ? '-translate-x-11 opacity-100 border-b border-[#ffffff74]' : 'invisible translate-x-0 opacity-0 border-b-0'} transition-all duration-1000 bg-transparent w-44 focus-within:border-t-0 focus-within:border-l-0 focus-within:border-r-0 px-1 focus-within:outline-none border-b -mt-8`}
+      className={`${isSwap ? 'translate-x-11 md:-translate-x-[50px] opacity-100 border-b border-[#ffffff74]' : 'invisible translate-x-0 opacity-0 border-b-0'} transition-all duration-1000 bg-transparent w-44 focus-within:border-t-0 focus-within:border-l-0 focus-within:border-r-0 px-1 focus-within:outline-none border-b -mt-8`}
       type="text"
     />
   );

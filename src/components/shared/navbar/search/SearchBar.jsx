@@ -8,13 +8,13 @@ const SearchBar = () => {
   const [isSwap, setIsSwap] = useState(false);
 
   return (
-    <div className='text-right'>
+    <div>
     <div className='text-[#ffffffda] ml-auto  cursor-pointer
-     grid grid-cols-2 w-32 items-center '>
+     grid grid-cols-2 w-32  items-center '>
       <SearchIcon isSwap={isSwap} onClick={() => setIsSwap(!isSwap)} />
       <span
         onClick={() => setIsSwap(!isSwap)}
-        className={`${isSwap ? ' -translate-x-32 opacity-0 pl-8 invisible' : '-translate-x-0 visible opacity-100'} transition-all duration-1000 justify-self-end`}
+        className={`${isSwap ? ' -translate-x-32 opacity-0 pl-8 invisible' : '-translate-x-1 visible opacity-100'} transition-all duration-1000 justify-self-end text-md md:text-[17px]`}
       >
         Search
       </span>

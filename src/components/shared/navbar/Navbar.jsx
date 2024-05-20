@@ -6,15 +6,19 @@ import { createContext, useState } from "react";
 import Container from "../container/Container";
 import MenuContents from "./menu/menu-contents/MenuContents";
 import SearchBar from "./search/SearchBar";
+import useGlobalContext from "@/hooks/useGlobalContext";
+import BgBlur from "@/components/ui/bg-blur/BgBlur";
+import { useScrollDirection } from "@/hooks/useScrollDirection";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+    // state management 
+    const [isBrandHover, setIsBrandsHover] = useState(false);
+    const {isMenuOpen,setIsMenuOpen} = useGlobalContext()
+
   // container styls
   const style = "flex justify-between gap-0 items-center px-8";
-
-  // brands state
-  const [isBrandHover, setIsBrandsHover] = useState(false);
 
   const navInfo = {
     setIsMenuOpen,
@@ -25,6 +29,13 @@ const Navbar = () => {
     isBrandHover,
   };
 
+  const scrollDirection = useScrollDirection();
+  const isScrollingUp = scrollDirection === 'up';
+
+  
+
+
+
   return (
     <navbarContext.Provider value={navInfo}>
       {/* // increase paddiing bottom once menu reveals */}
@@ -32,16 +43,15 @@ const Navbar = () => {
         className={`${
           isMenuOpen
             ? "py-11 min-h-screen md:min-h-32 lg:h-64"
-            : "pt-3 h-36 lg:h-40 "
+            : "pt-3 h-36 lg:h-40"
         } 
-        bg-[#00000086]  relative z-50 transition-all duration-700`}
+        bg-[#0000005a]  ${isScrollingUp?'visible opacity-100 translate-y-0 ':' invisible opacity-0 -translate-y-8'}  fixed left-0 right-0 top-0  z-50 transition-all duration-700
+        
+        
+        `}
       >
         {/* bg blur overlay : hover on brands */}
-        <div
-          className={`fixed -z-10 top-0 right-0 bottom-0 left-0 w-full h-full ${
-            isBrandHover ? "backdrop-blur-[5px] bg-[#0a09035f]" : "hidden"
-          } transition-all  duration-700`}
-        ></div>
+          <BgBlur isTrue={isBrandHover}/>
         {/* hambargar menu, logo and searchbar */}
         <Container className={style}>
           <MenuIcon label={"menu"} />
