@@ -14,16 +14,15 @@ const Home = () => {
   return (
     <>
       <main className="relative mt-44 z-40 min-h-[calc(100vh)]">
-        {/* <section>
-          <Banner />
-        </section>
-      <AccLifestyle />
-      <Craftsmanship />
-      <Newsletter />
-      */}
-      <HeroSection/>
-      
-      {/* <ProductCard/> */}
+        
+        <Banner />
+        <AccLifestyle />
+        <Craftsmanship />
+        <Newsletter />
+
+        <HeroSection />
+
+        {/* <ProductCard/> */}
       </main>
     </>
   );
