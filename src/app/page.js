@@ -5,15 +5,14 @@ import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import FlagshipProducts from "@/components/page/home/flagshipProducts/FlagshipProducts";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
 
-
 const Home = () => {
   return (
-    <> 
-  <main className="relative mt-44 z-40 min-h-[calc(100vh)]">
+    <>
+      <main className="relative mt-44 z-40 min-h-[calc(100vh)]">
         <section>
-          <Banner /> 
+          <Banner />
         </section>
-        <FlagshipProducts/>
+        <FlagshipProducts />
         <AccLifestyle />
         <Craftsmanship />
         <Newsletter />
