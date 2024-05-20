@@ -3,25 +3,20 @@ import Banner from "@/components/page/home/banner/Banner";
 import Craftsmanship from "@/components/page/home/CraftmanShip/CraftmanShip";
 import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import FlagshipProducts from "@/components/page/home/flagshipProducts/FlagshipProducts";
-import ProductSlider from "@/components/page/home/flagshipProducts/ProductSlider";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
-import Fslider from "@/components/test/Fslider";
-import Fslider2 from "@/components/test/Fslider2/Fslider2";
-import ProductCard from "@/components/shared/product/product-card/ProductCard";
+
 
 const Home = () => {
   return (
     <>
-      <main className="relative mt-44 z-40 min-h-[calc(100vh)]">
-        {/* <section>
+  <main className="relative mt-44 z-40 min-h-[calc(100vh)]">
+        <section>
           <Banner />
         </section>
-      */}
-      <AccLifestyle />
-      <Craftsmanship />
-      <Newsletter />
-      
-      {/* <ProductCard/> */}
+        <FlagshipProducts/>
+        <AccLifestyle />
+        <Craftsmanship />
+        <Newsletter />
       </main>
     </>
   );

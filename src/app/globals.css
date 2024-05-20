@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('../styles/fonts/font.css');
 
 @layer utilities {
   body {
@@ -27,7 +28,7 @@
   background: rgb(79, 79, 79);
 }
 
- ::-webkit-scrollbar-thumb:horizontal{
+::-webkit-scrollbar-thumb:horizontal{
         background: rgb(54, 54, 54);
         border-radius: 1px;
  }
