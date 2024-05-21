@@ -21,7 +21,7 @@ const ImageGallery = () => {
             height={600}
             src={field}
             alt="Field"
-            className="w-full group-hover:scale-x-125 h-auto object-cover col-span-2"
+            className="w-full group-hover:scale-x-125 h-auto object-cover col-span-2 transition-all duration-200"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Field</span>
@@ -33,7 +33,7 @@ const ImageGallery = () => {
             height={600}
             src={seedling}
             alt="Seedling"
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover group-hover:scale-x-125 transition-all duration-200"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Seedling</span>
@@ -45,7 +45,7 @@ const ImageGallery = () => {
             height={600}
             src={dryingLeaves}
             alt="Drying Leaves"
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover group-hover:scale-x-125 transition-all duration-200"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Drying Leaves</span>
@@ -57,7 +57,7 @@ const ImageGallery = () => {
             height={600}
             src={composting}
             alt="Composting"
-            className="w-full h-auto object-cover col-span-2"
+            className="w-full h-auto object-cover col-span-2 group-hover:scale-x-125 transition-all duration-200"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Composting</span>
@@ -69,7 +69,7 @@ const ImageGallery = () => {
             height={600}
             src={cigarMaking}
             alt="Cigar Making"
-            className="w-full h-auto object-cover col-span-2"
+            className="w-full h-auto object-cover col-span-2 group-hover:scale-x-125 transition-all duration-200"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Cigar Making</span>
@@ -81,7 +81,7 @@ const ImageGallery = () => {
             height={600}
             src={cigarStorage}
             alt="Cigar Storage"
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover group-hover:scale-x-125 transition-all duration-200"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Cigar Storage</span>
@@ -93,9 +93,9 @@ const ImageGallery = () => {
             height={600}
             src={truck}
             alt="Truck on Road"
-            className="w-2/3 group-hover:scale-x-100 h-auto object-cover"
+            className="w-2/3 group-hover:scale-x-125 h-auto object-cover transition-all duration-200"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="absolute w-auto duration-200 inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Truck on Road</span>
           </div>
         </div>
