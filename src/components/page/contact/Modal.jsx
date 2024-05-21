@@ -5,23 +5,23 @@ const Modal = ({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-90">
+        <div className="fixed inset-0 z-50 grid w-screen">
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "120%" }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            className="bg-gray-800 text-white rounded-lg shadow-lg w-full max-w-lg mx-4 overflow-hidden"
+            className="text-white rounded-lg shadow-lg w-ful overflow-hidden bg-[#121212]"
           >
-            <div className="grid place-items-center">
+            <div className="grid place-items-center w-full">
               <button
                 onClick={onClose}
-                className="text-white text-2xl h-10 flex items-center justify-center bg-[#222] w-full"
+                className="text-white text-2xl h-24 flex items-center justify-center bg-[#222] w-full"
               >
-                <CircleX />
+                <CircleX className="size-16" />
               </button>
             </div>
-            <div className="p-6">
+            <div className="p-6 max-w-xl mx-auto">
               <h2 className="text-2xl mb-4 text-center">Request Information</h2>
               <form>
                 <div className="mb-4">
