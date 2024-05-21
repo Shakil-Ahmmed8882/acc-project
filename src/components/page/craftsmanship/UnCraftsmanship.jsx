@@ -12,9 +12,9 @@ const UnCraftsmanship = () => {
 
   return (
     <Container className={"py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto"}>
-      <div className="flex flex-col lg:flex-row gap-16">
+      <div className="flex flex-col lg:flex-row gap-40">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
             Unparalleled Craftsmanship
           </h2>
           <Description {...{ text }} />
