@@ -6,11 +6,6 @@ import GlobalContext from "@/providers/GlobalContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import localFont from "next/font/local";
-
-
-
-
 export const metadata = {
   title: "ACC",
   description: "Acc-business project",

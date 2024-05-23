@@ -21,10 +21,6 @@ module.exports = {
         mediumGold: "#e0aa3e",
         darkGoldBorder: "#b88a44",
         darkslategray: "#414141",
-        khaki: {
-          100: "#e0d97a",
-          200: "#E0D97AE6",
-        },
       },
       transform: ["hover", "focus"],
       scale: ["hover", "focus"],
