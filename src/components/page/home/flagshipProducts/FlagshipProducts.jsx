@@ -61,6 +61,7 @@ const FlagshipProductsRight = () => {
         sliderId="flagship"
         className="FlagshipSlider"
         freeMode={true}
+        grabCursor={true}
         setSwiperState={setSwiperState}
       >
         {slideItems.map((_, index) => (
