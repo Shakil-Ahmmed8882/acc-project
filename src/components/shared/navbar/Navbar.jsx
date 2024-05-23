@@ -36,8 +36,6 @@ const Navbar = () => {
 
   
 
-
-
   return (
     <navbarContext.Provider value={navInfo}>
       {/* // increase paddiing bottom once menu reveals */}
@@ -63,7 +61,7 @@ const Navbar = () => {
         </Container>
 
         {/* hidden menu */}
-        <Container>
+        <Container isNavbar={true}>
           <HorizontalLine/>
           <MenuContents {...{ isMenuOpen }} />
          <Tabs {...{isMenuOpen}}/>

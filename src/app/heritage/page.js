@@ -11,7 +11,7 @@ import HeroSection from "@/components/shared/hero/Hero";
 const Heritage = () => {
   return (
     <section>
-      <HeroSection/>
+      <HeroSection title={'ACC Heritage'}/>
       <Crafting />
       <Achievement />
       <TheWorldOfACC />
