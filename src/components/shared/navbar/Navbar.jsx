@@ -9,6 +9,8 @@ import SearchBar from "./search/SearchBar";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import BgBlur from "@/components/ui/bg-blur/BgBlur";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
+import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
+import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
@@ -62,8 +64,9 @@ const Navbar = () => {
 
         {/* hidden menu */}
         <Container>
-          <span className="border-t mt-6 border-[#f2f2f27c] block w-full pt-3 "></span>
+          <HorizontalLine/>
           <MenuContents {...{ isMenuOpen }} />
+         <Tabs {...{isMenuOpen}}/>
         </Container>
       </header>
     </navbarContext.Provider>
