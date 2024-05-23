@@ -13,7 +13,7 @@ const Button = ({text,customStyle,clickHandler}) => {
     >
       <span className="
       group-hover:-translate-x-2 
-      transition-all duration-500">
+      transition-all duration-500 font-riviera">
         {text || 'Discover Now'}
       </span>
 
