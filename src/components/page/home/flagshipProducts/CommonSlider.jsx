@@ -46,19 +46,17 @@ import { Pagination, Navigation, FreeMode, Autoplay } from "swiper/modules";
  */
 const CommonSlider = ({
   children,
-  slidesPerView = 3,
+  slidesPerView = 4,
   spaceBetween = 10,
   slidesPerGroup,
   pagination = true,
   loop = true,
   className = "",
-  btnText,
-  titleText,
   sliderId,
   freeMode = false,
   autoplay = false,
   grabCursor = false,
-  header = true,
+  setSwiperState,
   ...props
 }) => (
   <div className="my-[10px]">
@@ -66,7 +64,15 @@ const CommonSlider = ({
       slidesPerGroup={slidesPerGroup}
       slidesPerView={slidesPerView}
       spaceBetween={spaceBetween}
-      loop={loop}
+      // slidesPerGroupSkip={1}
+      onSlideChange={(swiper) => {
+        setSwiperState({
+          isBeginning: swiper.isBeginning,
+          isEnd: swiper.isEnd,
+        });
+      }}
+      // loop={loop}
+      speed={800}
       freeMode={freeMode}
       grabCursor={grabCursor}
       navigation={{

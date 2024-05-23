@@ -1,9 +1,9 @@
+import BrandWorldAcc from "@/components/page/brands/BrandWorldAcc";
 import Banner from "@/components/page/home/banner/Banner";
 import Craftsmanship from "@/components/page/home/CraftmanShip/CraftmanShip";
 import FlagshipProducts from "@/components/page/home/flagshipProducts/FlagshipProducts";
  import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
-
 const Home = () => {
   return (
     <>
@@ -15,6 +15,7 @@ const Home = () => {
         <AccLifestyle />
         <Craftsmanship />
         <Newsletter /> 
+        {/* <BrandWorldAcc/> */}
       </main>
     </>
   );
