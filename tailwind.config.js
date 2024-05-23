@@ -14,17 +14,16 @@ module.exports = {
         "hover-txt-clr": "#FFD700",
         "main-bg-clr": "#222222",
         "light-white-clr": "#FAFAFA;",
-
         gold2: "#f9f295",
         gold: "#ffd700",
         darkGold: "#ac7c00",
         lightGold: "#faf398",
         mediumGold: "#e0aa3e",
         darkGoldBorder: "#b88a44",
+        darkslategray: "#414141",
       },
       transform: ["hover", "focus"],
       scale: ["hover", "focus"],
-
       fontFamily: {
         riviera: ["RivieraNightsTrial", "sans-serif"],
         cailyne: ["Cailyne", "sans-serif"],

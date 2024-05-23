@@ -37,7 +37,7 @@ const Brands = () => {
                 className="z-20 hidden md:block"
 
             >
-                <MenuItem {...{ isBrandHover }} path={'/'} isBrand={true} label={'BRANDS'} />
+                <MenuItem {...{ isBrandHover }} path={'/brands'} isBrand={true} label={'BRANDS'} />
             </article >
 
 
