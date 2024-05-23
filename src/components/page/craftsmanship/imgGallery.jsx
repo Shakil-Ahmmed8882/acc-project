@@ -21,7 +21,7 @@ const ImageGallery = () => {
             height={600}
             src={field}
             alt="Field"
-            className="w-full group-hover:scale-x-125 h-auto object-cover col-span-2 transition-all duration-200"
+            className="w-full group-hover:w- h-auto object-cover col-span-2 transition-all duration-500"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
             <span className="text-white text-lg">Field</span>
