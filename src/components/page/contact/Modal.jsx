@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose }) => {
                 <CircleX className="size-16" />
               </button>
             </div>
-            <div className="p-6 max-w-xl mx-auto">
+            <div className="p-6 max-w-2xl mx-auto">
               <h2 className="text-2xl mb-4 text-center">Request Information</h2>
               <form>
                 <div className="mb-4">
