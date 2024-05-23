@@ -1,47 +1,47 @@
 @font-face {
   font-family: "RivieraNightsTrial";
-  src: url("/RivieraNightsTrial-Regular.otf") format("opentype");
+  src: url("RivieraNightsTrial-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RivieraNightsTrial";
-  src: url("/RivieraNightsTrial-Bold.otf") format("opentype");
+  src: url("RivieraNightsTrial-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RivieraNightsTrial";
-  src: url("/RivieraNightsTrial-Medium.otf") format("opentype");
+  src: url("RivieraNightsTrial-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RivieraNightsTrial";
-  src: url("/RivieraNightsTrial-Black.otf") format("opentype");
+  src: url("RivieraNightsTrial-Black.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RivieraNightsTrial";
-  src: url("/RivieraNightsTrial-Ultralight.otf") format("opentype");
+  src: url("RivieraNightsTrial-Ultralight.otf") format("opentype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cailyne";
-  src: url("/Cailyne-BF657cf0a9e6c5b.ttf") format("truetype");
+  src: url("Cailyne-BF657cf0a9e6c5b.ttf") format("truetype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cailyne";
-  src: url("/Cailyne-Italic-BF657cf0aab7fa0.ttf") format("truetype");
+  src: url("Cailyne-Italic-BF657cf0aab7fa0.ttf") format("truetype");
   font-style: italic;
 }
 

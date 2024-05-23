@@ -8,12 +8,12 @@ import img4 from "@/assets/img/heritage/world-of-acc/img4.png";
 import SlideImage from "./SlideImage";
 import Container from "../container/Container";
 
-// demo array
-const images = [img1, img2, img3, img4];
 
-const HeroSection = () => {
-  const title = "ACC world here";
-
+const HeroSection = ({imagesArray=[],title,description}) => {
+  
+  
+  // demo array
+  const images = imagesArray 
   return (
     <Container
       className={"relative  h-screen overflow-y-hidden w-full grid justify-center items-center"}
@@ -36,18 +36,20 @@ const HeroSection = () => {
 
       {/* Overlay div for styling */}
       <div
-        className="absolute inset-0  bg-gradient-to-r
-       from-[#000000d7] to-[#00000049] 
+        className="absolute inset-0  bg-[#000000a3] mix-blend-darken
         transition-all duration-1000 ease-in "
       ></div>
 
-      {/* Hero title */}
+      {/* Hero title & desc */}
+      <div className="absolute inset-0 top-1/2 text-white  uppercase  text-center">
       <h1
-        className="absolute inset-0 top-1/2 text-white text-3xl
-       md:text-4xl lg:text-5xl uppercase  text-center"
+        className="text-3xl
+        md:text-4xl lg:text-6xl"
       >
         {title}
       </h1>
+        <p style={{letterSpacing:8}} className="text-white text-[10px]  md:text-[17px] lg:text-lg font-cailyne  pt-3">{description}</p>
+        </div>
     </Container>
   );
 };

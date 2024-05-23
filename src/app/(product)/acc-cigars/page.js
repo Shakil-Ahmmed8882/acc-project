@@ -8,6 +8,7 @@ const AccCigars = () => {
     <>
       <main className="bg-[#090b0d] relative mt-44 z-40 min-h-[calc(100vh)]">
         <Hero/>
+        <Tabs/>
         <Filter/>
         <BestSeller/>
       </main>

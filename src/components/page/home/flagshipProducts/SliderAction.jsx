@@ -2,23 +2,13 @@ import { ArrowIconLeft, ArrowIconRight } from "@/components/icons/Icons";
 import classNames from "classnames";
 import { ArrowLeft, ArrowRight, CircleChevronLeft } from "lucide-react";
 
-/**
- * SliderAction Component
- * @param {Object} props - Component properties
- * @param {boolean} props.pagination - Whether to display pagination
- * @param {string} props.sliderId - Unique identifier for the slider
- * @param {string} [props.variant='square'] - Button variant (circle or square)
- * @param {string} [props.className] - Additional custom classes for buttons
- * @param {boolean} [props.wrapperBorder=true] - Whether to display border around the wrapper
- */
 const SliderAction = ({
   pagination,
   sliderId,
+  isBeginning,
+  isEnd,
   wrapperBorder = true,
 }) => {
-
-
-
   return (
     <div
       className={classNames(
@@ -28,7 +18,7 @@ const SliderAction = ({
     >
       {/* Previous Button */}
       <div
-        className={`common-swiper-button-prev-${sliderId}  absolute bottom-56 z-10 left-0`}
+        className={`common-swiper-button-prev-${sliderId} ${isBeginning && "hidden"} absolute bottom-56 z-10 left-0`}
       >
         <ArrowIconLeft />
       </div>
@@ -42,7 +32,7 @@ const SliderAction = ({
 
       {/* Next Button */}
       <div
-        className={`common-swiper-button-next-${sliderId} absolute bottom-56 z-10 right-0`}
+        className={`common-swiper-button-next-${sliderId} ${isEnd && "hidden"} absolute bottom-56 z-10 right-0`}
       >
         <ArrowIconRight />
       </div>
