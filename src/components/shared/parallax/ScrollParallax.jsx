@@ -18,6 +18,7 @@ const ScrollParallax = () => {
           <ParallaxContents
             img={parallaxImg1}
             title={"LUXURY & VINTAGE CIGARS"}
+            page={1}
           />
         </div>
         <div className="section    text-8xl  mt-64 h-screen bg-[#089193] overflow-hidden sticky top-0">
@@ -29,9 +30,16 @@ const ScrollParallax = () => {
           />
         </div>
         <div className=" section text-8xl mt-64  h-screen bg-[#089193] overflow-hidden sticky top-0">
-          <ParallaxContents img={parallaxImg1} title={"LUXURY & "} />
+          <ParallaxContents 
+          img={parallaxImg1}
+          title={"LUXURY & "}
+          page={'last'}
+          />
         </div>
+
+        
       </div>
+      
     </section>
   );
 };

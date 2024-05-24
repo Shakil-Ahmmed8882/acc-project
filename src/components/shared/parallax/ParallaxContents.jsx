@@ -1,20 +1,24 @@
 import Image from "next/image";
 import Button from "./Button";
+import VerticalAnimatedProgressbar from "../animation/animated-video/VerticalAnimatedProgressbar";
 
-const ParallaxContents = ({ img, title}) => {
+const ParallaxContents = ({ img, title, page }) => {
   return (
     <>
-    
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
       <Image
         className=" absolute w-full h-full object-cover z-30 filter"
         src={img}
         alt="HOME | hero parallax images"
       />
-      <div  className=" absolute inset-0 flex flex-col justify-center items-center text-white  z-40">
-        <h1 className="font-cailyne text-3xl md:text-4xl lg:text-5xl   relative z-40">{title}</h1>
-        <Button/>
+      <div className=" absolute inset-0 flex flex-col justify-center items-center text-white  z-40">
+        <h1 className="font-cailyne text-3xl md:text-4xl lg:text-5xl   relative z-40">
+          {title}
+        </h1>
+        <Button />
       </div>
+
+      <VerticalAnimatedProgressbar className={'-bottom-[85vh]'}/>
     </>
   );
 };
