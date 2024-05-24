@@ -35,7 +35,7 @@ const ImageGallery = () => {
           more.
         </h1>
         <div className="space-y-6">
-          <div className="flex gap-6">
+          <div className="flex justify-between gap-6">
             <HoverImage
               src={field}
               alt="Field"
@@ -55,7 +55,7 @@ const ImageGallery = () => {
               hoverWidth="50%" // 6/12
             />
           </div>
-          <div className="flex gap-6">
+          <div className="flex justify-between gap-6">
             <HoverImage
               src={dryingLeaves}
               alt="Drying Leaves"
@@ -75,7 +75,7 @@ const ImageGallery = () => {
               hoverWidth="83.33%" // 10/12
             />
           </div>
-          <div className="flex gap-6">
+          <div className="flex justify-between gap-6">
             <HoverImage
               src={cigarMaking}
               alt="Cigar Making"
