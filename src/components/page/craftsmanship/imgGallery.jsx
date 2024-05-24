@@ -39,6 +39,10 @@ const ImageGallery = () => {
             <HoverImage
               src={field}
               alt="Field"
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
               hovered={hoveredFirstRow}
               setHovered={setHoveredFirstRow}
               hoverKey="first"
@@ -53,6 +57,10 @@ const ImageGallery = () => {
               hoverKey="second"
               initialWidth="33.33%" // 4/12
               hoverWidth="50%" // 6/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
             />
           </div>
           <div className="flex justify-between gap-6">
@@ -64,6 +72,10 @@ const ImageGallery = () => {
               hoverKey="third"
               initialWidth="33.33%" // 4/12
               hoverWidth="50%" // 6/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
             />
             <HoverImage
               src={composting}
@@ -73,6 +85,10 @@ const ImageGallery = () => {
               hoverKey="fourth"
               initialWidth="66.66%" // 8/12
               hoverWidth="83.33%" // 10/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
             />
           </div>
           <div className="flex justify-between gap-6">
@@ -84,6 +100,10 @@ const ImageGallery = () => {
               hoverKey="fifth"
               initialWidth="66.66%" // 8/12
               hoverWidth="83.33%" // 10/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
             />
             <HoverImage
               src={cigarStorage}
@@ -93,6 +113,10 @@ const ImageGallery = () => {
               hoverKey="sixth"
               initialWidth="33.33%" // 4/12
               hoverWidth="50%" // 6/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
             />
           </div>
           <div className="flex justify-center">
@@ -104,6 +128,10 @@ const ImageGallery = () => {
               hoverKey="seventh"
               initialWidth="70%"
               hoverWidth="80%"
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
             />
           </div>
         </div>

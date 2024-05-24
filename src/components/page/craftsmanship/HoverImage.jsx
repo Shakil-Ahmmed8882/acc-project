@@ -10,6 +10,8 @@ const HoverImage = ({
   hoverKey,
   initialWidth,
   hoverWidth,
+  title,
+  description,
 }) => {
   return (
     <motion.div
@@ -30,10 +32,11 @@ const HoverImage = ({
         height={400} // fixed height
         src={src}
         alt={alt}
-        className="w-full h-[450px] object-cover"
+        className="w-full h-[400px] object-cover"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-        <span className="text-white text-lg">{alt}</span>
+      <div className="absolute inset-0 bg-black bg-opacity-50 grid items-center py-24 px-16 justify-center opacity-0 hover:opacity-100 transition-opacity">
+        <h2 className="text-white text-4xl leading-10">{title}</h2>
+        <div className="text-white leading-6">{description}</div>
       </div>
     </motion.div>
   );
