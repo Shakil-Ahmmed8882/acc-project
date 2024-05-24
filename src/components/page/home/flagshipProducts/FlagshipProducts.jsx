@@ -47,7 +47,11 @@ const FlagshipProductsLeft = () => {
 };
 
 const FlagshipProductsRight = () => {
-  const slideItems = Array.from({ length: 180 });
+  const [swiperState, setSwiperState] = useState({
+    isBeginning: true,
+    isEnd: false,
+  });
+  const slideItems = Array.from({ length: 16 });
   return (
     <div className="relative ">
       <CommonSlider
@@ -57,13 +61,15 @@ const FlagshipProductsRight = () => {
         sliderId="flagship"
         className="FlagshipSlider"
         freeMode={true}
+        grabCursor={true}
+        setSwiperState={setSwiperState}
       >
         {slideItems.map((_, index) => (
           <SlideItem key={index} index={index} />
         ))}
       </CommonSlider>
-        {/* slider control */}
-        <SliderAction sliderId="flagship" />
+      {/* slider control */}
+      <SliderAction sliderId="flagship" isBeginning={swiperState.isBeginning} isEnd={swiperState.isEnd} />
     </div>
   );
 };
