@@ -1,4 +1,5 @@
 import AskQuestion from "@/components/page/contact/AskQuestion";
+import LuxurySection from "@/components/page/contact/luxury";
 import HeroSection from "@/components/shared/hero/Hero";
 
 const page = () => {
@@ -6,7 +7,7 @@ const page = () => {
     <section>
       <HeroSection />
       <AskQuestion />
-      <HeroSection />
+      <LuxurySection />
     </section>
   );
 };
