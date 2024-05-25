@@ -7,17 +7,14 @@ import Description from "@/components/ui/content/Description";
 import Container from "@/components/shared/container/Container";
 const Crafting = () => {
   return (
-
-
-  <div className="bg-black">
-    <Container className={'py-32'}>
+    <Container className={"py-32 bg-black"}>
       <div className="flex flex-col lg:flex-row gap-16 max-w-[1220px] mx-auto">
         <div className="text-white lg:w-1/2">
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-8 lg:mb-10 mt-8">
             Crafting EXCELLENCE SINCE 1952
           </h2>
 
-            <Description
+          <Description
             text={` The heritage of ACC began in 1952 with Jose Aray on a small tobacco
             field in Ecuador. Starting with simple planting, harvesting, and
             local trading, Mr. Aray, seeing the opportunity, began to purchase
@@ -31,7 +28,7 @@ const Crafting = () => {
             Cubano and Sumatra varieties developing what now is the standard
             Ecuadoran Sumatra breed, sought after for cigar wrapper leaf
             worldwide.`}
-            />  
+          />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="grid gap-4">
@@ -66,9 +63,6 @@ const Crafting = () => {
         </div>
       </div>
     </Container>
-
-  </div>
-    
   );
 };
 
