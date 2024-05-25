@@ -18,6 +18,7 @@ const useScrollObserver = () => {
 
       // Change the color of the active dot
       paginationDots[activeIndex].style.backgroundColor = "white"; // Replace with your active color
+      paginationDots[activeIndex].style.border = "2xl solid red"; // Replace with your active color
     };
 
     // Function to handle scroll event
