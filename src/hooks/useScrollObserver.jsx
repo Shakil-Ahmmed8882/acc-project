@@ -3,7 +3,12 @@ import useGlobalContext from "./useGlobalContext";
 const { useEffect } = require("react");
 
 const useScrollObserver = () => {
-  const {setIsScrollBeyondParallax} = useGlobalContext()
+
+  // state from global context 
+  const {
+    setIsScrollBeyondParallax,
+    setIsSecondParallaxInView
+  } = useGlobalContext()
 
   useEffect(() => {
     // Assuming you have an array of section elements and pagination dots
@@ -20,6 +25,26 @@ const useScrollObserver = () => {
       // Change the color of the active dot
       paginationDots[activeIndex].style.backgroundColor = "white"; // Replace with your active color
       paginationDots[activeIndex].style.border = "2xl solid red"; // Replace with your active color
+
+
+       // Check if the second parallax section is in view
+       const secondParallax = sections[1];
+       const firstParallax = sections[0];
+       const secondParallaxTop = secondParallax.getBoundingClientRect().top;
+       const firstParallaxTop = firstParallax.getBoundingClientRect().top;
+ 
+       if (secondParallaxTop <= window.innerHeight / 2 && secondParallaxTop >= 0) {
+        // Second parallax section is in view
+        setIsScrollBeyondParallax(true);
+        setIsSecondParallaxInView(true);
+        
+      } else if (firstParallaxTop >= 0) {
+        // First parallax section is back in view
+        setIsScrollBeyondParallax(false);
+        setIsSecondParallaxInView(false);
+      }
+
+ 
     };
 
     // Function to handle scroll event
@@ -29,8 +54,10 @@ const useScrollObserver = () => {
         const sectionTop = section.getBoundingClientRect().top;
         if (sectionTop <= window.innerHeight / 2) {
           activeIndex = index;
+    
         }
       });
+
 
       changeDotColor(activeIndex);
       // Check if scrolling is finished on the third stacking card
@@ -56,3 +83,16 @@ const useScrollObserver = () => {
 };
 
 export default useScrollObserver;
+
+
+
+
+
+
+
+
+
+
+
+
+

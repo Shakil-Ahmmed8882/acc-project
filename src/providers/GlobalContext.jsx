@@ -10,14 +10,23 @@ const GlobalContext= ({children}) => {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 const [isScrollBeyondParallax, setIsScrollBeyondParallax] = useState(false);
 
+// ================== parallax =====================
+const [isSecondParallaxInView, setIsSecondParallaxInView] = useState(false);
+
+
 
 // ========== Spread data across the app ==========
-
 const contextData = {
+  
+  // navbar
     isMenuOpen,
     setIsMenuOpen,
     setIsScrollBeyondParallax,
-    isScrollBeyondParallax
+    isScrollBeyondParallax,
+
+    // parallax 
+    setIsSecondParallaxInView,
+    isSecondParallaxInView
 }
 
   return (

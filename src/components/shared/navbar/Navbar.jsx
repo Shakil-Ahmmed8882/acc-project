@@ -15,6 +15,7 @@ export const navbarContext = createContext(null);
 
 const Navbar = () => {
   // state management
+  const { isScrollBeyondParallax, isSecondParallaxInView } = useGlobalContext();
   const [isBrandHover, setIsBrandsHover] = useState(false);
   const { isMenuOpen, setIsMenuOpen } = useGlobalContext();
 
@@ -30,12 +31,8 @@ const Navbar = () => {
     isBrandHover,
   };
 
-  const { isScrollBeyondParallax } = useGlobalContext();
-
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
-
-  console.log(isScrollBeyondParallax);
 
   return (
     <navbarContext.Provider value={navInfo}>
@@ -51,7 +48,7 @@ const Navbar = () => {
 
         bg-[#0000006c]
         
-        ${!isScrollBeyondParallax && 'visible opacity-100 translate-y-0'}
+        ${!isScrollBeyondParallax && "visible opacity-100 translate-y-0"}
         
         ${
           isScrollBeyondParallax
@@ -67,7 +64,8 @@ const Navbar = () => {
         {/* hambargar menu, logo and searchbar */}
         <Container isNavbar={true} className={style}>
           <MenuIcon label={"menu"} />
-          <Logo />
+          {isSecondParallaxInView ? <Logo /> : "LOGO"}
+
           <div className="hidden -pl-6 md:flex">
             <SearchBar />
           </div>
