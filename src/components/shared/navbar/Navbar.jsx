@@ -14,10 +14,9 @@ import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
-  
-    // state management 
-    const [isBrandHover, setIsBrandsHover] = useState(false);
-    const {isMenuOpen,setIsMenuOpen} = useGlobalContext()
+  // state management
+  const [isBrandHover, setIsBrandsHover] = useState(false);
+  const { isMenuOpen, setIsMenuOpen } = useGlobalContext();
 
   // container styls
   const style = "flex justify-between gap-0 items-center px-8";
@@ -31,26 +30,40 @@ const Navbar = () => {
     isBrandHover,
   };
 
-  const scrollDirection = useScrollDirection();
-  const isScrollingUp = scrollDirection === 'up';
+  const { isScrollBeyondParallax } = useGlobalContext();
 
-  
+  const scrollDirection = useScrollDirection();
+  const isScrollingUp = scrollDirection === "up";
+
+  console.log(isScrollBeyondParallax);
 
   return (
     <navbarContext.Provider value={navInfo}>
       {/* // increase paddiing bottom once menu reveals */}
+
       <header
         className={`${
           isMenuOpen
             ? "py-11 min-h-screen md:min-h-32 lg:h-64"
             : "pt-3 h-36 lg:h-40"
         } 
-        bg-[#0000006c]  ${isScrollingUp?'visible opacity-100 translate-y-0 ':' invisible opacity-0 -translate-y-8'}  fixed left-0 right-0 top-0  z-50 transition-all duration-700
 
-        `}
+
+        bg-[#0000006c]
+        
+        ${!isScrollBeyondParallax && 'visible opacity-100 translate-y-0'}
+        
+        ${
+          isScrollBeyondParallax
+            ? isScrollingUp
+              ? "visible opacity-100 translate-y-0 "
+              : "invisible opacity-0 -translate-y-8"
+            : "visible opacity-100 translate-y-0"
+        }  
+          fixed left-0 right-0 top-0  z-50 transition-all duration-700`}
       >
         {/* bg blur overlay : hover on brands */}
-          <BgBlur isTrue={isBrandHover}/>
+        <BgBlur isTrue={isBrandHover} />
         {/* hambargar menu, logo and searchbar */}
         <Container isNavbar={true} className={style}>
           <MenuIcon label={"menu"} />
@@ -62,9 +75,9 @@ const Navbar = () => {
 
         {/* hidden menu */}
         <Container isNavbar={true}>
-          <HorizontalLine/>
+          <HorizontalLine />
           <MenuContents {...{ isMenuOpen }} />
-         <Tabs {...{isMenuOpen}}/>
+          <Tabs {...{ isMenuOpen }} />
         </Container>
       </header>
     </navbarContext.Provider>

@@ -8,16 +8,16 @@ const GlobalContext= ({children}) => {
 
 // ================== Menubar =====================
 const [isMenuOpen, setIsMenuOpen] = useState(false);
- 
-
-
+const [isScrollBeyondParallax, setIsScrollBeyondParallax] = useState(false);
 
 
 // ========== Spread data across the app ==========
 
 const contextData = {
     isMenuOpen,
-    setIsMenuOpen
+    setIsMenuOpen,
+    setIsScrollBeyondParallax,
+    isScrollBeyondParallax
 }
 
   return (

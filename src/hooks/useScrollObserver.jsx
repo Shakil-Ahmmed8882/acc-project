@@ -1,8 +1,10 @@
+import useGlobalContext from "./useGlobalContext";
+
 const { useEffect } = require("react");
 
-
-
 const useScrollObserver = () => {
+  const {setIsScrollBeyondParallax} = useGlobalContext()
+
   useEffect(() => {
     // Assuming you have an array of section elements and pagination dots
     const sections = document.querySelectorAll(".section");
@@ -10,10 +12,9 @@ const useScrollObserver = () => {
 
     // Function to change the color of the pagination dot
     const changeDotColor = (activeIndex) => {
-
       // Reset all dots to default color
       paginationDots.forEach((dot) => {
-        dot.style.backgroundColor = "gray"; 
+        dot.style.backgroundColor = "gray";
       });
 
       // Change the color of the active dot
@@ -38,11 +39,13 @@ const useScrollObserver = () => {
         // Hide pagination dots
         paginationDots.forEach((dot) => {
           dot.style.display = "none";
+         setIsScrollBeyondParallax(true) 
         });
       } else {
         // Show pagination dots
         paginationDots.forEach((dot) => {
-          dot.style.display = "block"; // Assuming pagination dots are hidden by default
+          dot.style.display = "block"; 
+          setIsScrollBeyondParallax(false) 
         });
       }
     };
