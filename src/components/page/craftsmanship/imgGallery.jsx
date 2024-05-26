@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import Container from "@/components/shared/container/Container";
 
 // Images
 import field from "@/assets/img/craftsmanship/imgGallery/craftsmanship1.png";
@@ -8,99 +10,133 @@ import composting from "@/assets/img/craftsmanship/imgGallery/craftsmanship4.png
 import cigarMaking from "@/assets/img/craftsmanship/imgGallery/craftsmanship5.png";
 import cigarStorage from "@/assets/img/craftsmanship/imgGallery/craftsmanship6.png";
 import truck from "@/assets/img/craftsmanship/imgGallery/craftsmanship7.png";
-import Image from "next/image";
-import Container from "@/components/shared/container/Container";
+import HoverImage from "./HoverImage";
 
 const ImageGallery = () => {
+  const [hoveredFirstRow, setHoveredFirstRow] = useState(null);
+  const [hoveredSecondRow, setHoveredSecondRow] = useState(null);
+  const [hoveredThirdRow, setHoveredThirdRow] = useState(null);
+  const [hoveredFourthRow, setHoveredFourthRow] = useState(null);
+
   return (
-    <Container>
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        <div className="relative group col-span-full lg:col-span-2">
-          <Image
-            width={600}
-            height={600}
-            src={field}
-            alt="Field"
-            className="w-full group-hover:w- h-auto object-cover col-span-2 transition-all duration-500"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg">Field</span>
+    <>
+      <Container>
+        <div className="border-b pb-2 border-[#bfbfbf] text-2xl text-white w-fit">
+          CRAFTING PROCESS
+        </div>
+        <h1 className="py-6 riviera text-[#bfbfbf]">
+          At ACC we age and ferment the tobacco for years, a rare practice even
+          among the most well-known brands. We then roll the cigars in our own
+          factory and age them again. This process takes many years and is very
+          difficult for producers of mass-produced well-known brands. As a true
+          cigar aficionado knows, a cigar&apos;s best friend is slow natural
+          tobacco fermentation combined with ageing, compared to chamber, or
+          boxed-room heating. Our tobacco vintages range from 3 12 years and
+          more.
+        </h1>
+        <div className="space-y-6">
+          <div className="flex justify-between gap-6">
+            <HoverImage
+              src={field}
+              alt="Field"
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
+              hovered={hoveredFirstRow}
+              setHovered={setHoveredFirstRow}
+              hoverKey="first"
+              initialWidth="66.66%" // 8/12
+              hoverWidth="83.33%" // 10/12
+            />
+            <HoverImage
+              src={seedling}
+              alt="Seedling"
+              hovered={hoveredFirstRow}
+              setHovered={setHoveredFirstRow}
+              hoverKey="second"
+              initialWidth="33.33%" // 4/12
+              hoverWidth="50%" // 6/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
+            />
+          </div>
+          <div className="flex justify-between gap-6">
+            <HoverImage
+              src={dryingLeaves}
+              alt="Drying Leaves"
+              hovered={hoveredSecondRow}
+              setHovered={setHoveredSecondRow}
+              hoverKey="third"
+              initialWidth="33.33%" // 4/12
+              hoverWidth="50%" // 6/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
+            />
+            <HoverImage
+              src={composting}
+              alt="Composting"
+              hovered={hoveredSecondRow}
+              setHovered={setHoveredSecondRow}
+              hoverKey="fourth"
+              initialWidth="66.66%" // 8/12
+              hoverWidth="83.33%" // 10/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
+            />
+          </div>
+          <div className="flex justify-between gap-6">
+            <HoverImage
+              src={cigarMaking}
+              alt="Cigar Making"
+              hovered={hoveredThirdRow}
+              setHovered={setHoveredThirdRow}
+              hoverKey="fifth"
+              initialWidth="66.66%" // 8/12
+              hoverWidth="83.33%" // 10/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
+            />
+            <HoverImage
+              src={cigarStorage}
+              alt="Cigar Storage"
+              hovered={hoveredThirdRow}
+              setHovered={setHoveredThirdRow}
+              hoverKey="sixth"
+              initialWidth="33.33%" // 4/12
+              hoverWidth="50%" // 6/12
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
+            />
+          </div>
+          <div className="flex justify-center">
+            <HoverImage
+              src={truck}
+              alt="Truck on Road"
+              hovered={hoveredFourthRow}
+              setHovered={setHoveredFourthRow}
+              hoverKey="seventh"
+              initialWidth="70%"
+              hoverWidth="80%"
+              title={"Leaf Selection"}
+              description={
+                "The process begins with the careful selection of tobacco leaves. These leaves are sourced from Our firl, each contributing unique flavors and characteristics to the final blend."
+              }
+            />
           </div>
         </div>
-        <div className="relative group">
-          <Image
-            width={600}
-            height={600}
-            src={seedling}
-            alt="Seedling"
-            className="w-full h-auto object-cover group-hover:scale-x-125 transition-all duration-200"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg">Seedling</span>
-          </div>
-        </div>
-        <div className="relative group">
-          <Image
-            width={600}
-            height={600}
-            src={dryingLeaves}
-            alt="Drying Leaves"
-            className="w-full h-auto object-cover group-hover:scale-x-125 transition-all duration-200"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg">Drying Leaves</span>
-          </div>
-        </div>
-        <div className="relative group col-span-2">
-          <Image
-            width={600}
-            height={600}
-            src={composting}
-            alt="Composting"
-            className="w-full h-auto object-cover col-span-2 group-hover:scale-x-125 transition-all duration-200"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg">Composting</span>
-          </div>
-        </div>
-        <div className="relative group col-span-2">
-          <Image
-            width={600}
-            height={600}
-            src={cigarMaking}
-            alt="Cigar Making"
-            className="w-full h-auto object-cover col-span-2 group-hover:scale-x-125 transition-all duration-200"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg">Cigar Making</span>
-          </div>
-        </div>
-        <div className="relative group">
-          <Image
-            width={600}
-            height={600}
-            src={cigarStorage}
-            alt="Cigar Storage"
-            className="w-full h-auto object-cover group-hover:scale-x-125 transition-all duration-200"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg">Cigar Storage</span>
-          </div>
-        </div>
-        <div className="relative group col-span-3 flex justify-center ">
-          <Image
-            width={600}
-            height={600}
-            src={truck}
-            alt="Truck on Road"
-            className="w-2/3 group-hover:scale-x-125 h-auto object-cover transition-all duration-200"
-          />
-          <div className="absolute w-auto duration-200 inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg">Truck on Road</span>
-          </div>
-        </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 

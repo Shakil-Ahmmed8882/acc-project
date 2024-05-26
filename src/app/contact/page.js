@@ -1,11 +1,15 @@
+import AskQuestion from "@/components/page/contact/AskQuestion";
+import LuxurySection from "@/components/page/contact/luxury";
+import HeroSection from "@/components/shared/hero/Hero";
 
-
-const ACCCigars = () => {
+const page = () => {
   return (
     <section>
-      ACC cigarsss
+      <HeroSection />
+      <AskQuestion />
+      <LuxurySection />
     </section>
   );
 };
 
-export default ACCCigars;
+export default page;

@@ -7,9 +7,7 @@ const Home = () => {
   return (
     <>
       <main className="relative mt-44 z-40 min-h-[calc(100vh)]">
-        <section>
-          <Banner />
-        </section>
+        <Banner />
         <FlagshipProducts />
         <AccLifestyle />
         <Craftsmanship />
