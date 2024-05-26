@@ -1,4 +1,3 @@
-import BrandWorldAcc from "@/components/page/brands/brandWordAcc/BrandWorldAcc";
 import Banner from "@/components/page/home/banner/Banner";
 import Craftsmanship from "@/components/page/home/CraftmanShip/CraftmanShip";
 import FlagshipProducts from "@/components/page/home/flagshipProducts/FlagshipProducts";
@@ -15,7 +14,6 @@ const Home = () => {
         <AccLifestyle />
         <Craftsmanship />
         <Newsletter />
-        <BrandWorldAcc />
       </main>
     </>
   );
