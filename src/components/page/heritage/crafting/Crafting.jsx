@@ -32,32 +32,32 @@ const Crafting = () => {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="grid gap-4">
-            <div className="flex justify-center">
+            <div className="flex justify-center relative overflow-hidden">
               <Image
                 width={600}
                 height={600}
                 src={img1}
                 alt="Image 2"
-                className="w-full rounded shadow-md object-cover"
+                className="w-full rounded shadow-md object-cover hover-grow transition duration-300"
               />
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center relative overflow-hidden">
               <Image
                 width={600}
                 height={600}
                 src={img2}
                 alt="Image 3"
-                className="w-full rounded shadow-md object-cover"
+                className="w-full rounded shadow-md object-cover hover-grow transition duration-300"
               />
             </div>
           </div>
-          <div className="">
+          <div className="relative overflow-hidden">
             <Image
               width={600}
               height={600}
               src={img3}
               alt="Image 1"
-              className="w-full rounded shadow-md object-cover"
+              className="w-full rounded shadow-md object-cover hover-grow transition duration-300"
             />
           </div>
         </div>

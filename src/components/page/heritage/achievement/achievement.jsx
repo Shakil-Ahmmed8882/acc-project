@@ -6,13 +6,13 @@ import Description from "@/components/ui/content/Description";
 const Achievement = () => {
   return (
     <Container className={"bg-[#222222] text-white p-6"}>
-      <div className="flex flex-col items-center md:flex-row md:items-start mx-auto gap-10">
+      <div className="flex flex-col items-center md:flex-row md:items-start mx-auto gap-10 relative overflow-hidden">
         <Image
           width={600}
           height={600}
           src={img1}
           alt="Man smoking a cigar"
-          className="w-72 h-auto mb-8 md:mb-0 md:mr-8"
+          className="rounded-md mb-8 md:mb-0 md:mr-8 hover-grow transition duration-300 h-96 w-full md:w-[30%] object-cover"
         />
         <div className="lg:mt-10">
           <h1 className="text-3xl font-bold mb-4">ACHIEVEMENT CIGAR COMPANY</h1>
