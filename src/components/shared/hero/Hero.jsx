@@ -4,13 +4,13 @@ import Image from "next/image";
 import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
 import Container from "../container/Container";
-import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
+// import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
 
 const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   // demo array
   const images = imagesArray;
   return (
-    <InitialAnimateContainer>
+    // <InitialAnimateContainer>
       <Container
         className={
           "relative  h-screen overflow-y-hidden w-full grid justify-center items-center"
@@ -58,7 +58,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
           </p>
         </div>
       </Container>
-    </InitialAnimateContainer>
+    // </InitialAnimateContainer>
   );
 };
 
