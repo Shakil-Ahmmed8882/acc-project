@@ -2,22 +2,30 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
 import Button from "@/components/shared/button/Button";
-import ProductSlider from "./ProductSlider";
-import Container from "@/components/shared/container/Container";
 import CommonSlider from "./CommonSlider";
 
-import product1 from "@/assets/img/products/product2.png";
-import product2 from "@/assets/img/products/product2.png";
-import product3 from "@/assets/img/products/product3.png";
-import product4 from "@/assets/img/products/product4.png";
-import product5 from "@/assets/img/products/product4.png";
+import product1 from "@/assets/img/home/flagship/flagship1.png";
+import product2 from "@/assets/img/home/flagship/flagship2.png";
+import product3 from "@/assets/img/home/flagship/flagship3.png";
+import product4 from "@/assets/img/home/flagship/flagship4.png";
+import product5 from "@/assets/img/home/flagship/flagship5.png";
+import product6 from "@/assets/img/home/flagship/flagship6.png";
+import product7 from "@/assets/img/home/flagship/flagship7.png";
+import product8 from "@/assets/img/home/flagship/flagship8.png";
 import SliderAction from "./SliderAction";
 
 const FlagshipProducts = () => {
-  const products = [product1, product2, product3, product4, product5];
-
+  const products = [
+    product1,
+    product2,
+    product3,
+    product4,
+    product5,
+    product6,
+    product7,
+    product8,
+  ];
   return (
     <div className="bg-[#1C1C1C] py-10">
       <div className="lg:ml-[180px] grid grid-cols-1 lg:grid-cols-5 place-self-center  lg:gap-16">
@@ -25,7 +33,7 @@ const FlagshipProducts = () => {
           <FlagshipProductsLeft />
         </div>
         <div className="md:col-span-3 max-w-[1140px]">
-          <FlagshipProductsRight />
+          <FlagshipProductsRight products={products} />
         </div>
       </div>
     </div>
@@ -36,8 +44,8 @@ export default FlagshipProducts;
 
 const FlagshipProductsLeft = () => {
   return (
-    <div className=" w-full   lg:text-left text-center ">
-      <h4 className="text-[30px]  md:text-[40px]  mb-10 md:mb-[96px]  text-light-white-clr tracking-[5px] font-cailyne italic font-ultralight ">
+    <div className=" w-full lg:text-left text-center ">
+      <h4 className="text-[30px] md:text-[40px] mb-10 md:mb-[96px]  text-light-white-clr tracking-[5px] font-cailyne italic font-ultralight ">
         Explore ACC&apos;s Flagship products
       </h4>
 
@@ -46,39 +54,42 @@ const FlagshipProductsLeft = () => {
   );
 };
 
-const FlagshipProductsRight = () => {
+const FlagshipProductsRight = ({ products }) => {
   const [swiperState, setSwiperState] = useState({
     isBeginning: true,
     isEnd: false,
   });
-  const slideItems = Array.from({ length: 16 });
   return (
     <div className="relative ">
       <CommonSlider
         slidesPerView={4}
         spaceBetween={10}
-        slidesPerGroup={Math.ceil(slideItems.length / 4)}
+        slidesPerGroup={Math.ceil(products.length / 4)}
         sliderId="flagship"
         className="FlagshipSlider"
         freeMode={true}
         grabCursor={true}
         setSwiperState={setSwiperState}
       >
-        {slideItems.map((_, index) => (
-          <SlideItem key={index} index={index} />
+        {products.map((product, index) => (
+          <SlideItem key={index} product={product} />
         ))}
       </CommonSlider>
       {/* slider control */}
-      <SliderAction sliderId="flagship" isBeginning={swiperState.isBeginning} isEnd={swiperState.isEnd} />
+      <SliderAction
+        sliderId="flagship"
+        isBeginning={swiperState.isBeginning}
+        isEnd={swiperState.isEnd}
+      />
     </div>
   );
 };
 
-const SlideItem = ({ index }) => {
+const SlideItem = ({ product }) => {
   return (
     <div className="">
       <Image
-        src={`https://source.unsplash.com/random/${index}`}
+        src={product}
         className="object-cover h-[260px] w-full"
         width={240}
         height={300}
