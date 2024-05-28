@@ -7,7 +7,7 @@ const Heritage = () => {
   return (
     <section>
       <HeroSection
-        title={"ACC Heritage"}
+        title={"Craftsmanship"}
         imagesArray={[hero1]}
         noOverlay={true}
       />

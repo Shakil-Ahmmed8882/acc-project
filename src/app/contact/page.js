@@ -3,11 +3,16 @@
 import AskQuestion from "@/components/page/contact/AskQuestion";
 import LuxurySection from "@/components/page/contact/luxury";
 import HeroSection from "@/components/shared/hero/Hero";
+import hero1 from "@/assets/img/contact/hero.png";
 
 const page = () => {
   return (
     <section>
-      <HeroSection noOverlay={true}/>
+      <HeroSection
+        title={"Contact ACC"}
+        imagesArray={[hero1]}
+        noOverlay={true}
+      />
       <AskQuestion />
       <LuxurySection />
     </section>
