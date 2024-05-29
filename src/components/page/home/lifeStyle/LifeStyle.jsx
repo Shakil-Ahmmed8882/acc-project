@@ -36,7 +36,7 @@ const AccLifestyle = () => {
   const cardClass = "flex flex-col overflow-hidden";
   const imageContainerClass = "relative overflow-hidden gap-6";
   const imageClass =
-    "w-full h-64 object-cover hover-grow hover:opacity-50 transition duration-300";
+    "w-full h-64 object-cover  hover:opacity-50 hover-grow transition duration-300";
   const cardContentClass = "border-l-2 border-[#FAFAFA99] p-4";
   const titleClass = "text-xl font-semibold mb-2";
 

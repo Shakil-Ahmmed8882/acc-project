@@ -17,7 +17,7 @@ const ImageGallery = () => {
         <div className="border-b  pb-2 border-[#bfbfbf] text-2xl text-white w-fit">
           CRAFTING PROCESS
         </div>
-        <h1 className="py-6 riviera text-[#bfbfbf]">
+        <h1 className="py-6 font-riviera text-[#bfbfbf]">
           At ACC we age and ferment the tobacco for years, a rare practice even
           among the most well-known brands. We then roll the cigars in our own
           factory and age them again. This process takes many years and is very

@@ -8,43 +8,43 @@ import parallaxImg3 from "@/assets/img/home/parallax/parallax3.png";
 // import parallaxImg3 from "@/assets/img/home/parallax/parallax3";
 import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
 import useGlobalContext from "@/hooks/useGlobalContext";
-import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
+// import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
 
 const ScrollParallax = () => {
   const { isMenuOpen } = useGlobalContext();
   return (
-    <InitialAnimateContainer>
-      <section>
-        <div className="relative ">
-          0
-          <div
-            className={`  ${
-              isMenuOpen ? "-mt-[800px] md:-mt-96" : "-mt-96"
-            }   transition-all h-[125vh] duration-1000 section text-8xl  overflow-hidden sticky top-0`}
-          >
-            <AnimatedVideo />
-            <ParallaxContents
-              img={parallaxImg1}
-              title={"LUXURY & VINTAGE CIGARS"}
-              page={1}
-            />
-          </div>
-          <div className="section    text-8xl  mt-64 h-screen  overflow-hidden sticky top-0">
-            <ParallaxContents
-              img={parallaxImg2}
-              title={"LUXURY & VINTAGE SPIRITS"}
-            />
-          </div>
-          <div className=" section text-8xl mt-64  h-screen  overflow-hidden sticky top-0">
-            <ParallaxContents
-              img={parallaxImg3}
-              title={"LUXURY & "}
-              page={"last"}
-            />
-          </div>
+    // <InitialAnimateContainer>
+    <section>
+      <div className="relative ">
+        0
+        <div
+          className={`  ${
+            isMenuOpen ? "-mt-[800px] md:-mt-96" : "-mt-96"
+          }   transition-all h-[125vh] duration-1000 section text-8xl  overflow-hidden sticky top-0`}
+        >
+          <AnimatedVideo />
+          <ParallaxContents
+            img={parallaxImg1}
+            title={"LUXURY & VINTAGE CIGARS"}
+            page={1}
+          />
         </div>
-      </section>
-    </InitialAnimateContainer>
+        <div className="section    text-8xl  mt-64 h-screen  overflow-hidden sticky top-0">
+          <ParallaxContents
+            img={parallaxImg2}
+            title={"LUXURY & VINTAGE SPIRITS"}
+          />
+        </div>
+        <div className=" section text-8xl mt-64  h-screen  overflow-hidden sticky top-0">
+          <ParallaxContents
+            img={parallaxImg3}
+            title={"LUXURY & "}
+            page={"last"}
+          />
+        </div>
+      </div>
+    </section>
+    // </InitialAnimateContainer>
   );
 };
 
