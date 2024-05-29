@@ -12,10 +12,10 @@ const Achievement = () => {
           height={600}
           src={img1}
           alt="Man smoking a cigar"
-          className="rounded-md mb-8 md:mb-0 md:mr-8 hover-grow transition duration-300 h-96 w-full md:w-[30%] object-cover"
+          className="rounded-md mb-8 md:mb-0 md:mr-8 hover-grow transition duration-300 h-96 w-full md:w-[35%] object-cover"
         />
         <div className="lg:mt-10">
-          <h1 className="text-3xl font-bold mb-4">ACHIEVEMENT CIGAR COMPANY</h1>
+          <h1 className="text-3xl font-bold mb-4 font-cailyne">ACHIEVEMENT CIGAR COMPANY</h1>
           <Description
             text={`
             ACC frequently produces for and sponsors exclusive events with other
