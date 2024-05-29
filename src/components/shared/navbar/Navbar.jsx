@@ -41,7 +41,7 @@ const Navbar = () => {
       <header
         className={`${
           isMenuOpen
-          ? "min-h-screen md:min-h-32 lg:h-60"
+          ? "min-h-screen md:min-h-32 lg:h-52"
           : isScrollingUp
           ? "h-28 lg:h-32" 
           : "h-32 lg:h-28" 
