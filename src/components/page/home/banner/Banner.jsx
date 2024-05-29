@@ -6,9 +6,9 @@ import useScrollObserver from "@/hooks/useScrollObserver";
 
 const Banner = () => {
   // it's for active pagination marking
-const a =   useScrollObserver();
+useScrollObserver();
 
-console.log(a)
+
 
   return (
     <section className="relative">

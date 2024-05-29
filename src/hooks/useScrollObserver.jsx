@@ -54,8 +54,9 @@ const useScrollObserver = () => {
         const sectionTop = section.getBoundingClientRect().top;
         if (sectionTop <= window.innerHeight / 2) {
           activeIndex = index;
-    
         }
+
+       
       });
 
 
