@@ -64,7 +64,7 @@ const Navbar = () => {
         {/* hambargar menu, logo and searchbar */}
         <Container isNavbar={true} className={style}>
           <MenuIcon label={"menu"} />
-          {isSecondParallaxInView ? <Logo /> : "LOGO"}
+          <Logo {...{isSecondParallaxInView}} /> 
 
           <div className="hidden -pl-6 md:flex">
             <SearchBar />
