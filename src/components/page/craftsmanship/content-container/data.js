@@ -4,7 +4,7 @@ import dryingLeaves from "@/assets/img/craftsmanship/imgGallery/craftsmanship3.p
 import composting from "@/assets/img/craftsmanship/imgGallery/craftsmanship4.png";
 import cigarMaking from "@/assets/img/craftsmanship/imgGallery/craftsmanship5.png";
 import cigarStorage from "@/assets/img/craftsmanship/imgGallery/craftsmanship6.png";
-import truck from "@/assets/img/craftsmanship/imgGallery/craftsmanship7.png";
+
 
 export const imgData = [
   {

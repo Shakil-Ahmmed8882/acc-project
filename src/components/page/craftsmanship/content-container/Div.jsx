@@ -10,9 +10,9 @@ const Div = ({ children, width }) => {
       onMouseLeave={() => setIsHovered(false)}
       animate={{ width: isHovered ? "100%" : width }}
       className="relative overflow-hidden ease-linear cursor-pointer h-[400px] transition-all duration-500"
-      style={{ width }}
+      
     >
-      {children(isHovered)} {/* Pass isHovered to children */}
+      {children(isHovered)}
     </motion.div>
   );
 };
