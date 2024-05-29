@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
+
 const Div = ({ children, width }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <section
-      className={`relative w-[${width}] overflow-hidden ease-linear
-    cursor-pointer hover:w-[100%] group h-[400px] transition-all duration-500`}
+    <motion.div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      animate={{ width: isHovered ? "100%" : width }}
+      className="relative overflow-hidden ease-linear cursor-pointer h-[400px] transition-all duration-500"
+      style={{ width }}
     >
-      {children}
-    </section>
+      {children(isHovered)} {/* Pass isHovered to children */}
+    </motion.div>
   );
 };
 

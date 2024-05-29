@@ -1,13 +1,6 @@
 "use client";
-import React, { useState } from "react";
 import Container from "@/components/shared/container/Container";
-
-// Images
-import HoverImage from "./HoverImage";
 import ExpandingImgContainer from "./content-container/ExpandingImgContainer";
-import Image from "next/image";
-import HiddenContent from "./content-container/HiddenContent";
-import Img from "./content-container/Img";
 import { imgData } from "./content-container/data";
 
 const ImageGallery = () => {
@@ -37,9 +30,7 @@ const ImageGallery = () => {
             hiddenContent={data.hiddenContent}
           />
         ))}
-        {/*       
-      <ExpandingImgContainer src1={field} src2={seedling} width1={'40%'} width2={'60%'}/>
-      <ExpandingImgContainer src1={field} src2={seedling} width1={'60%'} width2={'40%'}/> */}
+    
       </Container>
     </>
   );
