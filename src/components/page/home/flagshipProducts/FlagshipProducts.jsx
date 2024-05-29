@@ -44,9 +44,9 @@ export default FlagshipProducts;
 
 const FlagshipProductsLeft = () => {
   return (
-    <div className=" w-full lg:text-left text-center ">
-      <h4 className="text-[30px] md:text-[40px] mb-10 md:mb-[96px]  text-light-white-clr tracking-[5px] font-cailyne italic font-ultralight ">
-        Explore ACC&apos;s Flagship products
+    <div className=" w-full lg:text-left text-center my-10">
+      <h4 className="text-[30px] md:text-[40px] mb-10 lg:mb-20 text-light-white-clr tracking-[8px] font-cailyne uppercase">
+        Explore ACC&#39;s Flagship products
       </h4>
 
       <Button size="large">Discover now</Button>
