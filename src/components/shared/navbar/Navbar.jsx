@@ -41,8 +41,8 @@ const Navbar = () => {
       <header
         className={`${
           isMenuOpen
-            ? "py-11 min-h-screen md:min-h-32 lg:h-64"
-            : "pt-3 h-36 lg:h-40"
+            ? " min-h-screen md:min-h-32 lg:h-64"
+            : "pt-3 h-36 lg:h-44"
         } 
 
 
