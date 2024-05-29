@@ -44,7 +44,7 @@ const Navbar = () => {
           ? "min-h-screen md:min-h-32 lg:h-60"
           : isScrollingUp
           ? "h-28 lg:h-32" 
-          : "h-36 lg:h-28" 
+          : "h-32 lg:h-28" 
       } 
 
 
