@@ -45,7 +45,7 @@ const Navbar = () => {
             ? "py-11 min-h-screen md:min-h-32 lg:h-64"
             : "pt-3 h-36 lg:h-40"
         } 
-        bg-[#00000080]  ${isScrollingUp?'visible opacity-100 translate-y-0 ':' invisible opacity-0 -translate-y-8'}  fixed left-0 right-0 top-0  z-50 transition-all duration-700
+        bg-[#0000006c]  ${isScrollingUp?'visible opacity-100 translate-y-0 ':' invisible opacity-0 -translate-y-8'}  fixed left-0 right-0 top-0  z-50 transition-all duration-700
 
         `}
       >

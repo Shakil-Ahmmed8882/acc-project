@@ -25,7 +25,7 @@ const UnCraftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src={craftsmanship3}
+              src={craftsmanship1}
               alt="Image 3"
               className="w-full rounded shadow-md object-cover h-fit"
             />
@@ -34,7 +34,7 @@ const UnCraftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src={craftsmanship1}
+              src={craftsmanship3}
               alt="Image 1"
               className="w-full rounded shadow-md object-cover"
             />
