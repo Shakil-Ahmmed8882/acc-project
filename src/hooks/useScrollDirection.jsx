@@ -8,6 +8,7 @@ export const useScrollDirection = () => {
     let lastScrollY = window.pageYOffset;
 
     const updateScrollDirection = () => {
+
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY ? 'down' : 'up';
       if (direction !== scrollDirection) {
