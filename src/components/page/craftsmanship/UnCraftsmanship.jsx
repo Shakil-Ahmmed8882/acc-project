@@ -27,7 +27,7 @@ const UnCraftsmanship = () => {
               height={500}
               src={craftsmanship1}
               alt="Image 3"
-              className="w-full rounded shadow-md object-cover h-fit"
+              className="w-full rounded shadow-md max-h-72"
             />
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1">

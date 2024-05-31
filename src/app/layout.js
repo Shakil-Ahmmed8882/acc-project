@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
 import GlobalContext from "@/providers/GlobalContext";
-
+import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
           <Navbar/>
             {children}
           <Footer />
+          <Toaster/>
         </GlobalContext>
       </body>
     </html>
