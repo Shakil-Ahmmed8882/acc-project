@@ -1,3 +1,4 @@
+
 "use client";
 
 import Lenis from "lenis";
@@ -8,25 +9,24 @@ import { useEffect } from "react";
 
 const Banner = () => {
   // Initialize Lenis for smooth scrolling
-  useEffect(() => {
-    const lenis = new Lenis();
+  // useEffect(() => {
+  //   const lenis = new Lenis();
 
-    function raf(time) {
-      lenis.raf(time); // Update scroll position
-      requestAnimationFrame(raf); // Call raf again for the next animation frame
-    }
-
-    requestAnimationFrame(raf); // Start the animation loop
-  }, []);
+  //   function raf(time) {
+  //     lenis.raf(time); 
+  //     requestAnimationFrame(raf); 
+  //   }
+  //   requestAnimationFrame(raf); 
+  // }, []);
 
   useScrollObserver();
   return (
     <main>
       <Pagination />
-
       <ScrollParallax />
     </main>
   );
 };
 
 export default Banner;
+

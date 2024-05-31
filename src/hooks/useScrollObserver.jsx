@@ -66,13 +66,13 @@ const useScrollObserver = () => {
       if (thirdCardBottom <= window.innerHeight) {
         // Hide pagination dots
         paginationDots.forEach((dot) => {
-          dot.style.display = "none";
+          dot.style.opacity = "0";
          setIsScrollBeyondParallax(true) 
         });
       } else {
         // Show pagination dots
         paginationDots.forEach((dot) => {
-          dot.style.display = "block"; 
+          dot.style.opacity = "100"; 
           setIsScrollBeyondParallax(false) 
         });
       }
@@ -84,16 +84,4 @@ const useScrollObserver = () => {
 };
 
 export default useScrollObserver;
-
-
-
-
-
-
-
-
-
-
-
-
 
