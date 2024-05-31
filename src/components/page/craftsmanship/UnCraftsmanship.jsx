@@ -25,16 +25,16 @@ const UnCraftsmanship = () => {
             <Image
               width={500}
               height={500}
-              src={craftsmanship3}
+              src={craftsmanship1}
               alt="Image 3"
-              className="w-full rounded shadow-md object-cover h-fit"
+              className="w-full rounded shadow-md max-h-72"
             />
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1">
             <Image
               width={500}
               height={500}
-              src={craftsmanship1}
+              src={craftsmanship3}
               alt="Image 1"
               className="w-full rounded shadow-md object-cover"
             />

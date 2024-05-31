@@ -8,8 +8,14 @@
 import Image from 'next/image';
 
 const ImageCard = ({ src, alt, additionalClasses }) => (
-  <div className={`rounded-lg text-center ${additionalClasses}`}>
-    <Image className="w-full object-top object-cover" src={src} alt={alt} />
+  <div
+    className={`relative overflow-hidden rounded-lg text-center ${additionalClasses}`}
+  >
+    <Image
+      className="w-full object-top object-cover hover-grow transition duration-300"
+      src={src}
+      alt={alt}
+    />
   </div>
 );
 

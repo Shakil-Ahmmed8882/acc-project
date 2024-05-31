@@ -1,19 +1,32 @@
+
 "use client";
 
-import ScrollParallax from "@/components/shared/parallax/ScrollParallax";
+import Lenis from "lenis";
 import Pagination from "./pagination";
 import useScrollObserver from "@/hooks/useScrollObserver";
+import ScrollParallax from "@/components/shared/parallax/ScrollParallax";
+import { useEffect } from "react";
 
 const Banner = () => {
-  // it's for active pagination marking
-  useScrollObserver();
+  // Initialize Lenis for smooth scrolling
+  // useEffect(() => {
+  //   const lenis = new Lenis();
 
+  //   function raf(time) {
+  //     lenis.raf(time); 
+  //     requestAnimationFrame(raf); 
+  //   }
+  //   requestAnimationFrame(raf); 
+  // }, []);
+
+  useScrollObserver();
   return (
-    <section className="relative">
-      <ScrollParallax />
+    <main>
       <Pagination />
-    </section>
+      <ScrollParallax />
+    </main>
   );
 };
 
 export default Banner;
+

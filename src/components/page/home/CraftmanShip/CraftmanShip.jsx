@@ -21,48 +21,46 @@ const Craftsmanship = () => {
   smoking.`
 
   return (
-    
-    <Container className={'py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto'}>
+    <Container className={"py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto"}>
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
             ACC Craftsmanship
           </h2>
-          <Description {...{text}}/>
+          <Description {...{ text }} />
           <Button />
         </div>
         <div className="grid md:grid-cols-2 gap-4 lg:w-1/2">
-          <div className="flex justify-center col-span-2 md:col-span-1">
+          <div className="flex justify-center col-span-2 md:col-span-1 relative overflow-hidden">
             <Image
               width={500}
               height={500}
               src={craftsmanship1}
               alt="Image 1"
-              className="w-full rounded shadow-md object-cover"
+              className="w-full rounded shadow-md object-cover hover-grow transition duration-300"
             />
           </div>
-          <div className="flex justify-center col-span-2 md:col-span-1">
+          <div className="flex justify-center col-span-2 md:col-span-1 relative overflow-hidden">
             <Image
               width={500}
               height={500}
               src={craftsmanship2}
               alt="Image 2"
-              className="w-full rounded shadow-md object-cover lg:h-5/6"
+              className="w-full rounded shadow-md object-cover lg:h-5/6 hover-grow transition duration-300"
             />
           </div>
-          <div className="flex justify-center col-span-2">
+          <div className="flex justify-center col-span-2 relative overflow-hidden">
             <Image
               width={500}
               height={500}
               src={craftsmanship3}
               alt="Image 3"
-              className="w-full rounded shadow-md object-cover h-fit"
+              className="w-full rounded shadow-md object-cover h-fit hover-grow transition duration-300"
             />
           </div>
         </div>
       </div>
     </Container>
-
   );
 };
 

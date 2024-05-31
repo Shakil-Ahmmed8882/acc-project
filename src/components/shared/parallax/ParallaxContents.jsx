@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import Button from "./Button";
 import VerticalAnimatedProgressbar from "../animation/animated-video/VerticalAnimatedProgressbar";
 
@@ -28,7 +27,7 @@ const ParallaxContents = ({ title }) => {
         />
       ))}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white z-40">
-        <h1 className="font-cailyne text-3xl md:text-4xl lg:text-5xl relative z-40">
+        <h1 className="font-cailyne text-3xl md:text-4xl lg:text-5xl relative z-50">
           {title}
         </h1>
         <Button />
