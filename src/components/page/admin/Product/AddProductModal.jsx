@@ -1,26 +1,55 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
+import Image from "next/image";
 
-const UpdateProductModal = ({ product, onClose }) => {
-  const [name, setName] = useState(product.name);
-  const [description, setDescription] = useState(product.description);
-  const [images, setImages] = useState(product.images.join(", "));
-  const [productType, setProductType] = useState(product.productType);
-  const [category, setCategory] = useState(product.category);
+const AddProductModal = ({ onClose, onAdd }) => {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [images, setImages] = useState([]);
+  const [productType, setProductType] = useState("");
+  const [category, setCategory] = useState("");
+  const [uploading, setUploading] = useState(false);
 
-  const handleUpdate = () => {
-    const updatedProduct = {
-      ...product,
+  const handleAdd = () => {
+    const newProduct = {
       name,
       description,
-      images: images.split(",").map((img) => img.trim()),
+      images,
       productType,
       category,
     };
 
-    // Update product logic here
-    console.log(updatedProduct);
+    // Add product logic here
+    console.log(newProduct);
+    onAdd(newProduct);
     onClose();
+  };
+
+  const handleImageUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    const uploadedImages = [];
+
+    setUploading(true);
+
+    for (const file of files) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "YOUR_UPLOAD_PRESET"); // Replace with your upload preset
+
+      try {
+        const response = await axios.post(
+          "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload", // Replace with your Cloudinary cloud name
+          formData
+        );
+        uploadedImages.push(response.data.secure_url);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
+    }
+
+    setImages([...images, ...uploadedImages]);
+    setUploading(false);
   };
 
   return (
@@ -33,7 +62,7 @@ const UpdateProductModal = ({ product, onClose }) => {
       >
         <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Update Product
+            Add Product
           </h2>
         </div>
         <div className="px-4 py-6">
@@ -74,15 +103,28 @@ const UpdateProductModal = ({ product, onClose }) => {
                   htmlFor="images"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                 >
-                  Images (comma separated URLs)
+                  Images
                 </label>
                 <input
-                  type="text"
+                  type="file"
                   id="images"
-                  value={images}
-                  onChange={(e) => setImages(e.target.value)}
+                  multiple
+                  onChange={handleImageUpload}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 />
+                {uploading && <p>Uploading images...</p>}
+                <div className="mt-2">
+                  {images.map((img, index) => (
+                    <Image
+                      width={500}
+                      height={500}
+                      key={index}
+                      src={img}
+                      alt={`Uploaded ${index}`}
+                      className="h-16 w-16 object-cover rounded-lg mr-2"
+                    />
+                  ))}
+                </div>
               </div>
               <div className="mb-4">
                 <label
@@ -128,10 +170,10 @@ const UpdateProductModal = ({ product, onClose }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
-                onClick={handleUpdate}
+                onClick={handleAdd}
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg dark:bg-blue-700 hover:bg-blue-700"
               >
-                Update
+                Add
               </motion.button>
             </div>
           </form>
@@ -141,4 +183,4 @@ const UpdateProductModal = ({ product, onClose }) => {
   );
 };
 
-export default UpdateProductModal;
+export default AddProductModal;
