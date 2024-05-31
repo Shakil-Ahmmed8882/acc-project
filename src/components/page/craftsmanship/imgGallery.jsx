@@ -33,7 +33,7 @@ const ImageGallery = () => {
               key={data.id}
               src1={data.img1}
               src2={data.img2}
-              width1={data.widh1}
+              width1={data.width1}
               width2={data.width2}
               hiddenContent={data.hiddenContent}
             />
