@@ -47,10 +47,10 @@ const NewsletterSubmit2 = () => {
   return (
     <form
       // onSubmit={(e) => e.preventDefault()}
-      className="flex-1 "
+      className="flex-1 relative"
     >
-      <div className="relative">
-        <button className="absolute top-0 bottom-0 right-0 rounded-full px-6 text-white font-medium font-riviera text-nowrap my-auto  hover:bg-white hover:text-black md:text-xl">
+
+        <button className="absolute top-0 bottom-0 right-0 rounded-full px-6 text-white font-medium font-riviera text-nowrap my-auto transition duration-500    hover:bg-white cursor-pointer hover:text-black md:text-xl">
           Sing up
         </button>
         <input
@@ -58,7 +58,6 @@ const NewsletterSubmit2 = () => {
           placeholder="Enter your email address"
           className="w-full py-3 pr-12 pl-4 text-light-white-clr border border-light-white-clr rounded-full outline-none bg-inherit focus:bg-inherit focus:border-gold"
         />
-      </div>
     </form>
   );
 };

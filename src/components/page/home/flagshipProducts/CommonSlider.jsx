@@ -38,7 +38,7 @@ const CommonSlider = ({
   loop = false,
   className = "",
   sliderId,
-  speed=800,
+  speed = 800,
   freeMode = false,
   autoplay = false,
   grabCursor = false,
