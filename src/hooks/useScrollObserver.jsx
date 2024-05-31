@@ -57,12 +57,7 @@ const useScrollObserver = () => {
         }
       });
 
-      // Scroll to the next section
-      window.scrollTo({
-        top: sectionHeight * (activeIndex + 1),
-        behavior: 'smooth',
-      
-      });
+   
 
       changeDotColor(activeIndex);
 
