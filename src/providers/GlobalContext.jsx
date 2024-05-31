@@ -14,7 +14,6 @@ const [isScrollBeyondParallax, setIsScrollBeyondParallax] = useState(false);
 const [isSecondParallaxInView, setIsSecondParallaxInView] = useState(false);
 
 
-
 // ========== Spread data across the app ==========
 const contextData = {
   
@@ -26,7 +25,7 @@ const contextData = {
 
     // parallax 
     setIsSecondParallaxInView,
-    isSecondParallaxInView
+    isSecondParallaxInView,
 }
 
   return (
