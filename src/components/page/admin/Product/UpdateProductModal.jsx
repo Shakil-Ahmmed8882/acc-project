@@ -1,26 +1,56 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
+import Image from "next/image";
 
-const UpdateProductModal = ({ product, onClose }) => {
+const UpdateProductModal = ({ product, onClose, onUpdate }) => {
   const [name, setName] = useState(product.name);
   const [description, setDescription] = useState(product.description);
-  const [images, setImages] = useState(product.images.join(", "));
+  const [images, setImages] = useState(product.images);
   const [productType, setProductType] = useState(product.productType);
   const [category, setCategory] = useState(product.category);
+  const [uploading, setUploading] = useState(false);
 
   const handleUpdate = () => {
     const updatedProduct = {
       ...product,
       name,
       description,
-      images: images.split(",").map((img) => img.trim()),
+      images,
       productType,
       category,
     };
 
     // Update product logic here
     console.log(updatedProduct);
+    onUpdate(updatedProduct);
     onClose();
+  };
+
+  const handleImageUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    const uploadedImages = [];
+
+    setUploading(true);
+
+    for (const file of files) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "YOUR_UPLOAD_PRESET"); // Replace with your upload preset
+
+      try {
+        const response = await axios.post(
+          "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload", // Replace with your Cloudinary cloud name
+          formData
+        );
+        uploadedImages.push(response.data.secure_url);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
+    }
+
+    setImages([...images, ...uploadedImages]);
+    setUploading(false);
   };
 
   return (
@@ -74,15 +104,28 @@ const UpdateProductModal = ({ product, onClose }) => {
                   htmlFor="images"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                 >
-                  Images (comma separated URLs)
+                  Images
                 </label>
                 <input
-                  type="text"
+                  type="file"
                   id="images"
-                  value={images}
-                  onChange={(e) => setImages(e.target.value)}
+                  multiple
+                  onChange={handleImageUpload}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 />
+                {uploading && <p>Uploading images...</p>}
+                <div className="mt-2">
+                  {images.map((img, index) => (
+                    <Image
+                      width={500}
+                      height={500}
+                      key={index}
+                      src={img}
+                      alt={`Uploaded ${index}`}
+                      className="h-16 w-16 object-cover rounded-lg mr-2"
+                    />
+                  ))}
+                </div>
               </div>
               <div className="mb-4">
                 <label

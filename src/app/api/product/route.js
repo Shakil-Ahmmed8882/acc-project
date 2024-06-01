@@ -1,6 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import { handleError } from "@/lib/utils";
-import Product from "@/models/Product";
+import { Product } from "@/models/Product";
+
 
 
 export async function POST(request) {

@@ -20,7 +20,6 @@ const AddProductModal = ({ onClose, onAdd }) => {
       category,
     };
 
-    // Add product logic here
     console.log(newProduct);
     onAdd(newProduct);
     onClose();
@@ -35,11 +34,11 @@ const AddProductModal = ({ onClose, onAdd }) => {
     for (const file of files) {
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "YOUR_UPLOAD_PRESET"); // Replace with your upload preset
+      formData.append("upload_preset", "YOUR_UPLOAD_PRESET"); 
 
       try {
         const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload", // Replace with your Cloudinary cloud name
+          "https://api.cloudinary.com/v1_1/dcemlsxpc/image/upload",
           formData
         );
         uploadedImages.push(response.data.secure_url);
