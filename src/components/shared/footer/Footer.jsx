@@ -1,6 +1,9 @@
+'use client'
+
 import Image from "next/image";
 import Container from "../container/Container";
 import footerBrand from "@/assets/img/shared/footer/brandFooter.svg";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const footerNavs = [
@@ -32,9 +35,13 @@ const Footer = () => {
       ],
     },
   ];
+    const router = usePathname();
 
   return (
-    <footer className="my-12">
+    <footer className={`
+    ${router == '/admin2'?'hidden':'block'}
+    my-12
+    `}>
       <Container>
         <div className="flex items-center justify-center">
           <Image

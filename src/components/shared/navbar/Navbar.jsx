@@ -11,14 +11,16 @@ import BgBlur from "@/components/ui/bg-blur/BgBlur";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
+import { usePathname } from "next/navigation";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
+
   // state management
   const { isScrollBeyondParallax, isSecondParallaxInView } = useGlobalContext();
   const [isBrandHover, setIsBrandsHover] = useState(false);
   const { isMenuOpen, setIsMenuOpen } = useGlobalContext();
-
+  const router = usePathname();
   // container styls
   const style = "flex justify-between gap-0 items-center px-8";
 
@@ -39,7 +41,10 @@ const Navbar = () => {
       {/* // increase paddiing bottom once menu reveals */}
 
       <header
-        className={`${
+        className={`
+
+        ${router == '/admin2'?'hidden':'block'}
+        ${  
           isMenuOpen
           ? "min-h-screen md:min-h-32 lg:h-52"
           : isScrollingUp

@@ -64,6 +64,10 @@ const ProductList = () => {
       category: "Women's Clothing",
     },
   ]);
+
+
+
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -97,14 +101,102 @@ const ProductList = () => {
     setProducts((prevProducts) => [...prevProducts, newProduct]);
   };
 
-  const groupedProducts = products.reduce((acc, product) => {
-    const productTypeName = product.productType || "Undefined"; // Handle undefined productType
-    if (!acc[productTypeName]) {
-      acc[productTypeName] = [];
-    }
-    acc[productTypeName].push(product);
-    return acc;
-  }, {});
+  // const groupedProducts = products.reduce((acc, product) => {
+  //   const productTypeName = product.productType || "Undefined"; // Handle undefined productType
+  //   if (!acc[productTypeName]) {
+  //     acc[productTypeName] = [];
+  //   }
+  //   acc[productTypeName].push(product);
+  //   return acc;
+  // }, {});
+
+
+
+
+
+
+
+
+  const groupedProducts = {
+    "Electronics": [
+      {
+        _id: "1",
+        name: "Smartphone",
+        description: "A powerful smartphone with a sleek design.",
+        category: "Mobile Phones",
+        images: [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ]
+      },
+      {
+        _id: "2",
+        name: "Laptop",
+        description: "A high-performance laptop for work and play.",
+        category: "Computers",
+        images: [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ]
+      }
+    ],
+    "Furniture": [
+      {
+        _id: "3",
+        name: "Sofa",
+        description: "A comfortable sofa for your living room.",
+        category: "Living Room",
+        images: [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ]
+      },
+      {
+        _id: "4",
+        name: "Dining Table",
+        description: "A stylish dining table for your dining room.",
+        category: "Dining Room",
+        images: [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ]
+      }
+    ],
+    "Clothing": [
+      {
+        _id: "5",
+        name: "T-shirt",
+        description: "A trendy t-shirt made from organic cotton.",
+        category: "Casual Wear",
+        images: [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ]
+      },
+      {
+        _id: "6",
+        name: "Jeans",
+        description: "Comfortable and stylish jeans.",
+        category: "Casual Wear",
+        images: [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ]
+      }
+    ]
+  };
+  
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div>
@@ -134,7 +226,7 @@ const ProductList = () => {
             </div>
             <button
               onClick={openAddModal}
-              className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex"
+              className="text-black bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex"
               type="button"
             >
               <LucidePlus className="w-5 h-5 mr-2" />
