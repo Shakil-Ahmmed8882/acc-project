@@ -11,7 +11,7 @@ const ProductDetails = ({ product }) => {
       animate={{ x: 0,opacity:1 }} 
       transition={{ duration: 0.5 }} 
     >
-    <div className=" h-screen absolute -inset-8 mx-auto bg-[#1A1A1A] shadow-md rounded-md p-8 mt-8">
+    <div className=" h-screen absolute -inset-8 mx-auto bg-[#1A1A1A] shadow-md rounded-md p-8 mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className=" justify-center md:justify-end h-80 grid w-full relative">
           {/* // Displaying the first image in detil */}

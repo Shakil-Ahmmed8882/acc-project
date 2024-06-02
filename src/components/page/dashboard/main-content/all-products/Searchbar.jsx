@@ -1,6 +1,6 @@
 const Searchbar = () => {
   return (
-    <section className="flex items-center mb-4 sm:mb-0">
+    <section className="pl-9 md:pl-0 flex items-center mb-4 sm:mb-0">
       <form className="sm:pr-3" action="#" method="GET">
         <label htmlFor="products-search" className="sr-only">
           Search
