@@ -14,7 +14,7 @@ const ProductDetails = ({ product }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className=" justify-center md:justify-end h-80 grid w-full relative">
           <img
-            src={images[0]} // Displaying the first image
+            src={images[0] || ''} // Displaying the first image
             alt={name}
             className=" object-contain w-full h-full absolute inset-0 block"
           />

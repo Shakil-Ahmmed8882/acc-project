@@ -47,6 +47,8 @@ export async function GET(request) {
       query = { _id: productId };
     }
 
+console.log(query)
+
     //step 4: find one product else all products
     const products = await Product.find(query);
 
