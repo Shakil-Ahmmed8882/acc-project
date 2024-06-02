@@ -15,7 +15,7 @@ const Sidebar = () => {
     <>
       <Menu
         onClick={() => setIsSideBarOpen(!isSideBarOpen)}
-        className="text-white flex md:hidden fixed top-7
+        className="text-white flex md:hidden absolute top-7
          left-5 z-50 cursor-pointer hover:-rotate-180
          smooth-transition"
       />
@@ -23,12 +23,12 @@ const Sidebar = () => {
         className={` ${
           isSideBarOpen
             ? "translate-x-0 visible left-0"
-            : "-translate-x-32 md:translate-x-0 invisible md:visible -left-80 "
+            : "-translate-x-32 md:translate-x-0 invisible md:visible -left-80 md:left-0 "
         } 
-            min-h-screen 
+            h-screen 
             smooth-transition
             w-full md:flex bg-[#161618] 
-            absolute top-0 md:static z-50
+            top-0 fixed z-50
             space-y-8 sm:w-64`}
         suppressHydrationWarning
       >
