@@ -8,7 +8,7 @@ const page = ({children}) => {
     <>
       <body className="flex gap-3 h-screen bg-[#1A1A1A]">
         <Sidebar />
-        <section className="flex-1 bg-[#1A1A1A] relative sm:ml-64">{children}</section>
+        <section className="flex-1 bg-[#1A1A1A] relative md:ml-64">{children}</section>
       </body>
     </>
   );

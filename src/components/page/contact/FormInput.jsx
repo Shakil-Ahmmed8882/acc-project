@@ -1,6 +1,7 @@
 import { toast } from "sonner";
-import sendEmail from "@/lib/sendEmail";
+
 import React, { useState } from "react";
+import sendEmail from "@/app/(server)/lib/sendEmail";
 
 const FormInput = () => {
   const [formData, setFormData] = useState({

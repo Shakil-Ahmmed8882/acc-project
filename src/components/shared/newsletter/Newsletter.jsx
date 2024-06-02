@@ -3,7 +3,7 @@ import Container from "../container/Container";
 
 const Newsletter = () => {
   return (
-    <section className="bg-[#121212] py-10 md:py-20">
+    <section className="bg-[#121212] py-4 md:py-10">
       <Container className="mt-6 md:mt-12 ">
         <h3 className="text-sm text-light-white-clr  uppercase border-b-2 border-light-white-clr md:max-w-fit  pb-4 md:pb-8 text-center">
           newsletter
