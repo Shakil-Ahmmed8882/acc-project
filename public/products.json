@@ -1,0 +1,82 @@
+[
+  {
+    "name": "PROPIO DIAMANTE",
+    "description": "Elegant evening dress",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "cigar",
+    "category": "PROPIO"
+  },
+  {
+    "name": "PROPIO VENENO",
+    "description": "Elegant evening dress",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "cigar",
+    "category": "PROPIO"
+  },
+  {
+    "name": "PROPIO DIAMANTE",
+    "description": "PROPIO LEON",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "cigar",
+    "category": "PROPIO"
+  },
+  {
+    "name": "Don Cervantes Tres Maduro",
+    "description": "Elegant evening dress",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "cigar",
+    "category": "DON CERVANTES"
+  },
+  {
+    "name": "MASTERPIECE Platinum",
+    "description": "Elegant evening dress",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "cigar",
+    "category": "DON CERVANTES"
+  },
+  {
+    "name": "MASTERPIECE BLACK",
+    "description": "Elegant evening dress",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "cigar",
+    "category": "DON CERVANTES"
+  },
+  {
+    "name": "26-40 Year Whisky",
+    "description": "Elegant evening dress",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "liquor",
+    "category": "whiskey"
+  },
+  {
+    "name": "Ostrich Incense Tube",
+    "description": "Elegant evening dress",
+    "images": [
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "productType": "accessories",
+    "category": "leather products"
+  }
+]

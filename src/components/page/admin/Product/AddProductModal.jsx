@@ -1,7 +1,8 @@
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import axios from "axios";
 import Image from "next/image";
+import { CldUploadWidget } from "next-cloudinary";
 
 const AddProductModal = ({ onClose, onAdd }) => {
   const [name, setName] = useState("");
@@ -25,29 +26,13 @@ const AddProductModal = ({ onClose, onAdd }) => {
     onClose();
   };
 
-  const handleImageUpload = async (e) => {
-    const files = Array.from(e.target.files);
-    const uploadedImages = [];
-
-    setUploading(true);
-
-    for (const file of files) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "YOUR_UPLOAD_PRESET"); 
-
-      try {
-        const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/dcemlsxpc/image/upload",
-          formData
-        );
-        uploadedImages.push(response.data.secure_url);
-      } catch (error) {
-        console.error("Error uploading image:", error);
-      }
-    }
-
-    setImages([...images, ...uploadedImages]);
+  const handleImageUpload = (result) => {
+    const optimizedImageUrl = result.info.secure_url.replace(
+      "/upload/",
+      "/upload/c_fill,h_500,w_500/"
+    );
+    console.log(optimizedImageUrl);
+    setImages([...images, optimizedImageUrl]);
     setUploading(false);
   };
 
@@ -104,15 +89,29 @@ const AddProductModal = ({ onClose, onAdd }) => {
                 >
                   Images
                 </label>
-                <input
-                  type="file"
-                  id="images"
+                <CldUploadWidget
+                  uploadPreset="k7xqqfq1"
                   multiple
-                  onChange={handleImageUpload}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                />
+                  onUpload={handleImageUpload}
+                >
+                  {({ open }) => {
+                    const onClick = (e) => {
+                      e.preventDefault();
+                      setUploading(true);
+                      open();
+                    };
+                    return (
+                      <button
+                        onClick={onClick}
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                      >
+                        Upload Images
+                      </button>
+                    );
+                  }}
+                </CldUploadWidget>
                 {uploading && <p>Uploading images...</p>}
-                <div className="mt-2">
+                <div className="mt-2 flex flex-wrap">
                   {images.map((img, index) => (
                     <Image
                       width={500}

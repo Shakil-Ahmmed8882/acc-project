@@ -7,63 +7,7 @@ import DeleteProductModal from "./DeleteProductModal.jsx";
 import Image from "next/image.js";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([
-    {
-      _id: "60d5ec49f4860e59e2d81b33",
-      name: "Women's Dress",
-      description: "Elegant evening dress",
-      images: [
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      productType: "Dresses",
-      category: "Women's Clothing",
-    },
-    {
-      _id: "60d5ec49f4860e59e2d81b33",
-      name: "Women's Dress",
-      description: "Elegant evening dress",
-      images: [
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      productType: "Dresses",
-      category: "Women's Clothing",
-    },
-    {
-      _id: "60d5ec49f4860e59e2d81b33",
-      name: "Women's Dress",
-      description: "Elegant evening dress",
-      images: [
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      productType: "Dresses",
-      category: "Women's Clothing",
-    },
-    {
-      _id: "60d5ec49f4860e59e2d81b33",
-      name: "Women's Dress",
-      description: "Elegant evening dress",
-      images: [
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      productType: "eev",
-      category: "Women's Clothing",
-    },
-    {
-      _id: "60d5ec49f4860e59e2d81b33",
-      name: "Women's Dress",
-      description: "Elegant evening dress",
-      images: [
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://plus.unsplash.com/premium_photo-1666855258034-8d2c36091ec1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ],
-      productType: "anv",
-      category: "Women's Clothing",
-    },
-  ]);
+  const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -71,9 +15,9 @@ const ProductList = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("/api/product");
+      const response = await fetch("/products.json");
       const data = await response.json();
-      setProducts(data.data);
+      setProducts(data);
     };
 
     fetchProducts();
@@ -98,7 +42,7 @@ const ProductList = () => {
   };
 
   const groupedProducts = products.reduce((acc, product) => {
-    const productTypeName = product.productType || "Undefined"; // Handle undefined productType
+    const productTypeName = product.productType || "Undefined";
     if (!acc[productTypeName]) {
       acc[productTypeName] = [];
     }
@@ -144,59 +88,60 @@ const ProductList = () => {
         </div>
       </div>
       <div className="p-4">
-        {Object.keys(groupedProducts).map((productType) => (
-          <div key={productType} className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Product Type: {productType}
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {groupedProducts[productType].map((product) => (
-                <div
-                  key={product._id}
-                  className="p-4 bg-white rounded-lg shadow dark:bg-gray-800"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      {product.name}
-                    </h4>
+        {groupedProducts &&
+          Object.keys(groupedProducts).map((productType) => (
+            <div key={productType} className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Product Type: {productType}
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {groupedProducts[productType].map((product) => (
+                  <div
+                    key={product._id}
+                    className="p-4 bg-white rounded-lg shadow dark:bg-gray-800"
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                        {product.name}
+                      </h4>
+                      <div className="flex space-x-2">
+                        <button
+                          onClick={() => openUpdateModal(product)}
+                          className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        >
+                          <LucideEdit2 className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={() => openDeleteModal(product)}
+                          className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:focus:ring-red-900"
+                        >
+                          <LucideTrash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                    <p className="mb-2 text-gray-700 dark:text-gray-300">
+                      {product.description}
+                    </p>
+                    <p className="mb-2 text-gray-700 dark:text-gray-300">
+                      Category: {product.category || "Undefined"}
+                    </p>
                     <div className="flex space-x-2">
-                      <button
-                        onClick={() => openUpdateModal(product)}
-                        className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                      >
-                        <LucideEdit2 className="w-4 h-4" />
-                      </button>
-                      <button
-                        onClick={() => openDeleteModal(product)}
-                        className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:focus:ring-red-900"
-                      >
-                        <LucideTrash2 className="w-4 h-4" />
-                      </button>
+                      {product.images.map((image, index) => (
+                        <Image
+                          width={500}
+                          height={500}
+                          key={index}
+                          src={image}
+                          alt={`${product.name}-${index}`}
+                          className="w-16 h-16 rounded object-cover"
+                        />
+                      ))}
                     </div>
                   </div>
-                  <p className="mb-2 text-gray-700 dark:text-gray-300">
-                    {product.description}
-                  </p>
-                  <p className="mb-2 text-gray-700 dark:text-gray-300">
-                    Category: {product.category || "Undefined"}
-                  </p>
-                  <div className="flex space-x-2">
-                    {product.images.map((image, index) => (
-                      <Image
-                        width={500}
-                        height={500}
-                        key={index}
-                        src={image}
-                        alt={`${product.name}-${index}`}
-                        className="w-16 h-16 rounded object-cover"
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
       {isUpdateModalOpen && (
         <UpdateProductModal
