@@ -14,8 +14,8 @@ const Achievement = () => {
           alt="Man smoking a cigar"
           className="rounded-md mb-8 md:mb-0 md:mr-8 hover-grow transition duration-300 h-96 w-full md:w-[35%] object-cover"
         />
-        <div className="lg:mt-10">
-          <h1 className="text-3xl font-bold mb-4 font-cailyne tracking-widest">
+        <div className="lg:mt-10 lg:space-y-16">
+          <h1 className="text-4xl font-bold mb-4 font-cailyne tracking-widest">
             ACHIEVEMENT CIGAR COMPANY
           </h1>
           <Description
