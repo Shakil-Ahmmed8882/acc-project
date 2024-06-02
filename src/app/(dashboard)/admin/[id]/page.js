@@ -19,7 +19,7 @@ useEffect(()=> {
     setProduct(data?.products[0])
     setIsLoading(false)
   })
-},[])
+},[id])
 
 
 if(isLoading) return 'loading...'
