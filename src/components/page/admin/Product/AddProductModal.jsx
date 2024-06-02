@@ -4,14 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
 
-
-const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) => {
+const AddProductModal = ({ onClose, onAdd, singleProduct, setIsAddModalOpen }) => {
   const {
     productType: type,
     name: productName,
     description: productDescription,
     category: productCategory,
-    images: productImages
+    images: productImages,
   } = singleProduct || {};
 
   const [name, setName] = useState("");
@@ -20,6 +19,7 @@ const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) =>
   const [productType, setProductType] = useState("");
   const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (singleProduct) {
@@ -29,10 +29,22 @@ const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) =>
       setProductType(type || "");
       setCategory(productCategory || "");
     }
-  }, [singleProduct, productName, productDescription,
-     productImages, type, productCategory]);
+  }, [
+    singleProduct,
+    productName,
+    productDescription,
+    productImages,
+    type,
+    productCategory,
+  ]);
 
   const handleAdd = async () => {
+    // Validation check
+    if (!name || !description || images.length === 0 || !productType || !category) {
+      setError("All fields are required.");
+      return;
+    }
+    
     const newProduct = {
       name,
       description,
@@ -41,8 +53,7 @@ const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) =>
       category,
     };
     onAdd(newProduct);
-    setIsAddModalOpen(false)
-
+    setIsAddModalOpen(false);
   };
 
   const handleImageUpload = (result) => {
@@ -64,10 +75,13 @@ const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) =>
       >
         <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Add Product
+            {productName ? "Update Product" : "Add Product"}
           </h2>
         </div>
         <div className="px-4 py-6">
+          {error && (
+            <p className="mb-4 text-sm text-red-600">{error}</p>
+          )}
           <form>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="mb-4">
@@ -177,7 +191,7 @@ const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) =>
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
-                onClick={()=> setIsAddModalOpen(false)}
+                onClick={() => setIsAddModalOpen(false)}
                 className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               >
                 Cancel
@@ -189,10 +203,7 @@ const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) =>
                 onClick={handleAdd}
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg dark:bg-blue-700 hover:bg-blue-700"
               >
-                {/* product name is found from single product 
-                    passed as current product when update
-                */}
-               {productName ?'Update':'Add'}
+                {productName ? "Update" : "Add"}
               </motion.button>
             </div>
           </form>
