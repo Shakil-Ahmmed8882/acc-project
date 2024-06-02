@@ -6,6 +6,7 @@ import { navigation } from "./navigationItems";
 import Link from "next/link";
 import { CrossIcon, Menu } from "lucide-react";
 import { useState } from "react";
+import Logo from "@/components/shared/navbar/Logo";
 
 const Sidebar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
@@ -24,11 +25,11 @@ const Sidebar = () => {
             ? "translate-x-0 visible left-0"
             : "-translate-x-32 md:translate-x-0 invisible md:visible -left-80 "
         } 
+            min-h-screen 
             smooth-transition
-            w-full md:flex h-full bg-[#161618] 
+            w-full md:flex bg-[#161618] 
             absolute top-0 md:static z-50
             space-y-8 sm:w-64`}
-
         suppressHydrationWarning
       >
         <div class="flex flex-col h-full">
@@ -43,7 +44,7 @@ const Sidebar = () => {
 
         {/* close menu */}
         <CrossIcon
-          onClick={()=>setIsSideBarOpen(false)}
+          onClick={() => setIsSideBarOpen(false)}
           className="
           flex
           md:hidden
@@ -82,20 +83,14 @@ function Profile() {
   return (
     <div className="py-4 px-4 border-t">
       <div className="flex items-center gap-x-4">
-        <Image
-          width={20}
-          height={20}
-          src="https://randomuser.me/api/portraits/women/79.jpg"
-          className="w-12 h-12 rounded-full"
-          alt=""
-        />
+        <Logo />
         <div>
-          <span className="block text-gray-700 text-sm font-semibold">
-            Alivika tony
+          <span className="block text-gray-400 text-sm font-semibold">
+            Tanmoy
           </span>
           <a
             href="javascript:void(0)"
-            className="block mt-px text-gray-600 hover:text-indigo-600 text-xs"
+            className="block mt-px text-gray-400 hover:text-indigo-600 text-xs"
           >
             View profile
           </a>
