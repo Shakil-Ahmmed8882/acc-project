@@ -38,7 +38,7 @@ const Footer = () => {
   const pathname = usePathname();
 
   // Check if the current route starts with /admin2
-  const isAdminRoute = pathname.startsWith('/admin2');
+  const isAdminRoute = pathname.startsWith('/admin');
 
   return (
     <footer className={`

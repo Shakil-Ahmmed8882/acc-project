@@ -23,7 +23,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   // Check if the current route starts with /admin2
-  const isAdminRoute = pathname.startsWith('/admin2');
+  const isAdminRoute = pathname.startsWith('/admin');
   // container styls
   const style = "flex justify-between gap-0 items-center px-8";
 

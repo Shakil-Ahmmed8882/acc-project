@@ -1,11 +1,15 @@
-import ProductList from "@/components/page/admin/Product/productList";
+'use client'
 
-const page = () => {
-  return (
-    <div className="my-72">
-      <ProductList />
-    </div>
-  );
+import MainContent from "@/components/page/dashboard/main-content/MainContent";
+
+const AdminPage = () => {
+
+  
+    return (
+        <>
+          <MainContent/>
+        </>
+    );
 };
 
-export default page;
+export default AdminPage;

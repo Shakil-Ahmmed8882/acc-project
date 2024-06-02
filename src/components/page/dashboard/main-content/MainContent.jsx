@@ -3,12 +3,12 @@
 import Searchbar from "./all-products/Searchbar";
 import AddProductButton from "./all-products/AddProductButton";
 import { useState } from "react";
-import AddProductModal from "../../admin/Product/AddProductModal";
 import Card from "./all-products/Card";
 import { AddSingleProduct } from "@/utils";
 import useGetAllProducts from "@/hooks/useGetAllProducts";
 import Image from "next/image";
 import noDataFound from '@/assets/img/shared/not-found/not-found.png'
+import AddProductModal from "./all-products/AddProductModal";
 
 const MainContent = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);

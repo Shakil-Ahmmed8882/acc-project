@@ -5,8 +5,8 @@ import Image from "next/image";
 import { createContext, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { deleteSingleProduct, fetchSingleProduct, updateSingleProduct } from "@/utils";
-import AddProductModal from "@/components/page/admin/Product/AddProductModal";
 import DeleteConfirmation from "./DeleteConfirmation";
+import AddProductModal from "./AddProductModal";
 
 export const productContext = createContext({});
 
@@ -50,7 +50,7 @@ const Card = ({ product, trigger, setTrigger }) => {
     <productContext.Provider value={contextValues}>
       <section className="group relative">
         <Link
-          href={`/admin2/${product?._id}`}
+          href={`/admin/${product?._id}`}
           className="bg-[#262626] cursor-pointer flex flex-col md:flex-row gap-3 relative rounded-lg"
         >
           <Image
