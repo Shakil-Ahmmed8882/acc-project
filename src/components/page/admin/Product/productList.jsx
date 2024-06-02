@@ -5,6 +5,7 @@ import UpdateProductModal from "./UpdateProductModal.jsx";
 import AddProductModal from "./AddProductModal.jsx";
 import DeleteProductModal from "./DeleteProductModal.jsx";
 import Image from "next/image.js";
+import axios from "axios";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -15,9 +16,16 @@ const ProductList = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("/products.json");
-      const data = await response.json();
-      setProducts(data);
+      try {
+        const response = await axios.get("/api/product");
+        if (response.data && Array.isArray(response.data.products)) {
+          setProducts(response.data.products);
+        } else {
+          console.error("Fetched data is not an array:", response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     };
 
     fetchProducts();
@@ -41,14 +49,30 @@ const ProductList = () => {
     setProducts((prevProducts) => [...prevProducts, newProduct]);
   };
 
-  const groupedProducts = products.reduce((acc, product) => {
-    const productTypeName = product.productType || "Undefined";
-    if (!acc[productTypeName]) {
-      acc[productTypeName] = [];
-    }
-    acc[productTypeName].push(product);
-    return acc;
-  }, {});
+  const handleUpdateProduct = (updatedProduct) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product._id === updatedProduct._id ? updatedProduct : product
+      )
+    );
+  };
+
+  const handleDeleteProduct = (deletedProductId) => {
+    setProducts((prevProducts) =>
+      prevProducts.filter((product) => product._id !== deletedProductId)
+    );
+  };
+
+  const groupedProducts = Array.isArray(products)
+    ? products.reduce((acc, product) => {
+        const productTypeName = product.productType || "Undefined";
+        if (!acc[productTypeName]) {
+          acc[productTypeName] = [];
+        }
+        acc[productTypeName].push(product);
+        return acc;
+      }, {})
+    : {};
 
   return (
     <div>
@@ -88,65 +112,65 @@ const ProductList = () => {
         </div>
       </div>
       <div className="p-4">
-        {groupedProducts &&
-          Object.keys(groupedProducts).map((productType) => (
-            <div key={productType} className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                Product Type: {productType}
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {groupedProducts[productType].map((product) => (
-                  <div
-                    key={product._id}
-                    className="p-4 bg-white rounded-lg shadow dark:bg-gray-800"
-                  >
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                        {product.name}
-                      </h4>
-                      <div className="flex space-x-2">
-                        <button
-                          onClick={() => openUpdateModal(product)}
-                          className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                        >
-                          <LucideEdit2 className="w-4 h-4" />
-                        </button>
-                        <button
-                          onClick={() => openDeleteModal(product)}
-                          className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:focus:ring-red-900"
-                        >
-                          <LucideTrash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                    <p className="mb-2 text-gray-700 dark:text-gray-300">
-                      {product.description}
-                    </p>
-                    <p className="mb-2 text-gray-700 dark:text-gray-300">
-                      Category: {product.category || "Undefined"}
-                    </p>
+        {Object.keys(groupedProducts).map((productType) => (
+          <div key={productType} className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              Product Type: {productType}
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {groupedProducts[productType].map((product) => (
+                <div
+                  key={product._id}
+                  className="p-4 bg-white rounded-lg shadow dark:bg-gray-800"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {product.name}
+                    </h4>
                     <div className="flex space-x-2">
-                      {product.images.map((image, index) => (
-                        <Image
-                          width={500}
-                          height={500}
-                          key={index}
-                          src={image}
-                          alt={`${product.name}-${index}`}
-                          className="w-16 h-16 rounded object-cover"
-                        />
-                      ))}
+                      <button
+                        onClick={() => openUpdateModal(product)}
+                        className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                      >
+                        <LucideEdit2 className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => openDeleteModal(product)}
+                        className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-1.5 dark:focus:ring-red-900"
+                      >
+                        <LucideTrash2 className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
-                ))}
-              </div>
+                  <p className="mb-2 text-gray-700 dark:text-gray-300">
+                    {product.description}
+                  </p>
+                  <p className="mb-2 text-gray-700 dark:text-gray-300">
+                    Category: {product.category || "Undefined"}
+                  </p>
+                  <div className="flex space-x-2">
+                    {product.images.map((image, index) => (
+                      <Image
+                        width={500}
+                        height={500}
+                        key={index}
+                        src={image}
+                        alt={`${product.name}-${index}`}
+                        className="w-16 h-16 rounded object-cover"
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+        ))}
       </div>
       {isUpdateModalOpen && (
         <UpdateProductModal
           product={selectedProduct}
           onClose={() => setIsUpdateModalOpen(false)}
+          onUpdate={handleUpdateProduct}
         />
       )}
       {isAddModalOpen && (
@@ -159,6 +183,7 @@ const ProductList = () => {
         <DeleteProductModal
           product={selectedProduct}
           onClose={() => setIsDeleteModalOpen(false)}
+          onDelete={handleDeleteProduct}
         />
       )}
     </div>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
+import axios from "axios";
 
 const AddProductModal = ({ onClose, onAdd }) => {
   const [name, setName] = useState("");
@@ -12,7 +13,7 @@ const AddProductModal = ({ onClose, onAdd }) => {
   const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  const handleAdd = () => {
+  const handleAdd = async () => {
     const newProduct = {
       name,
       description,
@@ -21,9 +22,20 @@ const AddProductModal = ({ onClose, onAdd }) => {
       category,
     };
 
-    console.log(newProduct);
-    onAdd(newProduct);
-    onClose();
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/product",
+        newProduct
+      );
+      if (response.data.success) {
+        onAdd(response.data.product);
+        onClose();
+      } else {
+        console.error("Failed to add product:", response.data.message);
+      }
+    } catch (error) {
+      console.error("Error adding product:", error);
+    }
   };
 
   const handleImageUpload = (result) => {
@@ -31,7 +43,6 @@ const AddProductModal = ({ onClose, onAdd }) => {
       "/upload/",
       "/upload/c_fill,h_500,w_500/"
     );
-    console.log(optimizedImageUrl);
     setImages([...images, optimizedImageUrl]);
     setUploading(false);
   };
