@@ -13,7 +13,8 @@ import AddProductModal from "./all-products/AddProductModal";
 const MainContent = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [trigger, setTrigger] = useState(false);
-  const { products } = useGetAllProducts(trigger);
+  const [searchTerm,setSearchTerm] = useState('')
+  const { products } = useGetAllProducts(trigger,searchTerm);
 
   // create a new product
   const onAdd = async (product) => {
@@ -22,7 +23,6 @@ const MainContent = () => {
     if (response.success) {
       setTrigger(!trigger);
       setIsAddModalOpen(false);
-      console.log(response);
     }
   };
 
@@ -31,7 +31,7 @@ const MainContent = () => {
       <div className="p-4 bg-[#262626] block sm:flex items-center justify-between border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
         <div className="w-full mb-1">
           <div className="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
-            <Searchbar />
+            <Searchbar setSearchTerm={setSearchTerm} />
             <AddProductButton {...{ setIsAddModalOpen }} />
           </div>
           {/* Model  */}

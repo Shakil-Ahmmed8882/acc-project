@@ -27,11 +27,13 @@ const Card = ({ product, trigger, setTrigger }) => {
   }, [isAddModalOpen, product]);
 
   const updateProduct = async (updatedProduct) => {
+
+    console.log(updatedProduct)
     const response = await updateSingleProduct(product?._id, updatedProduct);
     if (response?.success) {
       // This trigger for refetching the latest products
       setTrigger(!trigger);
-      setIsAddModalOpen(false);
+      // setIsAddModalOpen(false);
     }
   };
 
@@ -48,7 +50,7 @@ const Card = ({ product, trigger, setTrigger }) => {
 
   return (
     <productContext.Provider value={contextValues}>
-      <section className="group relative">
+      <section className="group relative md:h-52">
         <Link
           href={`/admin/${product?._id}`}
           className="bg-[#262626] cursor-pointer flex flex-col md:flex-row gap-3 relative rounded-lg"
@@ -57,7 +59,7 @@ const Card = ({ product, trigger, setTrigger }) => {
             width={500}
             height={500}
             src={product?.images[0]}
-            className="md:w-[40%] h-40 md:h-full rounded object-cover"
+            className="w-full md:w-[40%] h-44 md:h-52 rounded object-cover"
             alt=""
           />
           <Contents />

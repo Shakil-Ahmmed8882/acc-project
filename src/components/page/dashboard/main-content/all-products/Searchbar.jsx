@@ -1,4 +1,8 @@
-const Searchbar = () => {
+const Searchbar = ({ setSearchTerm }) => {
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <section className="pl-9 md:pl-0 flex items-center mb-4 sm:mb-0">
       <form className="sm:pr-3" action="#" method="GET">
@@ -8,6 +12,7 @@ const Searchbar = () => {
         <div className="relative w-48 mt-1 sm:w-64 xl:w-96">
           <input
             type="text"
+            onChange={handleSearch}
             name="search"
             id="products-search"
             className="bg-[#262626] placeholder:text-[16px]

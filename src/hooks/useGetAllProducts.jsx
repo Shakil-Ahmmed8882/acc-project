@@ -1,16 +1,15 @@
 import { fetchProducts } from "@/utils";
 import { useEffect, useState } from "react";
 
-const useGetAllProducts= (trigger) => {
-    const [products, setProducts] = useState([])
+const useGetAllProducts = (trigger, searchTerm) => {
+  const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    console.log(searchTerm)
+    fetchProducts(searchTerm).then(data => setProducts(data.products));
+  }, [trigger, searchTerm]);
 
-    useEffect(()=> {
-      fetchProducts()
-      .then(data => setProducts(data.products))
-    },[trigger])
-    
-  return {products}
+  return { products };
 };
 
-export default useGetAllProducts; 
+export default useGetAllProducts;

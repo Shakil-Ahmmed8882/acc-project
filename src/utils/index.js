@@ -13,15 +13,17 @@ export const AddSingleProduct = async (product) => {
 };
 
 // get all products 
-export const fetchProducts = async () => {
+export const fetchProducts = async (searchTerm = '') => {
   try {
-    const response = await axios.get('/api/product');
-    return response.data;
+    const response = await fetch(`/api/product${searchTerm ? `?q=${searchTerm}` : ''}`);
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error('Error fetching products:', error);
-    throw error;
+    return { products: [] };
   }
 };
+
 
 // get single product
 export const fetchSingleProduct = async (id) => {
