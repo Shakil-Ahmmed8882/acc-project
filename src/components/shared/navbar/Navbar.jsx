@@ -11,6 +11,7 @@ import BgBlur from "@/components/ui/bg-blur/BgBlur";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
+import SignOut from "../signOut/SignOut";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
@@ -71,6 +72,7 @@ const Navbar = () => {
 
           <div className="hidden -pl-6 md:flex">
             <SearchBar />
+            <SignOut/>
           </div>
         </Container>
 
@@ -86,3 +88,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

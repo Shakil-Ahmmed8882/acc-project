@@ -98,14 +98,13 @@ const ProductList = () => {
   };
 
   const groupedProducts = products?.reduce((acc, product) => {
-    const productTypeName = product.productType || "Undefined"; // Handle undefined productType
+    const productTypeName = product?.productType || "Undefined"; // Handle undefined productType
     if (!acc[productTypeName]) {
       acc[productTypeName] = [];
     }
     acc[productTypeName].push(product);
     return acc;
   }, {});
-
   return (
     <div>
       <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
@@ -144,13 +143,13 @@ const ProductList = () => {
         </div>
       </div>
       <div className="p-4">
-        {Object.keys(groupedProducts).map((productType) => (
+        {groupedProducts && Object?.keys(groupedProducts)?.map((productType) => (
           <div key={productType} className="mb-8">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
               Product Type: {productType}
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {groupedProducts[productType].map((product) => (
+              {groupedProducts[productType]?.map((product) => (
                 <div
                   key={product._id}
                   className="p-4 bg-white rounded-lg shadow dark:bg-gray-800"
@@ -181,13 +180,13 @@ const ProductList = () => {
                     Category: {product.category || "Undefined"}
                   </p>
                   <div className="flex space-x-2">
-                    {product.images.map((image, index) => (
+                    {product?.images.map((image, index) => (
                       <Image
                         width={500}
                         height={500}
                         key={index}
                         src={image}
-                        alt={`${product.name}-${index}`}
+                        alt={`${product?.name}-${index}`}
                         className="w-16 h-16 rounded object-cover"
                       />
                     ))}
