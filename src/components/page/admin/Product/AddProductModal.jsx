@@ -11,7 +11,9 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
   const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
+    e.preventDefault()
+
     const newProduct = {
       name,
       description,
@@ -24,6 +26,7 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
   };
 
   const handleImageUpload = async (e) => {
+    e.preventDefault()
     const files = Array.from(e.target.files);
     const uploadedImages = [];
 

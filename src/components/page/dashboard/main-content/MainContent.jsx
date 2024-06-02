@@ -2,28 +2,30 @@
 
 import Searchbar from "./all-products/Searchbar";
 import AddProductButton from "./all-products/AddProductButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AddProductModal from "../../admin/Product/AddProductModal";
 import Card from "./all-products/Card";
-import { fetchProducts } from "@/utils";
+import { AddSingleProduct } from "@/utils";
+import useGetAllProducts from "@/hooks/useGetAllProducts";
 
 const MainContent = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-  const [products, setProducts] = useState([])
+  const [trigger,setTrigger] = useState(false)
+const {products} = useGetAllProducts(trigger)
 
-
-useEffect(()=> {
-  fetchProducts()
-  .then(data => setProducts(data.products))
-},[])
-
-
-
-
+// create a new product
 const onAdd = async(product) => {
-products.push(product)
-
+  product.price = 300
+  product.images.push('https://images.pexels.com/photos/10177657/pexels-photo-10177657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
+  const response = await AddSingleProduct(product)
+  if(response.success){
+    setTrigger(!trigger)
+    setIsAddModalOpen(false)
+    console.log(response)
+  }
 }
+
+
 
   return (
     <section suppressHydrationWarning>
