@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
+import { BadgeX } from "lucide-react";
+
 
 const UpdateProductModal = ({ product, onClose, onUpdate }) => {
   const [name, setName] = useState(product.name);
@@ -12,7 +14,7 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
   const [category, setCategory] = useState(product.category);
   const [uploading, setUploading] = useState(false);
 
-  const handleUpdate = () => {
+  const handleUpdate = async () => {
     const updatedProduct = {
       ...product,
       name,
@@ -23,8 +25,25 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
     };
 
     console.log(updatedProduct);
-    onUpdate(updatedProduct);
-    onClose();
+
+    try {
+      const response = await fetch("/api/product", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      });
+
+      if (response.ok) {
+        onUpdate(updatedProduct);
+        onClose();
+      } else {
+        console.error("Failed to update product");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const handleImageUpload = (result) => {
@@ -34,6 +53,11 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
     );
     setImages([...images, optimizedImageUrl]);
     setUploading(false);
+  };
+
+  const handleImageDelete = (index) => {
+    const updatedImages = images.filter((_, i) => i !== index);
+    setImages(updatedImages);
   };
 
   return (
@@ -90,7 +114,7 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
                   Images
                 </label>
                 <CldUploadWidget
-                  uploadPreset="YOUR_UPLOAD_PRESET" // Replace with your upload preset
+                  uploadPreset="k7xqqfq1"
                   multiple
                   onUpload={handleImageUpload}
                 >
@@ -113,14 +137,21 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
                 {uploading && <p>Uploading images...</p>}
                 <div className="mt-2 flex flex-wrap">
                   {images.map((img, index) => (
-                    <Image
-                      width={500}
-                      height={500}
-                      key={index}
-                      src={img}
-                      alt={`Uploaded ${index}`}
-                      className="h-16 w-16 object-cover rounded-lg mr-2"
-                    />
+                    <div key={index} className="relative">
+                      <Image
+                        width={500}
+                        height={500}
+                        src={img}
+                        alt={`Uploaded ${index}`}
+                        className="h-16 w-16 object-cover rounded-lg mr-2"
+                      />
+                      <button
+                        onClick={() => handleImageDelete(index)}
+                        className="absolute top-0 right-0 p-1 bg-red-600 text-white rounded-full"
+                      >
+                        <BadgeX />
+                      </button>
+                    </div>
                   ))}
                 </div>
               </div>

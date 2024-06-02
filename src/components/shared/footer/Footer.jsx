@@ -34,7 +34,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="my-12">
+    <footer>
       <Container>
         <div className="flex items-center justify-center">
           <Image
