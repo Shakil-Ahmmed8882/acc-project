@@ -8,6 +8,15 @@ import Card from "./all-products/Card";
 import { AddSingleProduct } from "@/utils";
 import useGetAllProducts from "@/hooks/useGetAllProducts";
 
+
+
+const img1 = 'https://images.pexels.com/photos/10177657/pexels-photo-10177657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+const img2 = 'https://images.pexels.com/photos/10177657/pexels-photo-10177657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+const img3 = 'https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+const img4 = 'https://images.pexels.com/photos/1128257/pexels-photo-1128257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+
+
+
 const MainContent = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [trigger,setTrigger] = useState(false)
@@ -15,8 +24,9 @@ const {products} = useGetAllProducts(trigger)
 
 // create a new product
 const onAdd = async(product) => {
+  product.productType = "Electronics"
   product.price = 300
-  product.images.push('https://images.pexels.com/photos/10177657/pexels-photo-10177657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
+  product.images.push(img1,img2,img3,img4)
   const response = await AddSingleProduct(product)
   if(response.success){
     setTrigger(!trigger)
@@ -43,8 +53,9 @@ const onAdd = async(product) => {
       </div>
 
 
+        {/* Product cards */}
       <section className="grid md:grid-cols-2 mt-5 p-8 gap-8">
-          {products?.map((product,index) => <Card {...{product}} key={index}/>)}
+          {products?.map((product,index) => <Card  {...{product,trigger,setTrigger}} key={index}/>)}
           </section>
 
     </section>

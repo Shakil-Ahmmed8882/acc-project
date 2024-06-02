@@ -1,6 +1,4 @@
 
-
-import { useState } from "react";
 import MenuItem from "./MenuItem";
 import Brands from "./brands/Brands";
 import SearchBar from "../../search/SearchBar";

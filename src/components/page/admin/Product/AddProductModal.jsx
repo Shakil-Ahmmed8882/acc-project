@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import Image from "next/image";
 
-const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
+const AddProductModal = ({ onAdd, setIsAddModalOpen, singleProduct }) => {
+  // Destructure the singleProduct object
+  const { 
+    productType: type, 
+    name: productName, 
+    price: productPrice, 
+    description: productDescription, 
+    category: productCategory, 
+    images: productImages 
+  } = singleProduct || {};
+
+  // Initialize state with empty values or values from singleProduct
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
@@ -11,8 +22,19 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
   const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
 
+  // Use useEffect to set state values if singleProduct is provided
+  useEffect(() => {
+    if (singleProduct) {
+      setName(productName || "");
+      setDescription(productDescription || "");
+      setImages(productImages || []);
+      setProductType(type || "");
+      setCategory(productCategory || "");
+    }
+  }, [singleProduct]);
+
   const handleAdd = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const newProduct = {
       name,
@@ -20,13 +42,14 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
       images,
       productType,
       category,
+      price: productPrice || 0 // Assuming you want to keep the price for updates
     };
 
     onAdd(newProduct);
   };
 
   const handleImageUpload = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const files = Array.from(e.target.files);
     const uploadedImages = [];
 
@@ -35,7 +58,7 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
     for (const file of files) {
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("upload_preset", "YOUR_UPLOAD_PRESET"); 
+      formData.append("upload_preset", "YOUR_UPLOAD_PRESET");
 
       try {
         const response = await axios.post(
@@ -52,6 +75,7 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
     setUploading(false);
   };
 
+  
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50">
       <motion.div
@@ -113,7 +137,7 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 />
                 {uploading && <p>Uploading images...</p>}
-                <div className="mt-2">
+                <div className="my-4 flex">
                   {images.map((img, index) => (
                     <Image
                       width={500}
@@ -161,8 +185,8 @@ const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
-                onClick={()=> setIsAddModalOpen(false)}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                onClick={() => setIsAddModalOpen(false)}
+                className="px-4 py-2 z-50 cursor-grab text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               >
                 Cancel
               </motion.button>
