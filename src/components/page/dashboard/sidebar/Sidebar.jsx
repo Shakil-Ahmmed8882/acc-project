@@ -9,7 +9,7 @@ import Logo from "@/components/shared/navbar/Logo";
 import { navigation } from "./navigationItems";
 
 const Sidebar = () => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   return (
     <>
