@@ -1,20 +1,19 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import axios from "axios";
 import Image from "next/image";
+import { CldUploadWidget } from "next-cloudinary";
 
-const AddProductModal = ({ onAdd, setIsAddModalOpen, singleProduct }) => {
-  // Destructure the singleProduct object
-  const { 
-    productType: type, 
-    name: productName, 
-    price: productPrice, 
-    description: productDescription, 
-    category: productCategory, 
-    images: productImages 
+
+const AddProductModal = ({ onClose, onAdd, singleProduct,setIsAddModalOpen }) => {
+  const {
+    productType: type,
+    name: productName,
+    description: productDescription,
+    category: productCategory,
+    images: productImages
   } = singleProduct || {};
 
-  // Initialize state with empty values or values from singleProduct
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
@@ -22,7 +21,6 @@ const AddProductModal = ({ onAdd, setIsAddModalOpen, singleProduct }) => {
   const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  // Use useEffect to set state values if singleProduct is provided
   useEffect(() => {
     if (singleProduct) {
       setName(productName || "");
@@ -31,58 +29,38 @@ const AddProductModal = ({ onAdd, setIsAddModalOpen, singleProduct }) => {
       setProductType(type || "");
       setCategory(productCategory || "");
     }
-  }, [singleProduct]);
+  }, [singleProduct, productName, productDescription,
+     productImages, type, productCategory]);
 
-  const handleAdd = (e) => {
-    e.preventDefault();
-
+  const handleAdd = async () => {
     const newProduct = {
       name,
       description,
       images,
       productType,
       category,
-      price: productPrice || 0 // Assuming you want to keep the price for updates
     };
-
     onAdd(newProduct);
+    setIsAddModalOpen(false)
+
   };
 
-  const handleImageUpload = async (e) => {
-    e.preventDefault();
-    const files = Array.from(e.target.files);
-    const uploadedImages = [];
-
-    setUploading(true);
-
-    for (const file of files) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "YOUR_UPLOAD_PRESET");
-
-      try {
-        const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/dcemlsxpc/image/upload",
-          formData
-        );
-        uploadedImages.push(response.data.secure_url);
-      } catch (error) {
-        console.error("Error uploading image:", error);
-      }
-    }
-
-    setImages([...images, ...uploadedImages]);
+  const handleImageUpload = (result) => {
+    const optimizedImageUrl = result.info.secure_url.replace(
+      "/upload/",
+      "/upload/c_fill,h_500,w_500/"
+    );
+    setImages([...images, optimizedImageUrl]);
     setUploading(false);
   };
 
-  
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="bg-white rounded-lg shadow-lg dark:bg-gray-800"
+        className="bg-white rounded-lg w-[650px] shadow-lg dark:bg-gray-800"
       >
         <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -129,15 +107,29 @@ const AddProductModal = ({ onAdd, setIsAddModalOpen, singleProduct }) => {
                 >
                   Images
                 </label>
-                <input
-                  type="file"
-                  id="images"
+                <CldUploadWidget
+                  uploadPreset="k7xqqfq1"
                   multiple
-                  onChange={handleImageUpload}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                />
+                  onUpload={handleImageUpload}
+                >
+                  {({ open }) => {
+                    const onClick = (e) => {
+                      e.preventDefault();
+                      setUploading(true);
+                      open();
+                    };
+                    return (
+                      <button
+                        onClick={onClick}
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                      >
+                        Upload Images
+                      </button>
+                    );
+                  }}
+                </CldUploadWidget>
                 {uploading && <p>Uploading images...</p>}
-                <div className="my-4 flex">
+                <div className="mt-2 flex flex-wrap">
                   {images.map((img, index) => (
                     <Image
                       width={500}
@@ -185,8 +177,8 @@ const AddProductModal = ({ onAdd, setIsAddModalOpen, singleProduct }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
-                onClick={() => setIsAddModalOpen(false)}
-                className="px-4 py-2 z-50 cursor-grab text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                onClick={()=> setIsAddModalOpen(false)}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               >
                 Cancel
               </motion.button>
@@ -197,7 +189,10 @@ const AddProductModal = ({ onAdd, setIsAddModalOpen, singleProduct }) => {
                 onClick={handleAdd}
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg dark:bg-blue-700 hover:bg-blue-700"
               >
-                Add
+                {/* product name is found from single product 
+                    passed as current product when update
+                */}
+               {productName ?'Update':'Add'}
               </motion.button>
             </div>
           </form>

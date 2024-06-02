@@ -19,7 +19,6 @@ const DeleteModal = ({ id, refetch, endPoint }) => {
       }
       setOpenModal(false);
       refetch();
-      console.log("Resource deleted successfully");
     } catch (error) {
       console.error("Error deleting resource:", error.message);
     }

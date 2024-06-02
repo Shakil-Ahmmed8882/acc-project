@@ -2,7 +2,7 @@ import React from 'react';
 import {motion} from 'framer-motion';
 
 const ProductDetails = ({ product }) => {
-  const { productType, name, price, description, category, images } = product;
+  const {  name, description, category, images } = product;
 
   return (
     <motion.div
@@ -23,9 +23,7 @@ const ProductDetails = ({ product }) => {
         </div>
         <div>
           <h1 className="text-3xl font-semibold  text-white pb-8">{name}</h1>
-          <p className="text-lg text-[#b7b7b7] mb-3">Price: ${price.toFixed(2)}</p>
           <p className="text-lg text-[#b7b7b7] mb-3">Category: {category}</p>
-          <p className="text-lg text-[#b7b7b7] mb-3">Product Type: {productType}</p>
           <p className="text-lg text-[#b7b7b7] mb-3">{description}</p>
         </div>
       </div>

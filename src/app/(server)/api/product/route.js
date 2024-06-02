@@ -47,14 +47,11 @@ export async function GET(request) {
       query = { _id: productId };
     }
 
-console.log(query)
+
 
     //step 4: find one product else all products
     const products = await Product.find(query);
 
-    //step 5: send response
-
-    if (!products.length) throw new Error("No product found");
 
     //step 5: send response
     return new Response(
@@ -123,13 +120,10 @@ export async function DELETE(request) {
     // Step 2: check is the passed id  valid
     isValidObjectId(productId);
 
-    // Step 3: check the the product exist
-    await checkProductExists(productId);
-
-    // step 4: find and delete
+    // step 3: find and delete
     const product = await Product.findOneAndDelete({ _id: productId });
 
-    // step 5: send response
+    // step 4: send response
     return new Response(
       JSON.stringify({
         success: true,

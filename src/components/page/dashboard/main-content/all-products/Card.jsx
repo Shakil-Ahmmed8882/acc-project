@@ -2,19 +2,20 @@
 
 import { LucideEdit2, LucideTrash2 } from "lucide-react";
 import Image from "next/image";
-import product1 from "@/assets/img/brands/accessories.jpg";
-import { createContext, useContext,useEffect,useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { deleteSingleProduct, fetchSingleProduct, updateSingleProduct } from "@/utils";
 import AddProductModal from "@/components/page/admin/Product/AddProductModal";
+import DeleteConfirmation from "./DeleteConfirmation";
 
 export const productContext = createContext({});
 
 const Card = ({ product, trigger, setTrigger }) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(null);
+  const [isDelete, setIsDelete] = useState(false);
 
-  // fetch current product to show on modal before update
+  // Fetch current product to show on modal before update
   useEffect(() => {
     if (isAddModalOpen && product?._id) {
       const fetchCurrentProduct = async () => {
@@ -25,18 +26,14 @@ const Card = ({ product, trigger, setTrigger }) => {
     }
   }, [isAddModalOpen, product]);
 
-  const updateProduct = async(updatedProduct) => {
-    const response = await updateSingleProduct(product?._id,updatedProduct)
-    if(response?.success){
-      // this trigger for refetching the lateste products
-      setTrigger(!trigger)
-      setIsAddModalOpen(false)
+  const updateProduct = async (updatedProduct) => {
+    const response = await updateSingleProduct(product?._id, updatedProduct);
+    if (response?.success) {
+      // This trigger for refetching the latest products
+      setTrigger(!trigger);
+      setIsAddModalOpen(false);
     }
-    console.log(response)
-    
-  }
-
-
+  };
 
   const contextValues = {
     ...product,
@@ -44,7 +41,9 @@ const Card = ({ product, trigger, setTrigger }) => {
     setTrigger,
     isAddModalOpen,
     setIsAddModalOpen,
-    singleProduct: currentProduct
+    singleProduct: currentProduct,
+    setIsDelete,
+    isDelete,
   };
 
   return (
@@ -57,7 +56,7 @@ const Card = ({ product, trigger, setTrigger }) => {
           <Image
             width={500}
             height={500}
-            src={product1}
+            src={product?.images[0]}
             className="md:w-[40%] h-40 md:h-full rounded object-cover"
             alt=""
           />
@@ -67,30 +66,20 @@ const Card = ({ product, trigger, setTrigger }) => {
 
         {/* Hidden Modal */}
         {isAddModalOpen && <AddProductModal onAdd={updateProduct} {...{ setIsAddModalOpen, singleProduct: currentProduct }} />}
+        {isDelete && <DeleteConfirmation onCancel={() => setIsDelete(false)} onDelete={() => handleDeleteProduct(product?._id, setTrigger, trigger, setIsDelete)} />}
       </section>
     </productContext.Provider>
   );
 };
 
-
 export default Card;
 
 function DeleteAndEdit() {
-  const { _id, trigger, setTrigger, setIsAddModalOpen } =
-    useContext(productContext);
+  const { setIsDelete, setIsAddModalOpen } = useContext(productContext);
 
-  // stop click action till the edit & delete button
+  // Stop click action till the edit & delete button
   const handlePropagation = (e) => {
     e.stopPropagation();
-  };
-
-  // Delete a single product
-  const handleDeleteProduct = async (event) => {
-    event.preventDefault();
-    const response = await deleteSingleProduct(_id);
-    if (response.success) {
-      setTrigger(!trigger);
-    }
   };
 
   // Update a single product
@@ -116,11 +105,8 @@ function DeleteAndEdit() {
           className="w-8 h-8 p-[8px]"
         />
       </button>
-      <button className="text-red-700">
-        <LucideTrash2
-          onClick={handleDeleteProduct}
-          className="w-8 h-8 p-[6px]"
-        />
+      <button className="text-red-700" onClick={() => setIsDelete(true)}>
+        <LucideTrash2 className="w-8 h-8 p-[6px]" />
       </button>
     </div>
   );
@@ -136,4 +122,15 @@ function Contents() {
       <p className="text-[#b0b0b0]">{description}</p>
     </article>
   );
+}
+
+// Utility function to handle product deletion
+async function handleDeleteProduct(_id, setTrigger, trigger, setIsDelete) {
+  const response = await deleteSingleProduct(_id);
+  if (response.success) {
+    setTrigger(!trigger);
+    setIsDelete(false);
+  } else {
+    console.error('Failed to delete product');
+  }
 }
