@@ -43,7 +43,6 @@ const Footer = () => {
   return (
     <footer className={`
     ${isAdminRoute ?'hidden':'block'}
-    my-12
     `}>
       <Container>
         <div className="flex items-center justify-center">
