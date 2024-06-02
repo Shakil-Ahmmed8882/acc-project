@@ -35,11 +35,14 @@ const Footer = () => {
       ],
     },
   ];
-    const router = usePathname();
+  const pathname = usePathname();
+
+  // Check if the current route starts with /admin2
+  const isAdminRoute = pathname.startsWith('/admin2');
 
   return (
     <footer className={`
-    ${router == '/admin2'?'hidden':'block'}
+    ${isAdminRoute ?'hidden':'block'}
     my-12
     `}>
       <Container>

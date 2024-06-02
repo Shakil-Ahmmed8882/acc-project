@@ -6,7 +6,7 @@ import { navigation } from './navigationItems';
 
 const Sidebar = () => {
   return (
-    <nav className=" w-full h-full bg-[#1e1e1e] space-y-8 sm:w-64" suppressHydrationWarning>
+    <nav className=" w-full h-full bg-[#161618] space-y-8 sm:w-64" suppressHydrationWarning>
       <div class="flex flex-col h-full">
         <div className="mt-6 mb-11 px-4">
           <Image width={100} height={100} src={acclogo} alt="logo"/>
@@ -27,12 +27,12 @@ export default Sidebar;
 // sidebar top routes 
 function SidebarNavRoutes() {
   return (
-    <ul className="px-4 text-sm font-medium flex-1">
+    <ul className="px-4 text-sm font-medium flex-1 space-y-2">
       {navigation?.map((item, idx) => (
         <li key={idx}>
           <a
             href={item.href}
-            className="flex items-center gap-x-2 text-white p-2 rounded-lg  hover:bg-gray-50 active:bg-gray-100 duration-150"
+            className="flex items-center gap-x-2 text-[#ebebeb] p-2 rounded-lg  hover:bg-[#29292c] transition-all duration-300"
           >
             <div className="text-white">{item.icon}</div>
             {item.name}

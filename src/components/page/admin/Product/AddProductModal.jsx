@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import Image from "next/image";
 
-const AddProductModal = ({ onClose, onAdd }) => {
+const AddProductModal = ({ onAdd,setIsAddModalOpen }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
@@ -20,9 +20,7 @@ const AddProductModal = ({ onClose, onAdd }) => {
       category,
     };
 
-    console.log(newProduct);
     onAdd(newProduct);
-    onClose();
   };
 
   const handleImageUpload = async (e) => {
@@ -160,7 +158,7 @@ const AddProductModal = ({ onClose, onAdd }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
-                onClick={onClose}
+                onClick={()=> setIsAddModalOpen(false)}
                 className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               >
                 Cancel

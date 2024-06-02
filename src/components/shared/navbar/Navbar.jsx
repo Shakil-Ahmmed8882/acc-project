@@ -20,7 +20,10 @@ const Navbar = () => {
   const { isScrollBeyondParallax, isSecondParallaxInView } = useGlobalContext();
   const [isBrandHover, setIsBrandsHover] = useState(false);
   const { isMenuOpen, setIsMenuOpen } = useGlobalContext();
-  const router = usePathname();
+  const pathname = usePathname();
+
+  // Check if the current route starts with /admin2
+  const isAdminRoute = pathname.startsWith('/admin2');
   // container styls
   const style = "flex justify-between gap-0 items-center px-8";
 
@@ -43,7 +46,7 @@ const Navbar = () => {
       <header
         className={`
 
-        ${router == '/admin2'?'hidden':'block'}
+        ${isAdminRoute ?'hidden':'block'}
         ${  
           isMenuOpen
           ? "min-h-screen md:min-h-32 lg:h-52"
