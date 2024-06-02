@@ -59,7 +59,7 @@ const Card = ({ product, trigger, setTrigger }) => {
             width={500}
             height={500}
             src={product?.images[0]}
-            className="w-full md:w-[40%] h-44 md:h-52 rounded object-cover"
+            className="w-full md:w-[40%] h-32 md:h-52 rounded object-cover"
             alt=""
           />
           <Contents />
