@@ -1,6 +1,6 @@
 "use client";
 
-import Card from "@/components/shared/product/product-card/Card";
+import ProductCard from "@/components/shared/product/product-card/Card";
 import Container from "@/components/shared/container/Container";
 import Button from "@/components/shared/parallax/Button";
 import Title from "../ui/Title";
@@ -8,6 +8,8 @@ import useMaxHeight from "@/hooks/useMaxHeight";
 import { useEffect, useState } from "react";
 import useGetAllProducts from "@/hooks/useGetAllProducts";
 import useGlobalContext from "@/hooks/useGlobalContext";
+import Loader from "@/components/shared/loader/Loader";
+
 
 const Products = () => {
   const { showProducts } = useGlobalContext();
@@ -18,7 +20,7 @@ const Products = () => {
 
   useEffect(() => {
     if (showProducts === 'best-seller') {
-      setFilteredProducts(products.slice(0, 3));
+      setFilteredProducts(products.slice(0,3));
     } else {
       setFilteredProducts(products);
     }
@@ -26,16 +28,20 @@ const Products = () => {
 
   return (
     <section>
-      <Container className="min-h-screen py-9">
+      <Container className="min-h-screen py-9 relative">
         <Title />
         <article
           ref={containerRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out overflow-hidden"
+          className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out overflow-hidden"
           style={{ maxHeight }}
         >
-          {filteredProducts.slice(0, isSeeMore ? filteredProducts.length : 6).map((card, index) => (
-            <Card key={index} card={card} />
-          ))}
+          {
+            filteredProducts.length === 0?<Loader/>:
+            filteredProducts.slice(0, isSeeMore ? filteredProducts.length : 6).map((card, index) => (
+              <ProductCard key={index} card={card} />
+            ))
+
+          }
         </article>
 
         {showProducts === 'all' && (

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Card = ({ card }) => {
+const ProductCard = ({ card }) => {
   const { _id,images, name } = card || {};
 
 
@@ -41,4 +41,4 @@ const Card = ({ card }) => {
   );
 };
 
-export default Card;
+export default ProductCard;
