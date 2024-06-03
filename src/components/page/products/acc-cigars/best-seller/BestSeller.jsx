@@ -18,7 +18,7 @@ const BestSeller = () => {
 
   return (
     <section>
-      <Container className="min-h-screen py-12">
+      <Container className="min-h-screen py-9">
         <Title />
         <article
           ref={containerRef}
