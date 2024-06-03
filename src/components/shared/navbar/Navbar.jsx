@@ -22,7 +22,8 @@ const Navbar = () => {
   const { isMenuOpen, setIsMenuOpen } = useGlobalContext();
   const pathname = usePathname();
 
-  const isAdminRoute = pathname.startsWith("/admin");
+  const isAdminRoute = pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
+
   const style = "flex justify-between gap-0 items-center px-8";
 
   const navInfo = {
