@@ -1,10 +1,15 @@
+// The Card component remains the same, just ensuring the class names are appropriate for styling and responsiveness.
 "use client";
 
 import { LucideEdit2, LucideTrash2 } from "lucide-react";
 import Image from "next/image";
 import { createContext, useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { deleteSingleProduct, fetchSingleProduct, updateSingleProduct } from "@/utils";
+import {
+  deleteSingleProduct,
+  fetchSingleProduct,
+  updateSingleProduct,
+} from "@/utils";
 import DeleteConfirmation from "./DeleteConfirmation";
 import AddProductModal from "./AddProductModal";
 
@@ -14,8 +19,8 @@ const Card = ({ product, trigger, setTrigger }) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(null);
   const [isDelete, setIsDelete] = useState(false);
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
-  // Fetch current product to show on modal before update
   useEffect(() => {
     if (isAddModalOpen && product?._id) {
       const fetchCurrentProduct = async () => {
@@ -27,13 +32,9 @@ const Card = ({ product, trigger, setTrigger }) => {
   }, [isAddModalOpen, product]);
 
   const updateProduct = async (updatedProduct) => {
-
-    console.log(updatedProduct)
     const response = await updateSingleProduct(product?._id, updatedProduct);
     if (response?.success) {
-      // This trigger for refetching the latest products
       setTrigger(!trigger);
-      // setIsAddModalOpen(false);
     }
   };
 
@@ -50,10 +51,10 @@ const Card = ({ product, trigger, setTrigger }) => {
 
   return (
     <productContext.Provider value={contextValues}>
-      <section className="group relative md:h-52">
+      <section className="group relative md:h-52 bg-[#262626] p-4 rounded-lg shadow-lg">
         <Link
           href={`/admin/${product?._id}`}
-          className="bg-[#262626] cursor-pointer flex flex-col md:flex-row gap-3 relative rounded-lg"
+          className="flex flex-col md:flex-row gap-3"
         >
           <Image
             width={500}
@@ -62,13 +63,32 @@ const Card = ({ product, trigger, setTrigger }) => {
             className="w-full md:w-[40%] h-32 md:h-52 rounded object-cover"
             alt=""
           />
-          <Contents />
+          <Contents
+            showFullDescription={showFullDescription}
+            setShowFullDescription={setShowFullDescription}
+          />
         </Link>
         <DeleteAndEdit />
 
-        {/* Hidden Modal */}
-        {isAddModalOpen && <AddProductModal onAdd={updateProduct} {...{ setIsAddModalOpen, singleProduct: currentProduct }} />}
-        {isDelete && <DeleteConfirmation onCancel={() => setIsDelete(false)} onDelete={() => handleDeleteProduct(product?._id, setTrigger, trigger, setIsDelete)} />}
+        {isAddModalOpen && (
+          <AddProductModal
+            onAdd={updateProduct}
+            {...{ setIsAddModalOpen, singleProduct: currentProduct }}
+          />
+        )}
+        {isDelete && (
+          <DeleteConfirmation
+            onCancel={() => setIsDelete(false)}
+            onDelete={() =>
+              handleDeleteProduct(
+                product?._id,
+                setTrigger,
+                trigger,
+                setIsDelete
+              )
+            }
+          />
+        )}
       </section>
     </productContext.Provider>
   );
@@ -79,12 +99,10 @@ export default Card;
 function DeleteAndEdit() {
   const { setIsDelete, setIsAddModalOpen } = useContext(productContext);
 
-  // Stop click action till the edit & delete button
   const handlePropagation = (e) => {
     e.stopPropagation();
   };
 
-  // Update a single product
   const handleUpdateProduct = (event) => {
     event.preventDefault();
     setIsAddModalOpen(true);
@@ -93,7 +111,7 @@ function DeleteAndEdit() {
   return (
     <div
       onClick={handlePropagation}
-      className="space-x-1 p-3 md:bg-[#262626] 
+      className="space-x-1 p-3 
       translate-y-8 group-hover:translate-y-0
        smooth-transition group-hover:opacity-100 opacity-0 flex
         absolute top-0 right-0 z-40"
@@ -114,14 +132,32 @@ function DeleteAndEdit() {
   );
 }
 
-function Contents() {
+function Contents({ showFullDescription, setShowFullDescription }) {
   const { name, description, category } = useContext(productContext);
+
+  const truncatedDescription =
+    description.length > 100
+      ? `${description.substring(0, 100)}...`
+      : description;
 
   return (
     <article className="space-y-2 p-4">
       <h2 className="text-[18px] font-semibold text-white">{name}</h2>
       <p className="text-[#b3b3b3] inline-block">Category: {category}</p>
-      <p className="text-[#b0b0b0]">{description}</p>
+      <p className="text-[#b0b0b0]">
+        {showFullDescription ? description : truncatedDescription}
+        {description.length > 100 && (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setShowFullDescription(!showFullDescription);
+            }}
+            className="text-blue-500"
+          >
+            {showFullDescription ? " See Less" : " See More"}
+          </button>
+        )}
+      </p>
     </article>
   );
 }
@@ -133,6 +169,6 @@ async function handleDeleteProduct(_id, setTrigger, trigger, setIsDelete) {
     setTrigger(!trigger);
     setIsDelete(false);
   } else {
-    console.error('Failed to delete product');
+    console.error("Failed to delete product");
   }
 }
