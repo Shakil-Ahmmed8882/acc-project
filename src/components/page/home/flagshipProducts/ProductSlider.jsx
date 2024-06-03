@@ -14,6 +14,7 @@ import Button from "@/components/shared/button/Button";
 import SectionTitle from "@/components/shared/sectionTitle/SectionTitle";
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import Container from "@/components/shared/container/Container";
+import AnimatedVideo from "@/components/shared/animation/animated-video/AnimatedVideo";
 
 export default function ProductSlider() {
   //Add a state that will force a re-render
@@ -107,6 +108,7 @@ const SlideLeft = () => {
         className="text-[50px]  font-normal uppercase"
         title="Explore ACc's Flagship products"
       />
+      <AnimatedVideo/>
       <Button variant="primary" size="lg">
         DISCOVER
       </Button>
