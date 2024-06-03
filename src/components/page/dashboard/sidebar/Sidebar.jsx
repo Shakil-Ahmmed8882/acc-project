@@ -1,15 +1,14 @@
 "use client";
-
-import acclogo from "@/assets/img/shared/navbar/acc.png";
+import accLogo from "@/assets/img/shared/navbar/acc.png";
 import Image from "next/image";
-import Link from "next/link";
 import { CrossIcon, Menu } from "lucide-react";
 import { useState } from "react";
-import Logo from "@/components/shared/navbar/Logo";
-import { navigation } from "./navigationItems";
+import SidebarFooterRoutes from "./SidebarFooterRoutes";
+import SidebarNavRoutes from "./SidebarNavRoutes";
+import Profile from "./Profile";
 
 const Sidebar = () => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   return (
     <>
@@ -34,10 +33,11 @@ const Sidebar = () => {
       >
         <div class="flex flex-col h-full">
           <div className="mt-6 mb-11 px-4">
-            <Image width={100} height={100} src={acclogo} alt="logo" />
+            <Image width={100} height={100} src={accLogo} alt="logo" />
           </div>
           <div className="flex-1 flex flex-col h-full overflow-auto">
             <SidebarNavRoutes />
+        <SidebarFooterRoutes/>
             <Profile />
           </div>
         </div>
@@ -59,45 +59,10 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-// sidebar top routes
-function SidebarNavRoutes() {
-  return (
-    <ul className="px-4 text-sm font-medium flex-1 space-y-2">
-      {navigation?.map((item, idx) => (
-        <li key={idx}>
-          <Link
-            href={item.href}
-            className="flex items-center gap-x-2 text-[#ebebeb] p-2 rounded-lg  hover:bg-[#29292c] transition-all duration-300"
-          >
-            <div className="text-white">{item.icon}</div>
-            {item.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
 
-// Profile
-function Profile() {
-  return (
-    <div className="py-4 px-4 border-t">
-      <div className="flex items-center gap-x-4">
-        <Logo />
-        <div>
-          <span className="block text-gray-400 text-sm font-semibold">
-            Tanmoy
-          </span>
-          <a
-            href="javascript:void(0)"
-            className="block mt-px text-gray-400 hover:text-indigo-600 text-xs"
-          >
-            View profile
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
+
+
+
+
 
 

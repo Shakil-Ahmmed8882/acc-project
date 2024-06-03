@@ -5,8 +5,6 @@ import Footer from "@/components/shared/footer/Footer";
 import GlobalContext from "@/providers/GlobalContext";
 import { Toaster } from "sonner";
 import { getServerSession } from "next-auth";
-import SessionProvider from "@/providers/SessionProvider";
-import SignOut from "@/components/shared/signOut/SignOut";
 import AuthProvider from "@/providers/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,8 +21,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <GlobalContext>
           <AuthProvider session={session}>
-            {/* <Navbar /> */}
-            <SignOut/>
+            <Navbar />
             {children}
             <Footer />
             <Toaster />

@@ -1,7 +1,7 @@
 "use client";
 import Searchbar from "./all-products/Searchbar";
 import AddProductButton from "./all-products/AddProductButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "./all-products/Card";
 import { AddSingleProduct } from "@/utils";
 import useGetAllProducts from "@/hooks/useGetAllProducts";
@@ -17,7 +17,6 @@ const MainContent = () => {
 
   // create a new product
   const onAdd = async (product) => {
-    product.productType = "Electronics";
     const response = await AddSingleProduct(product);
     if (response.success) {
       setTrigger(!trigger);
@@ -25,15 +24,42 @@ const MainContent = () => {
     }
   };
 
+  const renderProductSection = (type) => {
+    const filteredProducts = products.filter(
+      (product) => product.productType === type
+    );
+    return (
+      <div key={type} className="mb-8">
+        <h2 className="text-2xl font-semibold text-white mt-8 mb-4">{type}</h2>
+        {filteredProducts.length === 0 ? (
+          <div className="flex justify-center items-center">
+            <Image
+              width={500}
+              height={500}
+              className="mix-blend-multiply"
+              src={noDataFound}
+              alt="No Data Found"
+            />
+          </div>
+        ) : (
+          <section className="grid lg:grid-cols-2 gap-8">
+            {filteredProducts.map((product, index) => (
+              <Card {...{ product, trigger, setTrigger }} key={index} />
+            ))}
+          </section>
+        )}
+      </div>
+    );
+  };
+
   return (
-    <section suppressHydrationWarning>
-      <div className="p-4 bg-[#262626] block sm:flex items-center justify-between border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
-        <div className="w-full mb-1">
+    <section className="p-8 bg-[#1A1A1A]">
+      <div className="p-4 bg-[#262626] block sm:flex items-center justify-between border-gray-200 dark:bg-gray-800 dark:border-gray-700 mb-8">
+        <div className="w-full">
           <div className="items-center justify-between block sm:flex md:divide-x md:divide-gray-100 dark:divide-gray-700">
             <Searchbar setSearchTerm={setSearchTerm} />
             <AddProductButton {...{ setIsAddModalOpen }} />
           </div>
-          {/* Model  */}
           {isAddModalOpen && (
             <AddProductModal {...{ onAdd }} {...{ setIsAddModalOpen }} />
           )}

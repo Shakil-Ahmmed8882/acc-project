@@ -18,7 +18,7 @@ export default function SignIn() {
 
   useEffect(() => {
     if (sessionStatus === "authenticated") {
-      router.replace("/private");
+      router.replace("/admin");
     }
   }, [sessionStatus, router]);
 
@@ -48,7 +48,7 @@ export default function SignIn() {
 
     if (res?.error) {
       setError("Invalid email or password");
-      if (res?.url) router.replace("/private");
+      if (res?.url) router.replace("/admin");
     } else {
       setError("");
     }
