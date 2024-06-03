@@ -19,16 +19,16 @@ useEffect(()=> {
     setProduct(data?.products[0])
     setIsLoading(false)
   })
-},[])
+},[id])
 
 
 if(isLoading) return 'loading...'
 
   return (
-        <>
-          <ProductDetails product={product}/>
-        </>
-    );
+    <>
+      <ProductDetails product={product} showHighlight={true} />
+    </>
+  );
 };
 
 export default ProductDetailsPage;
