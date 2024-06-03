@@ -1,4 +1,4 @@
-'use client'
+
 
 import MainContent from "@/components/page/dashboard/main-content/MainContent";
 

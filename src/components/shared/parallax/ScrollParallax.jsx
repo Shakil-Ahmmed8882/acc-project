@@ -29,7 +29,7 @@ import parallaxImg3 from "@/assets/img/home/parallax/parallax3.png";
 //             page={1}
 //           />
 //         </div>
-//         <div className="section    text-8xl  mt-64 h-screen  overflow-hidden sticky top-0">
+//         <div className="section smooth-transition    text-8xl  mt-64 h-screen  overflow-hidden sticky top-0">
 //           <ParallaxContents
 //             img={parallaxImg2}
 //             title={"LUXURY & VINTAGE SPIRITS"}
@@ -81,17 +81,18 @@ const ScrollParallax = () => {
           <ParallaxContents
             img={parallaxImg1}
             title={"LUXURY & VINTAGE CIGARS"}
-            page={1}
+            page={0}
           />
         </div>
-        <div className="section text-8xl mt-64 h-screen overflow-hidden sticky top-0">
+        <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
           <ParallaxContents
             img={parallaxImg2}
             title={"LUXURY & VINTAGE SPIRITS"}
+            page={1}
           />
         </div>
-        <div className="section text-8xl mt-64 h-screen overflow-hidden sticky top-0">
-          <ParallaxContents img={parallaxImg3} title={"LUXURY &"} page={"last"} />
+        <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
+          <ParallaxContents img={parallaxImg3} title={"LUXURY &"} page={2} />
         </div>
       </div>
     </section>

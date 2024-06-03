@@ -1,6 +1,4 @@
 "use client";
-
-import Lenis from "lenis";
 import Pagination from "./pagination";
 import useScrollObserver from "@/hooks/useScrollObserver";
 import ScrollParallax from "@/components/shared/parallax/ScrollParallax";

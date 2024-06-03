@@ -24,7 +24,8 @@ const Button = ({ text, customStyle, clickHandler }) => {
 
       <MoveRight
         className={`group-hover:visible group-hover:text-black group-hover:opacity-100 absolute
-         right-0 top-[25%] group-hover:right-14 opacity-0
+         right-0  group-hover:right-14 opacity-0
+         flex items-center
         invisible transition-all duration-500 `}
       />
     </button>

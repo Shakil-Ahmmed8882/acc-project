@@ -11,7 +11,7 @@ import { navigation } from "./navigationItems";
 const Sidebar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
-  return (
+  return (  
     <>
       <Menu
         onClick={() => setIsSideBarOpen(!isSideBarOpen)}
@@ -19,8 +19,8 @@ const Sidebar = () => {
          left-5 z-50 cursor-pointer hover:-rotate-180
          smooth-transition"
       />
-      <nav
-        className={` ${
+
+      <nav className={` ${
           isSideBarOpen
             ? "translate-x-0 visible left-0"
             : "-translate-x-32 md:translate-x-0 invisible md:visible -left-80 md:left-0 "
