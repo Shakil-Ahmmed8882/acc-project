@@ -8,9 +8,9 @@ export function handleError(error) {
 }
 
 // Extracts the 'search' parameter from the request URL
-export const getSearchParams = (req) => {
+export const getSearchParams = (req,q) => {
   const url = new URL(req.url);
-  return url.searchParams.get("id");
+  return url.searchParams.get(q);
 };
 
 // Checks if a product exists by ID, throws an error if not found

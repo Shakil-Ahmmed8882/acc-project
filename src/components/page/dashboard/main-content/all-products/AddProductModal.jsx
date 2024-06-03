@@ -1,55 +1,67 @@
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import axios from "axios";
 import Image from "next/image";
+import { CldUploadWidget } from "next-cloudinary";
 
-const UpdateProductModal = ({ product, onClose, onUpdate }) => {
-  const [name, setName] = useState(product.name);
-  const [description, setDescription] = useState(product.description);
-  const [images, setImages] = useState(product.images);
-  const [productType, setProductType] = useState(product.productType);
-  const [category, setCategory] = useState(product.category);
+const AddProductModal = ({ onClose, onAdd, singleProduct, setIsAddModalOpen }) => {
+  const {
+    productType: type,
+    name: productName,
+    description: productDescription,
+    category: productCategory,
+    images: productImages,
+  } = singleProduct || {};
+
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [images, setImages] = useState([]);
+  const [productType, setProductType] = useState("");
+  const [category, setCategory] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleUpdate = () => {
-    const updatedProduct = {
-      ...product,
+  useEffect(() => {
+    if (singleProduct) {
+      setName(productName || "");
+      setDescription(productDescription || "");
+      setImages(productImages || []);
+      setProductType(type || "");
+      setCategory(productCategory || "");
+    }
+  }, [
+    singleProduct,
+    productName,
+    productDescription,
+    productImages,
+    type,
+    productCategory,
+  ]);
+
+  const handleAdd = async () => {
+    // Validation check
+    if (!name || !description || images.length === 0 || !productType || !category) {
+      setError("All fields are required.");
+      return;
+    }
+    
+    const newProduct = {
       name,
       description,
       images,
       productType,
       category,
     };
-
-    // Update product logic here
-    console.log(updatedProduct);
-    onUpdate(updatedProduct);
-    onClose();
+    onAdd(newProduct);
+    setIsAddModalOpen(false);
   };
 
-  const handleImageUpload = async (e) => {
-    const files = Array.from(e.target.files);
-    const uploadedImages = [];
-
-    setUploading(true);
-
-    for (const file of files) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "YOUR_UPLOAD_PRESET"); // Replace with your upload preset
-
-      try {
-        const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload", // Replace with your Cloudinary cloud name
-          formData
-        );
-        uploadedImages.push(response.data.secure_url);
-      } catch (error) {
-        console.error("Error uploading image:", error);
-      }
-    }
-
-    setImages([...images, ...uploadedImages]);
+  const handleImageUpload = (result) => {
+    const optimizedImageUrl = result.info.secure_url.replace(
+      "/upload/",
+      "/upload/c_fill,h_500,w_500/"
+    );
+    setImages([...images, optimizedImageUrl]);
     setUploading(false);
   };
 
@@ -59,14 +71,17 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="bg-white rounded-lg shadow-lg dark:bg-gray-800"
+        className="bg-white rounded-lg w-[650px] shadow-lg dark:bg-gray-800"
       >
         <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Update Product
+            {productName ? "Update Product" : "Add Product"}
           </h2>
         </div>
         <div className="px-4 py-6">
+          {error && (
+            <p className="mb-4 text-sm text-red-600">{error}</p>
+          )}
           <form>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="mb-4">
@@ -106,15 +121,29 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
                 >
                   Images
                 </label>
-                <input
-                  type="file"
-                  id="images"
+                <CldUploadWidget
+                  uploadPreset="k7xqqfq1"
                   multiple
-                  onChange={handleImageUpload}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                />
+                  onUpload={handleImageUpload}
+                >
+                  {({ open }) => {
+                    const onClick = (e) => {
+                      e.preventDefault();
+                      setUploading(true);
+                      open();
+                    };
+                    return (
+                      <button
+                        onClick={onClick}
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                      >
+                        Upload Images
+                      </button>
+                    );
+                  }}
+                </CldUploadWidget>
                 {uploading && <p>Uploading images...</p>}
-                <div className="mt-2">
+                <div className="mt-2 flex flex-wrap">
                   {images.map((img, index) => (
                     <Image
                       width={500}
@@ -162,7 +191,7 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
-                onClick={onClose}
+                onClick={() => setIsAddModalOpen(false)}
                 className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               >
                 Cancel
@@ -171,10 +200,10 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="button"
-                onClick={handleUpdate}
+                onClick={handleAdd}
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg dark:bg-blue-700 hover:bg-blue-700"
               >
-                Update
+                {productName ? "Update" : "Add"}
               </motion.button>
             </div>
           </form>
@@ -184,4 +213,4 @@ const UpdateProductModal = ({ product, onClose, onUpdate }) => {
   );
 };
 
-export default UpdateProductModal;
+export default AddProductModal;
