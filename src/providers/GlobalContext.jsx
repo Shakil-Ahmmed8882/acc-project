@@ -20,6 +20,11 @@ const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 const [isSecondParallaxInView, setIsSecondParallaxInView] = useState(false);
 
 
+// ================== Products =====================
+const [showProducts,setShowProducts] = useState('best-seller');
+const [isSeeMore, setIsSeeMore] = useState(showProducts === "all");
+
+
 // ========== Spread data across the app ==========
 const contextData = {
   
@@ -33,7 +38,13 @@ const contextData = {
     setIsSecondParallaxInView,
     isSecondParallaxInView,
     activeSectionIndex,
-    setActiveSectionIndex
+    setActiveSectionIndex,
+
+    // products 
+    showProducts,
+    setShowProducts,
+    isSeeMore, 
+    setIsSeeMore
 }
 
   return (
