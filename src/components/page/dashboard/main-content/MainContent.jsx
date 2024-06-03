@@ -1,5 +1,4 @@
 "use client";
-
 import Searchbar from "./all-products/Searchbar";
 import AddProductButton from "./all-products/AddProductButton";
 import { useState, useEffect } from "react";
@@ -15,18 +14,8 @@ const MainContent = () => {
   const [trigger, setTrigger] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const { products } = useGetAllProducts(trigger, searchTerm);
-  const [productTypes, setProductTypes] = useState([]);
 
-  useEffect(() => {
-    if (products) {
-      setProductTypes([
-        // eslint-disable-next-line no-undef
-        ...new Set(products.map((product) => product.productType)),
-      ]);
-    }
-  }, [products]);
-
-  // Create a new product
+  // create a new product
   const onAdd = async (product) => {
     const response = await AddSingleProduct(product);
     if (response.success) {
@@ -77,7 +66,22 @@ const MainContent = () => {
         </div>
       </div>
 
-      {productTypes.map((type) => renderProductSection(type))}
+      {/* Product cards */}
+      {products?.length == 0 ? (
+        <Image
+          width={500}
+          height={500}
+          className="absolute  mix-blend-multiply top-24 right-0 left-[30%] flex justify-center object-cover"
+          src={noDataFound}
+          alt=""
+        />
+      ) : (
+        <section className="grid md:grid-cols-2 mt-5 p-8 gap-8">
+          {products?.map((product, index) => (
+            <Card {...{ product, trigger, setTrigger }} key={index} />
+          ))}
+        </section>
+      )}
     </section>
   );
 };

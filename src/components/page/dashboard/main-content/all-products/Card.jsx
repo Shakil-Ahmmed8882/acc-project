@@ -1,6 +1,5 @@
 // The Card component remains the same, just ensuring the class names are appropriate for styling and responsiveness.
 "use client";
-
 import { LucideEdit2, LucideTrash2 } from "lucide-react";
 import Image from "next/image";
 import { createContext, useContext, useEffect, useState } from "react";
@@ -58,9 +57,9 @@ const Card = ({ product, trigger, setTrigger }) => {
         >
           <Image
             width={500}
-            height={500}
+            height={400}
             src={product?.images[0]}
-            className="w-full lg:w-[40%] h-32 md:h-52 rounded object-cover"
+            className="w-full md:w-[40%] h-32 md:h-48 rounded object-cover"
             alt=""
           />
           <Contents

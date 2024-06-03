@@ -69,7 +69,7 @@ const Navbar = () => {
           <Logo {...{ isSecondParallaxInView }} />
           <div className="hidden -pl-6 md:flex">
             <SearchBar />
-          </div>
+        </div>
         </Container>
         <Container isNavbar={true}>
           <HorizontalLine />
