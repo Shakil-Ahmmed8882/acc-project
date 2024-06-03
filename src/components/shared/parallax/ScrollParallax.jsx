@@ -55,6 +55,7 @@ import parallaxImg3 from "@/assets/img/home/parallax/parallax3.png";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import { useEffect } from "react";
 import Lenis from "lenis";
+import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
 
 const ScrollParallax = () => {
   const { isMenuOpen } = useGlobalContext();
@@ -78,6 +79,7 @@ const ScrollParallax = () => {
             isMenuOpen ? "-mt-[800px] md:-mt-96" : "-mt-96"
           } transition-all h-[125vh] duration-1000 section text-8xl overflow-hidden sticky top-0`}
         >
+          <AnimatedVideo/>
           <ParallaxContents
             img={parallaxImg1}
             title={"LUXURY & VINTAGE CIGARS"}
