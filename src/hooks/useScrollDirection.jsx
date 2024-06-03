@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import useGlobalContext from './useGlobalContext';
 
 export const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState('up');

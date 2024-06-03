@@ -6,11 +6,15 @@ import parallaxImg1 from "@/assets/img/home/parallax/parallax1.png";
 import parallaxImg2 from "@/assets/img/home/parallax/parallax2.png";
 import parallaxImg3 from "@/assets/img/home/parallax/parallax3.png";
 import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
+import useGlobalContext from "@/hooks/useGlobalContext";
 
-const ParallaxContents = ({ title }) => {
+const ParallaxContents = ({ title,page }) => {
   const images = [parallaxImg1, parallaxImg2, parallaxImg3];
   const { index } = useImageSlideshow(images, 3000);
+  const {activeSectionIndex} = useGlobalContext()
 
+
+  console.log(activeSectionIndex)
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
@@ -26,7 +30,7 @@ const ParallaxContents = ({ title }) => {
           alt="HOME | hero parallax images"
         />
       ))}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-white z-40">
+      <div className={`${ activeSectionIndex === page? ' visible':'invisible opacity-0'} smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}>
         <h1 className="font-cailyne text-3xl md:text-4xl lg:text-5xl relative z-50">
           {title}
         </h1>

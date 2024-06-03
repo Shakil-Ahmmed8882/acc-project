@@ -42,7 +42,7 @@ const MainContent = () => {
             />
           </div>
         ) : (
-          <section className="grid lg:grid-cols-2 gap-8">
+          <section className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
             {filteredProducts.map((product, index) => (
               <Card {...{ product, trigger, setTrigger }} key={index} />
             ))}

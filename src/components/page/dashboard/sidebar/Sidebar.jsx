@@ -18,6 +18,7 @@ const Sidebar = () => {
          left-5 z-50 cursor-pointer hover:-rotate-180
          smooth-transition"
       />
+
       <nav
         className={` ${
           isSideBarOpen
@@ -37,7 +38,7 @@ const Sidebar = () => {
           </div>
           <div className="flex-1 flex flex-col h-full overflow-auto">
             <SidebarNavRoutes />
-        <SidebarFooterRoutes/>
+            <SidebarFooterRoutes />
             <Profile />
           </div>
         </div>
@@ -58,11 +59,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-
-
-
-
-
-
-

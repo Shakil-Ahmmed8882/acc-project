@@ -50,10 +50,10 @@ const Card = ({ product, trigger, setTrigger }) => {
 
   return (
     <productContext.Provider value={contextValues}>
-      <section className="group relative md:h-52 bg-[#262626] p-4 rounded-lg shadow-lg">
+      <section className="group relative  lg:h-60 bg-[#262626] p-4 rounded-lg shadow-lg">
         <Link
           href={`/admin/${product?._id}`}
-          className="flex flex-col md:flex-row gap-3"
+          className="flex flex-col lg:flex-row gap-3"
         >
           <Image
             width={500}

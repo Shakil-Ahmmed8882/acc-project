@@ -7,14 +7,14 @@ const useScrollObserver = () => {
   // state from global context
   const {
     setIsScrollBeyondParallax,
-    setIsSecondParallaxInView
+    setIsSecondParallaxInView,
+    setActiveSectionIndex
   } = useGlobalContext();
 
   useEffect(() => {
     // Assuming you have an array of section elements and pagination dots
     const sections = document.querySelectorAll('.section');
     const paginationDots = document.querySelectorAll('.pagination-dot');
-    const sectionHeight = window.innerHeight;
 
     // Function to change the color of the pagination dot
     const changeDotColor = (activeIndex) => {
@@ -25,7 +25,9 @@ const useScrollObserver = () => {
 
       // Change the color of the active dot
       paginationDots[activeIndex].style.backgroundColor = 'white'; 
-      
+      if(paginationDots[activeIndex]){
+        setActiveSectionIndex(activeIndex)
+      }
 
       // Check if the second parallax section is in view
       const secondParallax = sections[1];
@@ -55,6 +57,12 @@ const useScrollObserver = () => {
         if (sectionTop <= window.innerHeight / 2) {
           activeIndex = index;
         }
+
+
+
+          // Calculate the opacity based on the section's position relative to the viewport
+          const opacity = Math.max(0, Math.min(1, (window.innerHeight - sectionTop) / window.innerHeight));
+          section.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places
       });
 
    

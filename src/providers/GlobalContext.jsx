@@ -1,16 +1,22 @@
 'use client'
 
 
-import { createContext, useState } from "react";
+import { useScrollDirection } from "@/hooks/useScrollDirection";
+import { createContext, useEffect, useState } from "react";
 export const globalContext = createContext(null)
 const GlobalContext= ({children}) => {
 
 
 // ================== Menubar =====================
+const direction = useScrollDirection()
 const [isMenuOpen, setIsMenuOpen] = useState(false);
-const [isScrollBeyondParallax, setIsScrollBeyondParallax] = useState(false);
+
+
+
 
 // ================== parallax =====================
+const [isScrollBeyondParallax, setIsScrollBeyondParallax] = useState(false);
+const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 const [isSecondParallaxInView, setIsSecondParallaxInView] = useState(false);
 
 
@@ -26,6 +32,8 @@ const contextData = {
     // parallax 
     setIsSecondParallaxInView,
     isSecondParallaxInView,
+    activeSectionIndex,
+    setActiveSectionIndex
 }
 
   return (
