@@ -7,7 +7,7 @@ const Modal = ({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 grid w-screen">
+        <div className="fixed inset-0 z-[9999999] grid w-screen">
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
