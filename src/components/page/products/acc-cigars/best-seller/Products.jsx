@@ -24,7 +24,7 @@ const Products = () => {
     } else {
       setFilteredProducts(products);
     }
-  }, [showProducts, products]);
+  }, [products, showProducts]);
 
   return (
     <section>

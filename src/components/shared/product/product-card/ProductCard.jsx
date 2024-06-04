@@ -4,7 +4,6 @@ import img2 from '@/assets/img/home/hero/parallax2.jpg'
 
 
 
-import ProductCard from './Card';
 
 const cardsData = [
 
