@@ -8,40 +8,33 @@ import Container from "../container/Container";
 import MenuContents from "./menu/menu-contents/MenuContents";
 import SearchBar from "./search/SearchBar";
 import useGlobalContext from "@/hooks/useGlobalContext";
-import BgBlur from "@/components/ui/bg-blur/BgBlur";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 import { usePathname } from "next/navigation";
+import BgOverlay from "@/components/ui/bg-blur/BgOverlay";
 
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
   const { isScrollBeyondParallax, isSecondParallaxInView } = useGlobalContext();
-  const [isBrandHover, setIsBrandsHover] = useState(false);
   const { isMenuOpen, setIsMenuOpen } = useGlobalContext();
   const pathname = usePathname();
+  const {isBrandHover} = useGlobalContext()
 
   const isAdminRoute = pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
-
   const style = "flex justify-between gap-0 items-center px-8";
 
-  const navInfo = {
-    setIsMenuOpen,
-    isMenuOpen,
-    setIsBrandsHover,
-    isBrandHover,
-  };
-
+  
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
-
+  
   const headerVariants = {
     initial: { opacity: 1, translateY: 0 },
     scrollingDown: { opacity: 0, translateY: -32 },
     scrollingUp: { opacity: 1, translateY: 0 },
   };
-
+  
   const getHeaderVariant = () => {
     if (isScrollBeyondParallax) {
       return isScrollingUp ? "scrollingUp" : "scrollingDown";
@@ -49,6 +42,13 @@ const Navbar = () => {
     return "initial";
   };
 
+
+  const navInfo = {
+    setIsMenuOpen,
+    isMenuOpen,
+   
+  };
+  
   return (
     <navbarContext.Provider value={navInfo}>
       <motion.header
@@ -64,7 +64,7 @@ const Navbar = () => {
         variants={headerVariants}
         transition={{ duration: 0.7 }}
       >
-        <BgBlur isTrue={isBrandHover} />
+        <BgOverlay isTrue={isBrandHover} />
         <Container isNavbar={true} className={style}>
           <MenuIcon label={"menu"} />
           <Logo {...{ isSecondParallaxInView }} />
@@ -75,7 +75,8 @@ const Navbar = () => {
         <Container isNavbar={true}>
           <HorizontalLine />
           <MenuContents {...{ isMenuOpen }} />
-          <Tabs {...{ isMenuOpen }} />
+          {/* conditaional tabs */}
+          <Tabs/>
         </Container>
       </motion.header>
     </navbarContext.Provider>

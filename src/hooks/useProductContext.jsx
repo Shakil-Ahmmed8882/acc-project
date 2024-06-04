@@ -1,4 +1,5 @@
-import { ProductContext } from "@/app/(product)/acc-cigars/page";
+
+import { ProductContext } from "@/app/product/[collection]/page";
 import { useContext } from "react";
 
 const useProductContext= () => {
