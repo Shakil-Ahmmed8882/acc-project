@@ -19,7 +19,6 @@ const Filter= () => {
         <FilterIcon/>
         </article>
         <HorizontalLine />
-
         <HiddenFilterButtons {...{openFilter}}/>
     </Container>
   );

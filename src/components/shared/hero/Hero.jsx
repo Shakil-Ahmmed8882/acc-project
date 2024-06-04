@@ -4,6 +4,7 @@ import Image from "next/image";
 import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
 import Container from "../container/Container";
+import { motion } from "framer-motion";
 // import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
 
 const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
@@ -43,6 +44,11 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
         )}
 
         {/* Hero title & desc */}
+        <motion.div
+        initial={{ opacity: 0.4 }}
+        animate={{ opacity: 1}}
+        transition={{ duration: 1 }}
+        >
         <div className="absolute inset-0 top-1/2 text-white  uppercase  text-center">
           <h1
             className="text-3xl
@@ -51,12 +57,14 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
             {title}
           </h1>
           <p
-            style={{ letterSpacing: 8 }}
-            className="text-white text-[10px]  md:text-[17px] lg:text-lg font-cailyne  pt-3"
+            style={{ letterSpacing: 12 }}
+            className="text-white font-riviera text-[10px]  md:text-[17px] lg:text-lg font-thin pt-4"
           >
             {description}
           </p>
         </div>
+
+        </motion.div>
       </Container>
     // </InitialAnimateContainer>
   );
