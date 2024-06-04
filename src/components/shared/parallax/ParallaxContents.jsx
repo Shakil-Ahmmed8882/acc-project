@@ -13,8 +13,6 @@ const ParallaxContents = ({ title,page }) => {
   const { index } = useImageSlideshow(images, 3000);
   const {activeSectionIndex} = useGlobalContext()
 
-
-  console.log(activeSectionIndex)
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
