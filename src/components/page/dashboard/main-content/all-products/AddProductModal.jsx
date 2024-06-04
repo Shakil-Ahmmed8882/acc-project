@@ -24,7 +24,6 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
   const [bestSeller, setBestSeller] = useState(false);
   const [uploadingImage, setUploadingImage] = useState(false);
   const [uploadingVideo, setUploadingVideo] = useState(false);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     if (singleProduct) {
@@ -48,17 +47,6 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
   ]);
 
   const handleAdd = async () => {
-    // Validation check
-    if (
-      !name ||
-      !description ||
-      images.length === 0 ||
-      !productType ||
-      !video
-    ) {
-      setError("All fields except category are required.");
-      return;
-    }
 
     const newProduct = {
       name,
@@ -102,7 +90,7 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
           </h2>
         </div>
         <div className="px-4 py-6">
-          {error && <p className="mb-4 text-sm text-red-600">{error}</p>}
+        
           <form>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="mb-4">
