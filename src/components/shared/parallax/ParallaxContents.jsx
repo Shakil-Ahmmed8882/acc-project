@@ -13,8 +13,6 @@ const ParallaxContents = ({ title,page }) => {
   const { index } = useImageSlideshow(images, 3000);
   const {activeSectionIndex} = useGlobalContext()
 
-
-  console.log(activeSectionIndex)
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
@@ -29,6 +27,7 @@ const ParallaxContents = ({ title,page }) => {
           src={img}
           alt="HOME | hero parallax images"
         />
+
       ))}
       <div className={`${ activeSectionIndex === page? ' visible':'invisible opacity-0'} smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}>
         <h1 className="font-cailyne text-3xl md:text-4xl lg:text-5xl relative z-50">
