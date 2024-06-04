@@ -18,6 +18,10 @@ const ProductSchema = new mongoose.Schema(
         message: "Product must have at least one image",
       },
     },
+    video: {
+      type: String,
+      required: true,
+    },
     productType: {
       type: String,
       required: true,
@@ -25,6 +29,10 @@ const ProductSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
+    },
+    bestSeller: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }

@@ -57,7 +57,8 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
 
-const ScrollParallax = () => {
+const ScrollParallax = ({titles}) => {
+  const {title1,title2,title3} = titles || {}
   const { isMenuOpen } = useGlobalContext();
 
   // Initialize Lenis for smooth scrolling
@@ -82,19 +83,20 @@ const ScrollParallax = () => {
           <AnimatedVideo/>
           <ParallaxContents
             img={parallaxImg1}
-            title={"LUXURY & VINTAGE CIGARS"}
+            title={title1 || "LUXURY & VINTAGE CIGARS 1"}
             page={0}
           />
         </div>
         <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
           <ParallaxContents
             img={parallaxImg2}
-            title={"LUXURY & VINTAGE SPIRITS"}
+            title={title2 || "LUXURY & VINTAGE CIGARS 2"}
             page={1}
           />
         </div>
         <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
-          <ParallaxContents img={parallaxImg3} title={"LUXURY &"} page={2} />
+          <ParallaxContents img={parallaxImg3}
+           title={title3 || "LUXURY & VINTAGE CIGARS 3"} page={2} />
         </div>
       </div>
     </section>

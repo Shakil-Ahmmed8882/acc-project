@@ -53,7 +53,7 @@ export async function GET(request) {
 
 
     //step 4: find one product else all products
-    const products = await Product.find(query);
+    const products = await Product.find(query).sort({orderCount:-1});
 
 
     //step 5: send response

@@ -27,6 +27,7 @@ const ParallaxContents = ({ title,page }) => {
           src={img}
           alt="HOME | hero parallax images"
         />
+
       ))}
       <div className={`${ activeSectionIndex === page? ' visible':'invisible opacity-0'} smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}>
         <h1 className="font-cailyne text-3xl md:text-4xl lg:text-5xl relative z-50">

@@ -10,7 +10,7 @@ const GlobalContext= ({children}) => {
 // ================== Menubar =====================
 const direction = useScrollDirection()
 const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const [isBrandHover, setIsBrandsHover] = useState(false);
 
 
 
@@ -18,6 +18,11 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 const [isScrollBeyondParallax, setIsScrollBeyondParallax] = useState(false);
 const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 const [isSecondParallaxInView, setIsSecondParallaxInView] = useState(false);
+
+
+// ================== Products =====================
+const [showProducts,setShowProducts] = useState('best-seller');
+const [isSeeMore, setIsSeeMore] = useState(showProducts === "all");
 
 
 // ========== Spread data across the app ==========
@@ -28,12 +33,20 @@ const contextData = {
     setIsMenuOpen,
     setIsScrollBeyondParallax,
     isScrollBeyondParallax,
+    isBrandHover,
+    setIsBrandsHover,
 
     // parallax 
     setIsSecondParallaxInView,
     isSecondParallaxInView,
     activeSectionIndex,
-    setActiveSectionIndex
+    setActiveSectionIndex,
+
+    // products 
+    showProducts,
+    setShowProducts,
+    isSeeMore, 
+    setIsSeeMore
 }
 
   return (
