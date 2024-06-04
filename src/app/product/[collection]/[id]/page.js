@@ -26,8 +26,8 @@ const ProductDetailsPage = () => {
     <>
       <Container>
         <ProductDetails product={product} showHighlight={false} />
+        {product?.video && <VideoPlayer videoUrl={product?.video} />}
       </Container>
-      {product?.video && <VideoPlayer videoUrl={product?.video} />}
     </>
   );
 };

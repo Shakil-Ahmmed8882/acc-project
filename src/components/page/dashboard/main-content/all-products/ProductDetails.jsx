@@ -40,7 +40,7 @@ const ProductDetails = ({ product, showHighlight }) => {
                     height={500}
                     src={images[currentIndex]}
                     alt={`${name} - ${currentIndex + 1}`}
-                    className="object-contain w-full h-full m-0 p-0"
+                    className="object-contain w-full h-full m-0 p-0 rounded-md"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -57,7 +57,7 @@ const ProductDetails = ({ product, showHighlight }) => {
               ))}
             </div>
           </div>
-          <div className={showHighlight ? "pr-36" : ""}>
+          <div className="pr-36 md:pr-16 p-4">
             <h1 className="text-3xl font-semibold text-white pb-8 lg:text-4xl mt-6">
               {name}
             </h1>
@@ -90,7 +90,7 @@ const ProductDetails = ({ product, showHighlight }) => {
           </div>
         </div>
         {showHighlight && images.length > 1 && (
-          <div className="mt-16">
+          <div className="mt-16 p-4 pl-10">
             <h2 className="text-xl font-semibold mb-4 text-white pb-4">
               Additional Images
             </h2>
