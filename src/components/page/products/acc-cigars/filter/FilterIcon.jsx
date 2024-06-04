@@ -8,7 +8,7 @@ const FilterIcon = () => {
 
   return (
     <button onClick={()=> setOpenFilter(!openFilter)}
-      className={`${openFilter?'rotate-180':'rotate-0'} smooth-transition`}
+      className={`${openFilter?'rotate-180':'rotate-0'} smooth-transition relative !z-50`}
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"

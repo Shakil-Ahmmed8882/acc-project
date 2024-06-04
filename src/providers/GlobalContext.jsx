@@ -10,7 +10,7 @@ const GlobalContext= ({children}) => {
 // ================== Menubar =====================
 const direction = useScrollDirection()
 const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const [isBrandHover, setIsBrandsHover] = useState(false);
 
 
 
@@ -33,6 +33,8 @@ const contextData = {
     setIsMenuOpen,
     setIsScrollBeyondParallax,
     isScrollBeyondParallax,
+    isBrandHover,
+    setIsBrandsHover,
 
     // parallax 
     setIsSecondParallaxInView,
