@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CldUploadWidget } from "next-cloudinary";
 
-const AddProductModal = ({
-  onAdd,
-  singleProduct,
-  setIsAddModalOpen,
-}) => {
+const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
   const {
     productType: type,
     name: productName,
@@ -58,10 +54,9 @@ const AddProductModal = ({
       !description ||
       images.length === 0 ||
       !productType ||
-      !category ||
       !video
     ) {
-      setError("All fields are required.");
+      setError("All fields except category are required.");
       return;
     }
 
@@ -94,12 +89,12 @@ const AddProductModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50 overflow-y-scroll">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="bg-white rounded-lg w-[650px] shadow-lg dark:bg-gray-800"
+        className="bg-white rounded-lg w-[650px] shadow-lg dark:bg-gray-800 max-h-screen overflow-y-auto"
       >
         <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -120,26 +115,35 @@ const AddProductModal = ({
                 <input
                   type="text"
                   id="name"
+                  required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 />
               </div>
+
               <div className="mb-4">
                 <label
-                  htmlFor="productType"
+                  htmlFor="category"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                 >
                   Product Type
                 </label>
-                <input
-                  type="text"
+                <select
                   id="productType"
                   value={productType}
+                  required
                   onChange={(e) => setProductType(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                />
+                >
+                  <option value="">Select a category</option>
+                  <option value="cigar">Cigar</option>
+                  <option value="liquor">Liquor</option>
+                  <option value="accessories">Accessories</option>
+                  <option value="LUXURY STORAGE">Luxury storage</option>
+                </select>
               </div>
+
               <div className="mb-4">
                 <label
                   htmlFor="images"
@@ -220,9 +224,10 @@ const AddProductModal = ({
                   </div>
                 )}
               </div>
+
               <div className="mb-4">
                 <label
-                  htmlFor="category"
+                  htmlFor="productType"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                 >
                   Category
@@ -231,10 +236,12 @@ const AddProductModal = ({
                   type="text"
                   id="category"
                   value={category}
+                  required
                   onChange={(e) => setCategory(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 />
               </div>
+
               <div className="mb-4 md:col-span-2">
                 <label
                   htmlFor="description"
@@ -245,6 +252,7 @@ const AddProductModal = ({
                 <textarea
                   id="description"
                   value={description}
+                  required
                   onChange={(e) => setDescription(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 />
