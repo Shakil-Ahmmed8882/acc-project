@@ -90,7 +90,6 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
           </h2>
         </div>
         <div className="px-4 py-6">
-        
           <form>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="mb-4">
@@ -128,7 +127,7 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
                   <option value="cigar">Cigar</option>
                   <option value="liquor">Liquor</option>
                   <option value="accessories">Accessories</option>
-                  <option value="LUXURY STORAGE">Luxury storage</option>
+                  <option value="luxury storage">Luxury storage</option>
                 </select>
               </div>
 
