@@ -23,8 +23,8 @@ const ProductDetails = ({ product, showHighlight }) => {
       transition={{ duration: 0.5 }}
     >
       <div className="rounded-md my-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex flex-col justify-center md:justify-end h-[450px] w-full relative">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="flex flex-col justify-center md:justify-end h-[450px] relative">
             <motion.div className="w-full h-full relative flex items-center justify-center">
               <AnimatePresence>
                 <motion.div
@@ -40,7 +40,7 @@ const ProductDetails = ({ product, showHighlight }) => {
                     height={500}
                     src={images[currentIndex]}
                     alt={`${name} - ${currentIndex + 1}`}
-                    className="object-contain w-full h-full"
+                    className="object-contain w-full h-full m-0 p-0"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -57,8 +57,8 @@ const ProductDetails = ({ product, showHighlight }) => {
               ))}
             </div>
           </div>
-          <div>
-            <h1 className="text-3xl font-semibold text-white pb-8 lg:text-4xl">
+          <div className={showHighlight ? "pr-36" : ""}>
+            <h1 className="text-3xl font-semibold text-white pb-8 lg:text-4xl mt-6">
               {name}
             </h1>
             {showHighlight && (
@@ -108,7 +108,7 @@ const ProductDetails = ({ product, showHighlight }) => {
                     height={500}
                     src={image}
                     alt={`${name} - ${index + 1}`}
-                    className="w-full h-full object-contain cursor-pointer"
+                    className="w-full h-full object-contain cursor-pointer m-0 p-0"
                   />
                 </div>
               ))}

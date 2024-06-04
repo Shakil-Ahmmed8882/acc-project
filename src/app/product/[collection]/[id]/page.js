@@ -20,7 +20,6 @@ const ProductDetailsPage = () => {
       setIsLoading(false);
     });
   }, [id]);
-  console.log(product?.video);
   if (isLoading) return "loading...";
 
   return (
@@ -28,7 +27,7 @@ const ProductDetailsPage = () => {
       <Container>
         <ProductDetails product={product} showHighlight={false} />
       </Container>
-      <VideoPlayer videoUrl={product?.video} />
+      {product?.video && <VideoPlayer videoUrl={product?.video} />}
     </>
   );
 };
