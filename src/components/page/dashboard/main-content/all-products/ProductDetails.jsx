@@ -24,7 +24,7 @@ const ProductDetails = ({ product, showHighlight }) => {
     >
       <div className="rounded-md my-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex flex-col justify-center md:justify-end h-80 w-full relative">
+          <div className="flex flex-col justify-center md:justify-end h-[450px] w-full relative">
             <motion.div className="w-full h-full relative flex items-center justify-center">
               <AnimatePresence>
                 <motion.div
@@ -69,7 +69,7 @@ const ProductDetails = ({ product, showHighlight }) => {
             <div className="mb-3">
               <button
                 onClick={handleToggleDescription}
-                className="flex items-center text-[#FAFAFA]"
+                className="flex items-center justify-between text-xl text-[#FAFAFA] border-b-2 border-white w-full py-2"
               >
                 Description: {showDescription ? <Minus /> : <Plus />}
               </button>
@@ -80,7 +80,7 @@ const ProductDetails = ({ product, showHighlight }) => {
                     animate={{ opacity: 1, height: "auto", y: 0 }}
                     exit={{ opacity: 0, height: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="text-lg text-[#b7b7b7]"
+                    className="text-lg text-[#b7b7b7] text-justify pt-2"
                   >
                     {description}
                   </motion.p>

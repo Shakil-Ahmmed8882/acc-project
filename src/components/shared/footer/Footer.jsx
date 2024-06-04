@@ -41,7 +41,7 @@ const Footer = () => {
   const isAdminRoute = pathname.startsWith('/admin');
 
   return (
-    <footer className={`
+    <footer className={` pb-20
     ${isAdminRoute ?'hidden':'block'}
     `}>
       <Container>

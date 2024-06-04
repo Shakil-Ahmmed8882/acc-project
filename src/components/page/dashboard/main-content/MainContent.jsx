@@ -1,7 +1,7 @@
 "use client";
 import Searchbar from "./all-products/Searchbar";
 import AddProductButton from "./all-products/AddProductButton";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "./all-products/Card";
 import { AddSingleProduct } from "@/utils";
 import useGetAllProducts from "@/hooks/useGetAllProducts";

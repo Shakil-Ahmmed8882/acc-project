@@ -14,6 +14,7 @@ import product6 from "@/assets/img/home/flagship/flagship6.png";
 import product7 from "@/assets/img/home/flagship/flagship7.png";
 import product8 from "@/assets/img/home/flagship/flagship8.png";
 import SliderAction from "./SliderAction";
+import Container from "@/components/shared/container/Container";
 
 const FlagshipProducts = () => {
   const products = [
@@ -27,15 +28,15 @@ const FlagshipProducts = () => {
     product8,
   ];
   return (
-    <div className="bg-[#1C1C1C] py-10">
-      <div className="lg:ml-[180px] grid grid-cols-1 lg:grid-cols-5 place-self-center  lg:gap-16">
+    <div className="bg-[#1C1C1C]  py-10">
+      <Container className=" grid grid-cols-1 lg:grid-cols-5 place-self-center  lg:gap-10">
         <div className="md:col-span-2 mb-10 md:mb-0 self-center">
           <FlagshipProductsLeft />
         </div>
-        <div className="md:col-span-3 max-w-[1140px]">
+        <div className="md:col-span-3 ">
           <FlagshipProductsRight products={products} />
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
@@ -49,7 +50,7 @@ const FlagshipProductsLeft = () => {
         Explore ACC&#39;s Flagship products
       </h4>
 
-      <Button size="large">Discover now</Button>
+      <Button size="eLarge">Discover now</Button>
     </div>
   );
 };
