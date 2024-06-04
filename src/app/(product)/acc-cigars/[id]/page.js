@@ -20,7 +20,7 @@ const ProductDetailsPage = () => {
       setIsLoading(false);
     });
   }, [id]);
-
+  console.log(product?.video);
   if (isLoading) return "loading...";
 
   return (
@@ -28,7 +28,7 @@ const ProductDetailsPage = () => {
       <Container>
         <ProductDetails product={product} showHighlight={false} />
       </Container>
-      <VideoPlayer videoUrl="https://res.cloudinary.com/dcemlsxpc/video/upload/v1710500713/samples/sea-turtle.mp4" />
+      <VideoPlayer videoUrl={product?.video} />
     </>
   );
 };
