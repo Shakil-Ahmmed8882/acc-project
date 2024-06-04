@@ -5,7 +5,7 @@ import { CrossIcon, Menu } from "lucide-react";
 import { useState } from "react";
 import SidebarFooterRoutes from "./SidebarFooterRoutes";
 import SidebarNavRoutes from "./SidebarNavRoutes";
-import Profile from "./Profile";
+// import Profile from "./Profile";
 
 const Sidebar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -39,7 +39,7 @@ const Sidebar = () => {
           <div className="flex-1 flex flex-col h-full overflow-auto">
             <SidebarNavRoutes />
             <SidebarFooterRoutes />
-            <Profile />
+            {/* <Profile /> */}
           </div>
         </div>
 
