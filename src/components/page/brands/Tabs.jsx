@@ -15,18 +15,12 @@ const Tabs = () => {
 
   const { isScrollBeyondParallax } = useGlobalContext();
 
-  
-
-  
   const router = usePathname();
-
-  
-
 
   return (
     <section
       className={`
-      ${isScrollBeyondParallax?'invisible opacity-0':'visible opacity-100'}
+      ${isScrollBeyondParallax ? "invisible opacity-0" : "visible opacity-100"}
     duration-700 transition-all
     fixed lg:top-[85vh] bg-[#00000046] w-full 
     `}

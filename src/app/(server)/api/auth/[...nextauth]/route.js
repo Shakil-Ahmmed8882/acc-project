@@ -8,6 +8,22 @@ import { UserModel } from "@/app/(server)/models/User";
 /**
  * Authentication configuration for NextAuth.
  */
+
+// Define generateStaticParams function to return all possible values for dynamic segments
+export async function generateStaticParams() {
+  return [
+    {
+      // Example value for dynamic segment
+      segment: 'value1',
+    },
+    {
+      // Example value for dynamic segment
+      segment: 'value2',
+    },
+    // Add more possible values as needed
+  ];
+}
+
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -69,4 +85,4 @@ export const authOptions = {
 
 // Export the NextAuth handler for both GET and POST requests
 export const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST }; 
