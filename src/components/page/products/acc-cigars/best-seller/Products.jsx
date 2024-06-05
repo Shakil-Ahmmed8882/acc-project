@@ -21,8 +21,8 @@ const Products = ({ product }) => {
   }, [product]);
 
   return (
-    <section>
-      <Container className="min-h-screen py-9 relative productBg">
+    <section className="size-full productBg">
+      <Container className="min-h-screen py-9 relative">
         <Title title={"BEST SELLER"} />
         <article
           ref={containerRef}
