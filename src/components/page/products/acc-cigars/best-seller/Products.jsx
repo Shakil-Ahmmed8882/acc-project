@@ -8,7 +8,6 @@ import useMaxHeight from "@/hooks/useMaxHeight";
 import { useEffect, useState } from "react";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import Loader from "@/components/shared/loader/Loader";
-import axios from "axios";
 
 
 const Products = ({product}) => {
@@ -30,7 +29,6 @@ const Products = ({product}) => {
 
    fetchProducts();
  }, [product]);
-  console.log(bestSellerProducts);
 
   return (
     <section>
