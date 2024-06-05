@@ -9,7 +9,6 @@ import useGlobalContext from "@/hooks/useGlobalContext";
 import Loader from "@/components/shared/loader/Loader";
 import Button from "./Button";
 import AllProduct from "./AllProduct";
-
 const Products = ({ product }) => {
   const { isSeeMore, setIsSeeMore } = useGlobalContext();
   const { containerRef, maxHeight } = useMaxHeight("1500px", isSeeMore);
@@ -23,7 +22,7 @@ const Products = ({ product }) => {
 
   return (
     <section>
-      <Container className="min-h-screen py-9 relative">
+      <Container className="min-h-screen py-9 relative productBg">
         <Title title={"BEST SELLER"} />
         <article
           ref={containerRef}
