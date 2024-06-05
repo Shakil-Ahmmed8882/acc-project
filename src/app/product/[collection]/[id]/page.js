@@ -1,5 +1,6 @@
 "use client";
 import ProductDetails from "@/components/page/dashboard/main-content/all-products/ProductDetails";
+import SuggestedProduct from "@/components/page/products/acc-cigars/SuggestedProduct/SuggestedProduct";
 import Container from "@/components/shared/container/Container";
 import VideoPlayer from "@/components/shared/video/VideoPlayer";
 import { fetchSingleProduct } from "@/utils";
@@ -20,15 +21,15 @@ const ProductDetailsPage = () => {
       setIsLoading(false);
     });
   }, [id]);
-  console.log(product?.video);
   if (isLoading) return "loading...";
 
   return (
     <>
       <Container>
         <ProductDetails product={product} showHighlight={false} />
+        {product?.video && <VideoPlayer videoUrl={product?.video} />}
+        <SuggestedProduct id={product._id} />
       </Container>
-      <VideoPlayer videoUrl={product?.video} />
     </>
   );
 };

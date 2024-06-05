@@ -65,6 +65,7 @@ const Card = ({ product, trigger, setTrigger }) => {
           <Contents
             showFullDescription={showFullDescription}
             setShowFullDescription={setShowFullDescription}
+            id={product?._id}
           />
         </Link>
         <DeleteAndEdit />
@@ -131,7 +132,7 @@ function DeleteAndEdit() {
   );
 }
 
-function Contents({ showFullDescription, setShowFullDescription }) {
+function Contents({ showFullDescription, id }) {
   const { name, description, category } = useContext(productContext);
 
   const truncatedDescription =
@@ -146,15 +147,9 @@ function Contents({ showFullDescription, setShowFullDescription }) {
       <p className="text-[#b0b0b0]">
         {showFullDescription ? description : truncatedDescription}
         {description.length > 100 && (
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              setShowFullDescription(!showFullDescription);
-            }}
-            className="text-blue-500"
-          >
+          <Link href={`/admin/${id}`} className="text-blue-500">
             {showFullDescription ? " See Less" : " See More"}
-          </button>
+          </Link>
         )}
       </p>
     </article>

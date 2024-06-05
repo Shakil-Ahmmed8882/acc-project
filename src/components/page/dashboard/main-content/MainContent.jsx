@@ -15,41 +15,16 @@ const MainContent = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { products } = useGetAllProducts(trigger, searchTerm);
 
-  // create a new product
+  // Group products by productType
+  const groupedProducts = groupProductsByType(products);
+
+  // Create a new product
   const onAdd = async (product) => {
     const response = await AddSingleProduct(product);
     if (response.success) {
       setTrigger(!trigger);
       setIsAddModalOpen(false);
     }
-  };
-
-  const renderProductSection = (type) => {
-    const filteredProducts = products.filter(
-      (product) => product.productType === type
-    );
-    return (
-      <div key={type} className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mt-8 mb-4">{type}</h2>
-        {filteredProducts.length === 0 ? (
-          <div className="flex justify-center items-center">
-            <Image
-              width={500}
-              height={500}
-              className="mix-blend-multiply"
-              src={noDataFound}
-              alt="No Data Found"
-            />
-          </div>
-        ) : (
-          <section className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredProducts.map((product, index) => (
-              <Card {...{ product, trigger, setTrigger }} key={index} />
-            ))}
-          </section>
-        )}
-      </div>
-    );
   };
 
   return (
@@ -66,24 +41,40 @@ const MainContent = () => {
         </div>
       </div>
 
-      {/* Product cards */}
-      {products?.length == 0 ? (
+      {/* Product cards by productType */}
+      {Object.keys(groupedProducts).length === 0 ? (
         <Image
           width={500}
           height={500}
-          className="absolute  mix-blend-multiply top-24 right-0 left-[30%] flex justify-center object-cover"
+          className="absolute mix-blend-multiply top-24 right-0 left-[30%] flex justify-center object-cover"
           src={noDataFound}
           alt=""
         />
       ) : (
-        <section className="grid md:grid-cols-2 mt-5 p-8 gap-8">
-          {products?.map((product, index) => (
-            <Card {...{ product, trigger, setTrigger }} key={index} />
-          ))}
-        </section>
+        Object.keys(groupedProducts).map((type) => (
+          <div key={type} className="mb-8">
+            <h2 className="text-xl font-bold mb-4 text-white normal-case">{type}</h2>
+            <section className="grid md:grid-cols-2 mt-5 p-8 gap-8">
+              {groupedProducts[type].map((product, index) => (
+                <Card {...{ product, trigger, setTrigger }} key={index} />
+              ))}
+            </section>
+          </div>
+        ))
       )}
     </section>
   );
+};
+
+const groupProductsByType = (products) => {
+  return products.reduce((acc, product) => {
+    const type = product.productType;
+    if (!acc[type]) {
+      acc[type] = [];
+    }
+    acc[type].push(product);
+    return acc;
+  }, {});
 };
 
 export default MainContent;

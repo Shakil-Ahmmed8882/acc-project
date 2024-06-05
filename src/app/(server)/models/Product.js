@@ -20,11 +20,13 @@ const ProductSchema = new mongoose.Schema(
     },
     video: {
       type: String,
-      required: true,
     },
     productType: {
       type: String,
       required: true,
+      enum: ["cigar", "liquor", "accessories", "luxury-storage"],
+      message:
+        "Category must be one of the following: Cigar, Liquor, Accessories, Luxury storage",
     },
     category: {
       type: String,
