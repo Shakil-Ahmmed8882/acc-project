@@ -10,6 +10,9 @@ const ParallaxContents = ({ title, page, img }) => {
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
       <Image
+        placeholder="blur"
+        quality={100}
+        priority
         className="absolute inset-0 w-full h-full object-cover z-30 filter opacity-100 transition-all duration-1000 ease-in-out"
         src={img}
         alt="HOME | hero parallax images"
