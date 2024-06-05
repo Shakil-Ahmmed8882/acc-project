@@ -6,25 +6,31 @@ import Button from "@/components/shared/parallax/Button";
 import Title from "../ui/Title";
 import useMaxHeight from "@/hooks/useMaxHeight";
 import { useEffect, useState } from "react";
-import useGetAllProducts from "@/hooks/useGetAllProducts";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import Loader from "@/components/shared/loader/Loader";
+import axios from "axios";
 
 
-const Products = () => {
+const Products = ({product}) => {
   const { showProducts } = useGlobalContext();
   const { isSeeMore, setIsSeeMore } = useGlobalContext();
   const { containerRef, maxHeight } = useMaxHeight('1500px', isSeeMore);
-  const { products } = useGetAllProducts();
-  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  useEffect(() => {
-    if (showProducts === 'best-seller') {
-      setFilteredProducts(products.slice(0,3));
-    } else {
-      setFilteredProducts(products);
-    }
-  }, [products, showProducts]);
+  const [bestSellerProducts, setBestSellerProducts] = useState([]);
+
+ useEffect(() => {
+   const fetchProducts = async () => {
+     try {
+       const filteredProducts = product.filter((item) => item.bestSeller);
+       setBestSellerProducts(filteredProducts);
+     } catch (error) {
+       console.error("Error fetching products:", error);
+     }
+   };
+
+   fetchProducts();
+ }, [product]);
+  console.log(bestSellerProducts);
 
   return (
     <section>
@@ -36,8 +42,8 @@ const Products = () => {
           style={{ maxHeight }}
         >
           {
-            filteredProducts.length === 0?<Loader/>:
-            filteredProducts.slice(0, isSeeMore ? filteredProducts.length : 6).map((card, index) => (
+            bestSellerProducts.length === 0?<Loader/>:
+            bestSellerProducts.slice(0, isSeeMore ? bestSellerProducts.length : 6).map((card, index) => (
               <ProductCard key={index} card={card} />
             ))
 

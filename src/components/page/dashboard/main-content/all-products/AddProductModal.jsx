@@ -127,7 +127,7 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
                   <option value="cigar">Cigar</option>
                   <option value="liquor">Liquor</option>
                   <option value="accessories">Accessories</option>
-                  <option value="luxury">Luxury storage</option>
+                  <option value="luxury-storage">Luxury storage</option>
                 </select>
               </div>
 

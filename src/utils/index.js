@@ -60,4 +60,14 @@ export const deleteSingleProduct = async (id) => {
 
 
 
+// Get products by product type
+export const fetchProductsByType = async (productType) => {
+  try {
+    const response = await axios.get(`/api/product/${productType}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching products by type:', error);
+    throw error;
+  }
+};
 
