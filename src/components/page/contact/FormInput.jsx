@@ -1,6 +1,7 @@
 import { toast } from "sonner";
-import sendEmail from "@/lib/sendEmail";
+
 import React, { useState } from "react";
+import sendEmail from "@/app/(server)/lib/sendEmail";
 
 const FormInput = () => {
   const [formData, setFormData] = useState({
@@ -187,7 +188,7 @@ function TermsCondition() {
           </svg>
         </div>
 
-        <label for="remember-me" class="ml-3 block text-lg text-gray-400">
+        <label for="remember-me" className="ml-3 block text-lg text-gray-400">
           By opting in, you&apos;ll get marketing communications about
           ACC&apos;s offerings. Expect personalized content based on your
           interests, preferences, and interactions with us. You may also receive

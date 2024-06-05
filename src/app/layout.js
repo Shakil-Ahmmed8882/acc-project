@@ -4,6 +4,8 @@ import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
 import GlobalContext from "@/providers/GlobalContext";
 import { Toaster } from "sonner";
+import { getServerSession } from "next-auth";
+import AuthProvider from "@/providers/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,14 +15,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const session = getServerSession();
   return (
     <html lang="en">
       <body className={inter.className}>
         <GlobalContext>
-          <Navbar/>
+          <AuthProvider session={session}>
+            <Navbar />
             {children}
-          <Footer />
-          <Toaster/>
+            <Footer />
+            <Toaster />
+          </AuthProvider>
         </GlobalContext>
       </body>
     </html>

@@ -1,16 +1,14 @@
 "use client";
-
-import Lenis from "lenis";
 import Pagination from "./pagination";
 import useScrollObserver from "@/hooks/useScrollObserver";
 import ScrollParallax from "@/components/shared/parallax/ScrollParallax";
 
-const Banner = () => {
+const Banner = ({titles}) => {
   useScrollObserver();
   return (
     <main>
       <Pagination />
-      <ScrollParallax />
+      <ScrollParallax titles={titles}/>
     </main>
   );
 };

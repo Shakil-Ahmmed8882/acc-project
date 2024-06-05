@@ -4,7 +4,6 @@ import img2 from '@/assets/img/home/hero/parallax2.jpg'
 
 
 
-import Card from './Card';
 
 const cardsData = [
 
@@ -51,7 +50,7 @@ const ProductCard = () => {
     
     ">
       {cardsData.map((card, index) => (
-        <Card key={index} {...{card}} />
+        <ProductCard key={index} {...{card}} />
       ))}
     </div>
   );
