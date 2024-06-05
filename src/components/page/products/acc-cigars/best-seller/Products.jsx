@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import Loader from "@/components/shared/loader/Loader";
 
-
 const Products = ({product}) => {
   const { showProducts } = useGlobalContext();
   const { isSeeMore, setIsSeeMore } = useGlobalContext();
@@ -32,23 +31,24 @@ const Products = ({product}) => {
 
   return (
     <section>
-      <Container className="min-h-screen py-9 relative">
+
+      <Container className="min-h-screen productBg py-9 relative">
         <Title />
         <article
           ref={containerRef}
           className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out overflow-hidden"
           style={{ maxHeight }}
         >
-          {
-            bestSellerProducts.length === 0?<Loader/>:
-            bestSellerProducts.slice(0, isSeeMore ? bestSellerProducts.length : 6).map((card, index) => (
-              <ProductCard key={index} card={card} />
-            ))
-
-          }
+          {bestSellerProducts.length === 0 ? (
+            <Loader />
+          ) : (
+            bestSellerProducts
+              .slice(0, isSeeMore ? bestSellerProducts.length : 6)
+              .map((card, index) => <ProductCard key={index} card={card} />)
+          )}
         </article>
 
-        {showProducts === 'all' && (
+        {showProducts === "all" && (
           <div
             onClick={() => setIsSeeMore(!isSeeMore)}
             className="flex justify-center h-32 items-center"
