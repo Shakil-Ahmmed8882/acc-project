@@ -87,6 +87,6 @@
 
 .productBg {
   background: url(../assets/img/products/productBg.jpg);
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
 }

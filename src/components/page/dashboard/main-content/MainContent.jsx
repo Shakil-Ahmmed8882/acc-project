@@ -42,7 +42,7 @@ const MainContent = () => {
         <Image
           width={500}
           height={500}
-          className="absolute  mix-blend-multiply top-24 right-0 left-[30%] flex justify-center object-cover"
+          className="absolute mix-blend-multiply top-24 right-0 left-[30%] flex justify-center object-cover"
           src={noDataFound}
           alt=""
         />
