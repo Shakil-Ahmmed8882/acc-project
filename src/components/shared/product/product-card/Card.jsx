@@ -14,7 +14,7 @@ const ProductCard = ({ card }) => {
     >
       <div
         className="
-      relative h-[400px] mt-11 sm:mt-0 md:h-[450px] 
+      relative h-[300px] lg:h-[400px] mt-11 sm:mt-0 md:h-[450px] 
       w-full overflow-hidden group "
       >
         <Image
@@ -46,9 +46,9 @@ const ProductCard = ({ card }) => {
       hover:no-underline mt-4 mb-3 rounded-full 
       inline-block text-yellow-500 "
       >
-        LEARN
-        MORE
-      </Link>    </div>
+        LEARN MORE
+      </Link>{" "}
+    </div>
   );
 };
 
