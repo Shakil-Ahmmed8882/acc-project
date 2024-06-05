@@ -9,7 +9,7 @@ export async function GET(request) {
     const url = new URL(request.url);
     const pathname = url.pathname;
     const searchParams = new URLSearchParams(url.search);
-    const productType = pathname.split("/").pop(); 
+    const productType = pathname.split("/").pop();
     const productId = searchParams.get("id");
     let query = {};
 
@@ -30,7 +30,7 @@ export async function GET(request) {
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Successfully fetched the product(s)",
+        message: "Successfully fetched the product",
         products,
       }),
       { status: 200 }
@@ -39,4 +39,12 @@ export async function GET(request) {
     const errorResponse = handleError(error);
     return new Response(JSON.stringify(errorResponse), { status: 500 });
   }
+}
+
+export async function generateStaticParams() {
+  const productTypes = ["cigar", "liquor", "accessories", "luxury-storage"];
+  const staticParams = productTypes.map((type) => ({
+    productType: type,
+  }));
+  return staticParams;
 }
