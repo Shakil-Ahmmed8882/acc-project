@@ -58,5 +58,4 @@ const AccCigars = ({ params }) => {
     </>
   );
 };
-
 export default AccCigars;
