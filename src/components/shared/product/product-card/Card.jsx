@@ -21,6 +21,9 @@ const ProductCard = ({ card }) => {
           src={images[0]}
           alt={name}
           layout="fill"
+          // priority
+          // width={400}
+          // height={400}
           objectFit="cover"
           className="absolute object-cover object-top md:object-center rounded-md inset-0  mx-auto
              transition-transform duration-300 ease-in
