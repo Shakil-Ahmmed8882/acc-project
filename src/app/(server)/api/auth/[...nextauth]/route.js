@@ -71,7 +71,3 @@ export const authOptions = {
 export const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
 
-// Dummy generateStaticParams function to satisfy static generation requirement
-export async function generateStaticParams() {
-  return [];
-}
