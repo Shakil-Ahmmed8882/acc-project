@@ -28,6 +28,7 @@ module.exports = {
         riviera: ["RivieraNightsTrial", "sans-serif"],
         cailyne: ["Cailyne", "sans-serif"],
         calvinoTrial: ["CalvinoTrial", "sans-serif"],
+        castoroTitling: ['"Castoro Titling"', "serif"],
       },
       fontWeight: {
         ultralight: 200,

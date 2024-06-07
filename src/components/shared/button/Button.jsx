@@ -25,7 +25,7 @@ const Button = ({
   // Gradient text classes for primary variant
   const gradientTextClasses = {
     primary:
-      "gradient-text-gold text-transparent bg-clip-text bg-gradient-to-r from-pale-gold via-rich-gold to-deep-goldBorder transition-all duration-1000 group-hover:bg-gradient-to-b group-hover:from-gold group-hover:to-deep-gold",
+      "gradient-text-gold text-transparent bg-clip-text bg-gradient-to-r from-pale-gold via-rich-gold to-deep-gold Border transition-all duration-1000 group-hover:bg-gradient-to-b group-hover:from-gold group-hover:to-deep-gold",
   };
 
   return (

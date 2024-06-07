@@ -5,7 +5,7 @@ import useGlobalContext from "@/hooks/useGlobalContext";
 
 const ParallaxContents = ({ title, page, img }) => {
   const { activeSectionIndex } = useGlobalContext();
-
+ 
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
@@ -22,9 +22,11 @@ const ParallaxContents = ({ title, page, img }) => {
           activeSectionIndex === page ? "visible" : "invisible opacity-0"
         } smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}
       >
-        <h1 className="font-sans font-thin uppercase text-3xl md:text-4xl lg:text-5xl relative z-50">
+        {/* <h1 className="font-cailyne text-nowrap font-thin uppercase text-3xl md:text-4xl lg:text-5xl relative z-50">
           {title}
-        </h1>
+        </h1> */}
+
+        <TitleComponent title={title}/>
         <Button />
       </div>
       <VerticalAnimatedProgressbar className="-bottom-[85vh]" />
@@ -33,3 +35,16 @@ const ParallaxContents = ({ title, page, img }) => {
 };
 
 export default ParallaxContents;
+
+const TitleComponent = ({ title }) => {
+  // Replace & with a span that has the custom font class
+  const formattedTitle = title.replace(/&/g, '<span class="font-castoroTitling">&</span>');
+
+  return (
+    <h1
+      className="font-cailyne font-thin uppercase text-3xl md:text-4xl lg:text-5xl relative z-50"
+      dangerouslySetInnerHTML={{ __html: formattedTitle }}
+    />
+  );
+};
+
