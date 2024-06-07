@@ -9,7 +9,7 @@ export async function GET(request) {
     const url = new URL(request.url);
     const pathname = url.pathname;
     const searchParams = new URLSearchParams(url.search);
-    const productType = pathname.split("/").pop(); 
+    const productType = pathname.split("/").pop();
     const productId = searchParams.get("id");
     let query = {};
 
@@ -30,7 +30,7 @@ export async function GET(request) {
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Successfully fetched the product(s)",
+        message: "Successfully fetched the product",
         products,
       }),
       { status: 200 }

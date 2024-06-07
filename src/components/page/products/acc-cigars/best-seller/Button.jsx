@@ -1,9 +1,8 @@
 import { MoveRight } from "lucide-react";
-import Link from "next/link";
 
 const Button = ({ text, customStyle, clickHandler }) => {
   return (
-    <Link href={"/product/cigar"}>
+
       <button
         onClick={clickHandler}
         className={`${
@@ -31,7 +30,6 @@ const Button = ({ text, customStyle, clickHandler }) => {
         invisible transition-all duration-500 `}
         />
       </button>
-    </Link>
   );
 };
 

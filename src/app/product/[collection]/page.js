@@ -6,11 +6,12 @@ import Filter from "@/components/page/products/acc-cigars/filter/Filter";
 import { fetchProductsByType } from "@/utils";
 import { motion } from "framer-motion";
 
-import { usePathname } from "next/navigation";
+
 import { createContext, useEffect, useState } from "react";
 
 export const ProductContext = createContext(null);
-const AccCigars = () => {
+
+const AccCigars = ({ params }) => {
   const [openFilter, setOpenFilter] = useState(false);
 
   const data = {
@@ -18,13 +19,12 @@ const AccCigars = () => {
     setOpenFilter,
   };
 
-  const pathName = usePathname();
-  const collectionName = pathName.split("/").pop();
+  const collectionName = params.collection;
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // step 2:  fetch prodoct by id
+    // step 2: fetch product by type
     fetchProductsByType(collectionName).then((data) => {
       setProduct(data?.products);
       setIsLoading(false);
