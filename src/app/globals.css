@@ -5,7 +5,7 @@
 
 @layer utilities {
   body {
-    @apply bg-main-bg-clr min-w-[320px] max-w-[1920px] mx-auto overflow-x-hidden;
+    @apply bg-background-dark min-w-[320px] max-w-[1920px] mx-auto overflow-x-hidden;
   }
   .smooth-transition {
     @apply transition-all duration-500;

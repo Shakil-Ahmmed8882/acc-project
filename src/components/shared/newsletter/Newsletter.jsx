@@ -5,12 +5,12 @@ const Newsletter = () => {
   return (
     <section className="bg-[#121212] pb-20">
       <Container>
-        <h3 className="text-sm text-light-white-clr  uppercase border-b-2 border-light-white-clr md:max-w-fit  pb-4 md:pb-8 text-center">
+        <h3 className="text-sm text-light-text  uppercase border-b-2 border-light-text md:max-w-fit  pb-4 md:pb-8 text-center">
           newsletter
         </h3>
         <div className="md:flex space-y-6 md:space-y-0 justify-between items-center gap-8  mt-8 ">
           <div className="flex-1">
-            <p className="text-xl md:text-2xl text-center md:text-left text-light-white-clr leading-8 ">
+            <p className="text-xl md:text-2xl text-center md:text-left text-light-text leading-8 ">
               Sign up to stay updated with ACC and receive our latest news.
             </p>
           </div>
@@ -36,7 +36,7 @@ const NewsletterSubmit = () => {
       <input
         type="text"
         placeholder="Enter your email address"
-        className="w-full py-3 px-8 text-light-white-clr border border-light-white-clr rounded-full outline-none bg-inherit focus:bg-inherit focus:border-gold"
+        className="w-full py-3 px-8 text-light-text border border-light-text rounded-full outline-none bg-inherit focus:bg-inherit focus:border-standard-gold"
       />
     </form>
   );

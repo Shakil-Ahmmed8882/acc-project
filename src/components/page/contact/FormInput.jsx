@@ -164,7 +164,7 @@ function TermsCondition() {
       <div className="flex mt-8">
         <div className="relative mt-2 ">
           <input
-            className="w-4 h-4 transition-colors bg-inherit border rounded-full appearance-none cursor-pointer peer border-light-white-clr checked:border-yellow-500 checked:bg-yellow-200 checked:hover:border-yellow-600 checked:hover:bg-yellow-300 focus:outline-none checked:focus:border-yellow-700 checked:focus:bg-yellow-400  focus-visible:outline-none disabled:cursor-not-allowed disabled:border-slate-100 disabled:bg-slate-50"
+            className="w-4 h-4 transition-colors bg-inherit border rounded-full appearance-none cursor-pointer peer border-light-text checked:border-yellow-500 checked:bg-yellow-200 checked:hover:border-yellow-600 checked:hover:bg-yellow-300 focus:outline-none checked:focus:border-yellow-700 checked:focus:bg-yellow-400  focus-visible:outline-none disabled:cursor-not-allowed disabled:border-slate-100 disabled:bg-slate-50"
             type="radio"
             value="huey2"
             id="huey2"

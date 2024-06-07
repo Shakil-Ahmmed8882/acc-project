@@ -11,16 +11,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "hover-txt-clr": "#FFD700",
-        "main-bg-clr": "#222222",
-        "light-white-clr": "#FAFAFA;",
-        gold2: "#f9f295",
-        gold: "#ffd700",
-        darkGold: "#ac7c00",
-        lightGold: "#faf398",
-        mediumGold: "#e0aa3e",
-        darkGoldBorder: "#b88a44",
-        darkslategray: "#414141",
+        // updated color name
+        "background-dark": "#222222" /* Dark Background */,
+        "light-text": "#FAFAFA" /* Light White Text */,
+        "pale-gold": "#f9f295" /* Pale Gold */,
+        "standard-gold": "#ffd700" /* Standard Gold */,
+        "deep-gold": "#ac7c00" /* Deep Gold */,
+        "soft-gold": "#faf398" /* Soft Gold */,
+        "rich-gold": "#e0aa3e" /* Rich Gold */,
+        "dark-gold-border": "#b88a44" /* Dark Gold Border */,
+        "dark-slate-gray": "#414141" /* Dark Slate Gray */,
       },
       transform: ["hover", "focus"],
       scale: ["hover", "focus"],

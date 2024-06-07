@@ -46,7 +46,7 @@ export default FlagshipProducts;
 const FlagshipProductsLeft = () => {
   return (
     <div className=" w-full lg:text-left text-center my-10">
-      <h4 className="text-[30px] md:text-[40px] mb-10 lg:mb-20 text-light-white-clr tracking-[8px] font-cailyne uppercase">
+      <h4 className="text-[30px] md:text-[40px] mb-10 lg:mb-20 text-light-text tracking-[8px] font-cailyne uppercase">
         Explore ACC&#39;s Flagship products
       </h4>
 
@@ -97,7 +97,7 @@ const SlideItem = ({ product }) => {
         alt="product image"
       />
       <div className="md:mx-0 mx-4">
-        <h5 className="text-base text-light-white-clr font-semibold mt-4">
+        <h5 className="text-base text-light-text font-semibold mt-4">
           Vintage Cigar
         </h5>
         <p className="text-[#999999] text-xs mt-3">

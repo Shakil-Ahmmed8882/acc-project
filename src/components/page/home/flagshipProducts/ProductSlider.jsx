@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation"; 
+import "swiper/css/navigation";
 // import "./styles.css";
 // import required modules
 import { Pagination, Navigation, FreeMode } from "swiper/modules";
@@ -65,14 +65,14 @@ export default function ProductSlider() {
               <SlideItem index={index} />
             </SwiperSlide>
           ))}
-        <div className="flex justify-between absolute bottom-[150px] z-[99999] gap-[870px]">
-          <button ref={prevRef} className="products-swiper-button-prev ">
-            <CircleChevronLeft size={40} fill="white" color="#1c1c1c" />
-          </button>
-          <button ref={nextRef} className="products-swiper-button-next ">
-            <CircleChevronRight size={40} fill="white" color="#1c1c1c" />
-          </button>
-        </div>
+          <div className="flex justify-between absolute bottom-[150px] z-[99999] gap-[870px]">
+            <button ref={prevRef} className="products-swiper-button-prev ">
+              <CircleChevronLeft size={40} fill="white" color="#1c1c1c" />
+            </button>
+            <button ref={nextRef} className="products-swiper-button-next ">
+              <CircleChevronRight size={40} fill="white" color="#1c1c1c" />
+            </button>
+          </div>
         </Swiper>
       </div>
     </div>
@@ -90,7 +90,7 @@ const SlideItem = ({ index }) => {
         alt="image"
       />
       <div>
-        <h5 className="text-base text-light-white-clr font-semibold mt-4">
+        <h5 className="text-base text-light-text font-semibold mt-4">
           Vintage Cigar
         </h5>
         <p className="text-[#999999] text-xs mt-3">
@@ -103,12 +103,12 @@ const SlideItem = ({ index }) => {
 
 const SlideLeft = () => {
   return (
-    <Container className={'flex-1  max-w-[528px] w-full mt-[74px]'}>
+    <Container className={"flex-1  max-w-[528px] w-full mt-[74px]"}>
       <SectionTitle
         className="text-[50px]  font-normal uppercase"
         title="Explore ACc's Flagship products"
       />
-      <AnimatedVideo/>
+      <AnimatedVideo />
       <Button variant="primary" size="lg">
         DISCOVER
       </Button>
