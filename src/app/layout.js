@@ -18,6 +18,12 @@ export default function RootLayout({ children }) {
   const session = getServerSession();
   return (
     <html lang="en">
+      <link
+        rel="icon"
+        href="/logo.jpg"
+        type="image/jpg"
+        sizes="32x32"
+      />
       <body className={inter.className}>
         <GlobalContext>
           <AuthProvider session={session}>
