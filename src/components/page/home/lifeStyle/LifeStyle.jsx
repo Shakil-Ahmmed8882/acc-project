@@ -39,9 +39,9 @@ const AccLifestyle = () => {
     "object-cover  hover:opacity-50 hover-grow transition duration-300 smooth-transition size-[400px] lg:size-[500px]";
   const cardContentClass = "border-l-2 border-[#FAFAFA99] px-6 pt-6 pb-14";
   const titleClass =
-    "text-2xl font-semibold mb-6 text-2xl tracking-[.3rem] uppercase font-medium leading-[140%] RivieraNightsTrial";
+    "text-2xl font-semibold mb-6 text-2xl tracking-[.3rem] uppercase font-medium leading-[140%] font-riviera";
   const paragraph =
-    "text-[#FAFAFA99] leading-[140%] font-normal text-xl RivieraNightsTrial";
+    "text-[#FAFAFA99] leading-[140%] font-normal text-xl font-riviera";
 
   return (
     <div className="bg-black w-full">
