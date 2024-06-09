@@ -10,7 +10,7 @@ const Crafting = () => {
     <Container className="py-16 sm:py-24 md:py-32 bg-black">
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-32 mx-auto">
         <div className="text-white">
-          <h2 className="text-[64px] mb-4 lg:mb-10 mt-8 uppercase leading-[140%] font-cailyne font-normal pb-4 tracking-[5.12px]">
+          <h2 className="text-[64px] mb-4 lg:mb-10 mt-8 uppercase leading-[140%] font-cailyne font-normal pb-4 tracking-[5.12px] w-[80%]">
             Crafting Excellence Since 1952
           </h2>
           <Description
