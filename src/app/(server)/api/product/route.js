@@ -45,6 +45,7 @@ export async function GET(request) {
       // If productId is present, fetch a single product
       isValidObjectId(productId);
       query = { _id: productId };
+      
     } else if (searchTerm) {
       // If searchTerm is present, perform search
       const regex = new RegExp(searchTerm, 'i');

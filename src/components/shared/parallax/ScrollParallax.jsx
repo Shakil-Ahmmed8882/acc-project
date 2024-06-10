@@ -1,18 +1,17 @@
-// "use client";
+"use client";
 
 import ParallaxContents from "./ParallaxContents";
-import parallaxImg1 from "@/assets/img/home/parallax/parallax1.png";
-import parallaxImg2 from "@/assets/img/home/parallax/parallax2.png";
-import parallaxImg3 from "@/assets/img/home/parallax/parallax3.png";
-
 import useGlobalContext from "@/hooks/useGlobalContext";
 import { useEffect } from "react";
 import Lenis from "lenis";
 import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
 
-const ScrollParallax = ({ titles }) => {
+// pass dynamic titles object images array 
+const ScrollParallax = ({images, titles }) => {
   const { title1, title2, title3 } = titles || {};
+  const { parallaxOneBgImages,parallaxTwoBgImages,parallaxThreeBgImages } = images || {};
   const { isMenuOpen } = useGlobalContext();
+   
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -33,21 +32,21 @@ const ScrollParallax = ({ titles }) => {
         >
           <AnimatedVideo />
           <ParallaxContents
-            img={parallaxImg1}
+            images={parallaxOneBgImages}
             title={title1 || "Luxury & Vintage Cigars"}
             page={0}
-          />
+            />
         </div>
         <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
           <ParallaxContents
-            img={parallaxImg2}
+            images={parallaxTwoBgImages}
             title={title2 || "Luxury & Vintage Spirits"}
             page={1}
-          />
+            />
         </div>
         <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
           <ParallaxContents
-            img={parallaxImg3}
+            images={parallaxThreeBgImages}
             title={title3 || "luxury & accessories"}
             page={2}
           />

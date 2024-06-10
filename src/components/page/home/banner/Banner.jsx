@@ -3,12 +3,15 @@ import Pagination from "./pagination";
 import useScrollObserver from "@/hooks/useScrollObserver";
 import ScrollParallax from "@/components/shared/parallax/ScrollParallax";
 
-const Banner = ({titles}) => {
+// pass dynamic titles object images array 
+const Banner = ({titles,images}) => {
+
+  
   useScrollObserver();
   return (
     <main>
-      <Pagination />
-      <ScrollParallax titles={titles}/>
+      <Pagination/>
+      <ScrollParallax images={images} titles={titles}/>
     </main>
   );
 };

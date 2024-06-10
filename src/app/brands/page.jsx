@@ -7,8 +7,18 @@ import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
 
 
+import img1 from '@/assets/img/shared/parallax/p1bg1.jpg'
+import img2 from '@/assets/img/shared/parallax/p2bg2.jpg'
+import parallaxImg1 from "@/assets/img/home/parallax/parallax1.png";
+import parallaxImg2 from "@/assets/img/home/parallax/parallax2.png";
+import parallaxImg3 from "@/assets/img/home/parallax/parallax3.png";
+
 
 const page = () => {
+
+  const parallaxOneBgImages = [parallaxImg1,img1]
+  const parallaxTwoBgImages = [parallaxImg2,img2]
+  const parallaxThreeBgImages = [parallaxImg3,img2]
 
   
   const titles = {
@@ -18,7 +28,7 @@ const page = () => {
   }
   return (
     <div>
-      <Banner titles={titles}/>
+      <Banner images={{parallaxOneBgImages,parallaxTwoBgImages,parallaxThreeBgImages}} titles={titles}/>
       <AccLifestyle />
       <Tabs/>
       <BrandWorldAcc />
