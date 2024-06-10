@@ -2,10 +2,14 @@ import Image from "next/image";
 import Button from "./Button";
 import VerticalAnimatedProgressbar from "../animation/animated-video/VerticalAnimatedProgressbar";
 import useGlobalContext from "@/hooks/useGlobalContext";
+import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
 
 const ParallaxContents = ({ title, page, img }) => {
   const { activeSectionIndex } = useGlobalContext();
+  const {index} = useImageSlideshow([1,2,34,4,5,5],3000)
  
+
+  console.log(index)
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
