@@ -1,32 +1,50 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import VerticalAnimatedProgressbar from "../animation/animated-video/VerticalAnimatedProgressbar";
 import useGlobalContext from "@/hooks/useGlobalContext";
+import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
 
-const ParallaxContents = ({ title, page, img }) => {
+// pass dynamic titles object images array 
+const ParallaxContents = ({ title, page, images }) => {
   const { activeSectionIndex } = useGlobalContext();
- 
+  const [opacity, setOpacity] = useState(1);
+
+  // get inifinite loop animated index based 
+  //on image leng on specified duration
+  const { index } = useImageSlideshow(images, 4000);
+
+  // Update opacity smoothly when the active section changes
+  useEffect(() => {
+    if (activeSectionIndex !== page) {
+      setOpacity(0);
+    } else {
+      setOpacity(1);
+    }
+  }, [activeSectionIndex, page]);
+
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
-      <Image
-        placeholder="blur"
-        quality={100}
-        priority
-        className="absolute inset-0 w-full h-full object-cover z-30 filter opacity-100 transition-all duration-1000 ease-in-out"
-        src={img}
-        alt="HOME | hero parallax images"
-      />
+      {images.map((imageUrl, i) => (
+        <Image
+          key={imageUrl}
+          placeholder="blur"
+          quality={100}
+          priority
+          className={`
+            absolute inset-0 w-full h-full object-cover z-30 filter opacity-${i === index && activeSectionIndex === page ? '100' : '0'} transition-opacity duration-1000 `}
+          src={imageUrl}
+          alt="HOME | hero parallax images"
+        />
+      ))}
       <div
         className={`${
           activeSectionIndex === page ? "visible" : "invisible opacity-0"
         } smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}
+        style={{ opacity }}
       >
-        {/* <h1 className="font-cailyne text-nowrap font-thin uppercase text-3xl md:text-4xl lg:text-5xl relative z-50">
-          {title}
-        </h1> */}
-
-        <TitleComponent title={title}/>
+        <TitleComponent title={title} />
         <Button />
       </div>
       <VerticalAnimatedProgressbar className="-bottom-[85vh]" />
@@ -42,9 +60,10 @@ const TitleComponent = ({ title }) => {
 
   return (
     <h1
-      className="font-cailyne font-thin uppercase text-3xl md:text-4xl lg:text-5xl relative z-50"
+      style={{lineHeight:1.4}}
+      className="font-cailyne uppercase text-center text-3xl px-8 sm:text-4xl 
+      md:text-5xl relative font-normal tracking-[11px] z-50"
       dangerouslySetInnerHTML={{ __html: formattedTitle }}
     />
   );
 };
-
