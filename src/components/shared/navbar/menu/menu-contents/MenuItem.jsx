@@ -15,7 +15,11 @@ const MenuItem = ({ path, label, isBrand, className }) => {
       onClick={handleClick}
       className={`${
         className ? `${className}` : "text-[#cacaca]"
-      } mt-7 md:mt-0 relative z-40 flex gap-1 group text-[14px] hover:text-standard-gold hover:smooth-transition before:content-[''] before:bg-standard-gold before:w-0 before:h-1 before:my-8 md:before:mt-11 before:absolute before:transition-all before:duration-300 before:ease-linear hover:before:w-[100px] md:hover:before:w-full smooth-transition`}
+      } mt-7 md:mt-0 relative z-40 flex gap-1 group text-[14px]
+       hover:text-standard-gold before:content-['']
+        hover:before:bg-standard-gold transition-all duration-200
+         before:h-[2px] before:my-8 md:before:mt-6 before:absolute before:transition-all before:duration-300 before:ease-linear
+       hover:before:w-[100px] md:hover:before:w-full smooth-transition`}
       href={path}
     >
       {label}

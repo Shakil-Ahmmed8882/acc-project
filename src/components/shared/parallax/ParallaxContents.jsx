@@ -9,7 +9,7 @@ import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
 const ParallaxContents = ({ title, page, images }) => {
   const { activeSectionIndex } = useGlobalContext();
   const [opacity, setOpacity] = useState(1);
-  
+
   // get inifinite loop animated index based 
   //on image leng on specified duration
   const { index } = useImageSlideshow(images, 4000);
@@ -60,7 +60,9 @@ const TitleComponent = ({ title }) => {
 
   return (
     <h1
-      className="font-cailyne uppercase text-4xl md:text-5xl relative font-normal tracking-[12px] z-50"
+      style={{lineHeight:1.4}}
+      className="font-cailyne uppercase text-center text-3xl px-8 sm:text-4xl 
+      md:text-5xl relative font-normal tracking-[11px] z-50"
       dangerouslySetInnerHTML={{ __html: formattedTitle }}
     />
   );
