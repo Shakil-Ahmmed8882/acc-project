@@ -5,7 +5,6 @@ const useGetAllProducts = (trigger, searchTerm) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    console.log(searchTerm)
     fetchProducts(searchTerm).then(data => setProducts(data.products));
   }, [trigger, searchTerm]);
 

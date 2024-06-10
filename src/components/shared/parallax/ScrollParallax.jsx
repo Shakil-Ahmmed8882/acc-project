@@ -48,7 +48,7 @@ const ScrollParallax = ({ titles }) => {
         <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
           <ParallaxContents
             img={parallaxImg3}
-            title={title3 || "luxury accessories"}
+            title={title3 || "luxury & accessories"}
             page={2}
           />
         </div>

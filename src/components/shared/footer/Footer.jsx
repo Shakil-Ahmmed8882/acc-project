@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import Container from "../container/Container";
@@ -38,12 +38,14 @@ const Footer = () => {
   const pathname = usePathname();
 
   // Check if the current route starts with /admin2
-  const isAdminRoute = pathname.startsWith('/admin');
+  const isAdminRoute = pathname.startsWith("/admin");
 
   return (
-    <footer className={` pb-20
-    ${isAdminRoute ?'hidden':'block'}
-    `}>
+    <footer
+      className={` pb-20
+    ${isAdminRoute ? "hidden" : "block"}
+    `}
+    >
       <Container>
         <div className="flex items-center justify-center">
           <Image
@@ -57,7 +59,7 @@ const Footer = () => {
         <div className="space-y-6 justify-between md:flex items-center px-10 md:px-40 md:space-y-0 my-8 py-10 border-t border-b ">
           {footerNavs.map((nav, navIdx) => (
             <ul
-              className="space-y-6 text-sm text-light-white-clr uppercase"
+              className="space-y-6 text-sm text-light-text uppercase"
               key={`nav-${navIdx}`}
             >
               {nav.items.map((item, itemIdx) => (
@@ -73,7 +75,7 @@ const Footer = () => {
             </ul>
           ))}
         </div>
-        <p className="text-light-white-clr text-sm text-center">
+        <p className="text-light-text text-sm text-center">
           © 2024 ACHIVEMENT CIGAR COMPANY.
         </p>
       </Container>

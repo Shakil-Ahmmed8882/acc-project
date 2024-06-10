@@ -16,7 +16,7 @@ const VideoPlayer = ({ videoUrl }) => {
 
   return (
     <div className="relative">
-      <video ref={videoRef} className="w-full rounded-md" onClick={handlePlayPause}>
+      <video ref={videoRef} className="w-full" onClick={handlePlayPause}>
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

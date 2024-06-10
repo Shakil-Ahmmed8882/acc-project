@@ -31,7 +31,7 @@ const Tabs = () => {
             key={item?.path}
             className={
               router.includes(item.path)
-                ? "text-hover-txt-clr text-[10px] md:text-[16px]"
+                ? "text-standard-gold text-[10px] md:text-[16px]"
                 : ""
             }
             path={item.path}

@@ -19,13 +19,13 @@ const Button = ({
 
   // Variant classes for different button styles
   const variantClasses = {
-    primary: "rounded-gold-border border-gold2 font-riviera font-semibold",
+    primary: "rounded-gold-border border-pale-gold font-riviera font-semibold",
   };
 
   // Gradient text classes for primary variant
   const gradientTextClasses = {
     primary:
-      "gradient-text-gold text-transparent bg-clip-text bg-gradient-to-r from-gold2 via-mediumGold to-darkGoldBorder transition-all duration-1000 group-hover:bg-gradient-to-b group-hover:from-gold group-hover:to-darkGold",
+      "gradient-text-gold text-transparent bg-clip-text bg-gradient-to-r from-pale-gold via-rich-gold to-deep-gold Border transition-all duration-1000 group-hover:bg-gradient-to-b group-hover:from-gold group-hover:to-deep-gold",
   };
 
   return (

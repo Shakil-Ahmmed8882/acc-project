@@ -40,11 +40,3 @@ export async function GET(request) {
     return new Response(JSON.stringify(errorResponse), { status: 500 });
   }
 }
-
-export async function generateStaticParams() {
-  const productTypes = ["cigar", "liquor", "accessories", "luxury-storage"];
-  const staticParams = productTypes.map((type) => ({
-    productType: type,
-  }));
-  return staticParams;
-}

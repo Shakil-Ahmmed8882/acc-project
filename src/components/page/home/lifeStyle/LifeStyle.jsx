@@ -10,20 +10,20 @@ const accLifestyleContent = [
     title: "Unparalleled Luxury",
     description:
       "Indulge in the world's finest luxury spirits in hand crafted crystal with ACC Spirits.",
-    image: lifestyle1,
+    image: lifestyle3,
   },
   {
     id: 2,
     title: "Ignite Your Senses",
     description: "Enjoy the world's most exclusive cigar with ACC.",
-    image: lifestyle2,
+    image: lifestyle1,
   },
   {
     id: 3,
     title: "Unwind in Style",
     description:
       "Elevate your relaxation to a sophisticated experience with ACC.",
-    image: lifestyle3,
+    image: lifestyle2,
   },
 ];
 
@@ -36,36 +36,38 @@ const AccLifestyle = () => {
   const cardClass = "flex flex-col overflow-hidden";
   const imageContainerClass = "relative overflow-hidden gap-6";
   const imageClass =
-    "w-full h-64 object-cover  hover:opacity-50 hover-grow transition duration-300 smooth-transition";
-  const cardContentClass = "border-l-2 border-[#FAFAFA99] p-4";
-  const titleClass = "text-xl font-semibold mb-2";
+    "object-cover  hover:opacity-50 hover-grow transition duration-300 smooth-transition size-[400px] lg:size-[500px]";
+  const cardContentClass = "border-l-2 border-[#FAFAFA99] px-6 pt-6 pb-14";
+  const titleClass =
+    "text-2xl font-semibold mb-6 text-2xl tracking-[.3rem] uppercase font-medium leading-[140%] font-riviera";
+  const paragraph =
+    "text-[#FAFAFA99] leading-[140%] font-normal text-xl font-riviera";
 
   return (
     <div className="bg-black w-full">
-    <Container className={containerClass}>
-      <h2 className={headerClass}>Explore ACC Lifestyle</h2>
-      <p className={subHeaderClass}>Continue Your Journey</p>
-      <div className={gridClass}>
-        {accLifestyleContent.map((item) => (
-          <div key={item.id} className={cardClass}>
-            <div className={imageContainerClass}>
-              <Image
-                width={600}
-                height={600}
-                src={item.image}
-                alt={item.title}
-                className={imageClass}
-              />
+      <Container className={containerClass}>
+        <h2 className={headerClass}>Explore ACC Lifestyle</h2>
+        <p className={subHeaderClass}>Continue Your Journey</p>
+        <div className={gridClass}>
+          {accLifestyleContent.map((item) => (
+            <div key={item.id} className={cardClass}>
+              <div className={imageContainerClass}>
+                <Image
+                  width={600}
+                  height={600}
+                  src={item.image}
+                  alt={item.title}
+                  className={imageClass}
+                />
+              </div>
+              <div className={cardContentClass}>
+                <h3 className={titleClass}>{item.title}</h3>
+                <p className={paragraph}>{item.description}</p>
+              </div>
             </div>
-            <div className={cardContentClass}>
-              <h3 className={titleClass}>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </Container>
-
+          ))}
+        </div>
+      </Container>
     </div>
   );
 };

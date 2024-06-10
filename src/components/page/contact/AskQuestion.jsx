@@ -9,7 +9,6 @@ const AskQuestion = () => {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  console.log(openModal);
   return (
     <Container>
       <div className="grid place-items-center my-10 py-24">
