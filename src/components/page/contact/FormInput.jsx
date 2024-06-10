@@ -1,5 +1,7 @@
 import { toast } from "sonner";
 import React, { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import sendEmail from "@/app/(server)/lib/sendEmail";
 import TermsCondition from "./TermsCondition";
 
@@ -18,6 +20,14 @@ const FormInput = () => {
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,
+    }));
+  };
+
+  const handlePhoneChange = (value, country) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      phone: value,
+      countryCode: country.dialCode,
     }));
   };
 
@@ -48,18 +58,17 @@ const FormInput = () => {
   const inputFields = [
     { id: "firstName", label: "First Name", type: "text" },
     { id: "lastName", label: "Last Name", type: "text" },
-    { id: "phone", label: "Phone Number", type: "text" },
     { id: "email", label: "Email Address", type: "email" },
     { id: "enquiry", label: "Type Enquiry Here", type: "textarea" },
   ];
 
   return (
     <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
-      {inputFields.map((field) => (
+      {inputFields.map((field, index) => (
         <div key={field.id} className="relative mb-4 w-full">
           {field.type === "textarea" ? (
             <textarea
-              className="peer h-[100px] border-b w-full bg-[#1C1C1C] text-gray-200 px-2 pt-4 focus:outline-none"
+              className="peer h-[100px] border-b w-full bg-[#1C1C1C] text-[#ffffff] px-2 pt-4 focus:outline-none"
               id={field.id}
               placeholder=" "
               value={formData[field.id]}
@@ -68,7 +77,7 @@ const FormInput = () => {
             ></textarea>
           ) : (
             <input
-              className="peer h-[50px] border-b w-full bg-[#1C1C1C] text-gray-200 px-2 pt-4 focus:outline-none"
+              className="peer h-[50px] border-b w-full bg-[#1C1C1C] text-[#ffffff] px-2 pt-4 focus:outline-none"
               id={field.id}
               type={field.type}
               placeholder=" "
@@ -82,6 +91,26 @@ const FormInput = () => {
           >
             {field.label}
           </label>
+          {/* Insert the Phone Number input below the Last Name field */}
+          {index === 1 && (
+            <div className="relative w-full">
+              <PhoneInput
+                country={"us"}
+                value={formData.phone}
+                onChange={(value, country) => handlePhoneChange(value, country)}
+                containerClass="h-[50px] border-b w-full bg-[#1C1C1C] text-[#ffffff] focus:outline-none"
+                inputClass="peer h-[50px] border-b w-full bg-[#1C1C1C] text-[#ffffff] px-2 pt-4 focus:outline-none bg-[#1C1C1C]"
+                buttonClass="bg-[#1C1C1C] text-[#ffffff]"
+                dropdownClass="bg-[#1C1C1C] text-[#ffffff]"
+                placeholder=" "
+                inputStyle={{
+                  background: "#1C1C1C",
+                  color: "#ffffff",
+                  borderBottom: "1px solid",
+                }}
+              />
+            </div>
+          )}
         </div>
       ))}
       <div className="mb-8">
@@ -120,4 +149,3 @@ const FormInput = () => {
 };
 
 export default FormInput;
-

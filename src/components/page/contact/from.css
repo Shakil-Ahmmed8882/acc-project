@@ -1,18 +1,22 @@
 /* Styling the input fields */
-input, textarea {
-  background: #1C1C1C;
-  color: #1B8EF8;
+input,
+textarea {
+  background: #1c1c1c;
+  color: #1b8ef8;
   border: none;
-  border-bottom: 2px solid #1B8EF8;
+  border-bottom: 2px solid #1b8ef8;
   width: 100%;
   padding: 0.75rem 0.75rem 0.5rem;
   outline: none;
 }
 
-input:focus, textarea:focus {
-  border-bottom: 2px solid #1B8EF8;
+input:focus,
+textarea:focus {
+  border-bottom: 2px solid #1b8ef8;
 }
-
+textarea {
+  padding-bottom: 10px;
+}
 .relative {
   position: relative;
   width: 100%;
@@ -23,25 +27,25 @@ label {
   top: 0;
   left: 1rem;
   font-size: 1rem;
-  color: #1B8EF8;
+  color: #1b8ef8;
   pointer-events: none;
   transition: all 0.2s ease;
 }
 
-.peer-placeholder-shown~label {
+.peer-placeholder-shown ~ label {
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1rem;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 
-.peer:focus~label,
-input:not(:placeholder-shown)~label {
+.peer:focus ~ label,
+input:not(:placeholder-shown) ~ label {
   top: 0;
   left: 1rem;
   font-size: 0.75rem;
-  color: #1B8EF8;
+  color: #1b8ef8;
 }
 
 /* Input specific adjustments */
