@@ -55,8 +55,7 @@ const Navbar = () => {
         style={{ zIndex: 9999 }}
         className={`
           ${isAdminRoute ? "hidden" : "block"}
-          ${isMenuOpen ? "min-h-screen md:min-h-32 lg:h-52" : isScrollingUp ? "h-28 lg:h-32" : "h-32 lg:h-28"}
-          bg-[#0000006c]
+          ${isMenuOpen ? "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]" : isScrollingUp ? "h-28 lg:h-32" : "h-32 lg:h-28"}
           fixed left-0 right-0 top-0 transition-all duration-700
         `}
         initial="initial"
@@ -66,7 +65,7 @@ const Navbar = () => {
       >
         <BgOverlay isTrue={isBrandHover} />
         <Container isNavbar={true} className={style}>
-          <MenuIcon label={"menu"} />
+          <MenuIcon label={"MENU"} />
           <Logo {...{ isSecondParallaxInView }} />
           <div className="hidden -pl-6 md:flex">
             <SearchBar />
