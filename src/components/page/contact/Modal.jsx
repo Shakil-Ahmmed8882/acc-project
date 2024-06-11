@@ -4,10 +4,9 @@ import FormInput from "./FormInput";
 
 const Modal = ({ isOpen, onClose }) => {
   return (
-    
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999999] grid w-full overflow-y-scroll scroll-m-0">
+        <div className="fixed inset-0 z-[9999999] grid w-full overflow-y-auto">
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
@@ -18,6 +17,7 @@ const Modal = ({ isOpen, onClose }) => {
               duration: 0.4,
             }}
             className="text-white rounded-lg shadow-lg w-full bg-[#121212]"
+            // style={{ maxHeight: "100vh", overflowY: "auto" }}
           >
             <div className="grid place-items-center w-full">
               <button
@@ -31,7 +31,6 @@ const Modal = ({ isOpen, onClose }) => {
               <h2 className="text-5xl uppercase my-10 text-center font-riviera">
                 Request Information
               </h2>
-              {/* form input field component */}
               <FormInput />
             </div>
           </motion.div>
@@ -40,5 +39,4 @@ const Modal = ({ isOpen, onClose }) => {
     </AnimatePresence>
   );
 };
-
 export default Modal;
