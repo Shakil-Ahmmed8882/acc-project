@@ -1,15 +1,25 @@
-import { Search } from 'lucide-react';
-
-
-// Component for the Search icon with transition and click handler
 const SearchIcon = ({ isSwap, onClick }) => {
   return (
-    <Search
+    <svg
       onClick={onClick}
       className={`
         font-thin
-        ${isSwap ? ' mb-2 translate-x-44 md:translate-x-16' : ' -translate-x-0 md:-translate-x-3'} justify-self-end pb-1 z-30 transition-all p-[3px] md:p-0 duration-1000`}
-    />
+        ${
+          isSwap
+            ? " mb-2 translate-x-44 md:translate-x-16"
+            : " -translate-x-0 md:-translate-x-3"
+        } justify-self-end pb-1 z-30 transition-all p-[3px] md:p-0 duration-1000`}
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+    >
+      <path
+        d="M9.04546 0C14.0386 0 18.0909 4.05237 18.0909 9.04546C18.0909 14.0386 14.0386 18.0909 9.04546 18.0909C4.05237 18.0909 0 14.0386 0 9.04546C0 4.05237 4.05237 0 9.04546 0ZM9.04546 16.0808C12.9325 16.0808 16.0808 12.9325 16.0808 9.04546C16.0808 5.15842 12.9325 2.0101 9.04546 2.0101C5.15842 2.0101 2.0101 5.15842 2.0101 9.04546C2.0101 12.9325 5.15842 16.0808 9.04546 16.0808ZM16.8629 16.8629C17.2554 16.4705 17.8918 16.4705 18.2843 16.8629L19.7056 18.2843C20.0981 18.6768 20.0981 19.3131 19.7056 19.7056C19.3131 20.0981 18.6768 20.0981 18.2843 19.7056L16.8629 18.2843C16.4705 17.8918 16.4705 17.2554 16.8629 16.8629Z"
+        fill="#FAFAFA"
+      />
+    </svg>
   );
 };
 
