@@ -12,10 +12,9 @@ const TheWorldOfACC = () => {
   return (
     <Container className={" bg-[#121212]"}>
       <StoriesLink />
-      <h1 className="text-3xl pt-11 text-white">THE WORLD OF ACC</h1>
       <ImageGrid />
       <div className="flex justify-center py-16  mx-auto">
-        <Button customStyle={'text-white'} />
+        <Button customStyle={"text-white"} />
       </div>
     </Container>
   );

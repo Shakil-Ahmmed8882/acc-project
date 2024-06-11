@@ -21,7 +21,7 @@ const Craftsmanship = () => {
   smoking.`
 
   return (
-    <Container className={"py-12 px-4 sm:px-6 lg:px-8 max-w-[1220px] mx-auto"}>
+    <Container className={"py-12 px-4 sm:px-6 lg:px-8 mx-auto"}>
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2 my-8">
           <h2 className="text-4xl lg:text-6xl mb-8 lg:mb-20 font-cailyne tracking-[.3rem] uppercase font-medium leading-[140%]">
