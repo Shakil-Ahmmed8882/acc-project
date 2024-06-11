@@ -6,7 +6,7 @@ import CraftsmanShipVideo from "@/components/page/craftsmanship/CraftsmanShipVid
 
 const Heritage = () => {
   return (
-    <section className="bg-black">
+    <section>
       <HeroSection
         title={"Craftsmanship"}
         imagesArray={[hero1]}
