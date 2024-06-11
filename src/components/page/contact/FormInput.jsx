@@ -4,6 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import sendEmail from "@/app/(server)/lib/sendEmail";
 import TermsCondition from "./TermsCondition";
+import Input from "./Input";
 
 const FormInput = () => {
   const [formData, setFormData] = useState({
@@ -113,6 +114,7 @@ const FormInput = () => {
           )}
         </div>
       ))}
+      <Input formData={formData} handleChange={handleChange} />
       <div className="mb-8">
         <h2 className="text-white text-lg mb-4">
           Stay Informed with Achievement Cigar Company:

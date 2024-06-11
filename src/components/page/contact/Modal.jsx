@@ -4,9 +4,10 @@ import FormInput from "./FormInput";
 
 const Modal = ({ isOpen, onClose }) => {
   return (
+    
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999999] grid w-screen overflow-y-scroll">
+        <div className="fixed inset-0 z-[9999999] grid w-full overflow-y-scroll scroll-m-0">
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
@@ -16,7 +17,7 @@ const Modal = ({ isOpen, onClose }) => {
               ease: "easeIn",
               duration: 0.4,
             }}
-            className="text-white rounded-lg shadow-lg w-full bg-[#121212] overflow-y-scroll"
+            className="text-white rounded-lg shadow-lg w-full bg-[#121212]"
           >
             <div className="grid place-items-center w-full">
               <button
