@@ -10,7 +10,7 @@ import StoriesLink from "./StoriesLink";
 
 const TheWorldOfACC = () => {
   return (
-    <Container className={" bg-[#121212]"}>
+    <Container bgClr="bg-black">
       <StoriesLink />
       <ImageGrid />
       <div className="flex justify-center py-16  mx-auto">
