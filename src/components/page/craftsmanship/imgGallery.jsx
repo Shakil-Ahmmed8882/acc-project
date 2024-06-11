@@ -8,13 +8,10 @@ import truck from "@/assets/img/craftsmanship/imgGallery/craftsmanship7.png";
 import HiddenContent from "./content-container/HiddenContent";
 
 const ImageGallery = () => {
-
-  
-
   return (
     <>
-      <Container>
-        <div className="border-b  pb-2 border-[#bfbfbf] text-2xl text-white w-fit">
+      <Container bgClr="bg-black">
+        <div className="border-b  pb-2 border-[#bfbfbf] text-2xl text-white w-fit leading-[140%] font-normal font-riviera">
           CRAFTING PROCESS
         </div>
         <h1 className="py-6 font-riviera text-[#bfbfbf]">
@@ -39,17 +36,17 @@ const ImageGallery = () => {
             />
           ))}
           <div className="flex justify-center mt-11">
-          <Div width={'80%'}>
-            {(isHovered) => (
-              <>
-                <Img src={truck} />
-                <HiddenContent
-                  hiddenContent={{title:'',description:''}}
-                  isHovered={isHovered}
-                />
-              </>
-            )}
-          </Div>
+            <Div width={"80%"}>
+              {(isHovered) => (
+                <>
+                  <Img src={truck} />
+                  <HiddenContent
+                    hiddenContent={{ title: "", description: "" }}
+                    isHovered={isHovered}
+                  />
+                </>
+              )}
+            </Div>
           </div>
         </div>
       </Container>
