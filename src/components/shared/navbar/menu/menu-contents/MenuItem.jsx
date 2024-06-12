@@ -18,11 +18,11 @@ const MenuItem = ({ path, label, isBrand, className }) => {
     <Link
       onClick={handleClick}
       className={`${
-        className ? `${className}` : "text-[#fafafa]"
+        className ? `${className}` : "text-[#cccccc]"
       } mt-7 md:mt-0 relative z-40 flex gap-1 group text-[14px]
 
-      ${router === path? "!text-standard-gold":''}
-      
+      ${router === path? "!text-white":''}
+
        hover:text-standard-gold before:content-['']
         hover:before:bg-standard-gold transition-all duration-200
          before:h-[1px] md:before:mt-5 before:absolute before:transition-all before:duration-300 before:ease-linear

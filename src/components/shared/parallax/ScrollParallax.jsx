@@ -27,7 +27,7 @@ const ScrollParallax = ({images, titles }) => {
       <div className="relative">
         <div
           className={`${
-            isMenuOpen ? "-mt-[800px] md:-mt-96" : "-mt-96"
+            isMenuOpen ? "-mt-[1000px] md:-mt-96" : "-mt-[700px]"
           } transition-all h-[125vh] duration-1000 section text-8xl overflow-hidden sticky top-0`}
         >
           <AnimatedVideo />
