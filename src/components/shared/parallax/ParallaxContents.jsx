@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Button from "@/components/shared/button/Button";
 import { useEffect, useState } from "react";
-import Button from "./Button";
 import VerticalAnimatedProgressbar from "../animation/animated-video/VerticalAnimatedProgressbar";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
@@ -45,7 +45,7 @@ const ParallaxContents = ({ title, page, images }) => {
         style={{ opacity }}
       >
         <TitleComponent title={title} />
-        <Button />
+         <Button className={'mt-9 md:mt-11'} size="eLarge">Discover now</Button>
       </div>
       <VerticalAnimatedProgressbar className="-bottom-[85vh]" />
     </>
