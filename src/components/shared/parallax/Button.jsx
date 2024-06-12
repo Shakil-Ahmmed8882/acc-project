@@ -17,27 +17,24 @@ const Button = ({ text, customStyle, clickHandler }) => {
 
        
        hover:bg-[#dfdfdf] mt-8 text-[16px]
-      flex justify-center items-center gap-2   hover:border-none  
-      !rounded-full transition-all duration-700 py-3 px-16
+      flex justify-center items-center gap-2   
+       transition-all duration-700 py-3 px-16
       button-gradient-border
       relative `}
       >
         <div
           className="
       group-hover:-translate-x-2
-       
       transition-all duration-500 font-riviera"
         >
-          <span className=" group-hover:text-deep-gold transition-all duration-1000">
+          <span className="">
             {text || "Discover Now"}
           </span>
         </div>
 
         <MoveRight
-          className={`group-hover:visible group-hover:text-deep-gold group-hover:opacity-100 absolute
-         right-0 top-[7px]  group-hover:right-14 opacity-0
-         
-        invisible transition-all duration-500 `}
+          className={`group-hover:visible  group-hover:opacity-100 absolute
+         right-0 top-[9px]  group-hover:right-14 opacity-0 `}
         />
       </button>
     </Link>

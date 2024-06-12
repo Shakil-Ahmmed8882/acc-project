@@ -29,7 +29,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
           width={1000}
           height={1000}
           src={img1}
-          className={` top-0 left-0 absolute h-full w-full object-cover
+          className={` top-0 left-0  h-full w-full object-cover
        transition-all duration-1000 `}
           alt="hero section"
         />

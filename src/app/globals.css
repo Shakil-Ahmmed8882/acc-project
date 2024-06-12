@@ -101,19 +101,28 @@ body {
   
   
   /*  ============================================================ */
+                /* GRADIENT BORDER  */
   /*  ============================================================ */
   .button-gradient-border {
-    border: 2px solid transparent; /* Define border width */
+    border: 2px solid transparent;
     border-image-source: linear-gradient(90deg, #F9F295, #E0AA3E, #FAF398, #B88A44);
-    border-image-slice: 1; /* Use the entire image */
-    
-    letter-spacing: 1px; /* Letter spacing */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition:all 0.3s; /* Smooth transition for hover effect */
-    position: relative; /* Position relative for pseudo-element */
-    color: transparent; /* Make text transparent */
-    background: linear-gradient(90deg, #F9F295, #E0AA3E, #FAF398, #B88A44); /* Gradient background */
-    -webkit-background-clip: text; /* Clip background to text for WebKit browsers */
-    background-clip: text; /* Clip background to text */
-  }
+    border-image-slice: 20; /* Adjust the value to control the curve effect */
+    border-radius: 20px; /* Adjust border radius to your preference */
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    color: transparent;
+    background: linear-gradient(90deg, #F9F295, #E0AA3E, #FAF398, #B88A44);
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.6s;
+}
 
+.button-gradient-border:hover {
+    background: white;
+    color: #e0aa3e;
+    border: 2px solid transparent;
+    border-image-source: linear-gradient(90deg, #f9f29500, #00000000, #faf39800, #b88a4400);
+    border-image-slice: 20; /* Maintain the same curve effect on hover */
+    border-radius: 20px; /* Ensure border radius is applied on hover */
+}
