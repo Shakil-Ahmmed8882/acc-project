@@ -5,13 +5,12 @@ import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
 import Container from "../container/Container";
 import { motion } from "framer-motion";
-// import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
 
 const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   // demo array
   const images = imagesArray;
   return (
-    // <InitialAnimateContainer>
+
     <Container
       className={
         "h-screen overflow-y-hidden grid justify-center items-center"
@@ -29,8 +28,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
           width={1000}
           height={1000}
           src={img1}
-          className={` top-0 left-0 absolute h-full w-full object-cover
-       transition-all duration-1000 `}
+          className={` top-0 left-0 absolute h-full w-full object-cover transition-all duration-1000 `}
           alt="hero section"
         />
       )}
@@ -62,7 +60,6 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
         </div>
       </motion.div>
     </Container>
-    // </InitialAnimateContainer>
   );
 };
 

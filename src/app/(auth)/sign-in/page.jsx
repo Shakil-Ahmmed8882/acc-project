@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
+import Loading from "@/app/loading";
 
 export default function SignIn() {
   const router = useRouter();
@@ -56,7 +57,7 @@ export default function SignIn() {
   };
 
     if (sessionStatus === "loading") {
-      return <h1>Loading...</h1>;
+      return <Loading/>;
     }
 
   return (

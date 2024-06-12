@@ -26,7 +26,7 @@ const ParallaxContents = ({ title, page, images }) => {
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
-      {images.map((imageUrl, i) => (
+      {images?.map((imageUrl, i) => (
         <Image
           key={imageUrl}
           placeholder="blur"

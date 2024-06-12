@@ -28,15 +28,15 @@ const FlagshipProducts = () => {
     product8,
   ];
   return (
-    <div className="bg-[#1C1C1C]  py-10">
-      <Container className=" grid grid-cols-1 lg:grid-cols-5 place-self-center lg:gap-10 pr-0 mr-0">
+    <div className="bg-[#1C1C1C]  py-10 ">
+      <div className="mx-auto px-4 sm:mx-6 md:ml-10 lg:ml-28 2xl:ml-32 grid grid-cols-1 lg:grid-cols-5 place-self-center lg:gap-10 pr-0 mr-0">
         <div className="md:col-span-2 mb-10 md:mb-0 self-center">
           <FlagshipProductsLeft />
         </div>
         <div className="md:col-span-3 ">
           <FlagshipProductsRight products={products} />
         </div>
-      </Container>
+      </div>
     </div>
   );
 };
@@ -47,7 +47,7 @@ const FlagshipProductsLeft = () => {
   return (
     <div className=" w-full lg:text-left text-center my-10">
       <h4 className="text-[30px] md:text-[40px] mb-10 lg:mb-20 text-light-text tracking-[8px] font-cailyne uppercase">
-        Explore ACC&#39;s Flagship products
+        Explore ACC<span className="font-castoroTitling">&#39;</span>s Flagship products
       </h4>
 
       <Button size="eLarge">Discover now</Button>

@@ -1,5 +1,6 @@
 "use client";
 
+import Loading from "@/app/loading";
 import Hero from "@/components/page/products/acc-cigars/Hero";
 import Products from "@/components/page/products/acc-cigars/best-seller/Products";
 import Filter from "@/components/page/products/acc-cigars/filter/Filter";
@@ -31,9 +32,9 @@ const AccCigars = ({ params }) => {
     });
   }, [collectionName]);
 
-  console.log(product);
+  console.log(collectionName);
 
-  if (isLoading) return "loading...";
+  if (isLoading) return <Loading/>;
   const navigationItems = ["cigar", "liquor", "accessories", "luxury-storage"];
 
   if (!navigationItems.includes(collectionName)) {
