@@ -29,7 +29,7 @@ const FlagshipProducts = () => {
   ];
   return (
     <div className="bg-[#1C1C1C]  py-10">
-      <Container className=" grid grid-cols-1 lg:grid-cols-5 place-self-center  lg:gap-10">
+      <Container className=" grid grid-cols-1 lg:grid-cols-5 place-self-center lg:gap-10 pr-0 mr-0">
         <div className="md:col-span-2 mb-10 md:mb-0 self-center">
           <FlagshipProductsLeft />
         </div>

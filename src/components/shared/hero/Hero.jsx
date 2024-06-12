@@ -13,7 +13,9 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   return (
     // <InitialAnimateContainer>
     <Container
-      className={"h-screen overflow-y-hidden grid justify-center items-center"}
+      className={
+        "h-screen overflow-y-hidden grid justify-center items-center"
+      }
     >
       {/* stacking image from images gallery and slide with index */}
       {/* if array given animate images in bg */}
@@ -28,7 +30,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
           height={1000}
           src={img1}
           className={` top-0 left-0 absolute h-full w-full object-cover
-       transition-all duration-1000`}
+       transition-all duration-1000 `}
           alt="hero section"
         />
       )}
