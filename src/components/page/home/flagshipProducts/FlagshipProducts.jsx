@@ -53,7 +53,7 @@ const FlagshipProductsLeft = () => {
         Flagship products
       </h4>
 
-      <button className=" flex items-center justify-center gap-3 group hover:bg-light-text hover:text-deep-gold transition duration-300 px-20 py-4 rounded-full text-base font-medium w-full border">
+      <button className=" flex items-center justify-center gap-3 hover:gap-8 group hover:bg-light-text hover:text-deep-gold transition duration-300 px-20 py-4 rounded-full text-base font-medium w-full border">
         <span className="transition duration-300  text-transparent bg-clip-text bg-gradient-to-r from-pale-gold via-rich-gold to-deep-gold hover:text-deep-gold ">
           Discover now
         </span>
