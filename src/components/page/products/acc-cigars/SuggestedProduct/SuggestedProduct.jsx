@@ -1,11 +1,12 @@
 "use client";
-
 import ProductCard from "@/components/shared/product/product-card/Card";
-import Container from "@/components/shared/container/Container";
 import { useEffect, useState } from "react";
 import useGetAllProducts from "@/hooks/useGetAllProducts";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import Loader from "@/components/shared/loader/Loader";
+import Container from "@/components/shared/container/Container";
+import Image from "next/image";
+import bgImg from "@/assets/img/products/productBg.jpg";
 
 const SuggestedProduct = ({ id }) => {
   const { showProducts } = useGlobalContext();
@@ -22,8 +23,15 @@ const SuggestedProduct = ({ id }) => {
   }, [id, products, showProducts]);
 
   return (
-    <section>
-      <Container className="min-h-screen py-9 relative">
+    <section className="relative">
+      <Image
+        width={1000}
+        height={1000}
+        src={bgImg}
+        alt="Background Image"
+        class="absolute inset-0 w-full h-full object-cover filter blur-[5px]"
+      />
+      <Container>
         <h3
           style={{ letterSpacing: 2 }}
           className="text-white py-3 border-b border-[#bfbfbf] inline-block"
