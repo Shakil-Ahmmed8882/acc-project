@@ -32,9 +32,10 @@ const SuggestedProduct = ({ id }) => {
         class="absolute inset-0 w-full h-full object-cover -z-40"
         style={{
           background: "#00000033",
+          opacity:".5"
         }}
       />
-      <Container>
+      <Container className={"pb-24"}>
         <h3
           style={{ letterSpacing: 2 }}
           className="text-white py-3 border-b border-[#bfbfbf] inline-block z-50"

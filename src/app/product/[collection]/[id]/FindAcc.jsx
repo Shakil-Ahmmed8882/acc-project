@@ -12,38 +12,38 @@ const FindAcc = () => {
       <div className="flex flex-col items-center space-y-4 sm:space-y-0 sm:flex-row sm:justify-center sm:space-x-4">
         {/* Grouping ZIP CODE input and FIND A STORE button */}
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2">
-          <div className="flex items-center border border-gradient rounded-full overflow-hidden">
+          <div className="flex items-center border border-yellow-300 rounded-full overflow-hidden">
             <input
               type="text"
               placeholder="ZIP CODE"
-              className="px-4 py-2 bg-black focus:outline-none rounded-l-full"
+              className="px-4 py-2 bg-black focus:outline-none  rounded-l-full"
             />
-            <button className="text-[#FAFAFA] px-4 py-2 focus:outline-none rounded-r-full">
+            <button className="text-[#FAFAFA] font-riviera px-4 py-2 focus:outline-none rounded-r-full">
               FIND A STORE
             </button>
           </div>
         </div>
 
-        <div className="text-gray-400">OR</div>
+        <div className="text-[#FAFAFA] font-riviera">OR</div>
 
         {/* Use Current Location Button */}
-        <button className="bg-black text-[#FAFAFA] border border-gradient px-4 py-2 rounded-full focus:outline-none">
+        <button className="bg-black font-riviera border border-yellow-300 px-4 py-2 rounded-full focus:outline-none text-[#FAFAFA]">
           USE CURRENT LOCATION
         </button>
 
         {/* Divider for large screens */}
-        <div className="border-l border-gradient h-8 hidden lg:block"></div>
+        <div className="border-l border-yellow-300 h-8 hidden lg:block"></div>
 
         {/* Grouping Select Online Store and SEARCH NOW button */}
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2">
-          <div className="flex items-center border border-gradient rounded-full overflow-hidden">
-            <select className="bg-black text-[#FAFAFA] px-4 py-2 focus:outline-none">
+          <div className="flex items-center border border-yellow-300 rounded-full overflow-hidden">
+            <select className="bg-black text-[#FAFAFA] font-riviera px-4 py-2 focus:outline-none">
               <option>Select Online Store</option>
               <option>Store 1</option>
               <option>Store 2</option>
               <option>Store 3</option>
             </select>
-            <button className="bg-black text-[#FAFAFA] px-4 py-2 focus:outline-none rounded-none">
+            <button className="bg-black text-[#FAFAFA] font-riviera px-4 py-2 focus:outline-none rounded-none">
               SEARCH NOW
             </button>
           </div>
