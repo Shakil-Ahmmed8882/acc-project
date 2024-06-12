@@ -43,6 +43,7 @@ const FlagshipProducts = () => {
 export default FlagshipProducts;
 
 const FlagshipProductsLeft = () => {
+  
   return (
     <div className=" w-full lg:text-left text-center my-10">
       <h4 className="text-[30px] md:text-[40px] mb-10 lg:mb-20 text-light-text tracking-[8px] font-cailyne uppercase">

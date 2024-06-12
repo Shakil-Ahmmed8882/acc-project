@@ -2,7 +2,6 @@
 
 import MenuItem from "@/components/shared/navbar/menu/menu-contents/MenuItem";
 import useGlobalContext from "@/hooks/useGlobalContext";
-import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { usePathname } from "next/navigation";
 
 const Tabs = () => {
