@@ -39,13 +39,14 @@ const ParallaxContents = ({ title, page, images, }) => {
         />
       ))}
       <div
+        
         className={`${
           activeSectionIndex === page ? "visible" : "invisible opacity-0"
         } smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}
-        style={{ opacity }}
+        style={{zIndex:99999, opacity }}
       >
         <TitleComponent title={title} />
-         <Button className={'mt-9 md:mt-11'} size="eLarge">Discover now</Button>
+         <Button className={' relative mt-9 md:mt-11'} size="eLarge">Discover now</Button>
       </div>
       <VerticalAnimatedProgressbar className="-bottom-[85vh]" />
     </>
@@ -62,7 +63,7 @@ const TitleComponent = ({ title }) => {
     <h1
       style={{lineHeight:1.4}}
       className="font-cailyne uppercase text-center text-3xl px-8 sm:text-4xl 
-      md:text-5xl relative font-normal tracking-[11px] z-50"
+      md:text-5xl relative font-normal tracking-[11px] !z-50"
       dangerouslySetInnerHTML={{ __html: formattedTitle }}
     />
   );

@@ -8,7 +8,10 @@ const MenuContents = ({ isMenuOpen }) => {
 
 
   return (
-    <article className={`${isMenuOpen ? 'pt-4  visible opacity-100 ' : 'invisible opacity-0'} transition-all duration-700 text-white bottom w-full`}>
+    <article
+    style={{zIndex:-999999}}
+    className={`${isMenuOpen ? 'pt-4  visible opacity-100 ' : 'invisible opacity-0'}
+     transition-all absolute duration-700 text-white bottom w-full`}>
       <ul className=" md:flex gap-20 justify-center">
         <div className="md:hidden -ml-12 flex"><SearchBar/></div>
         <MenuItem path={'/'} label={'HOME'} />
