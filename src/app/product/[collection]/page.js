@@ -31,7 +31,7 @@ const AccCigars = ({ params }) => {
     });
   }, [collectionName]);
 
-  console.log(product);
+  
 
   if (isLoading) return "loading...";
   const navigationItems = ["cigar", "liquor", "accessories", "luxury-storage"];

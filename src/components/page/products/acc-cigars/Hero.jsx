@@ -6,7 +6,7 @@ const Hero= ({title}) => {
   return (
     <div className="-mt-40">
         <HeroSection 
-        imagesArray={[heroImag,img2]} 
+        imagesArray={[heroImag]} 
         title={title}
          description={'collection'}/>
     </div>

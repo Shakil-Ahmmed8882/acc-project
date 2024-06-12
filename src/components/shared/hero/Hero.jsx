@@ -14,7 +14,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
     // <InitialAnimateContainer>
     <Container
       className={
-        "h-screen overflow-y-hidden grid justify-center items-center"
+        "h-screen -mt-[600px] overflow-y-hidden grid justify-center items-center"
       }
     >
       {/* stacking image from images gallery and slide with index */}
