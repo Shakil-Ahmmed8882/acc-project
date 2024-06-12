@@ -1,17 +1,15 @@
 "use client";
-
 import Image from "next/image";
 import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
 import Container from "../container/Container";
 import { motion } from "framer-motion";
-// import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
 
 const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   // demo array
   const images = imagesArray;
   return (
-    // <InitialAnimateContainer>
+
     <Container
       className={
          `relative -mt-36  h-screen overflow-y-hidden 
@@ -65,7 +63,6 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
         </div>
       </motion.div>
     </Container>
-    // </InitialAnimateContainer>
   );
 };
 

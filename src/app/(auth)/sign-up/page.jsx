@@ -3,16 +3,30 @@ import { useState } from "react";
 import acclogo from "@/assets/img/shared/navbar/acc.png";
 import logo from "@/assets/img/shared/navbar/logo.png";
 import Image from "next/image";
+import Link from "next/link";
+import { createNewAdmin } from "@/utils";
+import { toast } from "sonner";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     // Handle form submission
-    console.log("Email:", email);
-    console.log("Password:", password);
+    const userData = {
+      email,
+      password,
+    };
+    const result = await createNewAdmin(userData);
+    console.log(result);
+    if (result.success) {
+      toast.success(result.message);
+      console.log("ok");
+      }else{
+      toast.error(result.message);
+
+    }
   };
 
   return (
@@ -66,9 +80,9 @@ export default function SignUp() {
             Sign in
           </button>
           <div className="text-center">
-            <a href="#" className="hover:text-indigo-600">
+            <Link href="forgot-password" className="hover:text-yellow-600">
               Forgot password?
-            </a>
+            </Link>
           </div>
         </form>
       </div>

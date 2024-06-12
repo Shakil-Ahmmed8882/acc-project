@@ -1,7 +1,6 @@
 import HeroSection from "@/components/shared/hero/Hero";
-import heroImag from '@/assets/img/products/acc-cigars/hero.png'
+import heroImag from "@/assets/img/products/acc-cigars/hero.png";
 import img2 from "@/assets/img/heritage/world-of-acc/img3.png";
-
 const Hero= ({title}) => {
   return (
     <div className="-mt-40">
@@ -13,4 +12,4 @@ const Hero= ({title}) => {
   );
 };
 
-export default Hero; 
+export default Hero;

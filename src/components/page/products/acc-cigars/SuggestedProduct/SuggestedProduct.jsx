@@ -23,24 +23,28 @@ const SuggestedProduct = ({ id }) => {
   }, [id, products, showProducts]);
 
   return (
-    <section className="relative">
+    <section className="relative bg-[#00000033]">
       <Image
         width={1000}
         height={1000}
         src={bgImg}
         alt="Background Image"
-        class="absolute inset-0 w-full h-full object-cover filter blur-[5px]"
+        class="absolute inset-0 w-full h-full object-cover -z-40"
+        style={{
+          background: "#00000033",
+          opacity:".5"
+        }}
       />
-      <Container>
+      <Container className={"pb-24"}>
         <h3
           style={{ letterSpacing: 2 }}
-          className="text-white py-3 border-b border-[#bfbfbf] inline-block"
+          className="text-white py-3 border-b border-[#bfbfbf] inline-block z-50"
         >
           SUGGESTED PRODUCTS
         </h3>
         <h3
           style={{ letterSpacing: 2 }}
-          className="text-white py-3 text-[18px] md:text-[20px] lg:text-[22px] mt-6 md:mt-4 md:mb-9"
+          className="text-white py-3 text-[18px] md:text-[20px] lg:text-[22px] mt-6 md:mt-4 md:mb-9 z-50"
         >
           YOU MAY ALSO LIKE
         </h3>

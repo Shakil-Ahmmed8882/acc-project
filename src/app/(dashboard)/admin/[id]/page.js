@@ -1,4 +1,5 @@
 'use client'
+import Loading from "@/app/loading";
 import ProductDetails from "@/components/page/dashboard/main-content/all-products/ProductDetails";
 import { fetchSingleProduct } from "@/utils";
 import { useParams } from "next/navigation";
@@ -22,7 +23,7 @@ useEffect(()=> {
 },[id])
 
 
-if(isLoading) return 'loading...'
+if(isLoading) return <Loading/>
 
   return (
     <>
