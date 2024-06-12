@@ -7,6 +7,7 @@ import { fetchSingleProduct } from "@/utils";
 import { useParams } from "next/navigation";
 
 import { useEffect, useState } from "react";
+import FindAcc from "./FindAcc";
 
 const ProductDetailsPage = () => {
   // step 1 get id
@@ -25,10 +26,15 @@ const ProductDetailsPage = () => {
 
   return (
     <>
-      <Container>
+      <Container bgClr={"bg-[#121212]"}>
         <ProductDetails product={product} showHighlight={false} />
-        {product?.video && <VideoPlayer videoUrl={product?.video} />}
-        <SuggestedProduct id={product._id} />
+      </Container>
+      {product?.video && <VideoPlayer videoUrl={product?.video} />}
+
+      <SuggestedProduct id={product._id} />
+
+      <Container bgClr={"bg-[#121212]"}>
+        <FindAcc />
       </Container>
     </>
   );
