@@ -7,6 +7,7 @@ const Button = ({
   size = "large",
   variant = "primary",
   className,
+  width,
   ...props
 }) => {
   // Size classes for different button sizes
@@ -38,7 +39,7 @@ const Button = ({
         `group uppercase inline-flex justify-center items-center 
         gap-2 rounded-full border relative overflow-hidden 
         hover:bg-[#fafafa] px-8 hover:md:px-20
-        transition-all duration-500`,
+        transition-all duration-500 w-[${width}] py-2`,
         sizeClasses[size],
         variantClasses[variant],
         className
