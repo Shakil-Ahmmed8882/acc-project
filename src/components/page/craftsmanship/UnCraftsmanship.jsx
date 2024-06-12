@@ -15,9 +15,9 @@ const UnCraftsmanship = () => {
       bgClr="bg-black"
       className={"py-12 px-4 sm:px-6 lg:px-8 mx-auto"}
     >
-      <div className="flex flex-col lg:flex-row gap-40">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-40">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
-          <h2 className="text-5xl lg:text-4xl mb-8 lg:mb-20 whitespace-nowrap mt-8 leading-[140%] font-normal font-cailyne uppercase">
+          <h2 className="text-3xl lg:text-4xl mb-8 lg:mb-20 mt-8 leading-[140%] font-normal font-cailyne uppercase">
             Unparalleled Craftsmanship
           </h2>
           <Description {...{ text }} />
@@ -39,7 +39,7 @@ const UnCraftsmanship = () => {
               height={500}
               src={craftsmanship3}
               alt="Image 1"
-              className="w-full rounded shadow-md object-cover"
+              className="w-full rounded shadow-md object-cover h-72 lg:h-auto"
             />
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1">
@@ -48,7 +48,7 @@ const UnCraftsmanship = () => {
               height={500}
               src={craftsmanship2}
               alt="Image 2"
-              className="w-full rounded shadow-md object-cover lg:h-5/6"
+              className="w-full rounded shadow-md object-cover lg:h-5/6 -h-72 "
             />
           </div>
         </div>

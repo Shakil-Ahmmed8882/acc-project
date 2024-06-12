@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Product.css";
+import Link from "next/link";
+import Button from "@/components/shared/button/Button";
 
 const ProductDetails = ({ product, showHighlight }) => {
   const { name, description, category, images } = product;
@@ -115,6 +117,12 @@ const ProductDetails = ({ product, showHighlight }) => {
                   </p>
                 </motion.div>
               )}
+              <Link
+                href={"#find"}
+                className="w-full flex justify-center py-6"
+              >
+                <Button>FIND A STORE</Button>
+              </Link>
             </div>
           </div>
         </div>

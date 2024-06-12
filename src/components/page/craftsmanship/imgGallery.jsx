@@ -6,15 +6,17 @@ import Div from "./content-container/Div";
 import Img from "./content-container/Img";
 import truck from "@/assets/img/craftsmanship/imgGallery/craftsmanship7.png";
 import HiddenContent from "./content-container/HiddenContent";
+import Button from "@/components/shared/button/Button";
+import Link from "next/link";
 
 const ImageGallery = () => {
   return (
     <>
       <Container bgClr="bg-black">
-        <div className="border-b  pb-2 border-[#bfbfbf] text-2xl text-white w-fit leading-[140%] font-normal font-riviera">
+        <div className="border-b pb-2 border-[#bfbfbf] text-2xl text-white w-fit leading-[140%] font-normal font-riviera">
           CRAFTING PROCESS
         </div>
-        <h1 className="py-6 font-riviera text-[#bfbfbf]">
+        <h1 className="pt-6 font-riviera text-[#bfbfbf]">
           At ACC we age and ferment the tobacco for years, a rare practice even
           among the most well-known brands. We then roll the cigars in our own
           factory and age them again. This process takes many years and is very
@@ -49,6 +51,9 @@ const ImageGallery = () => {
             </Div>
           </div>
         </div>
+        <Link href={"/product/cigar"} className="w-full flex justify-center py-16">
+          <Button>SEE OUR PRODUCTS</Button>
+        </Link>
       </Container>
     </>
   );
