@@ -1,4 +1,5 @@
 "use client";
+import Loading from "@/app/loading";
 import ProductDetails from "@/components/page/dashboard/main-content/all-products/ProductDetails";
 import SuggestedProduct from "@/components/page/products/acc-cigars/SuggestedProduct/SuggestedProduct";
 import Container from "@/components/shared/container/Container";
@@ -22,7 +23,7 @@ const ProductDetailsPage = () => {
       setIsLoading(false);
     });
   }, [id]);
-  if (isLoading) return "loading...";
+  if (isLoading) return <Loading/>;
 
   return (
     <>

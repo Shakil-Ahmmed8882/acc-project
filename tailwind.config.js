@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "gold-gradient":
+          "linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%)",
+      },
       colors: {
         // updated color name
         "background-dark": "#222222" /* Dark Background */,
