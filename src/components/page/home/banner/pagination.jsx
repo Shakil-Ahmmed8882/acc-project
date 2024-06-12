@@ -5,7 +5,7 @@ const Pagination = () => {
   const { isMenuOpen } = useGlobalContext();
   return (
     // if menu open hide parallax pagination dot
-    <Container className={'relative hidden'}>
+    <Container className={'relative'}>
     <div
       className={`${
         isMenuOpen ? " invisible opacity-0" : "invisible md:visible opacity-100"

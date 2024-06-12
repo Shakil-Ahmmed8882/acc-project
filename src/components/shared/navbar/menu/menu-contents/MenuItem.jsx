@@ -1,21 +1,28 @@
 import useGlobalContext from "@/hooks/useGlobalContext";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const MenuItem = ({ path, label, isBrand, className }) => {
+  const router = usePathname();
   const { setIsMenuOpen } = useGlobalContext();
   const { isBrandHover, setIsBrandsHover } = useGlobalContext();
   const handleClick = () => {
     setIsMenuOpen(false);
     setIsBrandsHover(false);
   };
+  
+
 
   return (
     <Link
       onClick={handleClick}
       className={`${
-        className ? `${className}` : "text-[#cacaca]"
+        className ? `${className}` : "text-[#fafafa]"
       } mt-7 md:mt-0 relative z-40 flex gap-1 group text-[14px]
+
+      ${router === path? "!text-standard-gold":''}
+
        hover:text-standard-gold before:content-['']
         hover:before:bg-standard-gold transition-all duration-200
          before:h-[1px] md:before:mt-5 before:absolute before:transition-all before:duration-300 before:ease-linear

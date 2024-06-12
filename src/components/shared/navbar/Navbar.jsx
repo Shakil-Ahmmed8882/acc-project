@@ -62,12 +62,12 @@ const Navbar = () => {
   return (
     <navbarContext.Provider value={navInfo}>
       <motion.header
-        style={{ zIndex: 9999 }}
+        style={{ zIndex: 99 }}
         className={`
           ${isAdminRoute ? "hidden" : "block"}
           ${isMenuOpen ? "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]" : 
             hasScrolled ? (isScrollingUp ? "h-28 lg:h-32 bg-[#0000006c]" : "h-32 lg:h-28 bg-[#0000006c]") : "bg-transparent"}
-          fixed left-0 right-0 top-0 transition-all duration-700
+          sticky left-0 right-0 top-0 transition-all duration-700
         `}
         initial="initial"
         animate={getHeaderVariant()}
