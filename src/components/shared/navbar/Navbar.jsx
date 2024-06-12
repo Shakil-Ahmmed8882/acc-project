@@ -62,12 +62,12 @@ const Navbar = () => {
   return (
     <navbarContext.Provider value={navInfo}>
       <motion.header
-        style={{ zIndex: 9999 }}
+        style={{ zIndex: 99 }}
         className={`
           ${isAdminRoute ? "hidden" : "block"}
-          ${isMenuOpen ? "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]" : 
-            hasScrolled ? (isScrollingUp ? "h-28 lg:h-32 bg-[#0000006c]" : "h-32 lg:h-28 bg-[#0000006c]") : "bg-transparent"}
-          fixed left-0 right-0 top-0 transition-all duration-700
+          ${isMenuOpen ? "md:min-h-32 lg:h-52 bg-[#0000006c]" : 
+            hasScrolled ? (isScrollingUp ? " bg-[#0000006c]" : " bg-[#0000006c]") : "bg-transparent"}
+            sticky right-0 top-0 transition-all duration-700
         `}
         initial="initial"
         animate={getHeaderVariant()}
@@ -75,7 +75,8 @@ const Navbar = () => {
         transition={{ duration: 0.7 }}
       >
         <BgOverlay isTrue={isBrandHover} />
-        <Container isNavbar={true} className="flex justify-between gap-0 items-center px-8">
+        <Container  isNavbar={true} 
+          className="flex justify-between gap-0 items-center px-8">
           <MenuIcon label={"MENU"} />
           <Logo isSecondParallaxInView={isSecondParallaxInView} />
           <div className="hidden -pl-6 md:flex">
