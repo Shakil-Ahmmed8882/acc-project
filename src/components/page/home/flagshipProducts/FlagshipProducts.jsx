@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Button from "@/components/shared/button/Button";
 import CommonSlider from "./CommonSlider";
 
 import product1 from "@/assets/img/home/flagship/flagship1.png";
@@ -14,7 +13,6 @@ import product6 from "@/assets/img/home/flagship/flagship6.png";
 import product7 from "@/assets/img/home/flagship/flagship7.png";
 import product8 from "@/assets/img/home/flagship/flagship8.png";
 import SliderAction from "./SliderAction";
-import Container from "@/components/shared/container/Container";
 import { ButtonRightArrow } from "@/components/icons/Icons";
 
 const FlagshipProducts = () => {

@@ -10,7 +10,8 @@ import Loader from "@/components/shared/loader/Loader";
 import Button from "./Button";
 import AllProduct from "./AllProduct";
 import SkeletonCard from "./ProductSkeleton";
-
+import Image from "next/image";
+import bgImg from "@/assets/img/products/productBg.jpg";
 
 const Products = ({ product }) => {
   const { isSeeMore, setIsSeeMore } = useGlobalContext();
@@ -29,7 +30,18 @@ const Products = ({ product }) => {
   }, [product]);
 
   return (
-    <section className="size-full productBg transition-all duration-300 min-h-screen">
+    <section className="size-full transition-all duration-300 min-h-screen relative">
+      <Image
+        width={1000}
+        height={1000}
+        src={bgImg}
+        alt="Background Image"
+        class="absolute inset-0 w-full h-full object-cover -z-40"
+        style={{
+          background: "#00000033",
+          opacity: ".5",
+        }}
+      />
       <Container className="min-h-screen py-9 relative">
         <Title title={"BEST SELLER"} />
         <article
