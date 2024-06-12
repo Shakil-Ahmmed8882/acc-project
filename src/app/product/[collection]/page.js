@@ -43,7 +43,7 @@ const AccCigars = ({ params }) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <main className="bg-[#090b0d] relative mt-44 min-h-[calc(100vh)] z-[1000]">
+          <main className="bg-[#090b0d] relative mt-44 min-h-[calc(100vh)] ">
             <ProductBanner title={collectionName} />
             <Filter />
             <Products product={product} />

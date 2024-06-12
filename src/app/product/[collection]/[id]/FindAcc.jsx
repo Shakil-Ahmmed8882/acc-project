@@ -2,7 +2,10 @@ import React from "react";
 
 const FindAcc = () => {
   return (
-    <div className="text-white flex flex-col items-center justify-center space-y-6 pb-28">
+    <div
+      id="find"
+      className="text-white flex flex-col items-center justify-center space-y-6 pb-28"
+    >
       <h3
         style={{ letterSpacing: 2 }}
         className="text-white py-3 text-3xl md:text-4xl lg:text-5xl mt-6 md:mt-4 md:mb-9 inline-block font-riviera"

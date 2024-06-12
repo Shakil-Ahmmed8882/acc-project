@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Product.css";
+import Link from "next/link";
+import Button from "@/components/shared/button/Button";
 
 const ProductDetails = ({ product, showHighlight }) => {
   const { name, description, category, images } = product;
@@ -15,10 +18,20 @@ const ProductDetails = ({ product, showHighlight }) => {
     setShowDescription(!showDescription);
   };
 
+  const descriptionVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const swiperVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
     <>
       <div className="rounded-md py-32">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-32">
           <div className="flex flex-col justify-center md:justify-end h-[500px] relative">
             <Swiper
               modules={[Pagination]}
@@ -33,13 +46,20 @@ const ProductDetails = ({ product, showHighlight }) => {
             >
               {images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <Image
-                    width={500}
-                    height={500}
-                    src={image}
-                    alt={`${name} - ${index + 1}`}
-                    className="object-contain w-full h-full m-0 p-0 rounded-md"
-                  />
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={swiperVariants}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image
+                      width={500}
+                      height={500}
+                      src={image}
+                      alt={`${name} - ${index + 1}`}
+                      className="object-contain w-full h-full m-0 p-0 rounded-md"
+                    />
+                  </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -79,17 +99,30 @@ const ProductDetails = ({ product, showHighlight }) => {
                       height="2"
                       rx="1"
                       className={`origin-center rotate-90 transform transition duration-300 ease-out ${
-                        !showDescription  && "!rotate-180"
+                        !showDescription && "!rotate-180"
                       }`}
                     />
                   </svg>
                 </span>
               </button>
               {showDescription && (
-                <p className="text-lg text-[#b7b7b7] text-justify pt-2">
-                  {description}
-                </p>
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={descriptionVariants}
+                  transition={{ duration: 0.3 }}
+                >
+                  <p className="text-lg text-[#b7b7b7] text-justify pt-2">
+                    {description}
+                  </p>
+                </motion.div>
               )}
+              <Link
+                href={"#find"}
+                className="w-full flex justify-center py-6"
+              >
+                <Button>FIND A STORE</Button>
+              </Link>
             </div>
           </div>
         </div>

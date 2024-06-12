@@ -17,7 +17,7 @@ const SearchBar = () => {
           onClick={() => setIsSwap(!isSwap)}
           style={{ letterSpacing: 3 }}
           className={`
-          font-cailyne
+          font-riviera
           uppercase
           ${
             isSwap

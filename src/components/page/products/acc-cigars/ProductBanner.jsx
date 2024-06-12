@@ -2,7 +2,7 @@ import heroImag from "@/assets/img/products/acc-cigars/hero.png";
 import Image from "next/image";
 const ProductBanner = ({ title }) => {
   return (
-    <div className="-mt-48 relative  overflow-hidden ">
+    <div className="-mt-[320px] relative ">
       <Image
         src={heroImag}
         width={1500}

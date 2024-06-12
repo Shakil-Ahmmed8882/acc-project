@@ -13,21 +13,13 @@ const Button = ({
   const sizeClasses = {
     small: "py-2 px-4  text-sm",
     medium: "py-4 px-8 text-base",
-    large: "py-4 px-16 text-base",
-    eLarge: "py-4 px-24 text-base",
+    large: "py-1 px-16 text-base",
+    eLarge: "py-3 text-[15px] md:py-3 px-11 md:px-16 md:text-base",
   };
 
   // Variant classes for different button styles
   const variantClasses = {
     primary: "rounded-gold-border border-pale-gold font-riviera font-semibold",
-  };
-
-
-  const sizeStyles = {
-    small: "w-[100px] hover:w-[120px] transition-all duration-300",
-    medium: "w-[150px] hover:w-[180px] transition-all duration-300",
-    large: "w-[200px] hover:w-[240px] transition-all duration-300",
-    eLarge: "w-[250px] hover:w-[300px] transition-all duration-300",
   };
 
   // Gradient text classes for primary variant
@@ -43,7 +35,10 @@ const Button = ({
   return (
     <button
       className={classNames(
-        "group uppercase inline-flex justify-center items-center gap-2 rounded-full border relative overflow-hidden hover:bg-[#fafafa] w-[380px] hover:w-[400px] transition-all duration-500",
+        `group uppercase inline-flex justify-center items-center 
+        gap-2 rounded-full border relative overflow-hidden 
+        hover:bg-[#fafafa] px-8 hover:md:px-20
+        transition-all duration-500`,
         sizeClasses[size],
         variantClasses[variant],
         className

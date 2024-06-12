@@ -10,7 +10,7 @@ const Crafting = () => {
     <Container bgClr="bg-black" className="py-16 sm:py-24 md:py-32">
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-32 mx-auto">
         <div className="text-white">
-          <h2 className="text-[64px] mb-4 lg:mb-10 mt-8 uppercase leading-[140%] font-cailyne font-normal pb-4 tracking-[5.12px] w-[80%]">
+          <h2 className="text-4xl md:text-5xl lg:text-[64px] mb-4 lg:mb-10 mt-8 uppercase leading-[140%] font-cailyne font-normal pb-4 tracking-[5.12px] w-[80%]">
             Crafting Excellence Since 1952
           </h2>
           <Description
@@ -41,7 +41,7 @@ const ImageCard = ({ src, alt }) => {
         height={600}
         src={src}
         alt={alt}
-        className={`w-full rounded shadow-md object-cover hover-grow transition duration-300 max-h-fit lg:w-[370px]`}
+        className={`w-full rounded shadow-md lg:object-cover hover-grow transition duration-300 max-h-80 lg:max-h-fit lg:w-[370px]`}
         placeholder="blur"
         priority
       />

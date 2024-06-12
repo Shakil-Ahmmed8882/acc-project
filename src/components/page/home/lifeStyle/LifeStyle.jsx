@@ -29,8 +29,10 @@ const accLifestyleContent = [
 
 const AccLifestyle = () => {
   const containerClass = "bg-black text-white py-16 px-4";
-  const headerClass = "text-center text-3xl font-bold mb-8";
-  const subHeaderClass = "text-center text-lg mb-16";
+  const headerClass =
+    "text-center text-[28px] font-riviera leading-[140%] uppercase mb-4 tracking-[.3rem]";
+  const subHeaderClass =
+    "text-center text-lg mb-16 font-riviera leading-[140%] uppercase tracking-[.3rem]";
   const gridClass =
     "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mx-auto";
   const cardClass = "flex flex-col overflow-hidden";
