@@ -47,7 +47,7 @@ const FlagshipProductsLeft = () => {
   return (
     <div className=" w-full lg:text-left text-center my-10">
       <h4 className="text-[30px] md:text-[40px] mb-10 lg:mb-20 text-light-text tracking-[8px] font-cailyne uppercase">
-        Explore ACC&#39;s Flagship products
+        Explore ACC<span className="font-sans">&apos;</span>s Flagship products
       </h4>
 
       <Button size="eLarge">Discover now</Button>
