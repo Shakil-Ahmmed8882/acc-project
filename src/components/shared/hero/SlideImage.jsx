@@ -1,12 +1,8 @@
-/// ..
-
 import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
 import Image from "next/image";
 
 const SlideImage = ({images, loopIndex}) => {
   const { index } = useImageSlideshow(images, 3000);
-
-
   return (
     <Image
       key={loopIndex}
