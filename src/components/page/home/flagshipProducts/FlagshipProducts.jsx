@@ -15,6 +15,7 @@ import product7 from "@/assets/img/home/flagship/flagship7.png";
 import product8 from "@/assets/img/home/flagship/flagship8.png";
 import SliderAction from "./SliderAction";
 import Container from "@/components/shared/container/Container";
+import { ButtonRightArrow } from "@/components/icons/Icons";
 
 const FlagshipProducts = () => {
   const products = [
@@ -47,13 +48,23 @@ const FlagshipProductsLeft = () => {
   return (
     <div className=" w-full lg:text-left text-center my-10">
       <h4 className="text-[30px] md:text-[40px] mb-10 lg:mb-20 text-light-text tracking-[8px] font-cailyne uppercase">
-        Explore ACC<span className="font-castoroTitling font-bold italic">&#39;</span>s Flagship products
+        Explore ACC
+        <span className="font-castoroTitling font-bold italic">&#39;</span>s
+        Flagship products
       </h4>
 
-      <Button size="eLarge">Discover now</Button>
+      <button className=" flex items-center justify-center gap-3 group hover:bg-light-text hover:text-deep-gold transition duration-300 px-20 py-4 rounded-full text-base font-medium w-full">
+        <span className="transition duration-300  text-transparent bg-clip-text bg-gradient-to-r from-pale-gold via-rich-gold to-deep-gold hover:text-gradient-hover ">
+          Discover now
+        </span>
+        <ButtonRightArrow />
+      </button>
     </div>
   );
 };
+// border: 1px solid;
+
+// border-image-source: linear-gradient(90deg, #F9F295 -6.63%, #E0AA3E 27.32%, #FAF398 71.21%, #B88A44 96.3%);
 
 const FlagshipProductsRight = ({ products }) => {
   const [swiperState, setSwiperState] = useState({

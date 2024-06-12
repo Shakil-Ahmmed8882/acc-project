@@ -99,12 +99,28 @@ body {
   transition: opacity 1s ease-in-out;
 }
 
-.hover\:text-gradient:hover {
-    background: linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.text-gradient {
+  /* background: linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%); */
+  background: linear-gradient(
+    90deg,
+    #f9f295 -6.63%,
+    #e0aa3e 27.32%,
+    #faf398 71.21%,
+    #b88a44 96.3%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-hover {
+  background: linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.hover\:bg-white:hover {
-    background-color: white;
+.gradientBorder{
+  border: 1px solid;
+ border-image-source: linear-gradient(90deg, #F9F295 -6.63%, #E0AA3E 27.32%, #FAF398 71.21%, #B88A44 96.3%);
 }

@@ -6,7 +6,7 @@ import useGlobalContext from "@/hooks/useGlobalContext";
 import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
 
 // pass dynamic titles object images array 
-const ParallaxContents = ({ title, page, images }) => {
+const ParallaxContents = ({ title, page, images, }) => {
   const { activeSectionIndex } = useGlobalContext();
   const [opacity, setOpacity] = useState(1);
 
