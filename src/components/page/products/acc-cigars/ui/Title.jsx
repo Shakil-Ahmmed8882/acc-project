@@ -1,4 +1,4 @@
-const Title = ({ title }) => {
+ const Title = ({ title}) => {
   return (
     <h3
       style={{ letterSpacing: 2 }}
