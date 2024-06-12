@@ -1,9 +1,8 @@
 import React from "react";
 
-export default function loading() {
+export default function Loading() {
   return (
     <div className="flex h-screen items-center justify-center">
-
       <svg
         viewBox="0 0 24 24"
         fill="none"

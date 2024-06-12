@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
+import Link from "next/link";
 
 export default function SignIn() {
   const router = useRouter();
@@ -111,9 +112,9 @@ export default function SignIn() {
               Sign in
             </button>
             <div className="text-center">
-              <a href="#" className="hover:text-indigo-600">
+              <Link href="forgot-password" className="hover:text-yellow-600">
                 Forgot password?
-              </a>
+              </Link>
             </div>
           </form>
         </div>
