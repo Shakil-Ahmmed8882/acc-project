@@ -1,3 +1,5 @@
+/// ..
+
 import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
 import Image from "next/image";
 
