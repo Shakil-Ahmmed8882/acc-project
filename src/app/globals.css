@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url("../styles/fonts/font.css");
-@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap");
 @layer utilities {
   body {
     @apply bg-background-dark min-w-[320px] max-w-[1920px] mx-auto overflow-x-hidden;
@@ -13,6 +13,11 @@
   .active-pagination {
     @apply !bg-[white] outline outline-[white];
   }
+}
+
+body {
+  max-width: 1920px;
+  margin: auto;
 }
 
 /* Scroll bar style */
@@ -92,4 +97,23 @@
   background-attachment: local;
   background-position: center;
   transition: opacity 1s ease-in-out;
-}
+  }
+  
+  
+  /*  ============================================================ */
+  /*  ============================================================ */
+  .button-gradient-border {
+    border: 2px solid transparent; /* Define border width */
+    border-image-source: linear-gradient(90deg, #F9F295, #E0AA3E, #FAF398, #B88A44);
+    border-image-slice: 1; /* Use the entire image */
+    
+    letter-spacing: 1px; /* Letter spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition:all 0.3s; /* Smooth transition for hover effect */
+    position: relative; /* Position relative for pseudo-element */
+    color: transparent; /* Make text transparent */
+    background: linear-gradient(90deg, #F9F295, #E0AA3E, #FAF398, #B88A44); /* Gradient background */
+    -webkit-background-clip: text; /* Clip background to text for WebKit browsers */
+    background-clip: text; /* Clip background to text */
+  }
+

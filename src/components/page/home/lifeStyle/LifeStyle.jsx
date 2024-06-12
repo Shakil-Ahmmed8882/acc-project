@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import lifestyle1 from "@/assets/img/home/lifestyle/lifestyle1.png";
 import lifestyle2 from "@/assets/img/home/lifestyle/lifestyle2.png";
-import lifestyle3 from "@/assets/img/home/lifestyle/lifestyle3.png";
+import lifestyle3 from "@/assets/img/home/lifestyle/lifestyle3.jpg";
 const accLifestyleContent = [
   {
     id: 1,

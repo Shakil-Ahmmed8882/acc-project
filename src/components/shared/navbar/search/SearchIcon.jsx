@@ -1,4 +1,4 @@
-import { Search } from 'lucide-react';
+
 import searchicon from '@/assets/img/shared/navbar/searchicon.png'
 import Image from 'next/image';
 

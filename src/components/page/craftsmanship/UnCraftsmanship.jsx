@@ -11,10 +11,13 @@ const UnCraftsmanship = () => {
   const text = `At ACC, cigar craftsmanship is not merely a process. It's an art form meticulously honed over generations. From the selection of the finest tobacco leaves to the skilled hands of our master blenders, every step in crafting our cigars is infused with dedication and passion. Each cigar is a testament to our unwavering commitment to excellence, ensuring that every draw delivers a symphony of flavors and an experience unlike any other. With a reverence for tradition and a relentless pursuit of perfection, we invite you to indulge in the unparalleled craftsmanship that defines ACC's legacy.`;
 
   return (
-    <Container className={"py-12 px-4 sm:px-6 lg:px-8 mx-auto"}>
+    <Container
+      bgClr="bg-black"
+      className={"py-12 px-4 sm:px-6 lg:px-8 mx-auto"}
+    >
       <div className="flex flex-col lg:flex-row gap-40">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 lg:mb-20 whitespace-nowrap mt-8">
+          <h2 className="text-5xl lg:text-4xl mb-8 lg:mb-20 whitespace-nowrap mt-8 leading-[140%] font-normal font-cailyne uppercase">
             Unparalleled Craftsmanship
           </h2>
           <Description {...{ text }} />
