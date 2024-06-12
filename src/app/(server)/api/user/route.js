@@ -6,7 +6,10 @@ export async function POST(request) {
   await dbConnect();
   try {
     const user = await request.json();
-    //
+    const isExistUser = await UserModel.findOne({ email: user?.email });
+    if (isExistUser) {
+      throw new Error("This Email already exist");
+    }
     const result = await UserModel.create(user);
 
     return Response.json({
@@ -16,7 +19,8 @@ export async function POST(request) {
     });
   } catch (err) {
     const errorResponse = handleError(err);
-    return new Response(JSON.stringify(errorResponse), { status: 500 });
+    // return Response(JSON.stringify(errorResponse), { status: 500 });
+    return Response.json(errorResponse);
   }
 }
 export async function GET() {

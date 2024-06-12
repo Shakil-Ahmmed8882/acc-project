@@ -32,7 +32,7 @@ const Sidebar = () => {
             space-y-8 sm:w-64`}
         suppressHydrationWarning
       >
-        <div class="flex flex-col h-full">
+        <div className="flex flex-col h-full">
           <div className="mt-6 mb-11 px-4">
             <Image width={100} height={100} src={accLogo} alt="logo" />
           </div>
