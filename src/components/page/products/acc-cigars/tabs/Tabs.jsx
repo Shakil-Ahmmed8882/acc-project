@@ -19,9 +19,11 @@ const Tabs = () => {
     <section
       className={`
       ${showTabs ? "block" : "hidden"}
-      ${isMenuOpen ? "invisible opacity-0 text-[#c2c2c200]" : "text-[#c2c2c2]"}
+      ${isMenuOpen ? "invisible opacity-0 text-[#c2c2c200]" 
+        : "text-[#c2c2c2]"}
       duration-700 transition-all
       absolute top-24 md:top-28 lg:top-32
+      ml-4
       `}
     >
       <ul className=" flex gap-16 py-3 items-center">
@@ -30,7 +32,7 @@ const Tabs = () => {
             key={item?.path}
             className={
               router.includes(item.path)
-                ? "text-standard-gold text-[10px] md:text-[16px]"
+                ? ""
                 : ""
             }
             path={item.path}
