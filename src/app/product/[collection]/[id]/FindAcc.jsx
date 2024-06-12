@@ -32,7 +32,7 @@ const FindAcc = () => {
         </button>
 
         {/* Divider for large screens */}
-        <div className="border-l  h-8 hidden lg:block"></div>
+        <div className="border-l border-gradient h-8 hidden lg:block"></div>
 
         {/* Grouping Select Online Store and SEARCH NOW button */}
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2">
