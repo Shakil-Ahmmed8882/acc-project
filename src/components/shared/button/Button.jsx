@@ -14,7 +14,7 @@ const Button = ({
     small: "py-2 px-4  text-sm",
     medium: "py-4 px-8 text-base",
     large: "py-1 px-16 text-base",
-    eLarge: "py-4 px-24 text-base",
+    eLarge: "py-3 text-[15px] md:py-3 px-11 md:px-16 md:text-base",
   };
 
   // Variant classes for different button styles
@@ -29,7 +29,7 @@ const Button = ({
       bg-gradient-to-r from-pale-gold via-rich-gold to-deep-gold 
       Border transition-all duration-1000
       group-hover:bg-gradient-to-b group-hover:from-gold
-       group-hover:to-deep-gold`,
+      group-hover:to-deep-gold`,
   };
 
   return (
@@ -37,7 +37,7 @@ const Button = ({
       className={classNames(
         `group uppercase inline-flex justify-center items-center 
         gap-2 rounded-full border relative overflow-hidden 
-        hover:bg-[#fafafa] w-[380px] hover:w-[400px] 
+        hover:bg-[#fafafa] px-8 hover:md:px-20
         transition-all duration-500`,
         sizeClasses[size],
         variantClasses[variant],
