@@ -2,7 +2,6 @@
 
 // React and Next.js imports
 import React from "react";
-import Image from "next/image";
 
 // Swiper React components and styles
 import { Swiper, SwiperSlide } from "swiper/react";

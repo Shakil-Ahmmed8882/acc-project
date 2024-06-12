@@ -8,7 +8,7 @@
     @apply bg-background-dark min-w-[320px] max-w-[1920px] mx-auto overflow-x-hidden;
   }
   .smooth-transition {
-    @apply transition-all duration-500;
+    @apply !transition-all !duration-500;
   }
   .active-pagination {
     @apply !bg-[white] outline outline-[white];
@@ -97,30 +97,4 @@ body {
   background-attachment: local;
   background-position: center;
   transition: opacity 1s ease-in-out;
-}
-
-.text-gradient {
-  /* background: linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%); */
-  background: linear-gradient(
-    90deg,
-    #f9f295 -6.63%,
-    #e0aa3e 27.32%,
-    #faf398 71.21%,
-    #b88a44 96.3%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.text-gradient-hover {
-  background: linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%);
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradientBorder{
-  border: 1px solid;
- border-image-source: linear-gradient(90deg, #F9F295 -6.63%, #E0AA3E 27.32%, #FAF398 71.21%, #B88A44 96.3%);
-}
+}  

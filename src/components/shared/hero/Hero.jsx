@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
@@ -13,7 +12,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
 
     <Container
       className={
-        "h-screen overflow-y-hidden grid justify-center items-center"
+         "relative  h-screen overflow-y-hidden w-full grid justify-center items-center"
       }
     >
       {/* stacking image from images gallery and slide with index */}
@@ -28,7 +27,8 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
           width={1000}
           height={1000}
           src={img1}
-          className={` top-0 left-0 absolute h-full w-full object-cover transition-all duration-1000 `}
+           className={` top-0 left-0 absolute h-full w-full object-cover
+       transition-all duration-1000 mix `}
           alt="hero section"
         />
       )}

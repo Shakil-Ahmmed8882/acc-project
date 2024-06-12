@@ -1,0 +1,27 @@
+/* Styles for the custom pagination container */
+.custom-pagination {
+  position: relative;
+  bottom: -30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base style for all pagination dots */
+.custom-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: grey;
+  opacity: 1;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+  outline: 2px solid white;
+}
+
+/* Style for active pagination dot */
+.custom-pagination .swiper-pagination-bullet-active {
+  background: white;
+  outline: 2px solid white;
+  margin: 10px;
+}

@@ -53,7 +53,7 @@ const Brands = () => {
             : `
             invisible                     
             opacity-0                     
-        -translate-y-[600px]
+        -translate-y-[250px]
             `
             
         }
