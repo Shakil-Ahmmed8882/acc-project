@@ -1,5 +1,5 @@
-"use client";
-
+"use client";// 
+///
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
@@ -18,11 +18,18 @@ import BgOverlay from "@/components/ui/bg-blur/BgOverlay";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
-  const { isScrollBeyondParallax, isSecondParallaxInView, isMenuOpen, setIsMenuOpen, isBrandHover } = useGlobalContext();
+  const {
+    isScrollBeyondParallax,
+    isSecondParallaxInView,
+    isMenuOpen,
+    setIsMenuOpen,
+    isBrandHover,
+  } = useGlobalContext();
   const pathname = usePathname();
-  
+
   const [hasScrolled, setHasScrolled] = useState(false);
-  const isAdminRoute = pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
+  const isAdminRoute =
+    pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
 
@@ -35,9 +42,9 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -65,8 +72,15 @@ const Navbar = () => {
         style={{ zIndex: 99 }}
         className={`
           ${isAdminRoute ? "hidden" : "block"}
-          ${isMenuOpen ? "md:min-h-32 lg:h-52 bg-[#0000006c]" : 
-            hasScrolled ? (isScrollingUp ? " bg-[#0000006c]" : " bg-[#0000006c]") : "bg-transparent"}
+          ${
+            isMenuOpen
+              ? "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]"
+              : hasScrolled
+              ? isScrollingUp
+                ? " min-h- md:bg-[#0000006c] "
+                : "bg-transparent"
+              : "bg-transparent"
+          }
             sticky right-0 top-0 transition-all duration-700
         `}
         initial="initial"
@@ -75,8 +89,10 @@ const Navbar = () => {
         transition={{ duration: 0.7 }}
       >
         <BgOverlay isTrue={isBrandHover} />
-        <Container  isNavbar={true} 
-          className="flex justify-between gap-0 items-center px-8">
+        <Container
+          isNavbar={true}
+          className="flex justify-between gap-0 items-center px-8"
+        >
           <MenuIcon label={"MENU"} />
           <Logo isSecondParallaxInView={isSecondParallaxInView} />
           <div className="hidden -pl-6 md:flex">
@@ -92,5 +108,6 @@ const Navbar = () => {
     </navbarContext.Provider>
   );
 };
+
 
 export default Navbar;

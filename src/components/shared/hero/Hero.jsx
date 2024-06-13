@@ -4,15 +4,19 @@ import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
 import Container from "../container/Container";
 import { motion } from "framer-motion";
+import useGlobalContext from "@/hooks/useGlobalContext";
 
 const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   // demo array
+  const {isMenuOpen} = useGlobalContext()
   const images = imagesArray;
   return (
 
     <Container
       className={
-         `relative -mt-36  h-screen overflow-y-hidden 
+         `
+         ${isMenuOpen?'-mt-80':''}
+         relative -mt-36  h-screen overflow-y-hidden 
           !w-full grid justify-center items-center
           !-ml-1
           
