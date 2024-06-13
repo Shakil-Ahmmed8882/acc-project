@@ -25,14 +25,26 @@ const Navbar = () => {
   } = useGlobalContext();
   const pathname = usePathname();
 
-  
   const isAdminRoute =
     pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
 
-  
-    
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        document.body.classList.add("has-scrolled");
+      } else {
+        document.body.classList.remove("has-scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const headerVariants = {
     initial: { opacity: 1, translateY: 0 },
     scrollingDown: { opacity: 0, translateY: -32 },
@@ -51,8 +63,6 @@ const Navbar = () => {
     isMenuOpen,
   };
 
-
-  const hasScrolled = false
   return (
     <navbarContext.Provider value={navInfo}>
       <motion.header
@@ -62,7 +72,7 @@ const Navbar = () => {
           ${
             isMenuOpen
               ? "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]"
-              : hasScrolled
+              : document.body.classList.contains("has-scrolled")
               ? isScrollingUp
                 ? " min-h- md:bg-[#0000006c] "
                 : "bg-transparent"
@@ -87,7 +97,7 @@ const Navbar = () => {
           </div>
         </Container>
         <Container isNavbar={true}>
-          <HorizontalLine />
+          <HorizontalLine classNames={'mt-8'}/>
           <MenuContents isMenuOpen={isMenuOpen} />
           <Tabs />
         </Container>
@@ -95,6 +105,5 @@ const Navbar = () => {
     </navbarContext.Provider>
   );
 };
-
 
 export default Navbar;
