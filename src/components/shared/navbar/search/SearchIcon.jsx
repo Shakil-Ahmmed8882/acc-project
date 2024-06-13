@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 // Component for the Search icon with transition and click handler
 const SearchIcon = ({ isSwap, onClick }) => {
+  
   return (
     <Image
       onClick={onClick}

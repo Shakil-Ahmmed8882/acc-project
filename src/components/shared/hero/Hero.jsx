@@ -15,11 +15,11 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
     <Container
       className={
          `
-         ${isMenuOpen?'-mt-80':''}
-         relative -mt-36  h-screen overflow-y-hidden 
+         ${isMenuOpen?'md:-mt-80 -mt-[700px]':'-mt-[150px] md:-mt-44'}
+         relative h-screen 
           !w-full grid justify-center items-center
           !-ml-1
-          
+          tranistio-all duration-1000
           `
       }
     >
