@@ -82,12 +82,12 @@ const Navbar = () => {
         className={`
           ${isAdminRoute ? "hidden" : "block"}
           ${getClassNames()}
-          sticky right-0 top-0 transition-all duration-700
+          sticky right-0 top-0 smooth-height-transition transition-all duration-700
         `}
         initial="initial"
         animate={getHeaderVariant()}
         variants={headerVariants}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.1 }}
       >
         <BgOverlay isTrue={isBrandHover} />
         <Container
