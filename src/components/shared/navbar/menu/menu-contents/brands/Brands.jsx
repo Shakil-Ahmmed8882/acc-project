@@ -17,7 +17,7 @@ import useGlobalContext from "@/hooks/useGlobalContext";
 
 const Brands = () => {
   // this state defined in main navbar
-  const { isBrandHover,setIsBrandsHover } = useGlobalContext()
+  const { isBrandHover, setIsBrandsHover } = useGlobalContext();
 
   const style =
     "hidden md:grid grid-cols-2 mx-auto justify-center  lg:flex gap0-4 md:gap-8 md:justify-around mt-44 lg:mt-32 ";
@@ -30,11 +30,7 @@ const Brands = () => {
         onMouseLeave={() => setIsBrandsHover(false)}
         className="z-20 hidden md:block"
       >
-        <MenuItem
-          path={"/brands"}
-          isBrand={true}
-          label={"BRANDS"}
-        />
+        <MenuItem path={"/brands"} isBrand={true} label={"BRANDS"} />
       </article>
 
       {/* BRANDS HIDDEN CONTENTS */}
@@ -55,7 +51,6 @@ const Brands = () => {
             opacity-0                     
         -translate-y-[250px]
             `
-            
         }
         
         ease-out                        
@@ -68,13 +63,24 @@ const Brands = () => {
         z-10                            
     `}
       >
-         
         {/* Large device  */}
         <Container className={style}>
-          <BrandsCollection path={'/cigar'} title={"CIGAR COLLECTION"} img={cigar_collection} />
-          <BrandsCollection path={'/liquor'} title={"LIQUOR"} img={liqure} />
-          <BrandsCollection path={'/accessories'} title={"ACCESSORIES"} img={accessories} />
-          <BrandsCollection path={'/luxury-storage'} title={"LUXURY"} img={luxury_storage} />
+          <BrandsCollection
+            path={"/cigar"}
+            title={"CIGAR COLLECTION"}
+            img={cigar_collection}
+          />
+          <BrandsCollection path={"/liquor"} title={"LIQUOR"} img={liqure} />
+          <BrandsCollection
+            path={"/accessories"}
+            title={"ACCESSORIES"}
+            img={accessories}
+          />
+          <BrandsCollection
+            path={"/luxury-storage"}
+            title={"LUXURY"}
+            img={luxury_storage}
+          />
         </Container>
       </article>
 

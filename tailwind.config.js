@@ -25,6 +25,7 @@ module.exports = {
         "rich-gold": "#e0aa3e" /* Rich Gold */,
         "dark-gold-border": "#b88a44" /* Dark Gold Border */,
         "dark-slate-gray": "#414141" /* Dark Slate Gray */,
+        
       },
       transform: ["hover", "focus"],
       scale: ["hover", "focus"],

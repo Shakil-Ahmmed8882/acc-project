@@ -14,7 +14,9 @@
     @apply !bg-[white] outline outline-[white];
   }
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   max-width: 1920px;
   margin: auto;
