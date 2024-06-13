@@ -136,11 +136,12 @@ const FormInput = () => {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-bold py-2 px-4 rounded-full"
-          type="button"
           onClick={handleSubmit}
+          className="group text-[#8C4C24]  bg-pale-gold hover:bg-[#F6DF65]  transition-all duration-500 text-sm md:text-base   py-2 md:py-4 px-8 md-16 lg:px-20 rounded-full border"
         >
-          SEND REQUEST
+          <span className="flex group items-center justify-center transition-all duration-500 hover:gap-4 gap-2">
+            SEND REQUEST
+          </span>
         </button>
       </div>
     </form>
