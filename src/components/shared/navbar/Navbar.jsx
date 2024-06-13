@@ -1,6 +1,4 @@
-"use client";// 
-///
-import { useState, useEffect } from "react";
+"use client";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
@@ -27,7 +25,6 @@ const Navbar = () => {
   } = useGlobalContext();
   const pathname = usePathname();
 
-  const [hasScrolled, setHasScrolled] = useState(false);
   const isAdminRoute =
     pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
   const scrollDirection = useScrollDirection();
@@ -36,9 +33,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        setHasScrolled(true);
+        document.body.classList.add("has-scrolled");
       } else {
-        setHasScrolled(false);
+        document.body.classList.remove("has-scrolled");
       }
     };
 
@@ -75,13 +72,13 @@ const Navbar = () => {
           ${
             isMenuOpen
               ? "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]"
-              : hasScrolled
+              : document.body.classList.contains("has-scrolled")
               ? isScrollingUp
                 ? " min-h- md:bg-[#0000006c] "
                 : "bg-transparent"
               : "bg-transparent"
           }
-            sticky right-0 top-0 transition-all duration-700
+            sticky right-0 top-0 transition-all duration-700 
         `}
         initial="initial"
         animate={getHeaderVariant()}
@@ -100,7 +97,7 @@ const Navbar = () => {
           </div>
         </Container>
         <Container isNavbar={true}>
-          <HorizontalLine />
+          <HorizontalLine classNames={'mt-8'}/>
           <MenuContents isMenuOpen={isMenuOpen} />
           <Tabs />
         </Container>
@@ -108,6 +105,5 @@ const Navbar = () => {
     </navbarContext.Provider>
   );
 };
-
 
 export default Navbar;
