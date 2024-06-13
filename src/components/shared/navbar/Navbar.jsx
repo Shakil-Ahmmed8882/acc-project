@@ -1,8 +1,8 @@
-"use client";
+"use client"
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
-import { createContext, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import Container from "../container/Container";
 import MenuContents from "./menu/menu-contents/MenuContents";
 import SearchBar from "./search/SearchBar";
@@ -15,6 +15,8 @@ import BgOverlay from "@/components/ui/bg-blur/BgOverlay";
 
 export const navbarContext = createContext(null);
 
+const isClient = () => typeof window !== "undefined";
+
 const Navbar = () => {
   const {
     isScrollBeyondParallax,
@@ -24,19 +26,17 @@ const Navbar = () => {
     isBrandHover,
   } = useGlobalContext();
   const pathname = usePathname();
-
   const isAdminRoute =
     pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
+    if (!isClient()) return;
+
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        document.body.classList.add("has-scrolled");
-      } else {
-        document.body.classList.remove("has-scrolled");
-      }
+      setHasScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -58,6 +58,18 @@ const Navbar = () => {
     return "initial";
   };
 
+  const getClassNames = () => {
+    if (isMenuOpen) {
+      return "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]";
+    } else if (hasScrolled) {
+      return isScrollingUp
+        ? "min-h-screen md:bg-[#0000006c]"
+        : "bg-transparent";
+    } else {
+      return "bg-transparent";
+    }
+  };
+
   const navInfo = {
     setIsMenuOpen,
     isMenuOpen,
@@ -69,16 +81,8 @@ const Navbar = () => {
         style={{ zIndex: 99 }}
         className={`
           ${isAdminRoute ? "hidden" : "block"}
-          ${
-            isMenuOpen
-              ? "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]"
-              : document.body.classList.contains("has-scrolled")
-              ? isScrollingUp
-                ? " min-h- md:bg-[#0000006c] "
-                : "bg-transparent"
-              : "bg-transparent"
-          }
-            sticky right-0 top-0 transition-all duration-700 
+          ${getClassNames()}
+          sticky right-0 top-0 transition-all duration-700
         `}
         initial="initial"
         animate={getHeaderVariant()}
@@ -97,7 +101,7 @@ const Navbar = () => {
           </div>
         </Container>
         <Container isNavbar={true}>
-          <HorizontalLine classNames={'mt-8'}/>
+          <HorizontalLine classNames={"mt-8"} />
           <MenuContents isMenuOpen={isMenuOpen} />
           <Tabs />
         </Container>

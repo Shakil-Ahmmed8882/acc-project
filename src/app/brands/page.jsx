@@ -1,6 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import Tabs from "@/components/page/brands/Tabs";
 import BrandWorldAcc from "@/components/page/brands/brandWordAcc/BrandWorldAcc";
 import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
