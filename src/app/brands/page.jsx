@@ -34,7 +34,7 @@ const BrandsPage = () => {
       image: parallaxImg1,
       id: "brands",
       title: "ACC BRANDS",
-      className: "-mt-44",
+      className: "md:-mt-44",
     },
     {
       image: cigar_collection,
@@ -81,8 +81,9 @@ const BrandsPage = () => {
             className={banner?.className}
             description={banner?.description}
             path={banner?.path}
+            index={index}
           />
-          {index === 0 && <Tabs />}
+
         </div>
       ))}
       <AccLifestyle />
