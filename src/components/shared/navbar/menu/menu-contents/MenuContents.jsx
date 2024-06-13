@@ -5,8 +5,6 @@ import SearchBar from "../../search/SearchBar";
 
 const MenuContents = ({ isMenuOpen }) => {
 
-
-
   return (
     <article
     style={{zIndex:-999999}}
