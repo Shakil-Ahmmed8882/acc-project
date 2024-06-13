@@ -7,7 +7,9 @@ const SlideImage = ({images, loopIndex}) => {
     <Image
       key={loopIndex}
       src={images[loopIndex]}
-      className={` top-0 ${
+      className={` 
+        top-0 ${
+        
         loopIndex == index ? `opacity-100` : "invisible opacity-0"
       } left-0 right-0 absolute  h-full w-full object-cover transition-all duration-1000`}
       alt="hero section"
