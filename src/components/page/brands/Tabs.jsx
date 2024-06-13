@@ -12,8 +12,8 @@ const Tabs = () => {
   ];
 
   return (
-    <section className="w-full absolute bg-purple-600 bottom-0 z-[51]  max-h-[80px] md:max-h-[200px] hidden md:block">
-      <ul className="flex flex-wrap gap-16 py-10 px-8 items-center justify-center ">
+    <section className="w-full absolute bg-[#121212] bottom-8 z-[51]  max-h-[90px]  hidden md:block">
+      <ul className="flex flex-wrap gap-16 py-8 px-8 items-center justify-center ">
         {navigationItems.map(({ path, label }) => (
           <li
             key={path}
