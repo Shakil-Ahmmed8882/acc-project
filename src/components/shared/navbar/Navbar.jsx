@@ -1,5 +1,4 @@
-"use client";// 
-///
+"use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
@@ -27,27 +26,14 @@ const Navbar = () => {
   } = useGlobalContext();
   const pathname = usePathname();
 
-  const [hasScrolled, setHasScrolled] = useState(false);
+  
   const isAdminRoute =
     pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setHasScrolled(true);
-      } else {
-        setHasScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+  
+    
   const headerVariants = {
     initial: { opacity: 1, translateY: 0 },
     scrollingDown: { opacity: 0, translateY: -32 },
@@ -66,6 +52,8 @@ const Navbar = () => {
     isMenuOpen,
   };
 
+
+  const hasScrolled = false
   return (
     <navbarContext.Provider value={navInfo}>
       <motion.header
