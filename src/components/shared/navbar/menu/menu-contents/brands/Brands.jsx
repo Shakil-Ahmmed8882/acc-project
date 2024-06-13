@@ -5,7 +5,7 @@ import { useState } from "react";
 import accessories from "@/assets/img/brands/accessories.jpg";
 import cigar_collection from "@/assets/img/brands/cigar-collection.jpg";
 import luxury_storage from "@/assets/img/brands/luxury-storage.png";
-import liqure from "@/assets/img/brands/accessories.jpg";
+import liqure from "@/assets/img/brands/liqure.png";
 
 //components
 import MenuItem from "../MenuItem";
@@ -72,7 +72,7 @@ const Brands = () => {
         {/* Large device  */}
         <Container className={style}>
           <BrandsCollection path={'/cigar'} title={"CIGAR COLLECTION"} img={cigar_collection} />
-          <BrandsCollection path={'/liquor'} title={"LIQUOR"} img={liqure} />
+          <BrandsCollection path={'/liquor'} title={"LIQUOR COLLECTION"} img={liqure} />
           <BrandsCollection path={'/accessories'} title={"ACCESSORIES"} img={accessories} />
           <BrandsCollection path={'/luxury-storage'} title={"LUXURY"} img={luxury_storage} />
         </Container>
