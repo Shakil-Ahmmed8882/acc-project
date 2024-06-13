@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 // Button component
-const Button = ({
+const Button2 = ({
   children,
   size = "large",
   variant = "primary",
@@ -24,8 +24,7 @@ const Button = ({
 
   // Gradient text classes for primary variant
   const gradientTextClasses = {
-    primary:
-      `gradient-text-gold text-transparent bg-clip-text 
+    primary: `gradient-text-gold text-transparent bg-clip-text 
       bg-gradient-to-r from-pale-gold via-rich-gold to-deep-gold 
       Border transition-all duration-1000
       group-hover:bg-gradient-to-b group-hover:from-gold
@@ -38,7 +37,7 @@ const Button = ({
         `group uppercase inline-flex justify-center items-center 
         gap-2 rounded-full border relative overflow-hidden 
         hover:bg-[#fafafa] px-8 hover:md:px-20
-        transition-all duration-500 py-2`,
+        transition-all duration-500 w-full py-2`,
         sizeClasses[size],
         variantClasses[variant],
         className
@@ -78,4 +77,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default Button2;

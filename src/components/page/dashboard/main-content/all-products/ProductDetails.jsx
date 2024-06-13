@@ -118,7 +118,7 @@ const ProductDetails = ({ product, showHighlight }) => {
                 </motion.div>
               )}
               <Link href={"#find"} className="w-full flex justify-center py-6">
-                <Button width={"600px"}>FIND A STORE</Button>
+                <Button className={"w-full"}>FIND A STORE</Button>
               </Link>
             </div>
           </div>

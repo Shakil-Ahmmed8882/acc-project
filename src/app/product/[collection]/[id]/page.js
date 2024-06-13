@@ -23,7 +23,7 @@ const ProductDetailsPage = () => {
       setIsLoading(false);
     });
   }, [id]);
-  if (isLoading) return <Loading/>;
+  if (isLoading) return <Loading />;
 
   return (
     <>

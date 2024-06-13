@@ -15,6 +15,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: 1920px;
   margin: auto;
@@ -97,4 +101,4 @@ body {
   background-attachment: local;
   background-position: center;
   transition: opacity 1s ease-in-out;
-}  
+}
