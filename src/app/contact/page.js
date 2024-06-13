@@ -7,7 +7,7 @@ import hero1 from "@/assets/img/contact/hero.png";
 
 const page = () => {
   return (
-    <section>
+    <section className="">
       <HeroSection
         title={"Contact ACC"}
         imagesArray={[hero1]}
