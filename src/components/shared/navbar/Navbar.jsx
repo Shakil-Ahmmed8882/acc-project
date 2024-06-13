@@ -1,9 +1,8 @@
 "use client";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 import Container from "../container/Container";
 import MenuContents from "./menu/menu-contents/MenuContents";
 import SearchBar from "./search/SearchBar";
