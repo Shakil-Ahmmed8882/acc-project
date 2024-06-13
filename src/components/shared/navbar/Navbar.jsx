@@ -79,7 +79,7 @@ const Navbar = () => {
                 : "bg-transparent"
               : "bg-transparent"
           }
-            sticky right-0 top-0 transition-all duration-700
+            sticky right-0 top-0 transition-all duration-700 
         `}
         initial="initial"
         animate={getHeaderVariant()}

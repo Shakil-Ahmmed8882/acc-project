@@ -16,8 +16,8 @@ const Modal = ({ isOpen, onClose }) => {
               ease: "easeIn",
               duration: 0.4,
             }}
-            className="text-white rounded-lg shadow-lg w-full bg-[#121212]"
-            // style={{ maxHeight: "100vh", overflowY: "auto" }}
+            className="text-white rounded-lg shadow-lg w-full bg-[#121212] overflow-y-scroll"
+            style={{ maxHeight: "100vh", overflowY: "auto" }}
           >
             <div className="grid place-items-center w-full">
               <button

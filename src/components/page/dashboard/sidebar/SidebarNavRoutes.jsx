@@ -40,8 +40,8 @@ export const routes = [
     ),
   },
   {
-    path: "/admin",
-    name: "Integration",
+    path: "/admin/email",
+    name: "User Email",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
