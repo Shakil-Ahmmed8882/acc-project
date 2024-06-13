@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
@@ -69,7 +68,7 @@ const Navbar = () => {
                 : "bg-transparent"
               : "bg-transparent"
           }
-            sticky right-0 top-0 transition-all duration-700
+            sticky right-0 top-0 transition-all duration-700 
         `}
         initial="initial"
         animate={getHeaderVariant()}
