@@ -23,7 +23,7 @@ const SearchBar = () => {
             isSwap
               ? " -translate-x-32 opacity-0 pl-8 invisible"
               : "translate-x-3  md:-translate-x-1 visible opacity-100"
-          } transition-all duration-1000 justify-self-end text-md md:text-[15px]`}
+          } transition-all duration-1000 justify-self-end text-md md:text-[13px]`}
         >
           Search
         </span>
