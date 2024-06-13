@@ -66,18 +66,18 @@ const Brands = () => {
         {/* Large device  */}
         <Container className={style}>
           <BrandsCollection
-            path={"/cigar"}
+            path={"cigar"}
             title={"CIGAR COLLECTION"}
             img={cigar_collection}
           />
-          <BrandsCollection path={"/liquor"} title={"LIQUOR"} img={liqure} />
+          <BrandsCollection path={"liquor"} title={"LIQUOR"} img={liqure} />
           <BrandsCollection
-            path={"/accessories"}
+            path={"accessories"}
             title={"ACCESSORIES"}
             img={accessories}
           />
           <BrandsCollection
-            path={"/luxury-storage"}
+            path={"luxury-storage"}
             title={"LUXURY"}
             img={luxury_storage}
           />
