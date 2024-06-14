@@ -14,26 +14,27 @@ import luxury_storage from "@/assets/img/brands/luxury-storage.png";
 import liqure from "@/assets/img/brands/accessories.jpg";
 
 const BrandsPage = () => {
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+  //   const raf = (time) => {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   };
+  //   requestAnimationFrame(raf);
 
-    // Cleanup function to avoid memory leaks
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  //   // Cleanup function to avoid memory leaks
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
 
   const brandBanners = [
     {
       image: parallaxImg1,
       id: "brands",
       title: "ACC BRANDS",
-      className: "md:-mt-44",
+    // className: "md:-mt-52",
+    className: '',
     },
     {
       image: cigar_collection,

@@ -4,15 +4,15 @@ import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
 import Container from "../container/Container";
 import { motion } from "framer-motion";
-import useGlobalContext from "@/hooks/useGlobalContext";
+
 
 const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   // demo array
-  const {isMenuOpen} = useGlobalContext()
+
   const images = imagesArray;
   return (
     <Container
-    className="-mt-44 h-screen"
+    className="-mt-44 h-[95vh] overflow-hidden"
     >
       {/* stacking image from images gallery and slide with index */}
       {/* if array given animate images in bg */}

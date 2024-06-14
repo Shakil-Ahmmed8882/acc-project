@@ -19,7 +19,8 @@ const Button = ({
 
   // Variant classes for different button styles
   const variantClasses = {
-    primary: "rounded-gold-border border-pale-gold font-riviera font-semibold",
+    primary: `rounded-gold-border
+     border-pale-gold font-riviera font-semibold`,
   };
 
   // Gradient text classes for primary variant
@@ -54,7 +55,8 @@ const Button = ({
         viewBox="0 0 20 16"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="-translate-x-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:translate-x-2  top-0 left-0 transition-all duration-500"
+        className="-translate-x-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 
+        group-hover:translate-x-3 absolute  right-16 transition-all duration-500"
       >
         <path
           d="M15.6716 7.00005L11.0147 2.34314C10.6242 1.95262 10.6242 1.31946 11.0147 0.928941C11.4052 0.538417 12.0384 0.538416 12.4289 0.92894L19.5 8.00005L12.4289 15.0711C12.0384 15.4616 11.4052 15.4616 11.0147 15.0711C10.6242 14.6805 10.6242 14.0474 11.0147 13.6569L15.6716 9.00005H1.5C0.947715 9.00005 0.5 8.55234 0.5 8.00005C0.5 7.44777 0.947715 7.00005 1.5 7.00005H15.6716Z"

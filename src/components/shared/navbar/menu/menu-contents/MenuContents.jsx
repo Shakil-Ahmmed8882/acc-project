@@ -8,7 +8,7 @@ const MenuContents = ({ isMenuOpen }) => {
   return (
     <article
     style={{zIndex:-999999}}
-    className={`${isMenuOpen ? ' pt-4 visible opacity-100 ' : 'hidden md:flex invisible opacity-0'}
+    className={`${isMenuOpen ? ' pt-4 visible opacity-100 absolute md:static bg-[#0000006c] md:bg-transparent pl-16 py-7  left-0' : 'hidden md:flex invisible opacity-0'}
      transition-all duration-700 text-white bottom w-full md:flex justify-center`}>
       <ul className=" md:flex gap-20 justify-center">
         <div className="md:hidden -ml-12 flex"><SearchBar/></div>
