@@ -22,8 +22,9 @@ const Home = () => {
   return (
     
     // <InitialAnimateContainer>
-      <main className="relative mt-44 z-40 min-h-[calc(100vh)]">
+      <main className="relative z-40 min-h-[calc(100vh)]">
         <Banner images={{parallaxOneBgImages,parallaxTwoBgImages,parallaxThreeBgImages}}/>
+
         <FlagshipProducts />
         <AccLifestyle />
         <Craftsmanship />

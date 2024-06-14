@@ -10,8 +10,8 @@ const AskQuestion = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   return (
-    <Container >
-      <div className="grid place-items-center my-10 py-24 ">
+    <Container>
+      <div className="grid place-items-center my-10 py-24">
         <h2 className="text-5xl font-semibold text-white">ASK US A QUESTION</h2>
         <Button openModal={openModal} />
       </div>
