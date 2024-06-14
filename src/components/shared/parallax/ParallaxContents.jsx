@@ -23,6 +23,8 @@ const ParallaxContents = ({ title, page, images, }) => {
     }
   }, [activeSectionIndex, page]);
 
+
+// 
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
