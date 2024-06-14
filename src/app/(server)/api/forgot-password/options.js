@@ -1,25 +1,20 @@
-import emailjs from "@emailjs/browser";
+import crypto from 'crypto';
+export function generateResetToken() {
+  return crypto.randomBytes(20).toString("hex");
+}
 
-const sendEmailServer = async (templateParams) => {
-  const emailConfig = {
-    serviceID: "service_bvibghn",
-    templateID: "template_sbfb9sc",
-    userID: "VPi2ac1VouHqcj81G",
-  };
+export function hashResetToken(resetToken) {
+  return crypto.createHash("sha256").update(resetToken).digest("hex");
+}
 
-  try {
-    const response = await emailjs.send(
-      emailConfig.serviceID,
-      emailConfig.templateID,
-      templateParams,
-      emailConfig.userID
-    );
-    console.log("Email successfully sent!", response.status, response.text);
-    return response;
-  } catch (err) {
-    console.error("Failed to send email.", err);
-    throw err;
-  }
-};
+export async function updateUserResetToken(user, token, expires) {
+  user.resetToken = token;
+  user.resetTokenExpires = new Date(expires);
+  await user.save();
+}
 
-export default sendEmailServer;
+export async function clearUserResetToken(user) {
+  user.resetToken = undefined;
+  user.resetTokenExpires = undefined;
+  await user.save();
+}

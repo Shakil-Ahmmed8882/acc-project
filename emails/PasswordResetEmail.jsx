@@ -1,7 +1,6 @@
 import React from "react";
 
 const PasswordResetEmail = ({ name, resetUrl }) => {
-  console.log(resetUrl,name);
   return (
     <div className="bg-gray-100 p-4">
       <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
