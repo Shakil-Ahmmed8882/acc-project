@@ -1,13 +1,11 @@
 
 
-
-
-
 "use client";
 
 import React from "react";
 import ParallaxContents from "./ParallaxContents";
 import useGlobalContext from "@/hooks/useGlobalContext";
+import useScrollObserver from "@/hooks/useScrollObserver";
 
 
 // Pass dynamic titles object and images array
@@ -48,25 +46,29 @@ export default React.memo(ScrollParallax);
 
 
 
-
 const Pagination = () => {
   const { isMenuOpen } = useGlobalContext();
+  useScrollObserver();
 
   return (
     <div
       className={`${
         isMenuOpen ? "invisible opacity-0" : "visible opacity-100"
-      } smooth-transition fixed top-1/2 z-50 space-y-6`}
-      style={{ left: 'calc(50% - 960px)', transform: 'translateY(-50%)' }}
+      } smooth-transition fixed top-1/2 left-[10%] right-0 z-50`}
+      style={{ transform: 'translateY(-50%)' }}
     >
-      <div className="size-6 flex justify-center items-center rounded-full p-2">
-        <span className="pagination-dot smooth-transition p-[4px] relative bg-[white] rounded-full"></span>
-      </div>
-      <div className="size-6 flex justify-center items-center rounded-full p-2">
-        <span className="pagination-dot smooth-transition p-[4px] relative bg-[white] rounded-full"></span>
-      </div>
-      <div className="size-6 flex justify-center items-center rounded-full p-2">
-        <span className="pagination-dot smooth-transition p-[4px] relative bg-[white] rounded-full"></span>
+      <div className="max-w-[1920px] mx-auto flex justify-start">
+        <div className="space-y-6">
+          <div className="size-6 flex justify-center items-center rounded-full p-2">
+            <span className="pagination-dot smooth-transition p-[4px] relative bg-[white] rounded-full"></span>
+          </div>
+          <div className="size-6 flex justify-center items-center rounded-full p-2">
+            <span className="pagination-dot smooth-transition p-[4px] relative bg-[white] rounded-full"></span>
+          </div>
+          <div className="size-6 flex justify-center items-center rounded-full p-2">
+            <span className="pagination-dot smooth-transition p-[4px] relative bg-[white] rounded-full"></span>
+          </div>
+        </div>
       </div>
     </div>
   );
