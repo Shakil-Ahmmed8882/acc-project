@@ -10,7 +10,7 @@ const Banner = ({titles,images}) => {
   useScrollObserver();
   return (
     <main>
-      <Pagination/>
+      {/* <Pagination/> */}
       <ScrollParallax images={images} titles={titles}/>
     </main>
   );

@@ -80,14 +80,20 @@ const Navbar = () => {
         className={`
           ${isAdminRoute ? "hidden" : "block"}
           ${getClassNames()}
-          sticky right-0 top-0  transition-all duration-700
+          fixed w-full right-0 top-0  transition-all duration-700
         `}
         initial="initial"
         animate={getHeaderVariant()}
         variants={headerVariants}
         transition={{ duration: 0.1 }}
       >
-        <BgOverlay isTrue={isBrandHover} />
+
+
+
+
+          <div className="max-w-[1920px] mx-auto">
+
+          <BgOverlay isTrue={isBrandHover} />
         <Container
           isNavbar={true}
           className="flex justify-between gap-0 items-center px-8"
@@ -103,6 +109,12 @@ const Navbar = () => {
           <MenuContents isMenuOpen={isMenuOpen} />
           <Tabs />
         </Container>
+
+          </div>
+
+
+
+       
       </motion.header>
     </navbarContext.Provider>
   );
