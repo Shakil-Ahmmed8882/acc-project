@@ -11,43 +11,46 @@ const ScrollParallax = ({ images, titles }) => {
   const { parallaxOneBgImages, parallaxTwoBgImages, parallaxThreeBgImages } =
     images || {};
 
-  const parallaxSections = [
-    {
-      images: parallaxOneBgImages,
-      title: title1 || "Luxury & Vintage Cigars",
-      page: 0,
-      className: "-mt-24 h-[120vh]",
-    },
-    {
-      images: parallaxTwoBgImages,
-      title: title2 || "Luxury & Vintage Spirits",
-      page: 1,
-      className: "mt-24 ",
-    },
-    {
-      images: parallaxThreeBgImages,
-      title: title3 || "Luxury & Accessories",
-      page: 2,
-    },
-  ];
-
   return (
     <section className="max-w-[1920px] flex flex-col">
       <div className="relative">
-        {parallaxSections.map((section, index) => (
-          <div
-            key={index}
-            className={` 
-              ${section?.className}
+        {/* parallax 1 */}
+        <div
+          className={` 
+              -mt-24 h-[120vh]
+              section text-8xl  overflow-hidden sticky top-0 transition-all duration-1000`}
+        >
+          <ParallaxContents
+            images={parallaxOneBgImages}
+            title={title1 || "Luxury & Vintage Cigars"}
+            page={0}
+          />
+        </div>
+
+        {/* parallax 2 */}
+        <div
+          className={` 
+              mt-24 
               section text-8xl h-screen overflow-hidden sticky top-0 transition-all duration-1000`}
-          >
-            <ParallaxContents
-              images={section.images}
-              title={section.title}
-              page={section.page}
-            />
-          </div>
-        ))}
+        >
+          <ParallaxContents
+            images={parallaxTwoBgImages}
+            title={title2 || "Luxury & Vintage Spirits"}
+            page={0}
+          />
+        </div>
+        {/* parallax 3 */}
+        <div
+          className={` 
+              
+              section text-8xl h-screen overflow-hidden sticky top-0 transition-all duration-1000`}
+        >
+          <ParallaxContents
+            images={parallaxThreeBgImages}
+            title={title3 || "Luxury & Accessories"}
+            page={0}
+          />
+        </div>
         <Pagination />
       </div>
     </section>

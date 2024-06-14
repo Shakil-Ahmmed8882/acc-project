@@ -10,6 +10,8 @@ const ParallaxContents = ({ title, page, images, }) => {
   const { activeSectionIndex } = useGlobalContext();
   const [opacity, setOpacity] = useState(1);
 
+  console.log(title)
+
   // get inifinite loop animated index based 
   //on image leng on specified duration
   const { index } = useImageSlideshow(images, 4000);
@@ -48,7 +50,7 @@ const ParallaxContents = ({ title, page, images, }) => {
         style={{zIndex:999, opacity }}
       >
         <TitleComponent title={title} />
-         <Button className={' relative mt-9 md:mt-11'} size="eLarge">Discover now</Button>
+         <Button className={' relative mt-9 md:mt-11 !z-50'} size="eLarge">Discover now</Button>
       </div>
       <VerticalAnimatedProgressbar className="-bottom-[85vh]" />
     </>
