@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
@@ -62,9 +62,7 @@ const Navbar = () => {
     if (isMenuOpen) {
       return "min-h-screen md:min-h-32 lg:h-52 bg-[#0000006c]";
     } else if (hasScrolled) {
-      return isScrollingUp
-        ? "min-h-screen md:bg-[#0000006c]"
-        : "bg-transparent";
+      return isScrollingUp ? " md:bg-[#0000006c]" : "bg-transparent";
     } else {
       return "bg-transparent";
     }
@@ -89,7 +87,7 @@ const Navbar = () => {
         variants={headerVariants}
         transition={{ duration: 0.1 }}
       >
-        <BgOverlay isTrue={isBrandHover} />
+        {/* <BgOverlay isTrue={isBrandHover} /> */}
         <Container
           isNavbar={true}
           className="flex justify-between gap-0 items-center px-8"
