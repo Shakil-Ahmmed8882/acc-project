@@ -43,6 +43,7 @@ const ProductCard = ({ card }) => {
         {name}
       </h3>
       <Link
+        
         href={`/product/cigar/${_id}`}
         className="px-9 py-1 md:px-12 text-sm md:py-2 
       hover:bg-white smooth-transition 

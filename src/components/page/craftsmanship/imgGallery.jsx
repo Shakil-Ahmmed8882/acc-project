@@ -6,8 +6,8 @@ import Div from "./content-container/Div";
 import Img from "./content-container/Img";
 import truck from "@/assets/img/craftsmanship/imgGallery/craftsmanship7.png";
 import HiddenContent from "./content-container/HiddenContent";
-import Button from "@/components/shared/button/Button";
 import Link from "next/link";
+import Button from "@/components/shared/button/Button";
 
 const ImageGallery = () => {
   return (
@@ -51,8 +51,11 @@ const ImageGallery = () => {
             </Div>
           </div>
         </div>
-        <Link href={"/product/cigar"} className="w-full flex justify-center py-16">
-          <Button width={"600px"}>SEE OUR PRODUCTS</Button>
+        <Link
+          href={"/product/cigar"}
+          className="w-full flex justify-center py-16"
+        >
+          <Button className={"w-3/6"}>SEE OUR PRODUCTS</Button>
         </Link>
       </Container>
     </>
