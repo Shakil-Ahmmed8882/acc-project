@@ -14,7 +14,9 @@
     @apply !bg-[white] outline outline-[white];
   }
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   max-width: 1920px;
   margin: auto;
@@ -98,3 +100,8 @@ body {
   background-position: center;
   transition: opacity 1s ease-in-out;
 }  
+
+
+.smooth-height-transition {
+  transition: height 0.7s ease-in-out;
+}

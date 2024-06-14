@@ -11,17 +11,8 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   const {isMenuOpen} = useGlobalContext()
   const images = imagesArray;
   return (
-
     <Container
-      className={
-         `
-         ${isMenuOpen?'md:-mt-80 -mt-[700px]':'-mt-[150px] md:-mt-44'}
-         relative h-screen 
-          !w-full grid justify-center items-center
-          !-ml-1
-          tranistio-all duration-1000
-          `
-      }
+    className="-mt-44 h-screen"
     >
       {/* stacking image from images gallery and slide with index */}
       {/* if array given animate images in bg */}
@@ -32,9 +23,8 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
       ) : (
         // else single img be displayed
         <Image
-       
           src={img1}
-           className={` top-0 left-0 absolute h-full w-full object-cover
+          className={` top-0 left absolute h-full w-full object-cover
        transition-all duration-1000 mix `}
           alt="hero section"
         />
@@ -71,3 +61,12 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
 };
 
 export default HeroSection;
+
+// sakhil vai container class
+      // className={`
+      //    ${isMenuOpen ? "md:-mt-80 -mt-[700px]" : "-mt-[150px] md:-mt-44"}
+      //    relative h-screen 
+      //     !w-full grid justify-center items-center
+      //     !-ml-1
+      //     transition-all duration-1000
+      //     `}

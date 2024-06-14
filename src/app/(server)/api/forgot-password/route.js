@@ -3,6 +3,7 @@ import dbConnect from "../../lib/dbConnect";
 import { handleError } from "../../lib/utils";
 import crypto from "crypto";
 import { sendResetLink } from "@/utils/sendRestLink";
+import { sendResetLinkWithNodeMailer } from "@/utils/sendResetLinkWithNodeMailer";
 
 export async function POST(request) {
   await dbConnect();
@@ -32,15 +33,24 @@ export async function POST(request) {
     const resetToken = generateResetToken();
     const passwordResetToken = hashResetToken(resetToken);
     const passwordResetExpires = Date.now() + 3600000; // 1 hour from now
-    const resetUrl = `${process.env.BASE_URL_CLIENT}update-password/${resetToken}`;
+    const resetUrl = `${process.env.BASE_URL_CLIENT}/update-password/${resetToken}`;
 
     const resetMsg = {
       name: existingUser.name || "User",
       url: resetUrl,
     };
 
-    const emailRes = await sendResetLink(resetMsg.name, resetUrl);
 
+
+
+
+
+
+
+
+    // const emailRes = await sendResetLink(resetMsg.name, resetUrl);
+    const emailRes = await sendResetLinkWithNodeMailer(resetMsg.name, resetUrl);
+console.log(emailRes);
     if (emailRes.success) {
       await updateUserResetToken(
         existingUser,

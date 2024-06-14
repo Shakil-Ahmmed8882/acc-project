@@ -1,42 +1,26 @@
 "use client";
 
-import MenuItem from "@/components/shared/navbar/menu/menu-contents/MenuItem";
-import useGlobalContext from "@/hooks/useGlobalContext";
-
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Tabs = () => {
   const navigationItems = [
-    { path: "/product/cigar", label: "CIGAR" },
-    { path: "/product/liquor", label: "LIQUOR" },
-    { path: "/product/accessories", label: "ACCESSORIES" },
-    { path: "/product/luxury-storage", label: "LUXURY STORAGE" },
+    { path: "#brands", label: "BRANDS" },
+    { path: "#cigar", label: "CIGAR COLLECTION" },
+    { path: "#liquor", label: "LIQUOR COLLECTION" },
+    { path: "#accessories", label: "ACCESSORIES" },
+    { path: "#luxury-storage", label: "LUXURY STORAGE" },
   ];
 
-  const { isScrollBeyondParallax } = useGlobalContext();
-
-  const router = usePathname();
-
   return (
-    <section
-      className={`
-      ${isScrollBeyondParallax ? "invisible opacity-0" : "visible opacity-100"}
-    duration-700 transition-all
-    fixed lg:top-[85vh] bg-[#00000046] w-full 
-    `}
-    >
-      <ul className=" flex gap-16 py-10 px-8 items-center">
-        {navigationItems.map((item) => (
-          <MenuItem
-            key={item?.path}
-            className={
-              router.includes(item.path)
-                ? "text-standard-gold text-[10px] md:text-[16px]"
-                : ""
-            }
-            path={item.path}
-            label={item.label}
-          />
+    <section className="w-full absolute bg-[#121212] bottom-8 z-[51]  max-h-[90px]  hidden md:block">
+      <ul className="flex flex-wrap gap-16 py-8 px-8 items-center justify-center ">
+        {navigationItems.map(({ path, label }) => (
+          <li
+            key={path}
+            className="text-light-text/60 hover:text-white text-sm md:text-xl"
+          >
+            <Link href={path}>{label}</Link>
+          </li>
         ))}
       </ul>
     </section>

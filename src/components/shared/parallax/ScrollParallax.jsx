@@ -15,11 +15,16 @@ const ScrollParallax = ({images, titles }) => {
 
   useEffect(() => {
     const lenis = new Lenis();
-    function raf(time) {
+    const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
-    }
+    };
     requestAnimationFrame(raf);
+
+    // Cleanup function to avoid memory leaks
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (

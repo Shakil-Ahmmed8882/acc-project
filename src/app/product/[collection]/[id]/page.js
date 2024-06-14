@@ -23,11 +23,11 @@ const ProductDetailsPage = () => {
       setIsLoading(false);
     });
   }, [id]);
-  if (isLoading) return <Loading/>;
+  if (isLoading) return <Loading />;
 
   return (
     <>
-      <Container bgClr={"bg-[#121212]"}>
+      <Container bgClr={"bg-[#121212] -mt-44"}>
         <ProductDetails product={product} showHighlight={false} />
       </Container>
       {product?.video && <VideoPlayer videoUrl={product?.video} />}
