@@ -13,19 +13,6 @@ const ScrollParallax = ({images, titles }) => {
   const { isMenuOpen } = useGlobalContext();
    
 
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    // Cleanup function to avoid memory leaks
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
 
   return (
     <section>
@@ -35,7 +22,7 @@ const ScrollParallax = ({images, titles }) => {
             isMenuOpen ? "-mt-[1000px] md:-mt-[800px]" : "-mt-[700px]"
           } transition-all h-[125vh] duration-1000 section text-8xl overflow-hidden sticky top-0`}
         >
-          <AnimatedVideo />
+          {/* <AnimatedVideo /> */}
           <ParallaxContents
             images={parallaxOneBgImages}
             title={title1 || "Luxury & Vintage Cigars"}
@@ -62,58 +49,3 @@ const ScrollParallax = ({images, titles }) => {
 };
 
 export default ScrollParallax;
-
-
-
-
-
-
-
-
-
-
-// // import parallaxImg2 from "@/assets/img/home/parallax/parallax2";
-// // import parallaxImg3 from "@/assets/img/home/parallax/parallax3";
-// import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
-// import useGlobalContext from "@/hooks/useGlobalContext";
-// // import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
-
-// const ScrollParallax = () => {
-//   const { isMenuOpen } = useGlobalContext();
-//   return (
-//     // <InitialAnimateContainer>
-//     <section>
-//       <div className="relative ">
-//         0
-//         <div
-//           className={`  ${
-//             isMenuOpen ? "-mt-[800px] md:-mt-96" : "-mt-96"
-//           }   transition-all h-[125vh] duration-1000 section text-8xl  overflow-hidden sticky top-0`}
-//         >
-//           <AnimatedVideo />
-//           <ParallaxContents
-//             img={parallaxImg1}
-//             title={"LUXURY & VINTAGE CIGARS"}
-//             page={1}
-//           />
-//         </div>
-//         <div className="section smooth-transition    text-8xl  mt-64 h-screen  overflow-hidden sticky top-0">
-//           <ParallaxContents
-//             img={parallaxImg2}
-//             title={"LUXURY & VINTAGE SPIRITS"}
-//           />
-//         </div>
-//         <div className=" section text-8xl mt-64  h-screen  overflow-hidden sticky top-0">
-//           <ParallaxContents
-//             img={parallaxImg3}
-//             title={"LUXURY & "}
-//             page={"last"}
-//           />
-//         </div>
-//       </div>
-//     </section>
-//     // </InitialAnimateContainer>
-//   );
-// };
-
-// export default ScrollParallax;
