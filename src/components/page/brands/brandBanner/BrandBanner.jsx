@@ -29,12 +29,14 @@ const BrandBanner = ({ title, image, id, className, description, path,index }) =
       <Container>
         <div className="bg-[#00000099] max-h-screen absolute inset-0"></div>
         <div className="absolute flex items-center justify-center flex-col z-50 inset-0 text-white max-w-[930px] mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl xl:text-7xl font-normal uppercase font-cailyne tracking-[0.08em] leading-[60px] md:leading-[134px]">
+          <h1 className="text-4xl md:text-5xl xl:text-7xl font-normal
+          uppercase font-cailyne tracking-[0.08em] leading-[60px]
+          md:leading-[134px]">
             {title}
           </h1>
           {id !== "brands" && (
             <>
-              <p className="text-white font-riviera text-[10px] md:text-[17px] lg:text-xl font-medium md:pt-4">
+              <p className="text-white opacity-[80%] font-riviera text-[10px] md:text-[17px] lg:text-xl font-medium md:pt-4">
                 {description || ""}
               </p>
               <button

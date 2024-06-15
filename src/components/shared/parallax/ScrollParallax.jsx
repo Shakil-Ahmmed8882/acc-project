@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import ParallaxContents from "./ParallaxContents";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useScrollObserver from "@/hooks/useScrollObserver";
-import Lenis from "lenis";
+
 
 // Pass dynamic titles object and images array
 const ScrollParallax = ({ images, titles }) => {
@@ -12,20 +12,6 @@ const ScrollParallax = ({ images, titles }) => {
   const { parallaxOneBgImages, parallaxTwoBgImages, parallaxThreeBgImages } =
     images || {};
 
-
-      useEffect(() => {
-        const lenis = new Lenis();
-        const raf = (time) => {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        };
-        requestAnimationFrame(raf);
-
-        // Cleanup function to avoid memory leaks
-        return () => {
-          lenis.destroy();
-        };
-      }, []);
   return (
     <section className="max-w-[1920px] flex flex-col">
       <div className="relative">

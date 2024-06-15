@@ -5,7 +5,7 @@ import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
 import parallaxImg1 from "@/assets/img/home/parallax/parallax1.png";
 import BrandBanner from "@/components/page/brands/brandBanner/BrandBanner";
-import Lenis from "lenis";
+
 
 // images
 import cigar_collection from "@/assets/img/brands/cigar-collection.jpg";
@@ -14,19 +14,7 @@ import luxury_storage from "@/assets/img/brands/luxury-storage.png";
 import liqure from "@/assets/img/brands/accessories.jpg";
 
 const BrandsPage = () => {
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    // Cleanup function to avoid memory leaks
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+ 
 
   const brandBanners = [
     {
