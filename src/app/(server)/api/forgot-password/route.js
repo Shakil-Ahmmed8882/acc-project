@@ -1,8 +1,8 @@
 import { UserModel } from "@/app/(server)/models/User";
 import dbConnect from "../../lib/dbConnect";
 import { handleError } from "../../lib/utils";
-import { sendResetLinkWithNodeMailer } from "@/utils/sendEmail";
-import PasswordResetEmail from "../../../../../emails/PasswordResetEmail";
+import { sendEmail } from "@/utils/sendEmail";
+import PasswordResetEmail from "../../../../../emails/PasswordResetEmailTemplate";
 import {
   clearUserResetToken,
   generateResetToken,
@@ -49,7 +49,7 @@ export async function POST(request) {
       subject: "Password Reset Request Link",
     };
 
-    const emailRes = await sendResetLinkWithNodeMailer(emailOptions);
+    const emailRes = await sendEmail(emailOptions);
 
     if (emailRes.success) {
       await updateUserResetToken(

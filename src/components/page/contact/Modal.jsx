@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CircleX } from "lucide-react";
 import FormInput from "./FormInput";
 
-const Modal = ({ isOpen, onClose }) => {
+const Modal = ({ isOpen, onClose}) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -31,7 +31,7 @@ const Modal = ({ isOpen, onClose }) => {
               <h2 className="text-5xl uppercase my-10 text-center font-riviera">
                 Request Information
               </h2>
-              <FormInput />
+              <FormInput onClose={onClose} />
             </div>
           </motion.div>
         </div>

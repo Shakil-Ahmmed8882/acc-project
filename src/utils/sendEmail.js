@@ -1,7 +1,7 @@
 import { render } from "@react-email/render";
-import { transporter } from "@/lib/nodeMailler";
+import { transporter } from "../../src/lib/nodeMailler";
 
-export async function sendResetLinkWithNodeMailer({
+export async function sendEmail({
   emailTemplate,
   recipientEmail,
   fromEmail,
