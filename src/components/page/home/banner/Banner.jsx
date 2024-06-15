@@ -12,8 +12,8 @@ const Banner = ({ titles, images }) => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.2, // Controls the duration of the smooth scroll animation
-      easing: (t) => Math.min(1, .0001 - Math.pow(1, -10 * t)), // Easing function
+      duration: 0.1, // Controls the duration of the smooth scroll animation
+      easing: (t) => Math.min(1, 0.0001 - Math.pow(1, -10 * t)), // Easing function
       direction: "vertical", // Scroll direction, could be 'vertical' or 'horizontal'
       gestureDirection: "vertical", // Direction for touch gestures
       smooth: true, // Enable or disable smooth scrolling
