@@ -14,6 +14,7 @@ import product7 from "@/assets/img/home/flagship/flagship7.png";
 import product8 from "@/assets/img/home/flagship/flagship8.png";
 import SliderAction from "./SliderAction";
 import { ButtonRightArrow } from "@/components/icons/Icons";
+import Button from "@/components/shared/button/Button";
 
 const FlagshipProducts = () => {
   const products = [
@@ -52,12 +53,7 @@ const FlagshipProductsLeft = () => {
         Flagship products
       </h4>
 
-      <button className=" flex items-center justify-center gap-3 hover:gap-8 group hover:bg-light-text hover:text-deep-gold transition duration-300 px-20 py-4 rounded-full text-base font-medium w-full border">
-        <span className="transition duration-300  text-transparent bg-clip-text bg-gradient-to-r from-pale-gold via-rich-gold to-deep-gold hover:text-deep-gold ">
-          Discover now
-        </span>
-        <ButtonRightArrow />
-      </button>
+      <Button className="relative mt-9 md:mt-3 !z-50 !w-[60%] md:w-[90%]" size="eLarge">Discover now</Button>
     </div>
   );
 };

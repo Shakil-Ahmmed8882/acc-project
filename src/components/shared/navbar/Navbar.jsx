@@ -23,7 +23,6 @@ const Navbar = () => {
     isSecondParallaxInView,
     isMenuOpen,
     setIsMenuOpen,
-    isBrandHover,
   } = useGlobalContext();
   const pathname = usePathname();
   const isAdminRoute =
@@ -87,34 +86,24 @@ const Navbar = () => {
         variants={headerVariants}
         transition={{ duration: 0.1 }}
       >
-
-
-
-
-          <div className="max-w-[1920px] mx-auto">
-
-          <BgOverlay isTrue={isBrandHover} />
-        <Container
-          isNavbar={true}
-          className="flex justify-between gap-0 items-center px-8"
-        >
-          <MenuIcon label={"MENU"} />
-          <Logo isSecondParallaxInView={isSecondParallaxInView} />
-          <div className="hidden -pl-6 md:flex">
-            <SearchBar />
-          </div>
-        </Container>
-        <Container isNavbar={true}>
-          <HorizontalLine classNames={"mt-8"} />
-          <MenuContents isMenuOpen={isMenuOpen} />
-          <Tabs />
-        </Container>
-
-          </div>
-
-
-
-       
+        <div className="max-w-[1920px] mx-auto">
+          {/* <BgOverlay/> */}
+          <Container
+            isNavbar={true}
+            className="flex justify-between gap-0 items-center px-8"
+          >
+            <MenuIcon label={"MENU"} />
+            <Logo isSecondParallaxInView={isSecondParallaxInView} />
+            <div className="hidden -pl-6 md:flex">
+              <SearchBar />
+            </div>
+          </Container>
+          <Container isNavbar={true}>
+            <HorizontalLine classNames={"mt-8"} />
+            <MenuContents isMenuOpen={isMenuOpen} />
+            <Tabs />
+          </Container>
+        </div>
       </motion.header>
     </navbarContext.Provider>
   );

@@ -7,16 +7,17 @@ const MenuItem = ({ path, label, isBrand, className }) => {
   const router = usePathname();
   const { setIsMenuOpen } = useGlobalContext();
   const { isBrandHover, setIsBrandsHover } = useGlobalContext();
-  const handleClick = () => {
-    setIsMenuOpen(false);
-    setIsBrandsHover(false);
-  };
+ 
   
 
 
   return (
     <Link
-      onClick={handleClick}
+      onClick={()=>{
+        setIsBrandsHover(false);
+        setIsMenuOpen(false);
+        (true)
+      }}
       className={`${
         className ? `${className}` : "text-[#cccccc]"
       } mt-7 md:mt-0 relative z-40 flex gap-1 group text-[14px]

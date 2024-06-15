@@ -23,14 +23,15 @@ const Brands = () => {
   const handleMouseLeave = () => setIsBrandsHover(false);
 
   const largeDeviceStyle =
-    "hidden md:grid grid-cols-2 mx-auto justify-center lg:flex gap-4 md:gap-8 md:justify-around mt-44 lg:mt-32";
+    `hidden md:grid grid-cols-2 mx-auto justify-center lg:flex 
+    gap-4 md:gap-8 md:justify-around `;
   const smallDeviceStyle = `${
     isClicked ? "h-28" : "h-0"
   } md:hidden smooth-transition`;
   const smallDeviceUlStyle = `${
     isClicked
-      ? "visible opacity-100 translate-y-7"
-      : "invisible opacity-0 translate-y-0"
+      ? "visible opacity-100 translate-y-7 "
+      : "invisible opacity-0 translate-y-0 "
   } smooth-transition grid grid-cols-2 gap-3`;
 
   return (
@@ -48,10 +49,11 @@ const Brands = () => {
         onMouseLeave={handleMouseLeave}
         className={`${
           isBrandHover
-            ? "visible -translate-y-[120px] opacity-100 cursor-pointer"
+            ? " visible -translate-y-[120px] opacity-100 cursor-pointer "
             : "invisible opacity-0 -translate-y-[200px]"
         } ease-out bg-red text-9xl h-[50vh] absolute w-full transition-all duration-700 z-10`}
       >
+        <div className="bg-[#00000074] absolute -left-32 top-[172px] pl-44 right-0 pb-8">
         <Container className={largeDeviceStyle}>
           <BrandsCollection
             path="cigar"
@@ -59,6 +61,7 @@ const Brands = () => {
             img={cigar_collection}
           />
           <BrandsCollection path="liquor" title="LIQUOR" img={liqure} />
+          
           <BrandsCollection
             path="accessories"
             title="ACCESSORIES"
@@ -70,6 +73,8 @@ const Brands = () => {
             img={luxury_storage}
           />
         </Container>
+          
+        </div>
       </article>
 
       <SmBrandLink isClicked={isClicked} setIsClicked={setIsClicked} />
