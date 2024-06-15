@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const SlideInText = ({ text }) => {
   const getDirection = (text) => {
-    const title = text.toLowerCase();
+    const title = text?.toLowerCase();
     if (title === "contact acc") {
       return "right";
     } else {

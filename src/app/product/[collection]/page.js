@@ -3,14 +3,15 @@ import Loading from "@/app/loading";
 import ProductBanner from "@/components/page/products/acc-cigars/ProductBanner";
 import Products from "@/components/page/products/acc-cigars/best-seller/Products";
 import Filter from "@/components/page/products/acc-cigars/filter/Filter";
+import Hero from "@/components/shared/hero/Hero";
 import { fetchProductsByType } from "@/utils";
 import { motion } from "framer-motion";
-
+import heroImag from "@/assets/img/products/acc-cigars/hero.png";
 import { createContext, useEffect, useState } from "react";
 
 export const ProductContext = createContext(null);
 
-const AccCigars = ({ params }) => {
+const Product = ({ params }) => {
   const [openFilter, setOpenFilter] = useState(false);
 
   const data = {
@@ -21,7 +22,7 @@ const AccCigars = ({ params }) => {
   const collectionName = params.collection;
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     // step 2: fetch product by type
     fetchProductsByType(collectionName).then((data) => {
@@ -44,8 +45,9 @@ const AccCigars = ({ params }) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <main className="bg-[#090b0d] relative mt-44 min-h-[calc(100vh)] ">
+          <main className="bg-[#090b0d]">
             <ProductBanner title={collectionName} />
+            {/* <Hero imagesArray={[heroImag]}/> */}
             <Filter />
             <Products product={product} />
           </main>
@@ -54,4 +56,4 @@ const AccCigars = ({ params }) => {
     </>
   );
 };
-export default AccCigars;
+export default Product;
