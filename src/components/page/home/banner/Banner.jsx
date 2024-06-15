@@ -12,13 +12,13 @@ const Banner = ({ titles, images }) => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.1, // Controls the duration of the smooth scroll animation
+      duration: 0.2, // Controls the duration of the smooth scroll animation
       easing: (t) => Math.min(1, 0.0001 - Math.pow(1, -10 * t)), // Easing function
       direction: "vertical", // Scroll direction, could be 'vertical' or 'horizontal'
       gestureDirection: "vertical", // Direction for touch gestures
       smooth: true, // Enable or disable smooth scrolling
       smoothTouch: true, // Disable smooth touch scrolling
-      touchMultiplier: 2, // Multiplier for touch scrolling
+      touchMultiplier: 1, // Multiplier for touch scrolling
       infinite: false, // Whether to loop the scroll
     });
 
@@ -30,7 +30,7 @@ const Banner = ({ titles, images }) => {
     requestAnimationFrame(raf);
 
     return () => {
-      lenis.destroy(); // Clean up Lenis instance on component unmount
+      lenis.destroy(); 
     };
   }, []);
 
