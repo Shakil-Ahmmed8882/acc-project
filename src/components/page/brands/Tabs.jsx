@@ -6,7 +6,7 @@ const Tabs = () => {
   const navigationItems = [
     { path: "#brands", label: "BRANDS" },
     { path: "#cigar", label: "CIGAR COLLECTION" },
-    { path: "#liquor", label: "LIQUOR COLLECTION" },
+    { path: "#spirits", label: "SPIRITS COLLECTION" },
     { path: "#accessories", label: "ACCESSORIES" },
     { path: "#luxury-storage", label: "LUXURY STORAGE" },
   ];

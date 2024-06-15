@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import BrandWorldAcc from "@/components/page/brands/brandWordAcc/BrandWorldAcc";
 import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
@@ -21,8 +20,8 @@ const BrandsPage = () => {
       image: parallaxImg1,
       id: "brands",
       title: "ACC BRANDS",
-    // className: "md:-mt-52",
-    className: '',
+      // className: "md:-mt-52",
+      className: "",
     },
     {
       image: cigar_collection,
@@ -34,11 +33,11 @@ const BrandsPage = () => {
     },
     {
       image: liqure,
-      id: "liquor",
+      id: "spirits",
       title: "Spirits Collection",
       description:
         "From smooth whiskies to rich cognacs and everything in between,  every ACC crystal masterpiece embodies the artistry and tradition of its craft, promising an unparalleled tasting journey for discerning connoisseurs.",
-      path: "/product/liquor",
+      path: "/product/spirits",
     },
     {
       image: accessories,

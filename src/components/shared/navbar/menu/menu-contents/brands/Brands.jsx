@@ -5,7 +5,7 @@ import { useState } from "react";
 import accessories from "@/assets/img/brands/accessories.jpg";
 import cigar_collection from "@/assets/img/brands/cigar-collection.jpg";
 import luxury_storage from "@/assets/img/brands/luxury-storage.png";
-import liqure from "@/assets/img/brands/liqure.png";
+import spirits from "@/assets/img/brands/liqure.png";
 
 //components
 import MenuItem from "../MenuItem";
@@ -22,8 +22,7 @@ const Brands = () => {
   const handleMouseEnter = () => setIsBrandsHover(true);
   const handleMouseLeave = () => setIsBrandsHover(false);
 
-  const largeDeviceStyle =
-    `hidden md:grid grid-cols-2 mx-auto justify-center lg:flex 
+  const largeDeviceStyle = `hidden md:grid grid-cols-2 mx-auto justify-center lg:flex 
     gap-4 md:gap-8 md:justify-around `;
   const smallDeviceStyle = `${
     isClicked ? "h-28" : "h-0"
@@ -54,33 +53,32 @@ const Brands = () => {
         } ease-out bg-red text-9xl h-[50vh] absolute w-full transition-all duration-700 z-10`}
       >
         <div className="bg-[#00000074] absolute -left-32 top-[172px] pl-44 right-0 pb-8">
-        <Container className={largeDeviceStyle}>
-          <BrandsCollection
-            path="cigar"
-            title="CIGAR COLLECTION"
-            img={cigar_collection}
-          />
-          <BrandsCollection path="liquor" title="LIQUOR" img={liqure} />
-          
-          <BrandsCollection
-            path="accessories"
-            title="ACCESSORIES"
-            img={accessories}
-          />
-          <BrandsCollection
-            path="luxury-storage"
-            title="LUXURY"
-            img={luxury_storage}
-          />
-        </Container>
-          
+          <Container className={largeDeviceStyle}>
+            <BrandsCollection
+              path="cigar"
+              title="CIGAR COLLECTION"
+              img={cigar_collection}
+            />
+            <BrandsCollection path="spirits" title="SPIRITS" img={spirits} />
+
+            <BrandsCollection
+              path="accessories"
+              title="ACCESSORIES"
+              img={accessories}
+            />
+            <BrandsCollection
+              path="luxury-storage"
+              title="LUXURY"
+              img={luxury_storage}
+            />
+          </Container>
         </div>
       </article>
 
       <SmBrandLink isClicked={isClicked} setIsClicked={setIsClicked} />
       <div className={smallDeviceStyle}>
         <ul className={smallDeviceUlStyle}>
-          <SMBrandCollection title="LIQUOR" img={liqure} />
+          <SMBrandCollection title="SPIRITS" img={spirits} />
           <SMBrandCollection title="CIGAR COLLECTION" img={cigar_collection} />
           <SMBrandCollection title="ACCESSORIES" img={accessories} />
           <SMBrandCollection title="LUXURY" img={luxury_storage} />

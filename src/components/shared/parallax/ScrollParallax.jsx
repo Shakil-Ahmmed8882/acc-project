@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import ParallaxContents from "./ParallaxContents";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useScrollObserver from "@/hooks/useScrollObserver";

@@ -5,7 +5,6 @@
 // import Container from "../container/Container";
 // import { motion } from "framer-motion";
 
-
 // const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
 //   // demo array
 //   const images = imagesArray;
@@ -13,7 +12,6 @@
 //   return (
 //     <div className="-mt-44 h-[125vh] overflow-hidden !w-[32]">
 
-    
 //       {/* stacking image from images gallery and slide with index */}
 //       {/* if array given animate images in bg */}
 //       {images.length !== 0 ? (
@@ -57,35 +55,17 @@
 //         </div>
 //       </motion.div>
 //     </div>
-    
+
 //   );
 // };
 
 // export default HeroSection;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import Image from "next/image";
 import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
-import Container from "../container/Container";
-import { motion } from "framer-motion";
-
+import SlideInText from "../animation/SlideInText/slideInText";
 
 const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   // demo array
@@ -93,8 +73,6 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
 
   return (
     <div className=" !h-[100vh] overflow-hidden">
-
-    
       {/* stacking image from images gallery and slide with index */}
       {/* if array given animate images in bg */}
       {images.length !== 0 ? (
@@ -122,38 +100,31 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
       )}
 
       {/* Hero title & desc */}
-        <div className="absolute inset-0 top-1/2 text-white uppercase text-center">
-          <h1 className="text-3xl
-         md:text-4xl lg:text-5xl text-white font-riviera tracking-[3.84px] font-normal ">{title}</h1>
-          <p
-            style={{ letterSpacing: 12 }}
-            className="text-white font-riviera text-[10px] md:text-[17px] lg:text-lg font-thin pt-4"
-          >
-            {description}
-          </p>
-        </div>
+      <div className="absolute inset-0 top-1/2 text-white uppercase text-center">
+        <h1
+          className="text-3xl
+         md:text-4xl lg:text-5xl text-white font-riviera tracking-[3.84px] font-normal "
+        >
+          <SlideInText text={title} />
+        </h1>
+        <p
+          style={{ letterSpacing: 12 }}
+          className="text-white font-riviera text-[10px] md:text-[17px] lg:text-lg font-thin pt-4"
+        >
+          {description}
+        </p>
+      </div>
     </div>
-    
   );
 };
 
 export default HeroSection;
 
-
-
-
-
-
-
-
-
-
-
 // sakhil vai container class
-      // className={`
-      //    ${isMenuOpen ? "md:-mt-80 -mt-[700px]" : "-mt-[150px] md:-mt-44"}
-      //    relative h-screen 
-      //     !w-full grid justify-center items-center
-      //     !-ml-1
-      //     transition-all duration-1000
-      //     `}
+// className={`
+//    ${isMenuOpen ? "md:-mt-80 -mt-[700px]" : "-mt-[150px] md:-mt-44"}
+//    relative h-screen
+//     !w-full grid justify-center items-center
+//     !-ml-1
+//     transition-all duration-1000
+//     `}

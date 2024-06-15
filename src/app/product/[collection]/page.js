@@ -30,7 +30,7 @@ const AccCigars = ({ params }) => {
     });
   }, [collectionName]);
   if (isLoading) return <Loading />;
-  const navigationItems = ["cigar", "liquor", "accessories", "luxury-storage"];
+  const navigationItems = ["cigar", "spirits", "accessories", "luxury-storage"];
 
   if (!navigationItems.includes(collectionName)) {
     return <h1 className="text-red">error.....</h1>;

@@ -8,7 +8,7 @@ const Tabs = () => {
   const { isMenuOpen } = useContext(navbarContext) || false;
   const navigationItems = [
     { path: "/product/cigar", label: "CIGAR" },
-    { path: "/product/liquor", label: "LIQUOR" },
+    { path: "/product/spirits", label: "SPIRITS" },
     { path: "/product/accessories", label: "ACCESSORIES" },
     { path: "/product/luxury-storage", label: "LUXURY STORAGE" },
   ];
@@ -19,22 +19,17 @@ const Tabs = () => {
     <section
       className={`
       ${showTabs ? "block" : "hidden"}
-      ${isMenuOpen ? "invisible opacity-0 text-[#c2c2c200]" 
-        : "text-[#c2c2c2]"}
+      ${isMenuOpen ? "invisible opacity-0 text-[#c2c2c200]" : "text-[#c2c2c2]"}
       duration-700 transition-all
       absolute top-24 md:top-28 lg:top-32
       ml-4
       `}
     >
-      <ul className=" flex gap-16 py-3 items-center">
+      <ul className=" flex gap-16 py-3 items-center pt-6">
         {navigationItems.map((item) => (
           <MenuItem
             key={item?.path}
-            className={
-              router.includes(item.path)
-                ? ""
-                : ""
-            }
+            className={router.includes(item.path) ? "" : ""}
             path={item.path}
             label={item.label}
           />
