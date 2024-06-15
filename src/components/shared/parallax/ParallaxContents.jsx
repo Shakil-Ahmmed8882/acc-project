@@ -10,6 +10,8 @@ const ParallaxContents = ({ title, page, images, }) => {
   const { activeSectionIndex } = useGlobalContext();
   const [opacity, setOpacity] = useState(1);
 
+  console.log(title)
+
   // get inifinite loop animated index based 
   //on image leng on specified duration
   const { index } = useImageSlideshow(images, 4000);
@@ -23,9 +25,11 @@ const ParallaxContents = ({ title, page, images, }) => {
     }
   }, [activeSectionIndex, page]);
 
+
+// 
   return (
     <>
-      <div className="absolute inset-0 bg-[#0c050570] w-full h-full z-40"></div>
+      <div className="absolute inset-0 bg-[#0c050552] w-full h-full z-40"></div>
       {images?.map((imageUrl, i) => (
         <Image
           key={i}
@@ -33,7 +37,7 @@ const ParallaxContents = ({ title, page, images, }) => {
           quality={100}
           priority
           className={`
-            absolute inset-0 w-full h-full object-cover z-30 filter opacity-${i === index && activeSectionIndex === page ? '100' : '0'} transition-opacity duration-1000 `}
+            absolute inset-0 w-full h-full object-cover z-30 filter  transition-opacity duration-1000 `}
           src={imageUrl}
           alt="HOME | hero parallax images"
         />
@@ -43,10 +47,10 @@ const ParallaxContents = ({ title, page, images, }) => {
         className={`${
           activeSectionIndex === page ? "visible" : "invisible opacity-0"
         } smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}
-        style={{zIndex:99999, opacity }}
+        style={{zIndex:999, opacity }}
       >
         <TitleComponent title={title} />
-         <Button className={' relative mt-9 md:mt-11'} size="eLarge">Discover now</Button>
+         <Button className={' relative mt-9 md:mt-11 !z-50'} size="eLarge">Discover now</Button>
       </div>
       <VerticalAnimatedProgressbar className="-bottom-[85vh]" />
     </>

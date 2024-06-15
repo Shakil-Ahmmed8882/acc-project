@@ -1,119 +1,88 @@
 "use client";
 
+import React from "react";
 import ParallaxContents from "./ParallaxContents";
 import useGlobalContext from "@/hooks/useGlobalContext";
-import { useEffect } from "react";
-import Lenis from "lenis";
-import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
+import useScrollObserver from "@/hooks/useScrollObserver";
 
-// pass dynamic titles object images array 
-const ScrollParallax = ({images, titles }) => {
+// Pass dynamic titles object and images array
+const ScrollParallax = ({ images, titles }) => {
   const { title1, title2, title3 } = titles || {};
-  const { parallaxOneBgImages,parallaxTwoBgImages,parallaxThreeBgImages } = images || {};
-  const { isMenuOpen } = useGlobalContext();
-   
-
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    // Cleanup function to avoid memory leaks
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  const { parallaxOneBgImages, parallaxTwoBgImages, parallaxThreeBgImages } =
+    images || {};
 
   return (
-    <section>
+    <section className="max-w-[1920px] flex flex-col">
       <div className="relative">
+        {/* parallax 1 */}
         <div
-          className={`${
-            isMenuOpen ? "-mt-[1000px] md:-mt-[800px]" : "-mt-[700px]"
-          } transition-all h-[125vh] duration-1000 section text-8xl overflow-hidden sticky top-0`}
+          className={` 
+              -mt-24 h-[120vh]
+              section text-8xl  overflow-hidden sticky top-0 transition-all duration-1000`}
         >
-          <AnimatedVideo />
           <ParallaxContents
             images={parallaxOneBgImages}
             title={title1 || "Luxury & Vintage Cigars"}
             page={0}
-            />
+          />
         </div>
-        <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
+
+        {/* parallax 2 */}
+        <div
+          className={` 
+              mt-24 
+              section text-8xl h-screen overflow-hidden sticky top-0 transition-all duration-1000`}
+        >
           <ParallaxContents
             images={parallaxTwoBgImages}
             title={title2 || "Luxury & Vintage Spirits"}
-            page={1}
-            />
-        </div>
-        <div className="section smooth-transition text-8xl mt-64 h-screen overflow-hidden sticky top-0">
-          <ParallaxContents
-            images={parallaxThreeBgImages}
-            title={title3 || "luxury & accessories"}
-            page={2}
+            page={0}
           />
         </div>
+        {/* parallax 3 */}
+        <div
+          className={` 
+              
+              section text-8xl h-screen overflow-hidden sticky top-0 transition-all duration-1000`}
+        >
+          <ParallaxContents
+            images={parallaxThreeBgImages}
+            title={title3 || "Luxury & Accessories"}
+            page={0}
+          />
+        </div>
+        <Pagination />
       </div>
     </section>
   );
 };
 
-export default ScrollParallax;
+export default React.memo(ScrollParallax);
 
+const Pagination = () => {
+  const { isMenuOpen } = useGlobalContext();
+  useScrollObserver();
 
-
-
-
-
-
-
-
-
-// // import parallaxImg2 from "@/assets/img/home/parallax/parallax2";
-// // import parallaxImg3 from "@/assets/img/home/parallax/parallax3";
-// import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
-// import useGlobalContext from "@/hooks/useGlobalContext";
-// // import InitialAnimateContainer from "../animation/framer-motion/initialAnimateContainer";
-
-// const ScrollParallax = () => {
-//   const { isMenuOpen } = useGlobalContext();
-//   return (
-//     // <InitialAnimateContainer>
-//     <section>
-//       <div className="relative ">
-//         0
-//         <div
-//           className={`  ${
-//             isMenuOpen ? "-mt-[800px] md:-mt-96" : "-mt-96"
-//           }   transition-all h-[125vh] duration-1000 section text-8xl  overflow-hidden sticky top-0`}
-//         >
-//           <AnimatedVideo />
-//           <ParallaxContents
-//             img={parallaxImg1}
-//             title={"LUXURY & VINTAGE CIGARS"}
-//             page={1}
-//           />
-//         </div>
-//         <div className="section smooth-transition    text-8xl  mt-64 h-screen  overflow-hidden sticky top-0">
-//           <ParallaxContents
-//             img={parallaxImg2}
-//             title={"LUXURY & VINTAGE SPIRITS"}
-//           />
-//         </div>
-//         <div className=" section text-8xl mt-64  h-screen  overflow-hidden sticky top-0">
-//           <ParallaxContents
-//             img={parallaxImg3}
-//             title={"LUXURY & "}
-//             page={"last"}
-//           />
-//         </div>
-//       </div>
-//     </section>
-//     // </InitialAnimateContainer>
-//   );
-// };
-
-// export default ScrollParallax;
+  return (
+    <div
+      className={`${
+        isMenuOpen ? "invisible opacity-0" : "visible opacity-100"
+      } smooth-transition fixed top-1/2 left-[10%] right-0 z-50`}
+      style={{ transform: "translateY(-50%)" }}
+    >
+      <div className="max-w-[1920px] mx-auto flex justify-start">
+        <div className="space-y-6">
+          {/* 3 pagination dots */}
+          {[0, 2, 3].map((dot) => (
+            <div
+              key={dot}
+              className="pagination-container size-5  flex justify-center items-center rounded-full p-2 outline-[2px]"
+            >
+              <span className="pagination-dot smooth-transitionb  p-[5px] relative bg-[white] rounded-full"></span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

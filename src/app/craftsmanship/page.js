@@ -4,7 +4,7 @@ import HeroSection from "@/components/shared/hero/Hero";
 import hero1 from "@/assets/img/craftsmanship/banner/img1.png";
 import CraftsmanShipVideo from "@/components/page/craftsmanship/CraftsmanShipVideo";
 
-const Heritage = () => {
+const Craftsmanship = () => {
   return (
     <section>
       <HeroSection
@@ -19,4 +19,4 @@ const Heritage = () => {
   );
 };
 
-export default Heritage;
+export default Craftsmanship;

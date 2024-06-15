@@ -6,47 +6,31 @@ const useScrollObserver = () => {
   
   // state from global context
   const {
-    setIsScrollBeyondParallax,
-    setIsSecondParallaxInView,
-    setActiveSectionIndex
+    setIsScrollBeyondParallax
   } = useGlobalContext();
 
   useEffect(() => {
     // Assuming you have an array of section elements and pagination dots
     const sections = document.querySelectorAll('.section');
     const paginationDots = document.querySelectorAll('.pagination-dot');
+    const paginationContainers = document.querySelectorAll('.pagination-container');
 
     // Function to change the color of the pagination dot
+    
     const changeDotColor = (activeIndex) => {
-      // Reset all dots to default color
-      paginationDots.forEach((dot) => {
-        dot.style.backgroundColor = 'gray';
+      paginationDots.forEach((dot, index) => {
+        dot.style.backgroundColor = index === activeIndex ? 'white' : 'gray';
       });
 
-      // Change the color of the active dot
-      paginationDots[activeIndex].style.backgroundColor = 'white'; 
-      if(paginationDots[activeIndex]){
-        setActiveSectionIndex(activeIndex)
-      }
-
-      // Check if the second parallax section is in view
-      const secondParallax = sections[1];
-      const firstParallax = sections[0];
-      const secondParallaxTop = secondParallax.getBoundingClientRect().top;
-      const firstParallaxTop = firstParallax.getBoundingClientRect().top;
-
-      if (
-        secondParallaxTop <= window.innerHeight / 2 &&
-        secondParallaxTop >= 0
-      ) {
-        // Second parallax section is in view
-        setIsScrollBeyondParallax(true);
-        setIsSecondParallaxInView(true);
-      } else if (firstParallaxTop >= 0) {
-        // First parallax section is back in view
-        setIsScrollBeyondParallax(false);
-        setIsSecondParallaxInView(false);
-      }
+      paginationContainers.forEach((container, index) => {
+        if (index === activeIndex) {
+          container.classList.add('outline');
+          container.classList.add('outline-[white]');
+        } else {
+          container.classList.remove('outline');
+          container.classList.remove('outline-[white]');
+        }
+      });
     };
 
     // Function to handle scroll event
@@ -57,8 +41,6 @@ const useScrollObserver = () => {
         if (sectionTop <= window.innerHeight / 2) {
           activeIndex = index;
         }
-
-
 
           // Calculate the opacity based on the section's position relative to the viewport
           const opacity = Math.max(0, Math.min(1, (window.innerHeight - sectionTop) / window.innerHeight));
@@ -73,8 +55,9 @@ const useScrollObserver = () => {
       const thirdCardBottom = sections[2].getBoundingClientRect().bottom;
       if (thirdCardBottom <= window.innerHeight) {
         // Hide pagination dots
-        paginationDots.forEach((dot) => {
+        paginationDots.forEach((dot,index) => {
           dot.style.display = 'none';
+          paginationContainers[index].classList.remove('outline-[white]');
           setIsScrollBeyondParallax(true);
         });
       } else {
