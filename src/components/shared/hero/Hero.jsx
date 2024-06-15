@@ -67,7 +67,7 @@ import img1 from "@/assets/img/heritage/world-of-acc/img1.png";
 import SlideImage from "./SlideImage";
 import SlideInText from "../animation/SlideInText/slideInText";
 
-const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
+const Hero = ({ imagesArray = [], title, description, noOverlay }) => {
   // demo array
   const images = imagesArray;
 
@@ -118,7 +118,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   );
 };
 
-export default HeroSection;
+export default Hero;
 
 // sakhil vai container class
 // className={`

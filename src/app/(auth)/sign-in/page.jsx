@@ -79,12 +79,12 @@ export default function SignIn() {
               </h3>
               <p className="">
                 Don&rsquo;t have an account?{" "}
-                <a
+                <span
                   href="#"
                   className="font-medium text-yellow-600 hover:text-yellow-500"
                 >
                   Sign up
-                </a>
+                </span>
               </p>
             </div>
           </div>
