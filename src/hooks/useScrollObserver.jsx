@@ -58,6 +58,7 @@ const useScrollObserver = () => {
         paginationDots.forEach((dot,index) => {
           dot.style.display = 'none';
           paginationContainers[index].classList.remove('outline-[white]');
+          paginationContainers[index].classList.remove('outline');
           setIsScrollBeyondParallax(true);
         });
       } else {

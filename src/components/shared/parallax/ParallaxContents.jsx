@@ -10,7 +10,6 @@ const ParallaxContents = ({ title, page, images, }) => {
   const { activeSectionIndex } = useGlobalContext();
   const [opacity, setOpacity] = useState(1);
 
-  console.log(title)
 
   // get inifinite loop animated index based 
   //on image leng on specified duration
@@ -30,7 +29,7 @@ const ParallaxContents = ({ title, page, images, }) => {
   return (
     <>
       <div className="absolute inset-0 bg-[#0c050552] w-full h-full z-40"></div>
-      {images?.map((imageUrl, i) => (
+      {images?.map((imgs, i) => (
         <Image
           key={i}
           placeholder="blur"
@@ -38,7 +37,7 @@ const ParallaxContents = ({ title, page, images, }) => {
           priority
           className={`
             absolute inset-0 w-full h-full object-cover z-30 filter  transition-opacity duration-1000 `}
-          src={imageUrl}
+          src={images[index]}
           alt="HOME | hero parallax images"
         />
       ))}

@@ -5,7 +5,7 @@ import Products from "@/components/page/products/acc-cigars/best-seller/Products
 import Filter from "@/components/page/products/acc-cigars/filter/Filter";
 import { fetchProductsByType } from "@/utils";
 import { motion } from "framer-motion";
-import Lenis from "lenis";
+
 import { createContext, useEffect, useState } from "react";
 
 export const ProductContext = createContext(null);
@@ -21,19 +21,7 @@ const AccCigars = ({ params }) => {
   const collectionName = params.collection;
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    // Cleanup function to avoid memory leaks
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  
   useEffect(() => {
     // step 2: fetch product by type
     fetchProductsByType(collectionName).then((data) => {

@@ -9,26 +9,14 @@ import { useParams } from "next/navigation";
 
 import { useEffect, useState } from "react";
 import FindAcc from "./FindAcc";
-import Lenis from "lenis";
+
 
 const ProductDetailsPage = () => {
   // step 1 get id
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-
-    // Cleanup function to avoid memory leaks
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+  
   useEffect(() => {
     // step 2:  fetch prodoct by id
     fetchSingleProduct(id).then((data) => {
