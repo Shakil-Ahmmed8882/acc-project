@@ -12,7 +12,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
   const images = imagesArray;
   return (
     <Container
-    className="-mt-44 h-[95vh] overflow-hidden"
+    className="-mt-44 h-screen  overflow-hidden"
     >
       {/* stacking image from images gallery and slide with index */}
       {/* if array given animate images in bg */}
@@ -24,7 +24,7 @@ const HeroSection = ({ imagesArray = [], title, description, noOverlay }) => {
         // else single img be displayed
         <Image
           src={img1}
-          className={` top-0 left absolute h-full w-full object-cover
+          className={` top-0 left h-full w-full object-cover
        transition-all duration-1000 mix `}
           alt="hero section"
         />

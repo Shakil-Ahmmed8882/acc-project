@@ -2,11 +2,12 @@ import { toast } from "sonner";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/plain.css";
-import sendEmail from "@/app/(server)/lib/sendEmail";
 import TermsCondition from "./TermsCondition";
 import Input from "./Input";
+import { sendContactEmail } from "@/utils";
+// import { sendEmail } from "@/utils/sendEmail";
 
-const FormInput = () => {
+const FormInput = ({ onClose }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -32,32 +33,29 @@ const FormInput = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    sendEmail(
-      formData,
-      (response) => {
-        console.log("Email successfully sent!", response);
-        toast.success("Email successfully sent!", {
-          classNames: {
-            success: "text-green-400",
-            title: "text-black",
-          },
-        });
-      },
-      (error) => {
-        console.error("Failed to send email.", error);
-        toast.error("Failed to send email.", {
-          classNames: {
-            error: "text-red-400",
-            title: "text-red-500",
-          },
-        });
-      }
-    );
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    if (isSubmitting) return; // Prevent multiple submissions
+
+    setIsSubmitting(true);
+
+    const emailRes = await sendContactEmail({ formData });
+    console.log(emailRes);
+
+    if (emailRes.success) {
+      toast.success(emailRes.message);
+      // close modal
+     await onClose()
+    } else {
+      toast.error(emailRes.message);
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
-    <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+    <form className="space-y-10 " onSubmit={(e) => e.preventDefault()}>
       <Input
         formData={formData}
         handleChange={handleChange}
@@ -75,9 +73,9 @@ const FormInput = () => {
           country={"us"}
           value={formData.phone}
           onChange={(value, country) => handlePhoneChange(value, country)}
-          inputClass="peer h-[50px] border-b w-full bg-[#1C1C1C] text-[#ffffff] px-2 focus:outline-none bg-[#1C1C1C]"
+          inputClass="peer h-[50px] border-b w-full !text-[#ffffff] px-2 focus:outline-none bg-[#1C1C1C]"
           buttonClass="bg-[#1C1C1C] text-[#ffffff]"
-          dropdownClass="bg-[#1C1C1C] text-[#ffffff]"
+          dropdownClass="!bg-[#1C1C1C] hover:text-black text-[#ffffff]"
           placeholder=" "
           inputStyle={{
             background: "#1C1C1C",
@@ -137,10 +135,11 @@ const FormInput = () => {
       <div className="flex items-center justify-center">
         <button
           onClick={handleSubmit}
+          disabled={isSubmitting}
           className="group text-[#8C4C24]  bg-pale-gold hover:bg-[#F6DF65]  transition-all duration-500 text-sm md:text-base   py-2 md:py-4 px-8 md-16 lg:px-20 rounded-full border"
         >
           <span className="flex group items-center justify-center transition-all duration-500 hover:gap-4 gap-2">
-            SEND REQUEST
+            {isSubmitting ? "Sending..." : " SEND REQUEST"}
           </span>
         </button>
       </div>

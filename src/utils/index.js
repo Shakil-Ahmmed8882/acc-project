@@ -173,3 +173,33 @@ export const updatePassword = async (userData) => {
     }
   }
 };
+//sent contact email
+export const sendContactEmail = async (userData) => {
+  try {
+    const response = await axios.post("/api/contact-email", userData);
+    return response.data;
+  } catch (error) {
+    console.error("Error sending error:", error);
+
+    // Check if there is a response from the server
+    if (error.response) {
+      return {
+        success: false,
+        message: error.response.data.message || "An error occurred.",
+        status: error.response.status,
+      };
+    } else if (error.request) {
+      // The request was made but no response was received
+      return {
+        success: false,
+        message: "No response from server. Please try again later.",
+      };
+    } else {
+      // Something happened in setting up the request
+      return {
+        success: false,
+        message: error.message,
+      };
+    }
+  }
+};

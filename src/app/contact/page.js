@@ -6,6 +6,7 @@ import HeroSection from "@/components/shared/hero/Hero";
 import hero1 from "@/assets/img/contact/hero.png";
 
 const page = () => {
+  
   return (
     <section className="">
       <HeroSection

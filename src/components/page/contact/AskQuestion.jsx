@@ -15,7 +15,10 @@ const AskQuestion = () => {
         <h2 className="text-5xl font-semibold text-white">ASK US A QUESTION</h2>
         <Button openModal={openModal} />
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </Container>
   );
 };

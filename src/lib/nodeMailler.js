@@ -1,11 +1,11 @@
 import nodemailer from "nodemailer";
 
 export const transporter = nodemailer.createTransport({
-  host: "mail.bismillahchinese.com",
-  port: 465,
-  secure: true,
+  host: process.env.SMTP_HOST,
+  port: process.env.SMTP_PORT,
+  secure: process.env.SMTP_SECURE,
   auth: {
-    user: "bismilla",
-    pass: "Hasan@1980",
+    user: process.env.SMTP_AUTH_USER,
+    pass: process.env.SMTP_AUTH_PASS,
   },
 });
