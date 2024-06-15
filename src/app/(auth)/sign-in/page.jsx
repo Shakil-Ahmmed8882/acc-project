@@ -29,10 +29,9 @@ export default function SignIn() {
     return emailRegex.test(email);
   };
 
-
   // form submit
   const handleSubmit = async (e) => {
-       e.preventDefault();
+    e.preventDefault();
     if (!isValidEmail(email)) {
       setError("Email is invalid");
       return;
@@ -56,22 +55,24 @@ export default function SignIn() {
     }
   };
 
-    if (sessionStatus === "loading") {
-      return <Loading/>;
-    }
+  if (sessionStatus === "loading") {
+    return <Loading />;
+  }
 
   return (
     sessionStatus !== "authenticated" && (
       <main className="w-full h-screen flex flex-col items-center justify-center px-4">
         <div className="max-w-sm w-full text-gray-600">
           <div className="text-center">
-            <Image
-              src={accLogo}
-              width={150}
-              height={150}
-              alt="acc logo"
-              className="mx-auto"
-            />
+            <Link href="/">
+              <Image
+                src={accLogo}
+                width={150}
+                height={150}
+                alt="acc logo"
+                className="mx-auto"
+              />
+            </Link>
             <div className="mt-5 space-y-2">
               <h3 className="text-white text-2xl font-bold sm:text-3xl">
                 Log in to your account
@@ -109,7 +110,10 @@ export default function SignIn() {
               />
             </div>
             <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
-            <button type="submit" className="w-full px-4 py-2 text-white font-medium btnGradient rounded-lg duration-150">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 text-white font-medium btnGradient rounded-lg duration-150"
+            >
               Sign in
             </button>
             <div className="text-center">

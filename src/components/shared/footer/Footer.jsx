@@ -4,6 +4,7 @@ import Image from "next/image";
 import Container from "../container/Container";
 import footerBrand from "@/assets/img/shared/footer/brandFooter.svg";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Footer = () => {
   const footerNavs = [
@@ -48,13 +49,15 @@ const Footer = () => {
     >
       <Container className={"pt-10"}>
         <div className="flex items-center justify-center">
-          <Image
-            src={footerBrand}
-            alt="ACHIVEMENT CIGAR LOGO"
-            width={14}
-            height={40}
-            className="w-28 md:w-36 sm:mx-auto"
-          />
+          <Link href="/">
+            <Image
+              src={footerBrand}
+              alt="ACHIVEMENT CIGAR LOGO"
+              width={14}
+              height={40}
+              className="w-28 md:w-36 sm:mx-auto"
+            />
+          </Link>
         </div>
         <div className="space-y-6 justify-between items-center px-10 md:px-40 md:space-y-0 my-8 py-10 border-t border-b grid grid-cols-2 lg:grid-cols-4">
           {footerNavs.map((nav, navIdx) => (
