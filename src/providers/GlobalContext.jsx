@@ -2,7 +2,7 @@
 
 
 import { useScrollDirection } from "@/hooks/useScrollDirection";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 export const globalContext = createContext(null)
 const GlobalContext= ({children}) => {
 
@@ -35,7 +35,6 @@ const contextData = {
     isScrollBeyondParallax,
     isBrandHover,
     setIsBrandsHover,
-
     // parallax 
     setIsSecondParallaxInView,
     isSecondParallaxInView,

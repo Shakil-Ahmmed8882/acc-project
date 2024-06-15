@@ -9,12 +9,13 @@ import img2 from "@/assets/img/shared/parallax/p2bg2.jpg";
 import parallaxImg1 from "@/assets/img/home/parallax/parallax1.png";
 import parallaxImg2 from "@/assets/img/home/parallax/parallax2.png";
 import parallaxImg3 from "@/assets/img/home/parallax/parallax3.png";
+import parallaxSprit1 from "@/assets/img/home/parallax/sprit1.jpg";
 
 // import InitialAnimateContainer from "@/components/shared/animation/framer-motion/initialAnimateContainer";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
 const Home = () => {
-  const parallaxOneBgImages = [parallaxImg1, img1];
-  const parallaxTwoBgImages = [parallaxImg2, img2];
+  const parallaxOneBgImages = [parallaxImg1, img1,parallaxImg1, img1];
+  const parallaxTwoBgImages = [parallaxImg2, parallaxSprit1];
   const parallaxThreeBgImages = [parallaxImg3, img2];
 
   return (
