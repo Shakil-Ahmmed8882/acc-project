@@ -11,7 +11,6 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 import { usePathname } from "next/navigation";
-import BgOverlay from "@/components/ui/bg-blur/BgOverlay";
 
 export const navbarContext = createContext(null);
 
@@ -86,7 +85,9 @@ const Navbar = () => {
         variants={headerVariants}
         transition={{ duration: 0.1 }}
       >
-        <div className="max-w-[1920px] mx-auto">
+        <div
+          className={`max-w-[1920px] mx-auto ${isMenuOpen && "bg-[#0e0e0e33] backdrop-filter"}`}
+        >
           {/* <BgOverlay/> */}
           <Container
             isNavbar={true}

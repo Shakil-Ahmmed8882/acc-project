@@ -8,7 +8,6 @@ import craftsmanship1 from "@/assets/img/home/craftsmanship/craftsmanship1.png";
 import craftsmanship2 from "@/assets/img/home/craftsmanship/craftsmanship3.png";
 import craftsmanship3 from "@/assets/img/home/craftsmanship/craftsmanship2.png";
 const Craftsmanship = () => {
-
   const text = ` The Entubado (Entubar) method employed in the construction of each ACC
   cigar is almost a lost art in cigar making. While a few faster methods of
   cigar construction dominate most cigar production, ACC refuses to settle
@@ -18,11 +17,11 @@ const Craftsmanship = () => {
   construction strength. The evidence is in the ash and within the hand of
   an experienced smoker. ACC cigars are hand-bunched and are capped with
   &quot;Triple Rings&quot; end caps to avoid unraveling wrapper leaf during
-  smoking.`
+  smoking.`;
 
   return (
     <Container className={"py-12 px-4 sm:px-6 lg:px-8 mx-auto"}>
-      <div className="flex flex-col lg:flex-row gap-16">
+      <div className="flex flex-col lg:flex-row gap-10">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2 my-8">
           <h2 className="text-4xl lg:text-6xl mb-8 lg:mb-20 font-cailyne tracking-[.3rem] uppercase font-medium leading-[140%]">
             ACC Craftsmanship
@@ -37,7 +36,7 @@ const Craftsmanship = () => {
               height={500}
               src={craftsmanship1}
               alt="Image 1"
-              className="w-full rounded shadow-md object-cover hover-grow transition duration-300"
+              className="w-full rounded shadow-md lg:object-cover hover-grow transition duration-300 h-64 lg:h-auto"
             />
           </div>
           <div className="flex justify-center col-span-2 md:col-span-1 relative overflow-hidden">
@@ -46,7 +45,7 @@ const Craftsmanship = () => {
               height={500}
               src={craftsmanship2}
               alt="Image 2"
-              className="w-full rounded shadow-md object-cover lg:h-5/6 hover-grow transition duration-300"
+              className="w-full rounded shadow-md lg:object-cover lg:h-5/6 hover-grow transition duration-300 h-64"
             />
           </div>
           <div className="flex justify-center col-span-2 relative overflow-hidden">
@@ -55,7 +54,7 @@ const Craftsmanship = () => {
               height={500}
               src={craftsmanship3}
               alt="Image 3"
-              className="w-full rounded shadow-md object-cover h-fit hover-grow transition duration-300"
+              className="w-full rounded shadow-md lg:object-cover lg:h-fit hover-grow transition duration-300 h-64 "
             />
           </div>
         </div>

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
-import "swiper/css/pagination";
-import "./Product.css";
 import Link from "next/link";
 import Button from "@/components/shared/button/Button";
 
@@ -13,6 +10,7 @@ const ProductDetails = ({ product, showHighlight }) => {
   const { name, description, category, images } = product;
   const [showDescription, setShowDescription] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   const handleToggleDescription = () => {
     setShowDescription(!showDescription);
@@ -21,11 +19,23 @@ const ProductDetails = ({ product, showHighlight }) => {
   const descriptionVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
   };
 
   const swiperVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },
+  };
+
+  const handleSlideChange = (swiper) => {
+    setCurrentIndex(swiper.activeIndex);
+  };
+
+  const goToSlide = (index) => {
+    if (swiperInstance) {
+      swiperInstance.slideTo(index);
+      setCurrentIndex(index);
+    }
   };
 
   return (
@@ -34,14 +44,10 @@ const ProductDetails = ({ product, showHighlight }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-32">
           <div className="flex flex-col justify-center md:justify-end h-[500px] relative">
             <Swiper
-              modules={[Pagination]}
+              onSwiper={setSwiperInstance}
+              onSlideChange={handleSlideChange}
               spaceBetween={10}
               slidesPerView={1}
-              pagination={{
-                clickable: true,
-                dynamicBullets: true,
-                el: ".custom-pagination",
-              }}
               className="w-full h-full"
             >
               {images.map((image, index) => (
@@ -63,8 +69,17 @@ const ProductDetails = ({ product, showHighlight }) => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            {/* Custom pagination container */}
-            <div className="custom-pagination w-full flex justify-center mt-4"></div>
+            <div className="custom-pagination w-full flex justify-center mt-4">
+              {images.map((_, index) => (
+                <div
+                  key={index}
+                  className={`pagination-dot ${
+                    index === currentIndex ? "active" : ""
+                  }`}
+                  onClick={() => goToSlide(index)}
+                />
+              ))}
+            </div>
           </div>
           <div className="w-full p-4">
             <h1 className="text-3xl font-semibold text-white pb-8 lg:text-4xl mt-6">
@@ -105,18 +120,21 @@ const ProductDetails = ({ product, showHighlight }) => {
                   </svg>
                 </span>
               </button>
-              {showDescription && (
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={descriptionVariants}
-                  transition={{ duration: 0.3 }}
-                >
-                  <p className="text-lg text-[#b7b7b7] text-justify pt-2">
-                    {description}
-                  </p>
-                </motion.div>
-              )}
+              <AnimatePresence>
+                {showDescription && (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={descriptionVariants}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <p className="text-lg text-[#b7b7b7] text-justify pt-2">
+                      {description}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <Link href={"#find"} className="w-full flex justify-center py-6">
                 <Button className={"w-full"}>FIND A STORE</Button>
               </Link>
@@ -135,7 +153,7 @@ const ProductDetails = ({ product, showHighlight }) => {
                   className={`w-40 h-40 ${
                     index === currentIndex ? "border-2 border-yellow-500" : ""
                   }`}
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() => goToSlide(index)}
                 >
                   <Image
                     width={500}
@@ -150,6 +168,27 @@ const ProductDetails = ({ product, showHighlight }) => {
           </div>
         )}
       </div>
+      <style jsx>{`
+        .pagination-dot {
+          width: 10px;
+          height: 10px;
+          background-color: #fff;
+          border-radius: 50%;
+          margin: 0 5px;
+          cursor: pointer;
+          position: relative;
+        }
+        .pagination-dot.active::after {
+          content: "";
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          width: 18px;
+          height: 18px;
+          border: 2px solid #fff;
+          border-radius: 50%;
+        }
+      `}</style>
     </>
   );
 };
