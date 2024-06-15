@@ -43,8 +43,8 @@ const useScrollObserver = () => {
         }
 
           // Calculate the opacity based on the section's position relative to the viewport
-          const opacity = Math.max(0, Math.min(1, (window.innerHeight - sectionTop) / window.innerHeight));
-          section.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places
+          // const opacity = Math.max(0, Math.min(1, (window.innerHeight - sectionTop) / window.innerHeight));
+          // section.style.opacity = opacity.toFixed(2); // Limit opacity to two decimal places
       });
 
    
