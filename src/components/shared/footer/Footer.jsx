@@ -52,7 +52,7 @@ const Footer = () => {
           <Link href="/">
             <Image
               src={footerBrand}
-              alt="ACHIVEMENT CIGAR LOGO"
+              alt="ACHIEVEMENT CIGAR LOGO"
               width={14}
               height={40}
               className="w-28 md:w-36 sm:mx-auto"
