@@ -30,7 +30,7 @@ const ProductDetails = ({ product, showHighlight }) => {
 
   return (
     <>
-      <div className="rounded-md py-32">
+      <div className="rounded-md pt-96 md:pt-80 lg:pt-72 pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-32">
           <div className="flex flex-col justify-center md:justify-end h-[500px] relative">
             <Swiper

@@ -25,7 +25,7 @@ const Tabs = () => {
       ml-4
       `}
     >
-      <ul className=" flex gap-16 py-3 items-center pt-6">
+      <ul className=" flex gap-16 py-3 items-center pt-10 lg:pt-6">
         {navigationItems.map((item) => (
           <MenuItem
             key={item?.path}
