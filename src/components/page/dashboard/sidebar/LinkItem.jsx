@@ -8,7 +8,7 @@ const LinkItem = ({ href, icon, name, action }) => {
         onClick={action && action}
         className="flex items-center gap-x-2 text-[#ebebeb] p-2 rounded-lg hover:bg-[#29292c] transition-all duration-300"
       >
-        <div className="text-white">{icon}</div>
+        <span className="text-white">{icon}</span>
         {name}
       </Link>
     </li>

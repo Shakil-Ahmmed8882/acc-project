@@ -2,7 +2,7 @@ import heroImag from "@/assets/img/products/acc-cigars/hero.png";
 import Image from "next/image";
 const ProductBanner = ({ title }) => {
   return (
-    <div className="-mt-[220px] relative ">
+    <div className="relative min-h-[400px] h-[500px] md:max-h-screen">
       <Image
         src={heroImag}
         width={1500}
@@ -11,7 +11,7 @@ const ProductBanner = ({ title }) => {
         alt="bannerI"
       />
       <div className="bg-[#00000099] h-[800px] absolute inset-0"></div>
-      <div className="absolute  top-1/2 inset-0 text-white uppercase text-center">
+      <div className="absolute  top-3/4 inset-0 text-white uppercase text-center">
         <h1 className="text-4xl lg:text-6xl uppercase font-riviera">
           ACC {title}
         </h1>
@@ -30,7 +30,7 @@ const ProductBanner = ({ title }) => {
 export default ProductBanner;
 const VerticalAnimatedProgressbar = ({ className }) => {
   return (
-    <div className="absolute inset-x-0  bottom-20">
+    <div className="absolute inset-x-0 hidden md:block md:-bottom-32">
       <div
         className={` ${className} w-[2px] bg-[#8d8d8d] left-1/2  relative z-40 `}
       >

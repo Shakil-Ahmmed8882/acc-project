@@ -19,19 +19,19 @@ export default function RootLayout({ children }) {
   const session = getServerSession();
   return (
     <html lang="en">
-        {/* <Link rel="icon" href="/logo.jpg" type="image/jpg" sizes="32x32" /> */}
-        <body className={inter.className}>
-      <LocomotiveScrollLayout>
-          <GlobalContext>
-            <AuthProvider session={session}>
-              <Navbar />
-              {children}
-              <Footer />
-              <Toaster />
-            </AuthProvider>
-          </GlobalContext>
-      </LocomotiveScrollLayout>
-        </body>
+      {/* <Link rel="icon" href="/logo.jpg" type="image/jpg" sizes="32x32" /> */} 
+      <body className={inter.className}>
+        <LocomotiveScrollLayout>
+        <GlobalContext>
+          <AuthProvider session={session}>
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
+          </AuthProvider>
+        </GlobalContext>
+        </LocomotiveScrollLayout>
+      </body>
     </html>
   );
 }
