@@ -11,7 +11,7 @@ import cigar_collection from "@/assets/img/brands/cigar-collection.jpg";
 import accessories from "@/assets/img/brands/accessories.jpg";
 import luxury_storage from "@/assets/img/brands/luxury-storage.png";
 import liqure from "@/assets/img/brands/accessories.jpg";
-import SmoothScroll from "@/providers/SmoothScroll";
+
 
 const BrandsPage = () => {
  
@@ -59,7 +59,7 @@ const BrandsPage = () => {
   ];
 
   return (
-    <SmoothScroll>
+    
     <div>
       {brandBanners.map((banner, index) => (
         <div key={index}>
@@ -79,7 +79,7 @@ const BrandsPage = () => {
       <BrandWorldAcc />
       <Newsletter />
     </div>
-    </SmoothScroll>
+    
   );
 };
 
