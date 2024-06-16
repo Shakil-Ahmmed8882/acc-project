@@ -1,4 +1,3 @@
-/////
 
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -8,7 +7,7 @@ import GlobalContext from "@/providers/GlobalContext";
 import { Toaster } from "sonner";
 import { getServerSession } from "next-auth";
 import AuthProvider from "@/providers/SessionProvider";
-import LocomotiveScrollLayout from "@/providers/Locomotive";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* <Link rel="icon" href="/logo.jpg" type="image/jpg" sizes="32x32" /> */} 
       <body className={inter.className}>
-        <LocomotiveScrollLayout>
         <GlobalContext>
           <AuthProvider session={session}>
             <Navbar />
@@ -32,7 +30,6 @@ export default function RootLayout({ children }) {
             <Toaster />
           </AuthProvider>
         </GlobalContext>
-        </LocomotiveScrollLayout>
       </body>
     </html>
   );
