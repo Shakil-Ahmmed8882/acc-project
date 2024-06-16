@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import Link from "next/link";
-import Button from "@/components/shared/button/Button";
+
+import Button2 from "@/components/shared/button/Button2";
 
 const ProductDetails = ({ product, showHighlight }) => {
   const { name, description, category, images } = product;
@@ -136,7 +137,7 @@ const ProductDetails = ({ product, showHighlight }) => {
                 )}
               </AnimatePresence>
               <Link href={"#find"} className="w-full flex justify-center py-6">
-                <Button className={"w-full"}>FIND A STORE</Button>
+                <Button2 className={"w-full"}>FIND A STORE</Button2>
               </Link>
             </div>
           </div>

@@ -10,8 +10,8 @@ const Filter = () => {
   const { openFilter } = useProductContext();
 
   return (
-    <Container className="">
-      <article className="flex justify-between items-center w-full py-6  md:py-8 text-white">
+    <Container className="mt-44">
+      <article className="flex justify-between items-center w-full py-6  md:py-8 text-white z-50">
         <h3 className="text-[16px] md:text-[20px] px-1">Filter</h3>
         <FilterIcon />
       </article>

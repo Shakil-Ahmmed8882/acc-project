@@ -27,7 +27,7 @@ const SlideInText = ({ text }) => {
       initial="hidden"
       animate="visible"
       variants={variants}
-      transition={{ duration: 1 }}
+      transition={{ duration: .6 }}
     >
       {text}
     </motion.div>

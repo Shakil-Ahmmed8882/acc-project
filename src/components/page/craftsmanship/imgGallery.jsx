@@ -7,7 +7,7 @@ import Img from "./content-container/Img";
 import truck from "@/assets/img/craftsmanship/imgGallery/craftsmanship7.png";
 import HiddenContent from "./content-container/HiddenContent";
 import Link from "next/link";
-import Button from "@/components/shared/button/Button";
+import Button2 from "@/components/shared/button/Button2";
 
 const ImageGallery = () => {
   return (
@@ -52,10 +52,10 @@ const ImageGallery = () => {
           </div>
         </div>
         <Link
-          href={"/product/cigar"}
-          className="w-full flex justify-center py-16"
+          href={"/brands"}
+          className="w-full flex justify-center py-8"
         >
-          <Button className={"w-3/6"}>SEE OUR PRODUCTS</Button>
+          <Button2 className={"w-3/6"}>SEE OUR PRODUCTS</Button2>
         </Link>
       </Container>
     </>

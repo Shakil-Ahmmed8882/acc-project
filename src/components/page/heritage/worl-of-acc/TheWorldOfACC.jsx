@@ -4,9 +4,10 @@
 //for modularity and readability.
 
 import Container from "@/components/shared/container/Container";
-import Button from "@/components/shared/parallax/Button";
 import ImageGrid from "./ImageGrid";
 import StoriesLink from "./StoriesLink";
+import Link from "next/link";
+import Button2 from "@/components/shared/button/Button2";
 
 const TheWorldOfACC = () => {
   return (
@@ -14,7 +15,9 @@ const TheWorldOfACC = () => {
       <StoriesLink />
       <ImageGrid />
       <div className="flex justify-center py-16  mx-auto">
-        <Button customStyle={"text-white"} />
+        <Link href={"/brands"} className="w-full flex justify-center py-16">
+          <Button2 className={"w-3/6"}>SEE OUR PRODUCTS</Button2>
+        </Link>
       </div>
     </Container>
   );
