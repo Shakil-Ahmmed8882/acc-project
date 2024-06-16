@@ -7,6 +7,7 @@ import GlobalContext from "@/providers/GlobalContext";
 import { Toaster } from "sonner";
 import { getServerSession } from "next-auth";
 import AuthProvider from "@/providers/SessionProvider";
+import LenisProvider from "@/providers/LenisProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <GlobalContext>
           <AuthProvider session={session}>
-            <Navbar />
-            {children}
+            <Navbar/>
+            <LenisProvider>{children}</LenisProvider>
             <Footer />
             <Toaster />
           </AuthProvider>
