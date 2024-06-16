@@ -9,6 +9,7 @@ import Image from "next/image";
 import noDataFound from "@/assets/img/shared/not-found/not-found.png";
 import AddProductModal from "./all-products/AddProductModal";
 
+
 const MainContent = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [trigger, setTrigger] = useState(false);
@@ -28,6 +29,7 @@ const MainContent = () => {
   };
 
   return (
+    
     <section className="p-8 bg-[#1A1A1A]">
       <div className="p-4 bg-[#262626] block sm:flex items-center justify-between border-gray-200 dark:bg-gray-800 dark:border-gray-700 mb-8">
         <div className="w-full">
@@ -63,6 +65,7 @@ const MainContent = () => {
         ))
       )}
     </section>
+    
   );
 };
 

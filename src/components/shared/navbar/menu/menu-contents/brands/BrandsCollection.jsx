@@ -6,7 +6,7 @@ const BrandsCollection = ({ img, title, path }) => {
   const { setIsBrandsHover, setIsMenuOpen } = useGlobalContext();
   return (
     <section>
-      <div
+      <Link
         onClick={() => {
           setIsMenuOpen(false);
           setIsBrandsHover(false);
@@ -25,7 +25,7 @@ const BrandsCollection = ({ img, title, path }) => {
         <h3 className="group-hover:text-white text-[#c6c6c6] transition-all duration-500  text-[14px] mt-3">
           {title}
         </h3>
-      </div>
+      </Link>
     </section>
   );
 };

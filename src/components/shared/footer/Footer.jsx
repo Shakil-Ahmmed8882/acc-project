@@ -42,6 +42,7 @@ const Footer = () => {
   const isAdminRoute = pathname.startsWith("/admin");
 
   return (
+    
     <footer
       className={`pb-10
     ${isAdminRoute ? "hidden" : "block"}

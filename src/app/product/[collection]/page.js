@@ -3,11 +3,10 @@ import Loading from "@/app/loading";
 import ProductBanner from "@/components/page/products/acc-cigars/ProductBanner";
 import Products from "@/components/page/products/acc-cigars/best-seller/Products";
 import Filter from "@/components/page/products/acc-cigars/filter/Filter";
-import Hero from "@/components/shared/hero/Hero";
 import { fetchProductsByType } from "@/utils";
 import { motion } from "framer-motion";
-import heroImag from "@/assets/img/products/acc-cigars/hero.png";
 import { createContext, useEffect, useState } from "react";
+
 
 export const ProductContext = createContext(null);
 
@@ -38,7 +37,7 @@ const Product = ({ params }) => {
   }
 
   return (
-    <>
+    
       <ProductContext.Provider value={data}>
         <motion.div
           initial={{ opacity: 0.4 }}
@@ -53,7 +52,7 @@ const Product = ({ params }) => {
           </main>
         </motion.div>
       </ProductContext.Provider>
-    </>
+    
   );
 };
 export default Product;

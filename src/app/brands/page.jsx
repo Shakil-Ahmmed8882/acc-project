@@ -12,6 +12,7 @@ import accessories from "@/assets/img/brands/accessories.jpg";
 import luxury_storage from "@/assets/img/brands/luxury-storage.png";
 import liqure from "@/assets/img/brands/accessories.jpg";
 
+
 const BrandsPage = () => {
  
 
@@ -58,6 +59,7 @@ const BrandsPage = () => {
   ];
 
   return (
+    
     <div>
       {brandBanners.map((banner, index) => (
         <div key={index}>
@@ -77,6 +79,7 @@ const BrandsPage = () => {
       <BrandWorldAcc />
       <Newsletter />
     </div>
+    
   );
 };
 

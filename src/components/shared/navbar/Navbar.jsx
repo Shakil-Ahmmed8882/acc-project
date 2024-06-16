@@ -86,7 +86,9 @@ const Navbar = () => {
         transition={{ duration: 0.1 }}
       >
         <div
-          className={`max-w-[1920px] mx-auto ${isMenuOpen && "bg-[#0e0e0e33] backdrop-filter"}`}
+          className={`max-w-[1920px] mx-auto ${
+            isMenuOpen && "bg-[#0e0e0e33] backdropShadow"
+          }`}
         >
           {/* <BgOverlay/> */}
           <Container

@@ -6,7 +6,7 @@ const Modal = ({ isOpen, onClose}) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999999] grid w-full overflow-y-scroll">
+        <div className="fixed inset-0 z-[9999999] grid w-full overflow-y-scroll h-[200svh]">
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}

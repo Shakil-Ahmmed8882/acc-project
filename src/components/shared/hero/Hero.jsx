@@ -72,7 +72,7 @@ const Hero = ({ imagesArray = [], title, description, noOverlay }) => {
   const images = imagesArray;
 
   return (
-    <div className=" !h-[100vh] overflow-hidden">
+    <div className=" !h-[100vh] overflow-hidden relative">
       {/* stacking image from images gallery and slide with index */}
       {/* if array given animate images in bg */}
       {images.length !== 0 ? (
