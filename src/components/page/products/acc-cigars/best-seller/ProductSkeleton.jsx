@@ -3,10 +3,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const SkeletonCard = () => {
   return (
-    <div className="p-4 bg-[#262626] rounded-lg">
-      <Skeleton height={200} />
-      <Skeleton count={3} />
-    </div>
+    
+      <div className="bg-gradient-to-r from-[#121212] to-[#0f0f10f8] rounded-lg h-72"></div>
   );
 };
 

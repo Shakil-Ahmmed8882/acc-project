@@ -5,7 +5,6 @@ import Container from "../container/Container";
 import footerBrand from "@/assets/img/shared/footer/brandFooter.svg";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import SmoothScroll from "@/providers/SmoothScroll";
 
 const Footer = () => {
   const footerNavs = [
@@ -43,7 +42,7 @@ const Footer = () => {
   const isAdminRoute = pathname.startsWith("/admin");
 
   return (
-    <SmoothScroll>
+    
     <footer
       className={`pb-10
     ${isAdminRoute ? "hidden" : "block"}
@@ -85,8 +84,6 @@ const Footer = () => {
         </p>
       </Container>
     </footer>
-
-    </SmoothScroll>
   );
 };
 

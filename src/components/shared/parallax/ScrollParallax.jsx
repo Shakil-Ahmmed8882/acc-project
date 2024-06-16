@@ -4,7 +4,7 @@ import React from "react";
 import ParallaxContents from "./ParallaxContents";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useScrollObserver from "@/hooks/useScrollObserver";
-import SmoothScroll from "@/providers/SmoothScroll";
+
 
 
 // Pass dynamic titles object and images array
@@ -16,7 +16,7 @@ const ScrollParallax = ({ images, titles }) => {
   return (
     <section className="max-w-[1920px] flex flex-col">
       <div className="relative">
-       <SmoothScroll>
+       
          {/* parallax 1 */}
          <div
           className={` 
@@ -54,7 +54,7 @@ const ScrollParallax = ({ images, titles }) => {
             page={0}
           />
         </div>
-       </SmoothScroll>
+       
         <Pagination />
       </div>
     </section>
