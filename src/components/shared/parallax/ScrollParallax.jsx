@@ -4,6 +4,7 @@ import React from "react";
 import ParallaxContents from "./ParallaxContents";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useScrollObserver from "@/hooks/useScrollObserver";
+import SmoothScroll from "@/providers/SmoothScroll";
 
 
 // Pass dynamic titles object and images array
@@ -15,8 +16,9 @@ const ScrollParallax = ({ images, titles }) => {
   return (
     <section className="max-w-[1920px] flex flex-col">
       <div className="relative">
-        {/* parallax 1 */}
-        <div
+       <SmoothScroll>
+         {/* parallax 1 */}
+         <div
           className={` 
               -mt-24 h-[120vh]
               section text-8xl  overflow-hidden sticky top-0 transition-all duration-1000`}
@@ -52,6 +54,7 @@ const ScrollParallax = ({ images, titles }) => {
             page={0}
           />
         </div>
+       </SmoothScroll>
         <Pagination />
       </div>
     </section>
@@ -68,10 +71,11 @@ const Pagination = () => {
     <div
       className={`${
         isMenuOpen ? "invisible opacity-0" : "visible opacity-100"
-      } smooth-transition fixed top-1/2 left-[10%] right-0 z-50`}
-      style={{ transform: "translateY(-50%)" }}
+      } smooth-transition fixed top-1/2 left-[10%] right-0 topStack`}
+      style={{ transform: "translateY(-50%)",zIndex:9999}}
     >
-      <div className="max-w-[1920px] mx-auto flex justify-start">
+      <div
+      className="max-w-[1920px] mx-auto flex justify-start">
         <div className="space-y-6">
           {/* 3 pagination dots */}
           {[0, 2, 3].map((dot) => (
@@ -87,3 +91,5 @@ const Pagination = () => {
     </div>
   );
 };
+
+

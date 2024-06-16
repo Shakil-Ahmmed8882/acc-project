@@ -13,11 +13,14 @@ import parallaxSprit1 from "@/assets/img/home/parallax/sprit1.jpg";
 
 // import InitialAnimateContainer from "@/components/shared/animation/framer-motion/initialAnimateContainer";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
+import SmoothScroll from "@/providers/SmoothScroll";
 const Home = () => {
   const parallaxOneBgImages = [parallaxImg1, img1,parallaxImg1, img1];
   const parallaxTwoBgImages = [parallaxImg2, parallaxSprit1];
   const parallaxThreeBgImages = [parallaxImg3, img2];
 
+
+  
   return (
     // <InitialAnimateContainer>
     <main className="relative z-40 min-h-[calc(100vh)]">
@@ -28,10 +31,13 @@ const Home = () => {
           parallaxThreeBgImages,
         }}
       />
+      <SmoothScroll>
       <FlagshipProducts />
+
       <AccLifestyle />
       <Craftsmanship />
       <Newsletter />
+      </SmoothScroll>
     </main>
 
     // </InitialAnimateContainer>

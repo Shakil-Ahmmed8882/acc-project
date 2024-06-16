@@ -108,3 +108,9 @@ body {
 .smooth-height-transition {
   transition: height 0.7s ease-in-out;
 }
+
+
+.topStack{
+  z-index: 9999999999999999999999999999999999999 !important;
+}
+

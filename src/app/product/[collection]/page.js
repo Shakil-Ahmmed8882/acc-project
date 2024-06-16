@@ -8,6 +8,7 @@ import { fetchProductsByType } from "@/utils";
 import { motion } from "framer-motion";
 import heroImag from "@/assets/img/products/acc-cigars/hero.png";
 import { createContext, useEffect, useState } from "react";
+import SmoothScroll from "@/providers/SmoothScroll";
 
 export const ProductContext = createContext(null);
 
@@ -38,7 +39,7 @@ const Product = ({ params }) => {
   }
 
   return (
-    <>
+    <SmoothScroll>
       <ProductContext.Provider value={data}>
         <motion.div
           initial={{ opacity: 0.4 }}
@@ -53,7 +54,7 @@ const Product = ({ params }) => {
           </main>
         </motion.div>
       </ProductContext.Provider>
-    </>
+    </SmoothScroll>
   );
 };
 export default Product;
