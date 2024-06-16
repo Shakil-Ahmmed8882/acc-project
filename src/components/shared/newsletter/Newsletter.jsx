@@ -7,7 +7,7 @@ const Newsletter = () => {
   return (
     <section className="bg-[#121212] pb-20">
       <Container>
-        <h3 className="text-sm text-light-text uppercase border-b-2 border-light-text md:max-w-fit pb-4 md:pb-8 text-center">
+        <h3 className="text-sm text-light-text uppercase border-b-2 border-light-text md:max-w-fit pb-4 md:pb-8">
           newsletter
         </h3>
         <div className="md:flex space-y-6 md:space-y-0 justify-between items-center gap-20 mt-8">

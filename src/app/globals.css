@@ -114,3 +114,6 @@ body {
   z-index: 9999999999999999999999999999999999999 !important;
 }
 
+.backdropShadow{
+  backdrop-filter: 1px;
+}
