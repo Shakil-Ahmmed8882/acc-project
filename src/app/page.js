@@ -20,9 +20,9 @@ const Home = () => {
   const parallaxThreeBgImages = [parallaxImg3, img2];
 
   return (
-    // <InitialAnimateContainer>
+
     <main className="relative z-40 min-h-[calc(100vh)]">
-      <Banner
+        <Banner
         images={{
           parallaxOneBgImages,
           parallaxTwoBgImages,
@@ -36,8 +36,6 @@ const Home = () => {
       <Craftsmanship />
       <Newsletter />
     </main>
-
-    // </InitialAnimateContainer>
   );
 };
 export default Home;
