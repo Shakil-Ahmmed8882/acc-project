@@ -13,8 +13,7 @@ import product6 from "@/assets/img/home/flagship/flagship6.png";
 import product7 from "@/assets/img/home/flagship/flagship7.png";
 import product8 from "@/assets/img/home/flagship/flagship8.png";
 import SliderAction from "./SliderAction";
-import { ButtonRightArrow } from "@/components/icons/Icons";
-import Button from "@/components/shared/button/Button";
+import Button from "./Button";
 
 const FlagshipProducts = () => {
   const products = [
@@ -53,7 +52,7 @@ const FlagshipProductsLeft = () => {
         Flagship products
       </h4>
 
-      <Button className="relative mt-9 md:mt-3 !z-50 !w-[60%] md:w-[90%]" size="eLarge">Discover now</Button>
+      <Button className="!z-50 !w-[80%] " size="eLarge">Discover now</Button>
     </div>
   );
 };

@@ -71,11 +71,11 @@ const Pagination = () => {
     <div
       className={`${
         isMenuOpen ? "invisible opacity-0" : "visible opacity-100"
-      } smooth-transition fixed top-1/2 left-[10%] right-0 topStack`}
+      } smooth-transition fixed top-1/2 left-[10%] w-32 right-0 topStack`}
       style={{ transform: "translateY(-50%)",zIndex:9999}}
     >
       <div
-      className="max-w-[1920px] mx-auto flex justify-start">
+      className="max-w-[20px]  flex justify-start">
         <div className="space-y-6">
           {/* 3 pagination dots */}
           {[0, 2, 3].map((dot) => (

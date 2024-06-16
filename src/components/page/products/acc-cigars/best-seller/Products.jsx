@@ -7,11 +7,12 @@ import Container from "@/components/shared/container/Container";
 import Title from "../ui/Title";
 import ProductCard from "@/components/shared/product/product-card/Card";
 import Loader from "@/components/shared/loader/Loader";
-import Button from "./Button";
 import AllProduct from "./AllProduct";
 import SkeletonCard from "./ProductSkeleton";
 import Image from "next/image";
 import bgImg from "@/assets/img/products/productBg.jpg";
+import Button from "./Button";
+
 
 const Products = ({ product }) => {
   const { isSeeMore, setIsSeeMore } = useGlobalContext();
@@ -74,10 +75,7 @@ const Products = ({ product }) => {
           onClick={() => setIsSeeMore(!isSeeMore)}
           className="flex justify-center h-32 items-center"
         >
-          <Button
-            text={`${isSeeMore ? "See less" : "See more"}`}
-            customStyle={"border-[white]"}
-          />
+          <Button className="relative mt-9 md:mt-11 hover:!md:px-0 !z-50" size="eLarge" isNotGrow={true}>{isSeeMore ? "See less" : "See more"}</Button>
         </div>
       </Container>
     </section>

@@ -78,10 +78,10 @@ const Brands = () => {
       <SmBrandLink isClicked={isClicked} setIsClicked={setIsClicked} />
       <div className={smallDeviceStyle}>
         <ul className={smallDeviceUlStyle}>
-          <SMBrandCollection title="SPIRITS" img={spirits} />
-          <SMBrandCollection title="CIGAR COLLECTION" img={cigar_collection} />
-          <SMBrandCollection title="ACCESSORIES" img={accessories} />
-          <SMBrandCollection title="LUXURY" img={luxury_storage} />
+          <SMBrandCollection path={''} title="SPIRITS" img={spirits} />
+          <SMBrandCollection path={''} title="CIGAR COLLECTION" img={cigar_collection} />
+          <SMBrandCollection path={''} title="ACCESSORIES" img={accessories} />
+          <SMBrandCollection path={''} title="LUXURY" img={luxury_storage} />
         </ul>
       </div>
     </>

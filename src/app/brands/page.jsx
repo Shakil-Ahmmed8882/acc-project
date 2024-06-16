@@ -2,7 +2,7 @@
 import BrandWorldAcc from "@/components/page/brands/brandWordAcc/BrandWorldAcc";
 import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
-import parallaxImg1 from "@/assets/img/home/parallax/parallax1.png";
+import parallaxImg1 from "@/assets/img/home/parallax/cigar1.jpg";
 import BrandBanner from "@/components/page/brands/brandBanner/BrandBanner";
 
 
