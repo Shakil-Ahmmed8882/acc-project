@@ -1,4 +1,3 @@
-
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar/Navbar";
@@ -19,14 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const session = getServerSession();
   return (
-    <html lang="en"> 
+    <html lang="en">
       <body className={inter.className}>
         <GlobalContext>
           <AuthProvider session={session}>
-            <Navbar/>
-            {/* <LenisProvider>
-              </LenisProvider> */}
-              {children}
+            <Navbar />
+            <LenisProvider>{children}</LenisProvider>
             <Footer />
             <Toaster />
           </AuthProvider>

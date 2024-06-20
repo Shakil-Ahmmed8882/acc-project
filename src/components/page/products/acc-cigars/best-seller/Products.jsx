@@ -14,7 +14,7 @@ import bgImg from "@/assets/img/products/productBg.jpg";
 import Button from "./Button";
 
 const Products = ({ product }) => {
-  const { showProducts } = useGlobalContext();
+  const { showProducts, setShowProducts } = useGlobalContext();
   const [isSeeMoreAll, setIsSeeMoreAll] = useState(false);
   const [isSeeMoreBestSeller] = useState(false);
   const { containerRef, maxHeight } = useMaxHeight(
@@ -46,6 +46,12 @@ const Products = ({ product }) => {
 
   const toggleSeeMore = () => {
     setIsSeeMoreAll((prev) => !prev);
+
+    if (!isSeeMoreAll) {
+      setShowProducts("all");
+    } else {
+      setShowProducts("best-seller");
+    }
   };
 
   const shouldShowSeeMoreButton = filteredAllProducts.length > 6;
@@ -83,23 +89,6 @@ const Products = ({ product }) => {
           )}
         </article>
 
-        <div className="flex justify-center items-center">
-          <Button
-            onClick={toggleSeeMore}
-            className="relative mt-9 md:mt-11 hover:!md:px-0 !z-50"
-            size="eLarge"
-            isNotGrow={true}
-          >
-            {showProducts === "all"
-              ? isSeeMoreAll
-                ? "See less"
-                : "See more"
-              : isSeeMoreBestSeller
-              ? "See less"
-              : "See more"}
-          </Button>
-        </div>
-
         <AllProduct
           maxHeight={maxHeight}
           containerRef={containerRef}
@@ -124,6 +113,23 @@ const Products = ({ product }) => {
                   ))}
           </article>
         )}
+
+        <div className="flex justify-center items-center">
+          <Button
+            onClick={toggleSeeMore}
+            className="relative mt-9 md:mt-11 hover:!md:px-0 !z-50"
+            size="eLarge"
+            isNotGrow={true}
+          >
+            {showProducts === "all"
+              ? isSeeMoreAll
+                ? "See less"
+                : "See more"
+              : isSeeMoreBestSeller
+              ? "See less"
+              : "See more"}
+          </Button>
+        </div>
       </Container>
     </section>
   );
