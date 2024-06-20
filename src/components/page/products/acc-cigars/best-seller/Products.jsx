@@ -12,33 +12,43 @@ import SkeletonCard from "./ProductSkeleton";
 import Image from "next/image";
 import bgImg from "@/assets/img/products/productBg.jpg";
 import Button from "./Button";
-import { globalContext } from "@/providers/GlobalContext";
 
 const Products = ({ product }) => {
-  // see more product button
-  // show Products === 'best-seller' or 'all'
-  const { isSeeMore, setIsSeeMore,showProducts } = useGlobalContext();
-
-  
-
-  const { containerRef, maxHeight } = useMaxHeight("1500px", isSeeMore);
-  const [bestSellerProducts, setBestSellerProducts] = useState([]);
+  const { showProducts } = useGlobalContext();
+  const [isSeeMoreAll, setIsSeeMoreAll] = useState(false);
+  const [isSeeMoreBestSeller] = useState(false);
+  const { containerRef, maxHeight } = useMaxHeight(
+    "1500px",
+    showProducts === "all" ? isSeeMoreAll : isSeeMoreBestSeller
+  );
+  const [filteredBestSellerProducts, setFilteredBestSellerProducts] = useState(
+    []
+  );
+  const [filteredAllProducts, setFilteredAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (product.length === 0) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-      if (showProducts === "all") {
-        const filteredProducts = product.filter((item) => item);
-        setBestSellerProducts(filteredProducts);
-      } else {
-        const filteredProducts = product.filter((item) => item.bestSeller);
-        setBestSellerProducts(filteredProducts);
-      }
-    }
+    setLoading(true); // Start loading state
+    // Simulating API call or data fetching delay
+    setTimeout(() => {
+      // Filter best-seller products
+      const bestSellerProducts = product.filter((item) => item.bestSeller);
+      setFilteredBestSellerProducts(bestSellerProducts);
+
+      // Show all products if showProducts is 'all', otherwise filter best-sellers only
+      const allProductsToShow =
+        showProducts === "all" ? product : bestSellerProducts;
+      setFilteredAllProducts(allProductsToShow);
+
+      setLoading(false); // Set loading state to false
+    }, 1000); // Simulated delay of 1 second (1000ms)
   }, [product, showProducts]);
+
+  const toggleSeeMore = () => {
+    setIsSeeMoreAll((prev) => !prev);
+  };
+
+  const shouldShowSeeMoreButton = filteredAllProducts.length > 6;
 
   return (
     <section className="size-full transition-all duration-300 min-h-screen relative">
@@ -47,16 +57,11 @@ const Products = ({ product }) => {
         height={1000}
         src={bgImg}
         alt="Background Image"
-        class="absolute inset-0 w-full h-full object-cover -z-40"
-        style={{
-          background: "#00000033",
-          opacity: ".5",
-        }}
+        className="absolute inset-0 w-full h-full object-cover -z-40"
+        style={{ background: "#00000033", opacity: ".5" }}
       />
       <Container className="min-h-screen py-9 relative">
-        <Title
-          title={showProducts === "all" ? "ALL PRODUCTS" : "BEST SELLER"}
-        />
+        <Title title={"BEST SELLER"} />
         <article
           ref={containerRef}
           className="grid grid-cols-1 mt-16 md:mt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out overflow-hidden"
@@ -66,35 +71,59 @@ const Products = ({ product }) => {
             Array.from({ length: 6 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
-          ) : bestSellerProducts.length === 0 ? (
+          ) : filteredBestSellerProducts.length === 0 ? (
             <Loader />
           ) : (
-            bestSellerProducts
-              .slice(0, isSeeMore ? bestSellerProducts.length : 6)
+            filteredBestSellerProducts
+              .slice(
+                0,
+                isSeeMoreBestSeller ? filteredBestSellerProducts.length : 6
+              )
               .map((card, index) => <ProductCard key={index} card={card} />)
           )}
         </article>
 
-        {/* all product section */}
-        <AllProduct
-          maxHeight={maxHeight}
-          containerRef={containerRef}
-          product={product}
-          isSeeMore={isSeeMore}
-        />
-
-        <div
-          onClick={() => setIsSeeMore(!isSeeMore)}
-          className="flex justify-center h-32 items-center"
-        >
+        <div className="flex justify-center items-center">
           <Button
+            onClick={toggleSeeMore}
             className="relative mt-9 md:mt-11 hover:!md:px-0 !z-50"
             size="eLarge"
             isNotGrow={true}
           >
-            {isSeeMore ? "See less" : "See more"}
+            {showProducts === "all"
+              ? isSeeMoreAll
+                ? "See less"
+                : "See more"
+              : isSeeMoreBestSeller
+              ? "See less"
+              : "See more"}
           </Button>
         </div>
+
+        <AllProduct
+          maxHeight={maxHeight}
+          containerRef={containerRef}
+          product={product}
+          isSeeMore={isSeeMoreAll}
+        />
+
+        {shouldShowSeeMoreButton && (
+          <article
+            ref={containerRef}
+            className="grid grid-cols-1 mt-16 md:mt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out overflow-hidden"
+            style={{ maxHeight }}
+          >
+            {loading
+              ? Array.from({ length: 6 }).map((_, index) => (
+                  <SkeletonCard key={index} />
+                ))
+              : filteredAllProducts
+                  .slice(0, isSeeMoreAll ? filteredAllProducts.length : 6)
+                  .map((card, index) => (
+                    <ProductCard key={index} card={card} />
+                  ))}
+          </article>
+        )}
       </Container>
     </section>
   );
