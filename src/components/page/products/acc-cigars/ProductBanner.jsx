@@ -10,7 +10,7 @@ const ProductBanner = ({ title }) => {
         className="h-full w-full object-cover relative"
         alt="bannerI"
       />
-      <div className="bg-[#00000099] h-[800px] absolute inset-0"></div>
+      <div className="bg-[#00000099] h-screen absolute inset-0"></div>
       <div className="absolute  top-2/4 inset-0 text-white uppercase text-center">
         <h1 className="text-4xl lg:text-6xl uppercase font-riviera">
           ACC {title}
