@@ -11,6 +11,7 @@ import { createContext, useEffect, useState } from "react";
 export const ProductContext = createContext(null);
 
 const Product = ({ params }) => {
+    const [isSeeMoreAll, setIsSeeMoreAll] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
 
   const data = {
@@ -37,22 +38,27 @@ const Product = ({ params }) => {
   }
 
   return (
-    
-      <ProductContext.Provider value={data}>
-        <motion.div
-          initial={{ opacity: 0.4 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <main className="bg-[#090b0d]">
-            <ProductBanner title={collectionName} />
-            {/* <Hero imagesArray={[heroImag]}/> */}
-            <Filter />
-            <Products product={product} />
-          </main>
-        </motion.div>
-      </ProductContext.Provider>
-    
+    <ProductContext.Provider value={data}>
+      <motion.div
+        initial={{ opacity: 0.4 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <main className="bg-[#090b0d]">
+          <ProductBanner title={collectionName} />
+          {/* <Hero imagesArray={[heroImag]}/> */}
+          <Filter
+            isSeeMoreAll={isSeeMoreAll}
+            setIsSeeMoreAll={setIsSeeMoreAll}
+          />
+          <Products
+            product={product}
+            isSeeMoreAll={isSeeMoreAll}
+            setIsSeeMoreAll={setIsSeeMoreAll}
+          />
+        </main>
+      </motion.div>
+    </ProductContext.Provider>
   );
 };
 export default Product;

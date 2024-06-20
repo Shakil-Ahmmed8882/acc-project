@@ -1,9 +1,6 @@
 "use client";
 
-import useGlobalContext from "@/hooks/useGlobalContext";
-
-const HiddenFilterButtons = ({ openFilter }) => {
-  const { showProducts, setShowProducts } = useGlobalContext();
+const HiddenFilterButtons = ({ openFilter, isSeeMoreAll, setIsSeeMoreAll }) => {
   return (
     <section
       className={`${
@@ -17,19 +14,19 @@ const HiddenFilterButtons = ({ openFilter }) => {
      `}
     >
       <button
-      style={{zIndex:999999}}
-        onClick={() => setShowProducts("all")}
+        style={{ zIndex: 999999 }}
+        onClick={() => setIsSeeMoreAll(true)}
         className={`${
-          showProducts === "all" ? "text-white" : "text-[gray]"
+          isSeeMoreAll ? "text-white" : "text-[gray]"
         }  hover:text-white outline outline-[1px] py-2 px-5 text-sm rounded-full smooth-transition`}
       >
         ALL
       </button>
       <button
-      style={{zIndex:999999}}
-        onClick={() => setShowProducts("best-seller")}
+        style={{ zIndex: 999999 }}
+        onClick={() => setIsSeeMoreAll(false)}
         className={`${
-          showProducts === "best-seller" ? "text-white" : "text-[gray]"
+          !isSeeMoreAll ? "text-white" : "text-[gray]"
         }  hover:text-white outline outline-[1px] py-2 px-5 text-sm rounded-full smooth-transition`}
       >
         BEST SELLER

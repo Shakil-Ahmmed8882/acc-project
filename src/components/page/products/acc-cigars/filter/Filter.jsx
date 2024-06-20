@@ -6,7 +6,7 @@ import Container from "@/components/shared/container/Container";
 import useProductContext from "@/hooks/useProductContext";
 import HiddenFilterButtons from "./HiddenFilterButtons";
 
-const Filter = () => {
+const Filter = ({ isSeeMoreAll, setIsSeeMoreAll }) => {
   const { openFilter } = useProductContext();
 
   return (
@@ -16,7 +16,11 @@ const Filter = () => {
         <FilterIcon />
       </article>
       <HorizontalLine />
-      <HiddenFilterButtons {...{ openFilter }} />
+      <HiddenFilterButtons
+        isSeeMoreAll={isSeeMoreAll}
+        setIsSeeMoreAll={setIsSeeMoreAll}
+        {...{ openFilter }}
+      />
     </Container>
   );
 };
