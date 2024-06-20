@@ -35,27 +35,23 @@ export async function GET(request) {
   await dbConnect();
   try {
     // step 1 get product id
-    const productId = getSearchParams(request,"id");
-    const searchTerm = getSearchParams(request,"q");
+    const productId = getSearchParams(request, "id");
+    const searchTerm = getSearchParams(request, "q");
 
-    
     let query = {};
 
     if (productId) {
       // If productId is present, fetch a single product
       isValidObjectId(productId);
       query = { _id: productId };
-      
     } else if (searchTerm) {
       // If searchTerm is present, perform search
-      const regex = new RegExp(searchTerm, 'i');
+      const regex = new RegExp(searchTerm, "i");
       query = { name: regex };
     }
 
-
     //step 4: find one product else all products
-    const products = await Product.find(query).sort({orderCount:-1});
-
+    const products = await Product.find(query).sort({ _id: -1 });
 
     //step 5: send response
     return new Response(
@@ -77,7 +73,7 @@ export async function PATCH(request) {
   await dbConnect();
   try {
     // Step 1: Get URL and search query
-    const productId = getSearchParams(request,'id');
+    const productId = getSearchParams(request, "id");
 
     // Step 2: check passed id is valid
     isValidObjectId(productId);
@@ -119,7 +115,7 @@ export async function DELETE(request) {
   await dbConnect();
   try {
     // Step 1: Get id
-    const productId = getSearchParams(request,'id');
+    const productId = getSearchParams(request, "id");
 
     // Step 2: check is the passed id  valid
     isValidObjectId(productId);
@@ -143,5 +139,3 @@ export async function DELETE(request) {
     return new Response(JSON.stringify(errorResponse), { status: 500 });
   }
 }
-
-

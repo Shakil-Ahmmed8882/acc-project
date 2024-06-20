@@ -29,7 +29,6 @@ const MainContent = () => {
   };
 
   return (
-    
     <section className="p-8 bg-[#1A1A1A]">
       <div className="p-4 bg-[#262626] block sm:flex items-center justify-between border-gray-200 dark:bg-gray-800 dark:border-gray-700 mb-8">
         <div className="w-full">
@@ -55,8 +54,10 @@ const MainContent = () => {
       ) : (
         Object.keys(groupedProducts).map((type) => (
           <div key={type} className="mb-8">
-            <h2 className="text-xl font-bold mb-4 text-white normal-case">{type}</h2>
-            <section className="grid md:grid-cols-2 mt-5 p-8 gap-8">
+            <h2 className="text-xl font-bold text-white uppercase border-b-4 py-2 border-[#bfbfbf] text-[18px] md:text-[20px] lg:text-[22px] inline-block font-riviera transition-all duration-300">
+              {type}
+            </h2>
+            <section className="grid md:grid-cols-2 mt-5 gap-8">
               {groupedProducts[type].map((product, index) => (
                 <Card {...{ product, trigger, setTrigger }} key={index} />
               ))}
@@ -65,7 +66,6 @@ const MainContent = () => {
         ))
       )}
     </section>
-    
   );
 };
 
