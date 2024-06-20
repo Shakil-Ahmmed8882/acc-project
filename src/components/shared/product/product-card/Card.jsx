@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProductCard = ({ card }) => {
-  const { _id, images, name,bestSeller  } = card || {};
+  const { _id, images, name} = card || {};
 
   return (
     <div
@@ -38,8 +38,7 @@ const ProductCard = ({ card }) => {
       <h3
         style={{ letterSpacing: 2 }}
         className="mt-9 md:mt-6
-      uppercase text-lg"
-      >
+      uppercase text-lg">
         {name}
       </h3>
       <Link
