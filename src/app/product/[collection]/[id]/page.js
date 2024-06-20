@@ -29,7 +29,7 @@ const ProductDetailsPage = () => {
   return (
     <>
       <Container bgClr={"bg-[#121212] -mt-44"}>
-        <ProductDetails product={product} showHighlight={false} />
+        <ProductDetails product={product} />
       </Container>
       {product?.video && <VideoPlayer videoUrl={product?.video} />}
 
