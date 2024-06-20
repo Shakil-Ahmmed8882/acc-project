@@ -33,7 +33,7 @@ const ProductDetailsPage = () => {
       </Container>
       {product?.video && <VideoPlayer videoUrl={product?.video} />}
 
-      <SuggestedProduct id={product._id} />
+      <SuggestedProduct id={product._id} productType={product.productType} />
 
       <Container bgClr={"bg-[#121212]"}>
         <FindAcc />

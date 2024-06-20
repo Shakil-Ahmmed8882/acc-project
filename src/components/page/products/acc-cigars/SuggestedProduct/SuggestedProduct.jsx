@@ -1,41 +1,57 @@
 "use client";
 import ProductCard from "@/components/shared/product/product-card/Card";
 import { useEffect, useState } from "react";
-import useGetAllProducts from "@/hooks/useGetAllProducts";
-import useGlobalContext from "@/hooks/useGlobalContext";
 import Loader from "@/components/shared/loader/Loader";
 import Container from "@/components/shared/container/Container";
-import Image from "next/image";
-import bgImg from "@/assets/img/products/productBg.jpg";
 
-const SuggestedProduct = ({ id }) => {
-  const { showProducts } = useGlobalContext();
-  const { products } = useGetAllProducts();
+import bgImg from "@/assets/img/products/productBg.jpg";
+import Loading from "@/app/loading";
+import { fetchProductsByType } from "@/utils";
+
+const SuggestedProduct = ({ id, productType }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const filtered = products.filter((product) => product.id !== id);
-    if (showProducts === "best-seller") {
-      setFilteredProducts(filtered.slice(0, 3));
-    } else {
-      setFilteredProducts(filtered.slice(0, 3));
-    }
-  }, [id, products, showProducts]);
+    // Fetch products by type
+    const fetchData = async () => {
+      try {
+        const data = await fetchProductsByType(productType);
+        // Safely handle cases where data might not be as expected
+        setProducts(data?.products || []);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [productType]);
+
+  useEffect(() => {
+    // Filter out the current product and limit the suggestions to 3
+    const filtered = products.filter((product) => product.id == id);
+    console.log(id,filtered)
+    setFilteredProducts(filtered.slice(0, 3));
+  }, [id, products]);
+
+  // Handle loading state
+  if (isLoading) return <Loading />;
 
   return (
     <section className="relative bg-[#00000033]">
-      <Image
-        width={1000}
-        height={1000}
-        src={bgImg}
-        alt="Background Image"
-        class="absolute inset-0 w-full h-full object-cover -z-40"
+      <div
+        className="absolute inset-0 w-full h-full -z-40"
         style={{
-          background: "#00000033",
-          opacity:".5"
+          backgroundImage: `url(${bgImg.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.5,
         }}
-      />
-      <Container className={"pb-24"}>
+      ></div>
+      <Container className="pb-24">
         <h3
           style={{ letterSpacing: 2 }}
           className="text-white py-3 border-b border-[#bfbfbf] inline-block z-50"
@@ -52,8 +68,8 @@ const SuggestedProduct = ({ id }) => {
           {filteredProducts.length === 0 ? (
             <Loader />
           ) : (
-            filteredProducts.map((card, index) => (
-              <ProductCard key={index} card={card} />
+            filteredProducts.map((card) => (
+              <ProductCard key={card._id} card={card} />
             ))
           )}
         </article>

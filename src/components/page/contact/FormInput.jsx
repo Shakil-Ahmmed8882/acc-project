@@ -41,7 +41,6 @@ const FormInput = ({ onClose }) => {
     setIsSubmitting(true);
 
     const emailRes = await sendContactEmail({ formData });
-    console.log(emailRes);
 
     if (emailRes.success) {
       toast.success(emailRes.message);
