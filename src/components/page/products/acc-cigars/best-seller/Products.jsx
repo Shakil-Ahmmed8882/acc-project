@@ -57,8 +57,11 @@ const Products = ({ product }) => {
         height={1000}
         src={bgImg}
         alt="Background Image"
-        className="absolute inset-0 w-full h-full object-cover -z-40"
-        style={{ background: "#00000033", opacity: ".5" }}
+        class="absolute inset-0 w-full h-full object-cover"
+        style={{
+          background: "#00000033",
+          opacity: ".5",
+        }}
       />
       <Container className="min-h-screen py-9 relative">
         <Title title={"BEST SELLER"} />
