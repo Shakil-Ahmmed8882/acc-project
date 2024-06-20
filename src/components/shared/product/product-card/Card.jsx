@@ -40,8 +40,7 @@ const ProductCard = ({ card }) => {
         className="mt-9 md:mt-6
       uppercase text-lg"
       >
-        {/* {name} */}
-        Best seller {bestSeller?'true':'false'}
+        {name}
       </h3>
       <Link
         
