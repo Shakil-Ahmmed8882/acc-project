@@ -22,7 +22,9 @@ const [isSecondParallaxInView, setIsSecondParallaxInView] = useState(false);
 
 // ================== Products =====================
 const [showProducts,setShowProducts] = useState('best-seller');
-const [isSeeMore, setIsSeeMore] = useState(showProducts === "all");
+// const [isSeeMore, setIsSeeMore] = useState(showProducts === "all");
+const [isSeeMore, setIsSeeMore] = useState(false);
+
 
 
 // ========== Spread data across the app ==========

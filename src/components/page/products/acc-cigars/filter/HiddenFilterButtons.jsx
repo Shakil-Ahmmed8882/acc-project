@@ -9,12 +9,15 @@ const HiddenFilterButtons = ({ openFilter }) => {
       className={`${
         openFilter ? "visible opacity-100 h-20" : "invisible opacity-0 h-0"
       }
+
      smooth-transition
+     absolute w-[100%]
      flex justify-center items-center
      gap-5
      `}
     >
       <button
+      style={{zIndex:999999}}
         onClick={() => setShowProducts("all")}
         className={`${
           showProducts === "all" ? "text-white" : "text-[gray]"
@@ -23,6 +26,7 @@ const HiddenFilterButtons = ({ openFilter }) => {
         ALL
       </button>
       <button
+      style={{zIndex:999999}}
         onClick={() => setShowProducts("best-seller")}
         className={`${
           showProducts === "best-seller" ? "text-white" : "text-[gray]"

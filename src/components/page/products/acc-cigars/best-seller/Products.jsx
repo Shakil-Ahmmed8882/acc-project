@@ -12,10 +12,15 @@ import SkeletonCard from "./ProductSkeleton";
 import Image from "next/image";
 import bgImg from "@/assets/img/products/productBg.jpg";
 import Button from "./Button";
-
+import { globalContext } from "@/providers/GlobalContext";
 
 const Products = ({ product }) => {
-  const { isSeeMore, setIsSeeMore } = useGlobalContext();
+  // see more product button
+  // show Products === 'best-seller' or 'all'
+  const { isSeeMore, setIsSeeMore,showProducts } = useGlobalContext();
+
+  
+
   const { containerRef, maxHeight } = useMaxHeight("1500px", isSeeMore);
   const [bestSellerProducts, setBestSellerProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,10 +30,15 @@ const Products = ({ product }) => {
       setLoading(true);
     } else {
       setLoading(false);
-      const filteredProducts = product.filter((item) => item.bestSeller);
-      setBestSellerProducts(filteredProducts);
+      if (showProducts === "all") {
+        const filteredProducts = product.filter((item) => item);
+        setBestSellerProducts(filteredProducts);
+      } else {
+        const filteredProducts = product.filter((item) => item.bestSeller);
+        setBestSellerProducts(filteredProducts);
+      }
     }
-  }, [product]);
+  }, [product, showProducts]);
 
   return (
     <section className="size-full transition-all duration-300 min-h-screen relative">
@@ -44,7 +54,9 @@ const Products = ({ product }) => {
         }}
       />
       <Container className="min-h-screen py-9 relative">
-        <Title title={"BEST SELLER"} />
+        <Title
+          title={showProducts === "all" ? "ALL PRODUCTS" : "BEST SELLER"}
+        />
         <article
           ref={containerRef}
           className="grid grid-cols-1 mt-16 md:mt-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out overflow-hidden"
@@ -75,7 +87,13 @@ const Products = ({ product }) => {
           onClick={() => setIsSeeMore(!isSeeMore)}
           className="flex justify-center h-32 items-center"
         >
-          <Button className="relative mt-9 md:mt-11 hover:!md:px-0 !z-50" size="eLarge" isNotGrow={true}>{isSeeMore ? "See less" : "See more"}</Button>
+          <Button
+            className="relative mt-9 md:mt-11 hover:!md:px-0 !z-50"
+            size="eLarge"
+            isNotGrow={true}
+          >
+            {isSeeMore ? "See less" : "See more"}
+          </Button>
         </div>
       </Container>
     </section>

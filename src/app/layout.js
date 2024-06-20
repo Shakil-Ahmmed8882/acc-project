@@ -24,7 +24,9 @@ export default function RootLayout({ children }) {
         <GlobalContext>
           <AuthProvider session={session}>
             <Navbar/>
-            <LenisProvider>{children}</LenisProvider>
+            {/* <LenisProvider>
+              </LenisProvider> */}
+              {children}
             <Footer />
             <Toaster />
           </AuthProvider>
