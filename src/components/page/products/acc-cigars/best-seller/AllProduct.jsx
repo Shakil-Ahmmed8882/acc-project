@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import ProductCard from "@/components/shared/product/product-card/Card";
 import Title from "../ui/Title";
-import { Loader } from "lucide-react";
 
 const AllProduct = ({ maxHeight, containerRef, product, isSeeMore }) => {
   const groupedProducts = groupProductsByCategory(product);
@@ -25,7 +24,9 @@ const AllProduct = ({ maxHeight, containerRef, product, isSeeMore }) => {
                 style={{ maxHeight }}
               >
                 {groupedProducts[category].length === 0 ? (
-                  <Loader />
+                  <div className="col-span-full text-center text-gray-500">
+                    No products are currently available in this category.
+                  </div>
                 ) : (
                   groupedProducts[category].map((card, index) => (
                     <ProductCard key={index} card={card} />

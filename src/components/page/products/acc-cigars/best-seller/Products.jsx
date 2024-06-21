@@ -1,12 +1,9 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useMaxHeight from "@/hooks/useMaxHeight";
 import Container from "@/components/shared/container/Container";
 import Title from "../ui/Title";
 import ProductCard from "@/components/shared/product/product-card/Card";
-import Loader from "@/components/shared/loader/Loader";
 import AllProduct from "./AllProduct";
 import SkeletonCard from "./ProductSkeleton";
 import Image from "next/image";
@@ -75,7 +72,9 @@ const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
               <SkeletonCard key={index} />
             ))
           ) : filteredBestSellerProducts.length === 0 ? (
-            <Loader />
+            <div className="col-span-full text-center text-gray-500">
+              No best-seller products are currently available.
+            </div>
           ) : (
             filteredBestSellerProducts
               .slice(

@@ -38,7 +38,7 @@ const AdminProductDetails = ({ product }) => {
 
   return (
     <>
-      <div className="container mx-auto rounded-md pt-10 pb-32 bg-gray-800">
+      <div className="container mx-auto rounded-md pt-10 pb-32 bg-gray-800 px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center md:justify-end h-[500px] relative">
             <Swiper
