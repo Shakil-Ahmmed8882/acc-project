@@ -3,7 +3,7 @@ import React from "react";
 const FindAcc = () => {
   return (
     <div
-      id="find"
+     
       className="text-white flex flex-col items-center justify-center space-y-6 pb-28"
     >
       <h3

@@ -61,6 +61,7 @@ const SuggestedProduct = ({ id, productType }) => {
             ))
           )}
         </article>
+        <div id="find"></div>
       </Container>
     </section>
   );
