@@ -3,28 +3,19 @@ import ProductCard from "@/components/shared/product/product-card/Card";
 import { useEffect, useState } from "react";
 import Loader from "@/components/shared/loader/Loader";
 import Container from "@/components/shared/container/Container";
-
 import bgImg from "@/assets/img/products/productBg.jpg";
-import Loading from "@/app/loading";
 import { fetchProductsByType } from "@/utils";
 
 const SuggestedProduct = ({ id, productType }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Fetch products by type
     const fetchData = async () => {
-      try {
-        const data = await fetchProductsByType(productType);
-        // Safely handle cases where data might not be as expected
-        setProducts(data?.products || []);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        setIsLoading(false);
-      }
+      fetchProductsByType(productType).then((data) => {
+        setProducts(data?.products);
+      });
     };
 
     fetchData();
@@ -32,14 +23,11 @@ const SuggestedProduct = ({ id, productType }) => {
 
   useEffect(() => {
     // Filter out the current product and limit the suggestions to 3
-    const filtered = products.filter((product) => product.id == id);
-    console.log(id,filtered)
+    const filtered = products.filter((product) => product._id !== id);
     setFilteredProducts(filtered.slice(0, 3));
   }, [id, products]);
 
-  // Handle loading state
-  if (isLoading) return <Loading />;
-
+  console.log(filteredProducts, productType);
   return (
     <section className="relative bg-[#00000033]">
       <div
