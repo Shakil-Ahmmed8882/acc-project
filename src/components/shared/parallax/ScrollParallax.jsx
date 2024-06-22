@@ -81,12 +81,12 @@ const Pagination = () => {
       <div className="max-w-[20px]  flex justify-start">
         <div className="space-y-6">
           {/* 3 pagination dots */}
-          {[0, 2, 3].map((dot) => (
+          {[0, 2, 3].map((dot,index) => (
             <div
               key={dot}
-              className="pagination-container size-5  flex justify-center items-center rounded-full p-2 outline-[2px]"
+              className={`${index === 0?'outline outline-[white]':''} pagination-container size-5  flex justify-center items-center rounded-full p-2 outline-[2px]`}
             >
-              <span className="pagination-dot smooth-transition  p-[5px] relative bg-[white] rounded-full"></span>
+              <span className={`${index === 0?'bg-[white]':'bg-[gray]'} pagination-dot smooth-transition  p-[5px] relative bg-[white] rounded-full`}></span>
             </div>
           ))}
         </div>
