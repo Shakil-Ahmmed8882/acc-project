@@ -4,7 +4,16 @@ import { useCallback } from "react";
 import Tabs from "../Tabs";
 import Container from "@/components/shared/container/Container";
 
-const BrandBanner = ({ title, image, id, className, description, path,index }) => {
+const BrandBanner = ({
+  title,
+  image,
+  id,
+  className,
+  description,
+  path,
+  index,
+  bgColor,
+}) => {
   const router = useRouter();
 
   const handleDiscoverNow = useCallback(() => {
@@ -24,14 +33,16 @@ const BrandBanner = ({ title, image, id, className, description, path,index }) =
           className="object-cover min-h-[300px]  relative"
           alt="banner"
         />
-        {/* <VerticalAnimatedProgressbar /> */}
+        {index === 0 && <VerticalAnimatedProgressbar />}
       </div>
       <Container>
-        <div className="bg-[#00000099] max-h-screen absolute inset-0"></div>
+        <div className={`${bgColor} max-h-screen absolute inset-0`}></div>
         <div className="absolute flex items-center justify-center flex-col z-50 inset-0 text-white max-w-[930px] mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl xl:text-7xl font-normal
+          <h1
+            className="text-4xl md:text-5xl xl:text-7xl font-normal
           uppercase font-cailyne tracking-[0.08em] leading-[60px]
-          md:leading-[134px]">
+          md:leading-[134px]"
+          >
             {title}
           </h1>
           {id !== "brands" && (
@@ -59,7 +70,7 @@ const BrandBanner = ({ title, image, id, className, description, path,index }) =
 
 const VerticalAnimatedProgressbar = ({ className }) => {
   return (
-    <div className="absolute inset-x-0 bottom-20">
+    <div className="absolute inset-x-0 hidden md:block md:bottom-48">
       <div
         className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative z-40`}
       >

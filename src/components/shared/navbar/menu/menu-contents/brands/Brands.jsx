@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 // images
-import accessories from "@/assets/img/brands/accessories.jpg";
-import cigar_collection from "@/assets/img/brands/cigar-collection.jpg";
-import luxury_storage from "@/assets/img/brands/luxury-storage.png";
+import cigar_collection from "@/assets/img/brands/banner/cigar-collection.jpg";
+import accessories from "@/assets/img/brands/banner/accessories.jpg";
+import luxury_storage from "@/assets/img/brands/banner/luxury-storage.png";
 import spirits from "@/assets/img/brands/liqure.png";
 
 //components

@@ -13,11 +13,11 @@ const Tabs = () => {
 
   return (
     <section className="w-full absolute bg-[#121212] bottom-0 z-[51]  max-h-[90px]  hidden md:block">
-      <ul className="flex flex-wrap gap-16 py-8 px-8 items-center justify-center ">
+      <ul className="flex flex-wrap gap-24 py-8 px-8 items-center justify-center ">
         {navigationItems.map(({ path, label }) => (
           <li
             key={path}
-            className="text-light-text/60 hover:text-white text-sm md:text-xl"
+            className={`text-light-text/60 ${label === 'BRANDS' && "border-r-2 border-light-text/60 pe-32 "} font-riviera hover:text-white text-sm md:text-[18px]`}
           >
             <Link href={path}>{label}</Link>
           </li>
