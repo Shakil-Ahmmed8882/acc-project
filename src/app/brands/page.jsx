@@ -2,15 +2,16 @@
 import BrandWorldAcc from "@/components/page/brands/brandWordAcc/BrandWorldAcc";
 import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 import Newsletter from "@/components/shared/newsletter/Newsletter";
-import parallaxImg1 from "@/assets/img/home/parallax/cigar1.jpg";
+
 import BrandBanner from "@/components/page/brands/brandBanner/BrandBanner";
 
 
 // images
-import cigar_collection from "@/assets/img/brands/cigar-collection.jpg";
-import accessories from "@/assets/img/brands/accessories.jpg";
-import luxury_storage from "@/assets/img/brands/luxury-storage.png";
-import liqure from "@/assets/img/brands/accessories.jpg";
+import acc_brands from "@/assets/img/brands/banner/accBrands.png";
+import cigar_collection from "@/assets/img/brands/banner/cigar-collection.jpg";
+import spirits from "@/assets/img/brands/banner/sprits.png";
+import accessories from "@/assets/img/brands/banner/accessories.jpg";
+import luxury_storage from "@/assets/img/brands/banner/luxury-storage.png";
 
 
 const BrandsPage = () => {
@@ -18,11 +19,12 @@ const BrandsPage = () => {
 
   const brandBanners = [
     {
-      image: parallaxImg1,
+      image: acc_brands,
       id: "brands",
       title: "ACC BRANDS",
       // className: "md:-mt-52",
       className: "",
+      bgColor: "bg-[#00000066]",
     },
     {
       image: cigar_collection,
@@ -31,14 +33,16 @@ const BrandsPage = () => {
       description:
         "Crafted with the utmost care and expertise, each cigar in our collection offers a unique blend of flavors and aromas, perfect for aficionados.",
       path: "/product/cigar",
+      bgColor: "bg-[#00000080]",
     },
     {
-      image: liqure,
+      image: spirits,
       id: "spirits",
       title: "Spirits Collection",
       description:
         "From smooth whiskies to rich cognacs and everything in between,  every ACC crystal masterpiece embodies the artistry and tradition of its craft, promising an unparalleled tasting journey for discerning connoisseurs.",
       path: "/product/spirits",
+      bgColor: "bg-[#00000099]",
     },
     {
       image: accessories,
@@ -47,6 +51,7 @@ const BrandsPage = () => {
       description:
         "From elegant cutters and lighters to luxurious humidors and ashtrays, each item in our collection combines functionality with timeless style, making it an essential companion for any aficionado.",
       path: "/product/accessories",
+      bgColor: "bg-[#00000080]",
     },
     {
       image: luxury_storage,
@@ -55,11 +60,11 @@ const BrandsPage = () => {
       description:
         "From handcrafted humidors to sleek cabinets, ACC's luxury storage options offer the perfect balance of form and function, ensuring your treasures are protected and displayed with sophistication.",
       path: "/product/luxury-storage",
+      bgColor: "bg-[#00000080]",
     },
   ];
 
   return (
-    
     <div>
       {brandBanners.map((banner, index) => (
         <div key={index}>
@@ -70,16 +75,15 @@ const BrandsPage = () => {
             className={banner?.className}
             description={banner?.description}
             path={banner?.path}
+            bgColor={banner?.bgColor}
             index={index}
           />
-
         </div>
       ))}
       <AccLifestyle />
       <BrandWorldAcc />
       <Newsletter />
     </div>
-    
   );
 };
 

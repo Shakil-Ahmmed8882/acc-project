@@ -6,7 +6,7 @@ const AnimatedVideo = () => {
       muted
       loop
       playsInline
-      className=" w-full absolute top-0 right-0 z-[9999999] opacity-55
+      className=" w-full absolute top-0 right-0 z-[99999999999999999999999999999999999] opacity-55
        filter  mix-blend-overlay  "
     ></video>
   );
