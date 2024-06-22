@@ -24,7 +24,7 @@ const AllProduct = ({ maxHeight, containerRef, product, isSeeMore }) => {
                 style={{ maxHeight }}
               >
                 {groupedProducts[category].length === 0 ? (
-                  <div className="col-span-full text-center text-gray-500">
+                  <div className="col-span-full text-center text-white">
                     No products are currently available in this category.
                   </div>
                 ) : (

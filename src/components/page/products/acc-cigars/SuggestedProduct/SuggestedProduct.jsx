@@ -9,25 +9,41 @@ import { fetchProductsByType } from "@/utils";
 const SuggestedProduct = ({ id, productType }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch products by type
     const fetchData = async () => {
-      fetchProductsByType(productType).then((data) => {
+      setLoading(true);
+      try {
+        const data = await fetchProductsByType(productType);
         setProducts(data?.products);
-      });
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchData();
   }, [productType]);
 
   useEffect(() => {
-    // Filter out the current product and limit the suggestions to 3
+    // Function to shuffle the array
+    const shuffleArray = (array) => {
+      return array.sort(() => Math.random() - 0.5);
+    };
+
+    // Filter out the current product
     const filtered = products.filter((product) => product._id !== id);
-    setFilteredProducts(filtered.slice(0, 3));
+
+    // Shuffle the filtered array and select the first 3 elements
+    const randomThree = shuffleArray(filtered).slice(0, 3);
+
+    // Set the filtered products
+    setFilteredProducts(randomThree);
   }, [id, products]);
 
-  console.log(filteredProducts, productType);
   return (
     <section className="relative bg-[#00000033]">
       <div
@@ -53,8 +69,12 @@ const SuggestedProduct = ({ id, productType }) => {
           YOU MAY ALSO LIKE
         </h3>
         <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24">
-          {filteredProducts.length === 0 ? (
+          {loading ? (
             <Loader />
+          ) : filteredProducts.length === 0 ? (
+            <div className="col-span-full text-center text-white">
+              No suggested products are currently available.
+            </div>
           ) : (
             filteredProducts.map((card) => (
               <ProductCard key={card._id} card={card} />
