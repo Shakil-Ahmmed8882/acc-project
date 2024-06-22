@@ -53,9 +53,9 @@ const ImageGallery = () => {
         </div>
         <Link
           href={"/brands"}
-          className="w-full flex justify-center py-8"
+          className="w-full flex justify-center py-12"
         >
-          <Button2 className={"w-3/6"}>SEE OUR PRODUCTS</Button2>
+          <Button2 className={"w-2/6"}>SEE OUR PRODUCTS</Button2>
         </Link>
       </Container>
     </>

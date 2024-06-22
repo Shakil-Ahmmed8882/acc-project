@@ -36,7 +36,7 @@ const Button2 = ({
       className={classNames(
         `group uppercase inline-flex justify-center items-center 
         gap-2 rounded-full border relative overflow-hidden 
-        hover:bg-[#fafafa] transition-all duration-500 py-2 px-8`,
+        hover:bg-[#fafafa] transition-all duration-500 py-3 px-8`,
         sizeClasses[size],
         variantClasses[variant],
         className

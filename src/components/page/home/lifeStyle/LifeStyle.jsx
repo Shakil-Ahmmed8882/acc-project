@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import lifestyle1 from "@/assets/img/home/lifestyle/lifestyle1.png";
 import lifestyle2 from "@/assets/img/home/lifestyle/lifestyle2.png";
-import lifestyle3 from "@/assets/img/home/lifestyle/lifestyle3.jpg";
+import lifestyle3 from "@/assets/img/home/lifestyle/lifestyle3.png";
 const accLifestyleContent = [
   {
     id: 1,
@@ -38,7 +38,7 @@ const AccLifestyle = () => {
   const cardClass = "flex flex-col overflow-hidden";
   const imageContainerClass = "relative overflow-hidden gap-6";
   const imageClass =
-    "object-cover  hover:opacity-50 hover-grow transition duration-300 smooth-transition size-[400px] lg:size-[500px]";
+    "object-cover hover:opacity-50 hover-grow transition duration-300 smooth-transition size-[400px] lg:size-[500px]";
   const cardContentClass = "border-l-2 border-[#FAFAFA99] px-6 pt-6 pb-14";
   const titleClass =
     "text-2xl font- mb-6 text-2xl tracking-[.3rem] uppercase font-medium leading-[140%] font-riviera";

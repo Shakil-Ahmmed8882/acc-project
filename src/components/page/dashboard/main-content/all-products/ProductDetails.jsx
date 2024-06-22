@@ -42,8 +42,8 @@ const ProductDetails = ({ product }) => {
   return (
     <>
       <div className="rounded-md pt-96 md:pt-80 lg:pt-72 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-32">
-          <div className="flex flex-col justify-center md:justify-end h-[500px] relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 xl:gap-32">
+          <div className="flex flex-col justify-center md:justify-end relative">
             <Swiper
               onSwiper={setSwiperInstance}
               onSlideChange={handleSlideChange}
@@ -64,13 +64,13 @@ const ProductDetails = ({ product }) => {
                       height={500}
                       src={image}
                       alt={`${name} - ${index + 1}`}
-                      className="object-contain w-full h-full m-0 p-0 rounded-md"
+                      className=" w-full h-full m-0 p-0 rounded-md"
                     />
                   </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="custom-pagination w-full flex justify-center mt-4">
+            <div className="custom-pagination w-full flex justify-center mt-4 mr-10">
               {images.map((_, index) => (
                 <div
                   key={index}
@@ -82,8 +82,8 @@ const ProductDetails = ({ product }) => {
               ))}
             </div>
           </div>
-          <div className="w-full p-4">
-            <h1 className="text-3xl font-semibold text-white pb-8 lg:text-4xl mt-6">
+          <div className="w-full p-4 font-riviera">
+            <h1 className="text-3xl font-semibold text-white pb-8 xl:pb-16 lg:text-4xl font-riviera">
               {name}
             </h1>
             <div className="mb-3">
@@ -125,7 +125,7 @@ const ProductDetails = ({ product }) => {
                     variants={descriptionVariants}
                     transition={{ duration: 0.3 }}
                   >
-                    <p className="text-lg text-[#b7b7b7] text-justify pt-2">
+                    <p className="text-lg text-[#b7b7b7] text-justify pt-2 pb-8 xl:pb-16">
                       {description}
                     </p>
                   </motion.div>
@@ -140,22 +140,29 @@ const ProductDetails = ({ product }) => {
       </div>
       <style jsx>{`
         .pagination-dot {
-          width: 10px;
-          height: 10px;
-          background-color: #fff;
+          width: 14px;
+          height: 14px;
+          background-color: #fafafa;
           border-radius: 50%;
-          margin: 0 5px;
+          margin: 0 10px;
           cursor: pointer;
           position: relative;
+          opacity: 0.6;
+        }
+        .pagination-dot.active {
+          width: 8px;
+          height: 8px;
+          opacity: 1;
+          margin: 3px 10px;
         }
         .pagination-dot.active::after {
           content: "";
           position: absolute;
-          top: -4px;
-          left: -4px;
-          width: 18px;
-          height: 18px;
-          border: 2px solid #fff;
+          top: -6px;
+          left: -6px;
+          width: 20px;
+          height: 20px;
+          border: 1px solid #fafafa;
           border-radius: 50%;
         }
       `}</style>
