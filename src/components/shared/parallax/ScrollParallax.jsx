@@ -54,7 +54,7 @@ const ScrollParallax = ({ images, titles }) => {
             title={title3 || "Luxury & Accessories"}
             page={0}
           />
-          <AnimatedVideo className={"opacity-50"} />
+          <AnimatedVideo className={"opacity-70"} />
         </div>
 
         <Pagination />

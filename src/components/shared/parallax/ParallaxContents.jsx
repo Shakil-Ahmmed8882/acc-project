@@ -23,7 +23,7 @@ const ParallaxContents = ({ title, page, images }) => {
 
   return (
     <>
-      <div className="absolute inset-0 bg-[#00000077] mix-blend-multiply w-full h-screen !z-40 sm:hidden"></div>
+      <div className="absolute inset-0 bg-[#00000077] sm:bg-[#00000038]  w-full h-screen !z-40 "></div>
       {images?.map((img, i) => (
         <Image
           key={i}
