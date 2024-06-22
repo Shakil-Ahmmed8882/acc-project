@@ -4,8 +4,7 @@ import React from "react";
 import ParallaxContents from "./ParallaxContents";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useScrollObserver from "@/hooks/useScrollObserver";
-
-
+import AnimatedVideo from "../animation/animated-video/AnimatedVideo";
 
 // Pass dynamic titles object and images array
 const ScrollParallax = ({ images, titles }) => {
@@ -14,20 +13,21 @@ const ScrollParallax = ({ images, titles }) => {
     images || {};
 
   return (
-    <section className="max-w-[1920px] flex flex-col">
+    <section className="max-w-[1920px] flex flex-col ">
       <div className="relative">
-       
-         {/* parallax 1 */}
-         <div
+        {/* parallax 1 */}
+        <div
           className={` 
               -mt-24 h-[120vh]
-              section text-8xl  overflow-hidden sticky top-0 transition-all duration-1000`}
+              section text-8xl overflow-hidden sticky top-0 transition-all duration-1000`}
         >
           <ParallaxContents
             images={parallaxOneBgImages}
             title={title1 || "Luxury & Vintage Cigars"}
             page={0}
           />
+          <AnimatedVideo className={" -top-52 opacity-60"} />
+
         </div>
 
         {/* parallax 2 */}
@@ -41,6 +41,7 @@ const ScrollParallax = ({ images, titles }) => {
             title={title2 || "Luxury & Vintage Spirits"}
             page={0}
           />
+          <AnimatedVideo className={"-top-44 opacity-55"} />
         </div>
         {/* parallax 3 */}
         <div
@@ -53,8 +54,9 @@ const ScrollParallax = ({ images, titles }) => {
             title={title3 || "Luxury & Accessories"}
             page={0}
           />
+          <AnimatedVideo className={"-top-10 opacity-50"} />
         </div>
-       
+
         <Pagination />
       </div>
     </section>
@@ -69,13 +71,14 @@ const Pagination = () => {
 
   return (
     <div
-      className={`${
+      className={`
+        
+        ${
         isMenuOpen ? "invisible opacity-0" : "visible opacity-100"
       } smooth-transition fixed top-1/2 left-[10%] w-32 right-0 topStack`}
-      style={{ transform: "translateY(-50%)",zIndex:9999}}
+      style={{ transform: "translateY(-50%)", zIndex: 9999 }}
     >
-      <div
-      className="max-w-[20px]  flex justify-start">
+      <div className="max-w-[20px]  flex justify-start">
         <div className="space-y-6">
           {/* 3 pagination dots */}
           {[0, 2, 3].map((dot) => (
@@ -91,5 +94,3 @@ const Pagination = () => {
     </div>
   );
 };
-
-
