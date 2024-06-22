@@ -26,7 +26,7 @@ const ScrollParallax = ({ images, titles }) => {
             title={title1 || "Luxury & Vintage Cigars"}
             page={0}
           />
-          <AnimatedVideo className={" -top-52 opacity-60"} />
+          <AnimatedVideo className={" opacity-50"} />
 
         </div>
 
@@ -41,7 +41,7 @@ const ScrollParallax = ({ images, titles }) => {
             title={title2 || "Luxury & Vintage Spirits"}
             page={0}
           />
-          <AnimatedVideo className={"-top-44 opacity-55"} />
+          <AnimatedVideo className={" opacity-40"} />
         </div>
         {/* parallax 3 */}
         <div
@@ -54,7 +54,7 @@ const ScrollParallax = ({ images, titles }) => {
             title={title3 || "Luxury & Accessories"}
             page={0}
           />
-          <AnimatedVideo className={"-top-10 opacity-50"} />
+          <AnimatedVideo className={"opacity-50"} />
         </div>
 
         <Pagination />
