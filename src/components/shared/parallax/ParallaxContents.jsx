@@ -23,7 +23,7 @@ const ParallaxContents = ({ title, page, images }) => {
 
   return (
     <>
-      <div className="absolute inset-0 bg-[#0c05056f] w-full h-full z-40"></div>
+      <div className="absolute inset-0 bg-[#0c050556] w-full h-full z-40"></div>
       {images?.map((img, i) => (
         <Image
           key={i}
@@ -38,8 +38,8 @@ const ParallaxContents = ({ title, page, images }) => {
       <div
         className={`${
           activeSectionIndex === page ? "visible" : "invisible opacity-0"
-        } smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white z-40`}
-        style={{ zIndex: 999, opacity }}
+        } smooth-transition absolute inset-0 flex flex-col justify-center items-center text-white`}
+        style={{ zIndex: 9999999, opacity }}
       >
         <TitleComponent title={title} />
         <Button className="relative mt-9 md:mt-11 !z-50" size="eLarge">Discover now</Button>

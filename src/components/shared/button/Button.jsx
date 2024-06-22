@@ -35,6 +35,7 @@ const Button = ({
 
   return (
     <button
+     style={{zIndex: 9999999}}
       className={classNames(
         `group uppercase inline-flex justify-center items-center 
         gap-2 rounded-full border relative overflow-hidden 

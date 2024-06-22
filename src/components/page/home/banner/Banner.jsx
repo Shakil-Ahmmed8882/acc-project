@@ -2,6 +2,7 @@
 
 import useScrollObserver from "@/hooks/useScrollObserver";
 import ScrollParallax from "@/components/shared/parallax/ScrollParallax";
+import AnimatedVideo from "@/components/shared/animation/animated-video/AnimatedVideo";
 
 const Banner = ({ titles, images }) => {
   

@@ -20,10 +20,8 @@ import sprit4 from "@/assets/img/home/parallax/sprit4.jpg";
 
 // accessories 
 import accessories1 from "@/assets/img/home/parallax/accessories1.jpg";
-
-
 import Newsletter from "@/components/shared/newsletter/Newsletter";
-import AnimatedVideo from "@/components/shared/animation/animated-video/AnimatedVideo";
+
 
 const Home = () => {
   const parallaxOneBgImages = [cigar1, cigar2, cigar3, cigar4, cigar5];
@@ -39,7 +37,6 @@ const Home = () => {
           parallaxThreeBgImages,
         }}
       />
-      <AnimatedVideo/>
 
       <FlagshipProducts />
 
