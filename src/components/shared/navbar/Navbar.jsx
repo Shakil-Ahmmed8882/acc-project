@@ -19,7 +19,6 @@ const isClient = () => typeof window !== "undefined";
 const Navbar = () => {
   const {
     isScrollBeyondParallax,
-    isSecondParallaxInView,
     isMenuOpen,
     setIsMenuOpen,
   } = useGlobalContext();
@@ -78,7 +77,7 @@ const Navbar = () => {
         className={`
           ${isAdminRoute ? "hidden" : "block"}
           ${getClassNames()}
-          fixed w-full right-0 top-0  transition-all duration-700
+          fixed w-full right-0 top-0 transition-all duration-700
         `}
         initial="initial"
         animate={getHeaderVariant()}
@@ -96,7 +95,7 @@ const Navbar = () => {
             className="flex justify-between gap-0 items-center px-8"
           >
             <MenuIcon label={"MENU"} />
-            <Logo isSecondParallaxInView={isSecondParallaxInView} />
+            <Logo/>
             <div className="hidden -pl-6 md:flex">
               <SearchBar />
             </div>
