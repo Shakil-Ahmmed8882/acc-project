@@ -5,7 +5,7 @@ const MenuIcon = ({ label }) => {
   const { setIsMenuOpen, isMenuOpen } = useContext(navbarContext);
 
   return (
-    <div className="flex-1">
+    <div className="flex-1 md:pt-6">
       <button
         className={`${label && "flex md:gap-[14px] gap-[10px] items-center justify-center"} !z-50`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -27,7 +27,7 @@ const MenuIcon = ({ label }) => {
         </svg>
         <span
           style={{ letterSpacing: "3px" }}
-          className="text-white uppercase text-[13px] md:text-[16px] font-riviera underline "
+          className="text-white uppercase text-[13px] md:text-[16px] font-riviera "
         >
           {label}{" "}
         </span>
