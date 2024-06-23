@@ -5,7 +5,7 @@ import Container from "@/components/shared/container/Container";
 import Description from "@/components/ui/content/Description";
 const Achievement = () => {
   return (
-    <Container className={"bg-[#222222] text-white p-6"}>
+    <Container className={"bg-[#222222] text-white pb-6 lg:pb-20"}>
       <div className="flex flex-col items-center md:flex-row md:items-start mx-auto gap-10 relative overflow-hidden">
         <Image
           width={600}
