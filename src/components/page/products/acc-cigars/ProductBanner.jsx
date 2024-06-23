@@ -1,10 +1,37 @@
-import heroImag from "@/assets/img/products/acc-cigars/hero.png";
+import cigar from "@/assets/img/products/product-banner/cigar.png";
+import spirits from "@/assets/img/products/product-banner/spirits.png";
+import accessories from "@/assets/img/products/product-banner/accessories.png";
+import storage from "@/assets/img/products/product-banner/storage.png";
+
 import Image from "next/image";
 const ProductBanner = ({ title }) => {
+
+ // Determine which image to use
+ // based on the title prop
+ let imageUrl;
+ switch (title) {
+   case "cigar":
+     imageUrl = cigar;
+     break;
+   case "spirits":
+     imageUrl = spirits;
+     break;
+   case "accessories":
+     imageUrl = accessories;
+     break;
+   case "storage":
+     imageUrl = storage;
+     break;
+   default:
+     imageUrl = cigar; 
+     break;
+ }
+
+
   return (
     <div className="relative h-screen overflow-hidden">
       <Image
-        src={heroImag}
+        src={imageUrl}
         width={1500}
         height={1240}
         className="h-full w-full object-cover relative"
