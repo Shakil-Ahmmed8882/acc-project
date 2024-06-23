@@ -10,8 +10,8 @@ const SearchIcon = ({ isSwap, onClick }) => {
       onClick={onClick}
       src={searchicon}
       className={`
-        md:w-[17px]
-        ${isSwap ? ' mb-2 translate-x-44 md:translate-x-16' : ' -translate-x-0 md:-translate-x-4'} justify-self-end pb-1 z-30 transition-all p-[3px] md:p-0 duration-1000`}
+        md:w-[20px]
+        ${isSwap ? ' mb-2 translate-x-44 md:translate-x-16' : ' -translate-x-0 md:-translate-x-7'} justify-self-end pb-1 z-30 transition-all p-[3px] md:p-0 duration-1000`}
         alt=''
     />
   );
