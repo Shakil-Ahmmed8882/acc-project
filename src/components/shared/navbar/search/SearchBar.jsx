@@ -9,16 +9,15 @@ const SearchBar = () => {
   return (
     <div>
       <div
-        className="text-[#ffffffda] ml-auto  cursor-pointer
-     grid grid-cols-2 w-32  items-center gap-x-4"
+        className={`text-[#ffffffda] ml-auto  cursor-pointer
+     grid grid-cols-2 w-32  items-center gap-x-2 md:gap-x-4 `}
       >
         <SearchIcon isSwap={isSwap} onClick={() => setIsSwap(!isSwap)} />
         <span
           onClick={() => setIsSwap(!isSwap)}
           style={{ letterSpacing: 3 }}
           className={`
-          font-riviera
-          uppercase
+          text-white uppercase text-[13px] md:text-[16px] font-riviera underline 
           ${
             isSwap
               ? " -translate-x-32 opacity-0 pl-8 invisible"
