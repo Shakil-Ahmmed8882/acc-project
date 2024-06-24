@@ -1,5 +1,7 @@
+
+
 import cigar from "@/assets/img/products/product-banner/cigar.png";
-import spirits from "@/assets/img/products/product-banner/spirits.png";
+import spirits from "@/assets/img/prActs/product-banner/spirits.png";
 import accessories from "@/assets/img/products/product-banner/accessories.png";
 import storage from "@/assets/img/products/product-banner/storage.png";
 
