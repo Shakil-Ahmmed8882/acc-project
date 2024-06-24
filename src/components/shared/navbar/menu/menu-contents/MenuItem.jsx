@@ -22,11 +22,11 @@ const MenuItem = ({ path, label, isBrand, className }) => {
         className ? `${className}` : "text-[#cccccc]"
       } mt-7 md:mt-0 relative z-40 flex gap-1 group text-[14px]
 
-      ${router === path? "text-white hover:text-standard-gold before:content-['']":''}
+      ${router === path? `text-white hover:text-standard-gold before:content-['']`:''}
 
        hover:text-standard-gold before:content-['']
         hover:before:bg-standard-gold transition-all duration-200
-         before:h-[2px] md:before:mt-10 before:absolute before:transition-all before:duration-300 before:ease-linear
+         before:h-[2px]  md:before:mt-[49px] before:absolute before:transition-all before:duration-300 before:ease-linear
        hover:before:w-[100px] md:hover:before:w-full smooth-transition`}
       href={path}
     >
