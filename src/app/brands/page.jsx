@@ -42,7 +42,7 @@ const BrandsPage = () => {
       description:
         "From smooth whiskies to rich cognacs and everything in between,  every ACC crystal masterpiece embodies the artistry and tradition of its craft, promising an unparalleled tasting journey for discerning connoisseurs.",
       path: "/product/spirits",
-      bgColor: "bg-[#00000099]",
+      bgColor: "bg-[#00000034]",
     },
     {
       image: accessories,
