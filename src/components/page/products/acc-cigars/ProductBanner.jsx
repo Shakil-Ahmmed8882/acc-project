@@ -1,7 +1,7 @@
-import cigar from "@/assets/img/products/product-banner/cigar.png";
-import spirits from "@/assets/img/products/product-banner/spirits.png";
-import accessories from "@/assets/img/products/product-banner/accessories.png";
-import storage from "@/assets/img/products/product-banner/storage.png";
+import cigar from "@/assets/img/products/product-banner/cigar.webp";
+import spirits from "@/assets/img/products/product-banner/spirits.webp";
+import accessories from "@/assets/img/products/product-banner/accessories.webp";
+import storage from "@/assets/img/products/product-banner/storage.webp";
 
 import Image from "next/image";
 const ProductBanner = ({ title }) => {
@@ -23,7 +23,7 @@ const ProductBanner = ({ title }) => {
      imageUrl = storage;
      break;
    default:
-     imageUrl = cigar; 
+     imageUrl = storage; 
      break;
  }
 

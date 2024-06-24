@@ -6,17 +6,18 @@ import AccLifestyle from "@/components/page/home/lifeStyle/LifeStyle";
 
 
 // cigar
-import cigar1 from "@/assets/img/home/parallax/cigar1.jpg";
-import cigar2 from "@/assets/img/home/parallax/cigar2.jpg";
-import cigar3 from "@/assets/img/home/parallax/cigar3.jpg";
-import cigar4 from "@/assets/img/home/parallax/cigar4.jpg";
-import cigar5 from "@/assets/img/home/parallax/cigar5.png";
+import cigar1 from "@/assets/img/home/parallax/cigar1.webp";
+import cigar2 from "@/assets/img/home/parallax/cigar2.webp";
+import cigar3 from "@/assets/img/home/parallax/cigar3.webp";
+import cigar4 from "@/assets/img/home/parallax/cigar4.webp";
+import cigar5 from "@/assets/img/home/parallax/cigar5.webp";
 
 // sprits
-import sprit1 from "@/assets/img/home/parallax/sprit1.png";
-import sprit2 from "@/assets/img/home/parallax/sprit2.jpg";
-import sprit3 from "@/assets/img/home/parallax/sprit3.jpg";
-import sprit4 from "@/assets/img/home/parallax/sprit4.jpg";
+import sprit1 from "@/assets/img/home/parallax/spirit1.webp";
+import sprit2 from "@/assets/img/home/parallax/spirit2.webp";
+import sprit3 from "@/assets/img/home/parallax/spirit3.webp";
+import sprit4 from "@/assets/img/home/parallax/spirit4.webp";
+import sprit5 from "@/assets/img/home/parallax/spirit5.webp";
 
 // accessories 
 import accessories1 from "@/assets/img/home/parallax/accessories1.jpg";
@@ -25,7 +26,7 @@ import Newsletter from "@/components/shared/newsletter/Newsletter";
 
 const Home = () => {
   const parallaxOneBgImages = [cigar1, cigar2, cigar3, cigar4, cigar5];
-  const parallaxTwoBgImages = [sprit1,sprit2, sprit3, sprit4];
+  const parallaxTwoBgImages = [sprit1,sprit2, sprit3, sprit4,sprit5];
   const parallaxThreeBgImages = [accessories1];
 
   return (
