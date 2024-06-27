@@ -17,13 +17,13 @@ const SearchBar = () => {
           onClick={() => setIsSwap(!isSwap)}
           style={{ letterSpacing: 3 }}
           className={`
-                        
+                        hidden  md:flex md:-mb-8
           text-white uppercase text-[13px] md:text-[16px] font-riviera  
           ${
             isSwap
               ? " -translate-x-32 opacity-0 pl-8 invisible"
               : "translate-x-3  md:-translate-x-1 visible opacity-100"
-          } transition-all duration-1000 justify-self-end text-md md:text-[13px]`}
+          } transition-all  duration-1000 justify-self-end text-md md:text-[13px]`}
         >
           Search
         </span>

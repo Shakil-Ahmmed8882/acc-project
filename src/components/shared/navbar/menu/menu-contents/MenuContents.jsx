@@ -1,6 +1,6 @@
 import MenuItem from "./MenuItem";
 import Brands from "./brands/Brands";
-import SearchBar from "../../search/SearchBar";
+
 
 const MenuContents = ({ isMenuOpen }) => {
   return (
@@ -14,9 +14,7 @@ const MenuContents = ({ isMenuOpen }) => {
      transition-all duration-700 text-white bottom w-full md:flex justify-center`}
     >
       <ul className=" md:flex gap-20 justify-center">
-        <div className="md:hidden -ml-12 flex">
-          <SearchBar />
-        </div>
+  
         <MenuItem path={"/"} label={"HOME"} />
         <MenuItem path={"/heritage"} label={"HERITAGE"} />
         <MenuItem path={"/craftsmanship"} label={"CRAFTSMANSHIP"} />

@@ -17,11 +17,8 @@ export const navbarContext = createContext(null);
 const isClient = () => typeof window !== "undefined";
 
 const Navbar = () => {
-  const {
-    isScrollBeyondParallax,
-    isMenuOpen,
-    setIsMenuOpen,
-  } = useGlobalContext();
+  const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } =
+    useGlobalContext();
   const pathname = usePathname();
   const isAdminRoute =
     pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
@@ -95,10 +92,8 @@ const Navbar = () => {
             className="flex justify-between gap-0 items-center px-8"
           >
             <MenuIcon label={"MENU"} />
-            <Logo/>
-            <div className="hidden -pl-6 md:flex">
-              <SearchBar />
-            </div>
+            <Logo />
+            <SearchBar />
           </Container>
           <Container isNavbar={true}>
             <HorizontalLine classNames={"md:mt-8"} />

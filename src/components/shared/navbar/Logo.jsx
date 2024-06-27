@@ -11,12 +11,12 @@ const Logo = ({ width = 100, height = 100 }) => {
   return (
     <Link
       href="/"
-      className={`relative flex-1 w-32 transition-all duration-700 ${
+      className={`relative ml-24 md:ml-20 flex-1 justify-center w-32 transition-all duration-700 ${
         scrollUp ? "h-[105px]" : "h-[95px] md:h-[95px]"
       }`}
     >
       <Image
-        className={`absolute w-14 sm:w-16 right-0 md:right-auto top-7 lg:top-3 md:w-24 lg:w-36 transition-all duration-1000 ${
+        className={`absolute  min-w-11 w-16 sm:w-20  top-8 lg:top-3 md:w-28 lg:w-36 transition-all duration-1000 ${
           scrollUp ? "opacity-100 transform" : "opacity-0 transform"
         }`}
         width={width}
@@ -25,7 +25,7 @@ const Logo = ({ width = 100, height = 100 }) => {
         alt="logo"
       />
       <Image
-        className={`absolute right-0 md:right-auto w-16 sm:w-20 top-11 lg:top-9 md:w-24 lg:w-36 transition-all duration-1000 ${
+        className={`absolute  min-w-11 w-16 sm:w-20 top-10 lg:top-9 md:w-28 lg:w-36 transition-all duration-1000 ${
           scrollUp ? "opacity-0" : "opacity-100"
         }`}
         width={width}
