@@ -27,7 +27,7 @@ const MenuIcon = ({ label }) => {
         </svg>
         <span
           style={{ letterSpacing: "3px" }}
-          className="text-white uppercase text-[13px] md:text-[16px] font-riviera "
+          className="text-white hidden md:flex uppercase text-[13px] md:text-[16px] font-riviera "
         >
           {label}{" "}
         </span>

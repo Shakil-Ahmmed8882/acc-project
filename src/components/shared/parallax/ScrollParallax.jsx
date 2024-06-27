@@ -72,7 +72,7 @@ const Pagination = () => {
   return (
     <div
       className={`
-        
+        hidden md:flex
         ${
         isMenuOpen ? "invisible opacity-0" : "visible opacity-100"
       } smooth-transition fixed top-1/2 left-[10%] w-32 right-0 topStack`}

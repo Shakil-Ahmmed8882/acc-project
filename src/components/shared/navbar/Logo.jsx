@@ -16,20 +16,18 @@ const Logo = ({ width = 100, height = 100 }) => {
       }`}
     >
       <Image
-        className={`absolute w-14 sm:w-16 top-3 md:w-24 lg:w-36 transition-all duration-1000 ${
-          scrollUp ? "opacity-100 transform " : "opacity-0 transform "
+        className={`absolute w-14 sm:w-16 right-0 md:right-auto top-7 lg:top-3 md:w-24 lg:w-36 transition-all duration-1000 ${
+          scrollUp ? "opacity-100 transform" : "opacity-0 transform"
         }`}
-  
         width={width}
         height={height}
         src={logo}
         alt="logo"
       />
       <Image
-        className={`absolute w-16 sm:w-20 top-9 md:w-24 lg:w-36 transition-all duration-1000 ${
+        className={`absolute right-0 md:right-auto w-16 sm:w-20 top-11 lg:top-9 md:w-24 lg:w-36 transition-all duration-1000 ${
           scrollUp ? "opacity-0" : "opacity-100"
         }`}
-        
         width={width}
         height={height}
         src={acclogo}

@@ -101,7 +101,7 @@ const Navbar = () => {
             </div>
           </Container>
           <Container isNavbar={true}>
-            <HorizontalLine classNames={"mt-8"} />
+            <HorizontalLine classNames={"md:mt-8"} />
             <MenuContents isMenuOpen={isMenuOpen} />
             <Tabs />
           </Container>
