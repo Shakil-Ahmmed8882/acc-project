@@ -52,7 +52,7 @@ const FlagshipProductsLeft = () => {
         Flagship products
       </h4>
 
-      <Button className="!z-50 !w-[80%] " size="eLarge">Discover now</Button>
+      <Button className="!z-50 !w-[80%] whitespace-nowrap" size="eLarge">Discover now</Button>
     </div>
   );
 };

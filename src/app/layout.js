@@ -6,7 +6,7 @@ import GlobalContext from "@/providers/GlobalContext";
 import { Toaster } from "sonner";
 import { getServerSession } from "next-auth";
 import AuthProvider from "@/providers/SessionProvider";
-import LenisProvider from "@/providers/LenisProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
