@@ -44,7 +44,7 @@ const ImageCard = ({ src, alt }) => {
         height={600}
         src={src}
         alt={alt}
-        className={`w-full rounded shadow-md lg:object-cover hover-grow transition duration-300 max-h-80 lg:max-h-fit lg:w-[370px]`}
+        className={`w-full rounded object-fill shadow-md lg:object-cover hover-grow transition duration-300 max-h-80 lg:max-h-fit lg:w-[370px]`}
         placeholder="blur"
         priority
       />
