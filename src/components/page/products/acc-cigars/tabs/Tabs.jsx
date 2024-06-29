@@ -18,6 +18,7 @@ const Tabs = () => {
   return (
     <section
       className={`
+        mt-5
       ${showTabs ? "block" : "hidden"}
       ${isMenuOpen ? "invisible opacity-0 text-[#c2c2c200]" : "text-[#c2c2c2]"}
       duration-700 transition-all
@@ -25,7 +26,9 @@ const Tabs = () => {
       ml-4
       `}
     >
-      <ul className=" flex gap-16 py-3 items-center pt-10 lg:pt-6">
+      <ul className=" flex flex-wrap 
+      gap-x-16
+       md:gap-16 py-3 items-center pt-10 lg:pt-6">
         {navigationItems.map((item) => (
           <MenuItem
             key={item?.path}
