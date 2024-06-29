@@ -60,10 +60,10 @@ const Footer = () => {
             />
           </Link>
         </div>
-        <div className="space-y-6 justify-between items-center px-10 md:px-40 md:space-y-0 my-8 py-10 border-t border-b grid grid-cols-2 lg:grid-cols-4">
+        <div className=" px-4 md:px-20 md:space-y-0 my-8 py-10 border-t border-b  gap-x-20 md:gap-x-0 grid place-content-stretch grid-cols-2 lg:grid-cols-4">
           {footerNavs.map((nav, navIdx) => (
             <ul
-              className="space-y-6 text-sm text-light-text uppercase"
+              className="space-y-6 mb-5 text-sm text-light-text uppercase"
               key={`nav-${navIdx}`}
             >
               {nav.items.map((item, itemIdx) => (
