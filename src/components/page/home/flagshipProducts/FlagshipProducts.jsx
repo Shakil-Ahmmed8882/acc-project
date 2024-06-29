@@ -27,7 +27,7 @@ const FlagshipProducts = () => {
     product8,
   ];
   return (
-    <div className="bg-[#222222]  py-24 ">
+    <div className="bg-[#222222] py-6 lg:py-24 ">
       <div className="mx-auto px-4 sm:mx-6 md:ml-10 lg:ml-28 2xl:ml-32 grid grid-cols-1 lg:grid-cols-5 place-self-center lg:gap-12 pr-0 mr-0">
         <div className="md:col-span-2 mb-10 md:mb-0 self-center">
           <FlagshipProductsLeft />
