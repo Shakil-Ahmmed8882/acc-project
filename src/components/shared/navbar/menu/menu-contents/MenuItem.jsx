@@ -18,7 +18,9 @@ const MenuItem = ({ path, label, isBrand, className }) => {
         setIsMenuOpen(false);
         (true)
       }}
-      className={`${
+      className={`
+        
+        ${
         className ? `${className}` : "text-[#cccccc]"
       } mt-7 md:mt-0 relative z-40 flex gap-1 group text-[14px]
 

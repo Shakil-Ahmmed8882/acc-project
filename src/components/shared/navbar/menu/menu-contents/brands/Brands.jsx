@@ -42,11 +42,13 @@ const Brands = () => {
       >
         <MenuItem path="/brands" isBrand label="BRANDS" />
       </article>
-
+    
       <article
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`${
+        className={`
+           mx-auto
+          ${
           isBrandHover
             ? " visible -translate-y-[120px] opacity-100 cursor-pointer "
             : "invisible opacity-0 -translate-y-[200px]"
