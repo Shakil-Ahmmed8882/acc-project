@@ -48,7 +48,7 @@ const AccLifestyle = () => {
   return (
     <div className="bg-black w-full">
       <Container className={containerClass}>
-        <h2 className={`${headerClass} mt-16 `}>Explore ACC Lifestyle</h2>
+        <h2 className={`${headerClass} mt-16 !leading-10 `}>Explore ACC Lifestyle</h2>
         <p className={`${subHeaderClass} pt-3 pb-5 text-gray-300`}>Continue Your Journey</p>
         <div className={gridClass}>
           {accLifestyleContent.map((item) => (
