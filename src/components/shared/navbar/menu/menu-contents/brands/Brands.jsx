@@ -31,7 +31,7 @@ const Brands = () => {
     isClicked
       ? "visible opacity-100 translate-y-7 "
       : "invisible opacity-0 translate-y-0 "
-  } smooth-transition grid grid-cols-2 gap-3`;
+  } smooth-transition grid mx-8 grid-cols-2 gap-3`;
 
   return (
     <>
@@ -82,14 +82,14 @@ const Brands = () => {
       <SmBrandLink isClicked={isClicked} setIsClicked={setIsClicked} />
       <div className={smallDeviceStyle}>
         <ul className={smallDeviceUlStyle}>
-          <SMBrandCollection path={""} title="SPIRITS" img={spirits} />
+          <SMBrandCollection path={"product/spirits"} title="SPIRITS" img={spirits} />
           <SMBrandCollection
-            path={""}
+            path={"product/cigar"}
             title="CIGAR COLLECTION"
             img={cigar_collection}
           />
-          <SMBrandCollection path={""} title="ACCESSORIES" img={accessories} />
-          <SMBrandCollection path={""} title="LUXURY" img={luxury_storage} />
+          <SMBrandCollection path={"product/accessories"} title="ACCESSORIES" img={accessories} />
+          <SMBrandCollection path={"product/luxury-storage"} title="LUXURY" img={luxury_storage} />
         </ul>
       </div>
     </>
