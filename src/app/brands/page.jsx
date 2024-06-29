@@ -12,6 +12,7 @@ import cigar_collection from "@/assets/img/brands/banner/cigar-collection.jpg";
 import spirits from "@/assets/img/brands/banner/sprits.png";
 import accessories from "@/assets/img/brands/banner/accessories.jpg";
 import luxury_storage from "@/assets/img/brands/banner/luxury-storage.png";
+import Tabs from "@/components/page/brands/Tabs";
 
 
 const BrandsPage = () => {
@@ -78,6 +79,7 @@ const BrandsPage = () => {
             bgColor={banner?.bgColor}
             index={index}
           />
+          {index === 0 && <Tabs />}
         </div>
       ))}
       <AccLifestyle />

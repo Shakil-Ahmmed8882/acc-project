@@ -120,11 +120,3 @@ const Hero = ({ imagesArray = [], title, description, noOverlay }) => {
 
 export default Hero;
 
-// sakhil vai container class
-// className={`
-//    ${isMenuOpen ? "md:-mt-80 -mt-[700px]" : "-mt-[150px] md:-mt-44"}
-//    relative h-screen
-//     !w-full grid justify-center items-center
-//     !-ml-1
-//     transition-all duration-1000
-//     `}
