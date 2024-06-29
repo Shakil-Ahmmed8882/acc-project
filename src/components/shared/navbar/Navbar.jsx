@@ -108,10 +108,6 @@
 
 // export default Navbar;
 
-
-
-
-
 "use client";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
@@ -201,15 +197,11 @@ const Navbar = () => {
           }`}
         >
           {/* <BgOverlay/> */}
-          <Container
-            isNavbar={true}
-            className=""
-          >
+          <Container isNavbar={true} className="">
             <div className="grid  grid-cols-3 justify-center items-center h-32 px-8">
-            <MenuIcon label={"MENU"} />
-            <Logo />
-            <SearchBar />
-
+              <MenuIcon label={"MENU"} />
+              <Logo />
+              <SearchBar />
             </div>
           </Container>
           <Container isNavbar={true}>

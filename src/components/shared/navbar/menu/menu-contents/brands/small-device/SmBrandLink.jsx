@@ -7,7 +7,7 @@ const SmBrandLink = ({ setIsClicked, isClicked }) => {
       onClick={() => setIsClicked(!isClicked)}
       className="md:hidden flex gap-1  items-center "
     >
-      <MenuItem path={"/"} label={"BRANDS"} />
+      <MenuItem path={"/brands"} label={"BRANDS"} />
       <ChevronDown
         className={` mt-7 ${
           isClicked && " rotate-180 text-standard-gold "
