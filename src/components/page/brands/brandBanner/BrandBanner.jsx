@@ -28,16 +28,16 @@ const BrandBanner = ({
           src={image}
           width={1920}
           height={1024}
-          className="object-cover min-h-[300px] h-screen relative"
+          className="object-cover min-h-[300px]  md:h-screen relative"
           alt="banner"
         />
         {index === 0 && <VerticalAnimatedProgressbar />}
       </div>
       <div className="">
         <div className={`${bgColor} max-h-screen absolute inset-0`}></div>
-        <div className="absolute flex items-center justify-center flex-col w-[900px]  inset-0 text-white h-screen mx-auto text-center">
+        <div className="absolute flex items-center justify-center flex-col max-w-[900px]  inset-0 text-white  mx-auto text-center">
           <h1
-            className="text-4xl md:text-5xl xl:text-7xl font-normal
+            className="text-3xl md:text-5xl xl:text-7xl font-normal
           uppercase font-cailyne tracking-[0.08em] leading-[60px]
           md:leading-[134px]"
           >
@@ -50,11 +50,11 @@ const BrandBanner = ({
               </p>
               <button
                 onClick={handleDiscoverNow}
-                className="group text-[#8C4C24] mt-6 md:mt-12 bg-pale-gold hover:bg-[#F6DF65]  transition-all duration-500 text-sm md:text-base   py-2 md:py-4 px-8 md-16 lg:px-20 rounded-full border"
+                className="group text-[#8C4C24] mt-6 md:mt-12 bg-pale-gold hover:bg-[#F6DF65]  transition-all duration-500 text-sm md:text-base   py-2 md:py-4 px-8  lg:px-20 rounded-full border"
               >
-                <span className="flex group items-center justify-center transition-all duration-500 hover:gap-4 gap-2">
+                <span className="transition-all duration-500">
                   DISCOVER NOW
-                  <ButtonRightArrow />
+                  {/* <ButtonRightArrow /> */}
                 </span>
               </button>
             </>
