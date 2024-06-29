@@ -1,3 +1,5 @@
+// ....
+
 import useGlobalContext from "@/hooks/useGlobalContext";
 import Image from "next/image";
 import Link from "next/link";

@@ -4,6 +4,7 @@ import React from "react";
 import lifestyle1 from "@/assets/img/home/lifestyle/lifestyle1.png";
 import lifestyle2 from "@/assets/img/home/lifestyle/lifestyle2.png";
 import lifestyle3 from "@/assets/img/home/lifestyle/lifestyle3.png";
+
 const accLifestyleContent = [
   {
     id: 1,
@@ -28,43 +29,34 @@ const accLifestyleContent = [
 ];
 
 const AccLifestyle = () => {
-  const containerClass = "bg-black text-white py-16 px-4";
-  const headerClass =
-    "text-center text-[28px]  font-riviera leading-[140%] uppercase mb-4 tracking-[.3rem]";
-  const subHeaderClass =
-    "text-center text-lg mb-16 font-riviera leading-[140%] uppercase tracking-[.3rem]";
-  const gridClass =
-    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mx-auto";
-  const cardClass = "flex flex-col overflow-hidden";
-  const imageContainerClass = "relative overflow-hidden gap-6";
-  const imageClass =
-    "object-cover hover:opacity-50 hover-grow transition duration-300 smooth-transition size-[400px] lg:size-[500px]";
-  const cardContentClass = "border-l-2 border-[#FAFAFA99] px-6 pt-6 pb-14";
-  const titleClass =
-    "text-2xl font- mb-6 text-2xl tracking-[.3rem] uppercase font-medium leading-[140%] font-riviera";
-  const paragraph =
-    "text-[#FAFAFA99] leading-[140%] font-normal text-xl font-riviera";
-
   return (
     <div className="bg-black w-full">
-      <Container className={containerClass}>
-        <h2 className={`${headerClass} mt-16 !leading-10 `}>Explore ACC Lifestyle</h2>
-        <p className={`${subHeaderClass} pt-3 pb-5 text-gray-300`}>Continue Your Journey</p>
-        <div className={gridClass}>
-          {accLifestyleContent.map((item) => (
-            <div key={item.id} className={cardClass}>
-              <div className={imageContainerClass}>
+      <Container className="bg-black text-white py-16 px-4">
+        <h2 className="text-center text-[28px] font-riviera leading-[140%] uppercase mb-4 tracking-[.3rem]">
+          Explore ACC Lifestyle
+        </h2>
+        <p className="text-center text-lg mb-16 font-riviera leading-[140%] uppercase tracking-[.3rem]">
+          Continue Your Journey
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
+          {accLifestyleContent.map(({ id, title, description, image }) => (
+            <div key={id} className="flex flex-col overflow-hidden">
+              <div className="relative overflow-hidden gap-6">
                 <Image
                   width={600}
                   height={600}
-                  src={item.image}
-                  alt={item.title}
-                  className={imageClass}
+                  src={image}
+                  alt={title}
+                  className="object-cover hover:opacity-50 hover-grow transition duration-300 smooth-transition size-[400px] w-full lg:size-[500px]"
                 />
               </div>
-              <div className={cardContentClass}>
-                <h3 className={titleClass}>{item.title}</h3>
-                <p className={paragraph}>{item.description}</p>
+              <div className="border-l-2 border-[#FAFAFA99] px-6 pt-6 pb-14">
+                <h3 className="text-2xl mb-6 tracking-[.3rem] uppercase font-medium leading-[140%] font-riviera">
+                  {title}
+                </h3>
+                <p className="text-[#FAFAFA99] leading-[140%] font-normal text-xl font-riviera">
+                  {description}
+                </p>
               </div>
             </div>
           ))}
@@ -72,6 +64,6 @@ const AccLifestyle = () => {
       </Container>
     </div>
   );
-};
+}
 
 export default AccLifestyle;
