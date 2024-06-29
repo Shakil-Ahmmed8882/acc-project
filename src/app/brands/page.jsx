@@ -80,7 +80,6 @@ const BrandsPage = () => {
             index={index}
           />
           {index === 0 && <Tabs />}
-          {/* <div className="h-20"></div> */}
         </div>
       ))}
       <AccLifestyle />
