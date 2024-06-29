@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-// Button component
+/// Button component
 const Button = ({
   children,
   size = "large",
@@ -14,7 +14,7 @@ const Button = ({
     small: "py-2 px-4  text-sm",
     medium: "py-4 px-8 text-base",
     large: "py-1 px-16 text-base",
-    eLarge: "py-3 text-[15px] md:py-3 px-11 md:px-16 md:text-base",
+    eLarge: "py-3 text-[12px] md:py-3 flex md:text-base",
   };
 
   // Variant classes for different button styles

@@ -30,7 +30,7 @@ const accLifestyleContent = [
 const AccLifestyle = () => {
   const containerClass = "bg-black text-white py-16 px-4";
   const headerClass =
-    "text-center text-[28px] font-riviera leading-[140%] uppercase mb-4 tracking-[.3rem]";
+    "text-center text-[28px]  font-riviera leading-[140%] uppercase mb-4 tracking-[.3rem]";
   const subHeaderClass =
     "text-center text-lg mb-16 font-riviera leading-[140%] uppercase tracking-[.3rem]";
   const gridClass =
@@ -48,8 +48,8 @@ const AccLifestyle = () => {
   return (
     <div className="bg-black w-full">
       <Container className={containerClass}>
-        <h2 className={headerClass}>Explore ACC Lifestyle</h2>
-        <p className={subHeaderClass}>Continue Your Journey</p>
+        <h2 className={`${headerClass} mt-16 !leading-10 `}>Explore ACC Lifestyle</h2>
+        <p className={`${subHeaderClass} pt-3 pb-5 text-gray-300`}>Continue Your Journey</p>
         <div className={gridClass}>
           {accLifestyleContent.map((item) => (
             <div key={item.id} className={cardClass}>
