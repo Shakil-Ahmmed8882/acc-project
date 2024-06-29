@@ -63,14 +63,14 @@ const BrandBanner = ({
           )}
         </div>
       </Container>
-      {index === 0 && <Tabs />}
+      {/* {index === 0 && <Tabs />} */}
     </div>
   );
 };
 
 const VerticalAnimatedProgressbar = ({ className }) => {
   return (
-    <div className="absolute inset-x-0 hidden md:block md:bottom-48">
+    <div className="absolute inset-x-0 hidden md:block md:bottom-28">
       <div
         className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative z-40`}
       >
