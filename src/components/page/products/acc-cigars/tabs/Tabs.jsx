@@ -18,6 +18,7 @@ const Tabs = () => {
   return (
     <section
       className={`
+        mt-5
       ${showTabs ? "block" : "hidden"}
       ${isMenuOpen ? "invisible opacity-0 text-[#c2c2c200]" : "text-[#c2c2c2]"}
       duration-700 transition-all
