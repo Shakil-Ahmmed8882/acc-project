@@ -10,7 +10,7 @@ const ExpandingImgContainer = ({
   hiddenContent,
 }) => {
   return (
-    <div className=" flex gap-8 mt-11">
+    <div className="flex flex-col md:flex-row gap-8 md:mt-11">
       <Div width={width1}>
         {(isHovered) => (
           <>
