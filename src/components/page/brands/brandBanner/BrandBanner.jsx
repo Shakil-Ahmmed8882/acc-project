@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
-import Tabs from "../Tabs";
-import Container from "@/components/shared/container/Container";
 
 const BrandBanner = ({
   title,
@@ -30,14 +28,14 @@ const BrandBanner = ({
           src={image}
           width={1920}
           height={1024}
-          className="object-cover min-h-[300px]  relative"
+          className="object-cover min-h-[300px] h-screen relative"
           alt="banner"
         />
         {index === 0 && <VerticalAnimatedProgressbar />}
       </div>
-      <Container>
+      <div className="">
         <div className={`${bgColor} max-h-screen absolute inset-0`}></div>
-        <div className="absolute flex items-center justify-center flex-col z-50 inset-0 text-white max-w-[930px] mx-auto text-center">
+        <div className="absolute flex items-center justify-center flex-col w-[900px]  inset-0 text-white h-screen mx-auto text-center">
           <h1
             className="text-4xl md:text-5xl xl:text-7xl font-normal
           uppercase font-cailyne tracking-[0.08em] leading-[60px]
@@ -62,8 +60,7 @@ const BrandBanner = ({
             </>
           )}
         </div>
-      </Container>
-      {/* {index === 0 && <Tabs />} */}
+      </div>
     </div>
   );
 };
@@ -72,7 +69,7 @@ const VerticalAnimatedProgressbar = ({ className }) => {
   return (
     <div className="absolute inset-x-0 hidden md:block md:bottom-28">
       <div
-        className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative z-40`}
+        className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative `}
       >
         <div className="w-[2px] bottom-0 bg-[#d1d1d1] max-h-[120px] animate-progress absolute !z-50"></div>
       </div>
