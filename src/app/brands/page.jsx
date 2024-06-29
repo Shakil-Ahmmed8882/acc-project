@@ -82,7 +82,7 @@ const BrandsPage = () => {
           {index === 0 && <Tabs />}
         </div>
       ))}
-      <AccLifestyle />
+      {/* <AccLifestyle /> */}
       <BrandWorldAcc />
       <Newsletter />
     </div>
