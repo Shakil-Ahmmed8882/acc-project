@@ -51,8 +51,7 @@ const SearchBar = () => {
         style={{ letterSpacing: 3 }}
         className={`
             
-            cursor-pointer
-                        hidden  md:flex 
+            cursor-pointer hidden  md:flex 
           text-white uppercase text-[13px] md:text-[16px] font-riviera  
           ${
             isSwap

@@ -50,7 +50,7 @@ const SearchInput = ({ isSwap }) => {
   return (
     <input
       ref={inputRef}
-      className={`absolute text-white ${isSwap ? '-translate-x-28 md:-translate-x-[50px] opacity-100 border-b border-[#ffffff74]' : 'invisible translate-x-0 opacity-0 border-b-0'} transition-all duration-1000 bg-transparent w-44 focus-within:border-t-0 focus-within:border-l-0 focus-within:border-r-0 px-1 focus-within:outline-none border-b `}
+      className={`absolute w-[80%] md:w-auto -right-24 md:right-auto text-white ${isSwap ? '-translate-x-28 md:-translate-x-[50px] opacity-100 border-b border-[#ffffff74]' : 'invisible translate-x-0 opacity-0 border-b-0'} transition-all duration-1000 bg-transparent w-44 focus-within:border-t-0 focus-within:border-l-0 focus-within:border-r-0 px-1 focus-within:outline-none border-b `}
       type="text"
     />
   );
