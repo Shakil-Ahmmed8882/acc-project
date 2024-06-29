@@ -36,7 +36,7 @@ const Button2 = ({
       className={classNames(
         `group uppercase inline-flex justify-center items-center 
         gap-2 rounded-full border relative overflow-hidden 
-        hover:bg-[#fafafa] transition-all duration-500 py-3 px-8`,
+        hover:bg-[#fafafa] transition-all duration-500 py-3 px-8 whitespace-nowrap`,
         sizeClasses[size],
         variantClasses[variant],
         className
@@ -50,7 +50,7 @@ const Button2 = ({
         )}
       >
         {children}
-        <span className="inline-flex items-center ml-2 relative">
+        {/* <span className="inline-flex items-center ml-2 relative">
           <svg
             width="20"
             height="16"
@@ -78,7 +78,7 @@ const Button2 = ({
               </linearGradient>
             </defs>
           </svg>
-        </span>
+        </span> */}
       </span>
     </button>
   );

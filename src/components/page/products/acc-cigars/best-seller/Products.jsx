@@ -8,7 +8,7 @@ import AllProduct from "./AllProduct";
 import SkeletonCard from "./ProductSkeleton";
 import Image from "next/image";
 import bgImg from "@/assets/img/products/productBg.jpg";
-import Button from "./Button";
+import Button2 from "@/components/shared/button/Button2";
 
 const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
   const { showProducts } = useGlobalContext();
@@ -110,14 +110,14 @@ const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
           </article>
         )}
         <div className="flex justify-center items-center">
-          <Button
+          <Button2
             onClick={toggleSeeMore}
             className="relative mt-9 md:mt-11 hover:!md:px-0 !z-50"
             size="eLarge"
             isNotGrow={true}
           >
             {isSeeMoreAll ? "See less" : "See more"}
-          </Button>
+          </Button2>
         </div>
       </Container>
     </section>

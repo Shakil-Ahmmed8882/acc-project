@@ -16,7 +16,7 @@ const TheWorldOfACC = () => {
       <ImageGrid />
       <div className="flex justify-center py-16  mx-auto">
         <Link href={"/brands"} className="w-full flex justify-center py-16">
-          <Button2 className={"w-2/6"}>SEE OUR PRODUCTS</Button2>
+          <Button2 className={"w-5/6 lg:w-2/6"}>SEE OUR PRODUCTS</Button2>
         </Link>
       </div>
     </Container>

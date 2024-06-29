@@ -18,7 +18,7 @@ const Crafting = () => {
             text={`The heritage of ACC began in 1952 with Jose Aray on a small tobacco field in Ecuador. Starting with simple planting, harvesting, and local trading, Mr. Aray, seeing the opportunity, began to purchase several agricultural properties in the Province of Guayas in Ecuador. In 1954 Mr. Aray then met Guillermo de la Portilla, who had migrated from Cuba, bringing with him generations of Cuban expertise as well as precious varieties of Cubano seed and leaf. Mr. Portilla and the Aray family began planting on their hacienda Paulina, which had the perfect weather, soil, and luminosity needed for the growth of first-class tobacco. In 1967, Jose Aray successfully crossbred Cubano and Sumatra varieties developing what now is the standard Ecuadoran Sumatra breed, sought after for cigar wrapper leaf worldwide.`}
           />
         </div>
-        <div className="grid gap-4 lg:grid-cols-2 px-4 sm:px-8 lg:px-0">
+        <div className="grid gap-4 lg:grid-cols-2">
           <div className="grid gap-4">
             <ImageCard src={img1} alt="Crafting Image 1" />
             <ImageCard src={img2} alt="Crafting Image 2" />
@@ -44,7 +44,7 @@ const ImageCard = ({ src, alt }) => {
         height={600}
         src={src}
         alt={alt}
-        className={`w-full rounded shadow-md lg:object-cover hover-grow transition duration-300 max-h-80 lg:max-h-fit lg:w-[370px]`}
+        className={`w-full rounded object-fill shadow-md xl:object-cover hover-grow transition duration-300 max-h-80 lg:max-h-fit lg:w-[370px]`}
         placeholder="blur"
         priority
       />
