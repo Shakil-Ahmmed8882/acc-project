@@ -28,7 +28,7 @@ const Modal = ({ isOpen, onClose}) => {
               </button>
             </div>
             <div className="p-6 max-w-3xl mx-auto">
-              <h2 className="text-5xl uppercase my-10 text-center font-riviera">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl uppercase my-10 text-center font-riviera">
                 Request Information
               </h2>
               <FormInput onClose={onClose} />

@@ -28,7 +28,7 @@ const BrandBanner = ({
           src={image}
           width={1920}
           height={1024}
-          className="object-cover min-h-[300px]  md:h-screen relative"
+          className="object-cover h-screen relative"
           alt="banner"
         />
         {index === 0 && <VerticalAnimatedProgressbar />}

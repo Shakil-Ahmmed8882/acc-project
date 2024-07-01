@@ -10,8 +10,8 @@ const LuxurySection = () => {
     <div className="relative">
       <Image
         src={img1}
-        className={`h-full w-full object-cover
-       transition-all duration-1000`}
+        className={` w-full object-cover
+       transition-all duration-1000 h-screen`}
         alt="hero section"
       />
 
@@ -20,7 +20,7 @@ const LuxurySection = () => {
         className="
         text-2xl
          md:text-4xl px-12 lg:text-5xl text-white font-riviera tracking-[3.84px] font-normal 
-        absolute  inset-0 top-1/4 md:top-1/2
+        absolute  inset-0 top-1/2
         uppercase text-center leading-[140%] pb-4"
       >
         {title}

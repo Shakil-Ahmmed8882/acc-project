@@ -13,7 +13,7 @@ const UnCraftsmanship = () => {
   return (
     <Container
       bgClr="bg-black"
-      className={"py-12 px-4 sm:px-6 lg:px-8 mx-auto"}
+      className={"pb-4 lg:py-12 px-4 sm:px-6 lg:px-8 mx-auto"}
     >
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-40">
         <div className="text-white mb-8 lg:mb-0 lg:w-1/2">
