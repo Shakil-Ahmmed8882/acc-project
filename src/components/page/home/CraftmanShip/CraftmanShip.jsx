@@ -28,7 +28,7 @@ const Craftsmanship = () => {
             ACC Craftsmanship
           </h2>
           <Description {...{ text }} />
-          <Link href="brands">
+          <Link href="craftsmanship">
             <Button />
           </Link>
         </div>

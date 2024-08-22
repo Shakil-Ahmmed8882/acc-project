@@ -47,20 +47,20 @@ const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
   const shouldShowSeeMoreButton = filteredAllProducts.length > 6;
 
   return (
-    <Container className="transition-all duration-300 relative bg-[#090b0d] pb-6 md:pb-10 lg:pb-24">
+    <div className="relative pb-6 md:pb-10 lg:pb-24">
       <Image
         width={1000}
         height={1000}
         src={bgImg}
         alt="Background Image"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full"
         style={{
           background: "#00000033",
           opacity: ".5",
         }}
       />
 
-      <div className="relative">
+      <Container className="relative">
         {/* <Title title={"BEST SELLER"} />
         <article
           ref={containerRef}
@@ -91,7 +91,7 @@ const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
           product={product}
           isSeeMore={isSeeMoreAll}
         />
-      </div>
+      </Container>
 
       {shouldShowSeeMoreButton && (
         <article
@@ -118,7 +118,7 @@ const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
           {isSeeMoreAll ? "See less" : "See more"}
         </Button2>
       </div> */}
-    </Container>
+    </div>
   );
 };
 

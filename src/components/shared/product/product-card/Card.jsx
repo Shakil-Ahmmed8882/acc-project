@@ -6,25 +6,23 @@ import Link from "next/link";
 const ProductCard = ({ card }) => {
   const { _id, images, name } = card || {};
   return (
-    <div
+    <Link
+      href={`/product/cigar/${_id}`}
       className="justify-self-center
      w-full  rounded-md text-center
     cursor-pointer text-white"
     >
       <div
         className="
-      relative h-[300px] lg:h-[400px] mt-11 sm:mt-0 md:h-[450px] 
+      relative mt-11 sm:mt-0  
       w-full group "
       >
         <Image
           src={images[0]}
           alt={name}
-          // layout="fill"
-          // priority
           width={1000}
           height={1000}
-          objectFit="cover"
-          className=" object-cover object-top md:object-center rounded-md inset-0  mx-auto
+          className="rounded-md inset-0 mx-auto
              transition-transform duration-300 ease-in
           group-hover:scale-105"
         />
@@ -50,7 +48,7 @@ const ProductCard = ({ card }) => {
       >
         LEARN MORE
       </Link>{" "}
-    </div>
+    </Link>
   );
 };
 
