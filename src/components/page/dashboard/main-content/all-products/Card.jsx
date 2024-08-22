@@ -1,4 +1,3 @@
-// The Card component remains the same, just ensuring the class names are appropriate for styling and responsiveness.
 "use client";
 import { LucideEdit2, LucideTrash2 } from "lucide-react";
 import Image from "next/image";
@@ -50,7 +49,12 @@ const Card = ({ product, trigger, setTrigger }) => {
 
   return (
     <productContext.Provider value={contextValues}>
-      <section className="group relative  lg:h-60 bg-[#262626] p-4 rounded-lg shadow-lg">
+      <section className="group relative lg:h-60 bg-[#262626] p-4 rounded-lg shadow-lg">
+        {product.bestSeller && (
+          <div className="absolute top-0 left-0 bg-yellow-500 text-black px-2 py-1 rounded-br-lg">
+            Best Seller
+          </div>
+        )}
         <Link
           href={`/admin/${product?._id}`}
           className="flex flex-col lg:flex-row gap-3"
@@ -111,15 +115,9 @@ function DeleteAndEdit() {
   return (
     <div
       onClick={handlePropagation}
-      className="space-x-1 p-3 
-      translate-y-8 group-hover:translate-y-0
-       smooth-transition group-hover:opacity-100 opacity-0 flex
-        absolute top-0 right-0 z-40"
+      className="space-x-1 p-3 translate-y-8 group-hover:translate-y-0 smooth-transition group-hover:opacity-100 opacity-0 flex absolute top-0 right-0 z-40"
     >
-      <button
-        className="text-white 
-      font-medium rounded-lg text-sm px-3 py-1.5"
-      >
+      <button className="text-white font-medium rounded-lg text-sm px-3 py-1.5">
         <LucideEdit2
           onClick={handleUpdateProduct}
           className="w-8 h-8 p-[8px]"
@@ -133,8 +131,8 @@ function DeleteAndEdit() {
 }
 
 function Contents({ showFullDescription, id }) {
-  const { name, description, category } = useContext(productContext);
-
+  const { name, description, category } =
+    useContext(productContext);
   const truncatedDescription =
     description.length > 100
       ? `${description.substring(0, 100)}...`

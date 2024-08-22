@@ -76,8 +76,17 @@ export const createNewAdmin = async (userData) => {
     const response = await axios.post("/api/user", userData);
     return response.data;
   } catch (error) {
-    console.error("Error create new user", error);
-    throw new Error(error.message);
+    // Log detailed error information
+    console.error(
+      "Error creating new user:",
+      error.response?.data || error.message
+    );
+
+    // Throw a new error with a detailed message
+    throw new Error(
+      error.response?.data?.message ||
+        "An error occurred while creating the user"
+    );
   }
 };
 
@@ -202,4 +211,37 @@ export const sendContactEmail = async (userData) => {
       };
     }
   }
+};
+
+
+// best seller products
+
+import { useState, useEffect } from "react";
+
+export const useBestSellerProducts = () => {
+  const [bestSellerProducts, setBestSellerProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBestSellerProducts = async () => {
+      try {
+        const response = await fetch("/api/product?bestSeller=true");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setBestSellerProducts(data.products);
+      } catch (error) {
+        console.error("Error fetching best seller products:", error);
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBestSellerProducts();
+  }, []);
+
+  return { bestSellerProducts, loading, error };
 };

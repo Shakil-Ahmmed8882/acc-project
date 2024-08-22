@@ -17,10 +17,10 @@ const AllProduct = ({ maxHeight, containerRef, product, isSeeMore }) => {
         >
           {Object.keys(groupedProducts).map((category) => (
             <section key={category}>
-              <Title title={category} />
+              <Title className={"uppercase"} title={category} />
               <article
                 ref={containerRef}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out overflow-hidden"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out "
                 style={{ maxHeight }}
               >
                 {groupedProducts[category].length === 0 ? (

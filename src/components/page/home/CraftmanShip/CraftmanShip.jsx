@@ -7,6 +7,7 @@ import Container from "@/components/shared/container/Container";
 import craftsmanship1 from "@/assets/img/home/craftsmanship/craftsmanship1.png";
 import craftsmanship2 from "@/assets/img/home/craftsmanship/craftsmanship3.png";
 import craftsmanship3 from "@/assets/img/home/craftsmanship/craftsmanship2.png";
+import Link from "next/link";
 const Craftsmanship = () => {
   const text = ` The Entubado (Entubar) method employed in the construction of each ACC
   cigar is almost a lost art in cigar making. While a few faster methods of
@@ -27,7 +28,9 @@ const Craftsmanship = () => {
             ACC Craftsmanship
           </h2>
           <Description {...{ text }} />
-          <Button />
+          <Link href="brands">
+            <Button />
+          </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-4 lg:w-1/2">
           <div className="flex justify-center col-span-2 md:col-span-1 relative overflow-hidden">

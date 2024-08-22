@@ -4,7 +4,7 @@ import { CldUploadWidget } from "next-cloudinary";
 import { useState } from "react";
 
 const CloudinaryPage = () => {
-  const [uploadPreset] = useState("<Your Upload Preset>"); // Set your Cloudinary upload preset here
+  const [uploadPreset] = useState("wunhlfmm"); // Set your Cloudinary upload preset here
 
   const fetchSignature = async () => {
     const response = await fetch(`/api/sign-upload?upload_preset=${uploadPreset}`);

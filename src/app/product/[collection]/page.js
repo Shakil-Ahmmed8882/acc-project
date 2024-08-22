@@ -2,16 +2,15 @@
 import Loading from "@/app/loading";
 import ProductBanner from "@/components/page/products/acc-cigars/ProductBanner";
 import Products from "@/components/page/products/acc-cigars/best-seller/Products";
-import Filter from "@/components/page/products/acc-cigars/filter/Filter";
+// import Filter from "@/components/page/products/acc-cigars/filter/Filter";
 import { fetchProductsByType } from "@/utils";
 import { motion } from "framer-motion";
 import { createContext, useEffect, useState } from "react";
 
-
 export const ProductContext = createContext(null);
 
 const Product = ({ params }) => {
-    const [isSeeMoreAll, setIsSeeMoreAll] = useState(false);
+  const [isSeeMoreAll, setIsSeeMoreAll] = useState(true);
   const [openFilter, setOpenFilter] = useState(false);
 
   const data = {
@@ -46,11 +45,11 @@ const Product = ({ params }) => {
       >
         <main className="bg-[#090b0d]">
           <ProductBanner title={collectionName} />
-          {/* <Hero imagesArray={[heroImag]}/> */}
-          <Filter
+
+          {/* <Filter
             isSeeMoreAll={isSeeMoreAll}
             setIsSeeMoreAll={setIsSeeMoreAll}
-          />
+          /> */}
           <Products
             product={product}
             isSeeMoreAll={isSeeMoreAll}

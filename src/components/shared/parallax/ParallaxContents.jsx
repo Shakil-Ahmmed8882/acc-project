@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import VerticalAnimatedProgressbar from "../animation/animated-video/VerticalAnimatedProgressbar";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import useImageSlideshow from "@/hooks/interval/useImageSliderShow";
+import Link from "next/link";
 
-const ParallaxContents = ({ title, page, images }) => {
+const ParallaxContents = ({ title, page, images,name }) => {
   const { activeSectionIndex } = useGlobalContext();
   const [opacity, setOpacity] = useState(1);
 
@@ -30,7 +31,9 @@ const ParallaxContents = ({ title, page, images }) => {
           placeholder="blur"
           quality={100}
           priority
-          className={`absolute inset-0 w-full h-full object-cover z-30 filter transition-opacity duration-1000 ${i === index ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 w-full h-full object-cover z-30 filter transition-opacity duration-1000 ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
           src={img}
           alt="HOME | hero parallax images"
         />
@@ -42,7 +45,11 @@ const ParallaxContents = ({ title, page, images }) => {
         style={{ zIndex: 9999999, opacity }}
       >
         <TitleComponent title={title} />
-        <Button className="relative mt-9 md:mt-11 !z-50" size="eLarge">Discover now</Button>
+        <Link href={`brands#${name}`}>
+          <Button className="relative mt-9 md:mt-11 !z-50" size="eLarge">
+            Discover now
+          </Button>
+        </Link>
       </div>
       <VerticalAnimatedProgressbar className="-bottom-[85vh]" />
     </>
@@ -53,7 +60,10 @@ export default ParallaxContents;
 
 const TitleComponent = ({ title }) => {
   // Replace & with a span that has the custom font class
-  const formattedTitle = title.replace(/&/g, '<span class="font-castoroTitling">&</span>');
+  const formattedTitle = title.replace(
+    /&/g,
+    '<span class="font-castoroTitling">&</span>'
+  );
 
   return (
     <h1

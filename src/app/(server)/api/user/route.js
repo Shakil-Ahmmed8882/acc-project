@@ -1,28 +1,32 @@
 import dbConnect from "../../lib/dbConnect";
-import Email from "../../models/Email";
-import { handleError } from "../../lib/utils"; 
+import { handleError } from "../../lib/utils";
+import { UserModel } from "../../models/User";
 
 export async function POST(request) {
   await dbConnect();
 
   try {
-    const { email } = await request.json();
-    const isExistEmail = await Email.findOne({ email });
+    const { email, password } = await request.json(); // Ensure you're receiving both email and password
+    console.log("Received email and password:", email, password); // Debug log
+
+    const isExistEmail = await UserModel.findOne({ email });
     if (isExistEmail) {
       throw new Error("This email already exists");
     }
 
-    const result = await Email.create({ email });
+    const result = await UserModel.create({ email, password }); // Save email and password
+    console.log("Email and password saved successfully:", result); // Debug log
 
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Email saved successfully",
+        message: "Email and password saved successfully",
         data: result,
       }),
       { status: 201, headers: { "Content-Type": "application/json" } }
     );
   } catch (err) {
+    console.error("Error saving email and password:", err); // Detailed error log
     const errorResponse = handleError(err);
     return new Response(JSON.stringify(errorResponse), {
       status: errorResponse.status || 500,
@@ -35,7 +39,7 @@ export async function GET() {
   await dbConnect();
 
   try {
-    const result = await Email.find();
+    const result = await UserModel.find();
 
     return new Response(
       JSON.stringify({

@@ -35,9 +35,9 @@ const ProductDetailsPage = () => {
 
       <SuggestedProduct id={product._id} productType={product.productType} />
 
-      <Container bgClr={"bg-[#121212]"}>
+      {/* <Container bgClr={"bg-[#121212]"}>
         <FindAcc />
-      </Container>
+      </Container> */}
     </>
   );
 };

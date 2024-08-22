@@ -11,14 +11,14 @@ const Crafting = () => {
     <Container bgClr="bg-black" className="py-8 sm:py-16 md:py-24 lg:py-32">
       <div className="grid gap-8 xl:gap-32 lg:grid-cols-2 mx-auto">
         <div className="text-white px-4 sm:px-8 lg:px-0">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mb-4 lg:mb-10 mt-4 lg:mt-8 uppercase leading-[140%] font-cailyne font-normal pb-4 tracking-[5.12px] w-full lg:w-[80%]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mb-10 lg:mb-16 mt-4 lg:mt-8 uppercase leading-[140%] font-cailyne font-normal pb-4 tracking-[5.12px] w-full lg:w-[80%]">
             Crafting Excellence Since 1952
           </h2>
           <Description
             text={`The heritage of ACC began in 1952 with Jose Aray on a small tobacco field in Ecuador. Starting with simple planting, harvesting, and local trading, Mr. Aray, seeing the opportunity, began to purchase several agricultural properties in the Province of Guayas in Ecuador. In 1954 Mr. Aray then met Guillermo de la Portilla, who had migrated from Cuba, bringing with him generations of Cuban expertise as well as precious varieties of Cubano seed and leaf. Mr. Portilla and the Aray family began planting on their hacienda Paulina, which had the perfect weather, soil, and luminosity needed for the growth of first-class tobacco. In 1967, Jose Aray successfully crossbred Cubano and Sumatra varieties developing what now is the standard Ecuadoran Sumatra breed, sought after for cigar wrapper leaf worldwide.`}
           />
         </div>
-        <div className="grid gap-4 lg:grid-cols-2">
+        {/* <div className="grid gap-4 lg:grid-cols-2">
           <div className="grid gap-4">
             <ImageCard src={img1} alt="Crafting Image 1" />
             <ImageCard src={img2} alt="Crafting Image 2" />
@@ -28,6 +28,35 @@ const Crafting = () => {
             alt="Crafting Image 3"
             className="lg:row-span-2"
           />
+        </div> */}
+        <div className="grid md:grid-cols-2 gap-4 max-h-[800px]">
+          <div className="flex justify-center col-span-2 md:col-span-1 relative overflow-hidden">
+            <Image
+              width={1000}
+              height={1000}
+              src={img3}
+              alt="Image 1"
+              className="w-full rounded shadow-md object-cover hover-grow transition duration-300 h-full"
+            />
+          </div>
+          <div className="flex justify-center col-span-2 md:col-span-1 relative overflow-hidden">
+            <Image
+              width={1000}
+              height={1000}
+              src={img2}
+              alt="Image 2"
+              className="w-full rounded shadow-md lg:object-cover hover-grow transition duration-300 h-full"
+            />
+          </div>
+          <div className="flex justify-center col-span-2 relative overflow-hidden">
+            <Image
+              width={1000}
+              height={1000}
+              src={img1}
+              alt="Image 3"
+              className="w-full rounded shadow-md lg:object-cover hover-grow transition duration-300 h-full"
+            />
+          </div>
         </div>
       </div>
     </Container>
@@ -36,18 +65,18 @@ const Crafting = () => {
 
 export default Crafting;
 
-const ImageCard = ({ src, alt }) => {
-  return (
-    <div className="flex justify-center relative overflow-hidden max-w-full">
-      <Image
-        width={600}
-        height={600}
-        src={src}
-        alt={alt}
-        className={`w-full rounded object-fill shadow-md xl:object-cover hover-grow transition duration-300 max-h-80 lg:max-h-fit lg:w-[370px]`}
-        placeholder="blur"
-        priority
-      />
-    </div>
-  );
-};
+// const ImageCard = ({ src, alt }) => {
+//   return (
+//     <div className="flex justify-center relative overflow-hidden max-w-full">
+//       <Image
+//         width={600}
+//         height={600}
+//         src={src}
+//         alt={alt}
+//         className={`w-full rounded object-fill shadow-md xl:object-cover hover-grow transition duration-300 max-h-80 lg:max-h-fit lg:w-[370px]`}
+//         placeholder="blur"
+//         priority
+//       />
+//     </div>
+//   );
+// };

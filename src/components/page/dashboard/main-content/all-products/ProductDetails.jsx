@@ -56,12 +56,13 @@ const ProductDetails = ({ product }) => {
                   <motion.div
                     initial="hidden"
                     animate="visible"
+                    className="p-6"
                     variants={swiperVariants}
                     transition={{ duration: 0.5 }}
                   >
                     <Image
-                      width={500}
-                      height={500}
+                      width={1000}
+                      height={1000}
                       src={image}
                       alt={`${name} - ${index + 1}`}
                       className=" w-full h-full m-0 p-0 rounded-md"
@@ -82,8 +83,8 @@ const ProductDetails = ({ product }) => {
               ))}
             </div>
           </div>
-          <div className="w-full p-4 font-riviera">
-            <h1 className="text-3xl font-semibold text-white pb-8 xl:pb-16 lg:text-4xl font-riviera">
+          <div className="w-full p-10">
+            <h1 className="text-3xl font-semibold text-white pb-8 xl:pb-16 lg:text-4xl">
               {name}
             </h1>
             <div className="mb-3">
@@ -125,15 +126,15 @@ const ProductDetails = ({ product }) => {
                     variants={descriptionVariants}
                     transition={{ duration: 0.3 }}
                   >
-                    <p className="text-lg text-[#b7b7b7] text-justify pt-2 pb-8 xl:pb-16">
+                    <p className="text-xl text-[#b7b7b7] text-justify pt-6 pb-8 xl:pb-16">
                       {description}
                     </p>
                   </motion.div>
                 )}
               </AnimatePresence>
-              <Link href={"#find"} className="w-full flex justify-center py-6">
+              {/* <Link href={"#find"} className="w-full flex justify-center py-6">
                 <Button2 className={"w-full"}>FIND A STORE</Button2>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

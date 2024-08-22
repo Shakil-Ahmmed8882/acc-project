@@ -46,13 +46,13 @@ export default function SignUp() {
               Create a account
             </h3>
             <p className="">
-              Already have an account
-              <a
-                href="#"
-                className="font-medium text-yellow-600 hover:text-yellow-500"
+              Already have an account?
+              <Link
+                href="sign-in"
+                className="font-medium text-yellow-600 hover:text-yellow-500 ml-2"
               >
                 Sign in
-              </a>
+              </Link>
             </p>
           </div>
         </div>

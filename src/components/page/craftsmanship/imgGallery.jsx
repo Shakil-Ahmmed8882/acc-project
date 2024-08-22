@@ -5,7 +5,7 @@ import { imgData } from "./content-container/data";
 import Div from "./content-container/Div";
 import Img from "./content-container/Img";
 import truck from "@/assets/img/craftsmanship/imgGallery/craftsmanship7.png";
-import HiddenContent from "./content-container/HiddenContent";
+// import HiddenContent from "./content-container/HiddenContent";
 import Link from "next/link";
 import Button2 from "@/components/shared/button/Button2";
 
@@ -39,13 +39,13 @@ const ImageGallery = () => {
           ))}
           <div className="flex justify-center mt-11">
             <Div width={"80%"}>
-              {(isHovered) => (
+              {() => (
                 <>
                   <Img src={truck} />
-                  <HiddenContent
+                  {/* <HiddenContent
                     hiddenContent={{ title: "", description: "" }}
                     isHovered={isHovered}
-                  />
+                  /> */}
                 </>
               )}
             </Div>

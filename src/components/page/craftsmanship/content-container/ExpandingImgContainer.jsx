@@ -12,25 +12,25 @@ const ExpandingImgContainer = ({
   return (
     <div className="flex flex-col md:flex-row gap-8 md:mt-11">
       <Div width={width1}>
-        {(isHovered) => (
+        {() => (
           <>
             <Img src={src1} />
-            <HiddenContent
+            {/* <HiddenContent
               hiddenContent={hiddenContent}
               isHovered={isHovered}
-            />
+            /> */}
           </>
         )}
       </Div>
 
       <Div width={width2}>
-        {(isHovered) => (
+        {() => (
           <>
             <Img src={src2} />
-            <HiddenContent
+            {/* <HiddenContent
               hiddenContent={hiddenContent}
               isHovered={isHovered}
-            />
+            /> */}
           </>
         )}
       </Div>

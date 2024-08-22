@@ -24,7 +24,7 @@ const BrandWorldAcc = () => {
                 height={413}
                 src={image.src}
                 alt={image.alt}
-                className="object-cover h-full lg:h-max w-full lg:max-w-fit hover:opacity-50 hover-grow transition duration-300 smooth-transition"
+                className="object-cover h-full lg:h-max w-full  hover:opacity-50 hover-grow transition duration-300 smooth-transition"
               />
               {image.description && (
                 <p className="md:text-xl mt-4 lg:mt-8 font-medium font-riviera text-light-text uppercase tracking-[1.2px]">

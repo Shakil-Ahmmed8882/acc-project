@@ -34,9 +34,10 @@ export async function POST(request) {
 export async function GET(request) {
   await dbConnect();
   try {
-    // step 1 get product id
+    // Step 1: Get product id and search term
     const productId = getSearchParams(request, "id");
     const searchTerm = getSearchParams(request, "q");
+    const bestSeller = getSearchParams(request, "bestSeller");
 
     let query = {};
 
@@ -48,16 +49,19 @@ export async function GET(request) {
       // If searchTerm is present, perform search
       const regex = new RegExp(searchTerm, "i");
       query = { name: regex };
+    } else if (bestSeller) {
+      // If bestSeller is present, filter by bestSeller
+      query = { bestSeller: bestSeller === "true" };
     }
 
-    //step 4: find one product else all products
-    const products = await Product.find(query).sort({ _id: -1 });
+    // Step 4: Find products based on the query
+    const products = await Product.find(query);
 
-    //step 5: send response
+    // Step 5: Send response
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Successfully fetched the product",
+        message: "Successfully fetched the product(s)",
         products,
       }),
       { status: 200 }
@@ -67,6 +71,7 @@ export async function GET(request) {
     return new Response(JSON.stringify(errorResponse), { status: 500 });
   }
 }
+
 
 // update  product
 export async function PATCH(request) {

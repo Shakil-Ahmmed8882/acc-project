@@ -131,7 +131,10 @@ const Navbar = () => {
     useGlobalContext();
   const pathname = usePathname();
   const isAdminRoute =
-    pathname.startsWith("/admin") || pathname.startsWith("/sign-in");
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/sign-in") ||
+    pathname.startsWith("/sign-up") ||
+    pathname.startsWith("/forgot-password");
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
   const [hasScrolled, setHasScrolled] = useState(false);

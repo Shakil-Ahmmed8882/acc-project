@@ -139,7 +139,7 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
                   Images
                 </label>
                 <CldUploadWidget
-                  uploadPreset="k7xqqfq1"
+                  uploadPreset="wunhlfmm"
                   multiple
                   onUpload={handleImageUpload}
                 >
@@ -181,7 +181,7 @@ const AddProductModal = ({ onAdd, singleProduct, setIsAddModalOpen }) => {
                   Video
                 </label>
                 <CldUploadWidget
-                  uploadPreset="k7xqqfq1"
+                  uploadPreset="wunhlfmm"
                   resourceType="video"
                   onUpload={handleVideoUpload}
                 >

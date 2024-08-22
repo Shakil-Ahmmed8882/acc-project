@@ -1,6 +1,6 @@
 const AnimatedVideo = ({className}) => {
   return (
-    <div className="w-full h-[300vh] hidden sm:grid items-stretch ">
+    <div className="w-full h-[300svh] hidden sm:grid items-stretch ">
 
       <video
         src="https://res.cloudinary.com/dcemlsxpc/video/upload/v1718296198/Client%20Project%20video/i56w5wi4v1j9kvj5pyyb.mp4"
