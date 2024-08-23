@@ -20,7 +20,7 @@ const AllProduct = ({ maxHeight, containerRef, product, isSeeMore }) => {
               <Title className={"uppercase"} title={category} />
               <article
                 ref={containerRef}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-11 md:gap-20 lg:gap-24 transition-all duration-1000 ease-in-out "
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-11 md:gap-x-20 lg:gap-x-10 xl:gap-x-48 gap-y-14 transition-all duration-1000 ease-in-out "
                 style={{ maxHeight }}
               >
                 {groupedProducts[category].length === 0 ? (

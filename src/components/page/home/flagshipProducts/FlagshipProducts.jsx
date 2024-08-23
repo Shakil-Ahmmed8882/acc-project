@@ -12,7 +12,11 @@ import Loader from "@/components/shared/loader/Loader";
 const FlagshipProducts = () => {
   const { bestSellerProducts, loading, error } = useBestSellerProducts();
 
-  if (loading) return <Loader/> ;
+  if (loading) return (
+    <div className="relative">
+      <Loader />
+    </div>
+  );
   if (error) return <p>Error loading best seller products: {error.message}</p>;
 
   return (

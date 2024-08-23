@@ -61,8 +61,8 @@ const ProductDetails = ({ product }) => {
                     transition={{ duration: 0.5 }}
                   >
                     <Image
-                      width={1000}
-                      height={1000}
+                      width={10000}
+                      height={10000}
                       src={image}
                       alt={`${name} - ${index + 1}`}
                       className=" w-full h-full m-0 p-0 rounded-md"

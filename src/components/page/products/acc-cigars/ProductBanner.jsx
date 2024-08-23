@@ -1,6 +1,6 @@
 import cigar from "@/assets/img/products/product-banner/cigar.webp";
 import spirits from "@/assets/img/products/product-banner/spirits.webp";
-import accessories from "@/assets/img/products/product-banner/accessories.webp";
+import accessories from "@/assets/img/products/product-banner/accessories.jpg";
 import storage from "@/assets/img/products/product-banner/storage.webp";
 
 import Image from "next/image";

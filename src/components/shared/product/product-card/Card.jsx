@@ -24,7 +24,7 @@ const ProductCard = ({ card }) => {
           height={1000}
           className="rounded-md inset-0 mx-auto
              transition-transform duration-300 ease-in
-          group-hover:scale-105"
+          group-hover:scale-105 2xl:min-h-[450px]"
         />
         <div
           className="absolute inset-0 

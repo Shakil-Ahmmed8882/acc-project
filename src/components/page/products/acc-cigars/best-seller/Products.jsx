@@ -9,7 +9,7 @@ import Image from "next/image";
 import bgImg from "@/assets/img/products/productBg.jpg";
 // import Button2 from "@/components/shared/button/Button2";
 
-const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
+const Products = ({ product, isSeeMoreAll }) => {
   const { showProducts } = useGlobalContext();
 
   const [isSeeMoreBestSeller] = useState(false);
@@ -49,14 +49,14 @@ const Products = ({ product, isSeeMoreAll, setIsSeeMoreAll }) => {
   return (
     <div className="relative pb-6 md:pb-10 lg:pb-24">
       <Image
-        width={1000}
-        height={1000}
+        width={100000}
+        height={100000}
         src={bgImg}
         alt="Background Image"
-        class="absolute inset-0 w-full h-full"
+        className="absolute inset-0"
         style={{
-          background: "#00000033",
-          opacity: ".5",
+          // background: "#00000033",
+          opacity: ".6",
         }}
       />
 
