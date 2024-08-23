@@ -121,6 +121,7 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 import { usePathname } from "next/navigation";
+import useGetAllProducts from "@/hooks/useGetAllProducts";
 
 export const navbarContext = createContext(null);
 
@@ -180,6 +181,24 @@ const Navbar = () => {
     isMenuOpen,
   };
 
+  // Trigger state to store the search value
+  const [trigger, setTrigger] = useState("");
+
+  // Fetching products with the trigger as a dependency to refetch on search
+  const { products } = useGetAllProducts(trigger, trigger);
+
+  // Search handler to update the trigger
+  const handleSearch = (value) => {
+    setTrigger(value);
+  };
+
+  // Filtering products based on the productType matching the trigger value
+  const filteredProducts = products.filter((product) =>
+    product?.productType?.toLowerCase().includes(trigger.toLowerCase())
+  );
+
+  // console.log(filteredProducts);
+
   return (
     <navbarContext.Provider value={navInfo}>
       <motion.header
@@ -201,14 +220,14 @@ const Navbar = () => {
         >
           {/* <BgOverlay/> */}
           <Container isNavbar={true} className="">
-            <div className="grid  grid-cols-3 justify-center items-center h-32 px-8">
+            <div className="grid  grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 px-8">
               <MenuIcon label={"MENU"} />
               <Logo />
-              <SearchBar />
+              <SearchBar {...{ handleSearch }} />
             </div>
           </Container>
           <Container isNavbar={true}>
-            <HorizontalLine classNames={"md:mt-8"} />
+            <HorizontalLine classNames={"mt-4"} />
             <MenuContents isMenuOpen={isMenuOpen} />
             <Tabs />
           </Container>
