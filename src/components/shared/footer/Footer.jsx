@@ -17,9 +17,9 @@ const Footer = () => {
     },
     {
       items: [
-        { href: "/cigars", name: "Cigars" },
-        { href: "/spirits", name: "Spirits" },
-        { href: "/accessories", name: "Accessories" },
+        { href: "/product/cigars", name: "Cigars" },
+        { href: "/product/spirits", name: "Spirits" },
+        { href: "/product/accessories", name: "Accessories" },
       ],
     },
     {

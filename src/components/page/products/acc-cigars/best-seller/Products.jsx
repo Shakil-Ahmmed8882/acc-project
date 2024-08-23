@@ -53,7 +53,7 @@ const Products = ({ product, isSeeMoreAll }) => {
         height={100000}
         src={bgImg}
         alt="Background Image"
-        className="absolute inset-0"
+        className="sticky top-0 inset-0"
         style={{
           // background: "#00000033",
           opacity: ".6",

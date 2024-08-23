@@ -15,7 +15,7 @@ const ProductCard = ({ card }) => {
       <div
         className="
       relative mt-11 sm:mt-0  
-      w-full group "
+      w-full group"
       >
         <Image
           src={images[0]}
@@ -24,7 +24,7 @@ const ProductCard = ({ card }) => {
           height={1000}
           className="rounded-md inset-0 mx-auto
              transition-transform duration-300 ease-in
-          group-hover:scale-105 2xl:min-h-[450px]"
+          group-hover:scale-105"
         />
         <div
           className="absolute inset-0 
