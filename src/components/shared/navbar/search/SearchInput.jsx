@@ -1,14 +1,12 @@
 
 import useClickOutside from '@/hooks/useClickOutSide';
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 
 // Component for the search input field with autofocus on swap
-const SearchInput = ({ isSwap, setIsSwap, OnValueChange }) => {
-  const inputRef = useRef(null);
-
-
+const SearchInput = ({ isSwap, setIsSwap, OnValueChange, inputRef  }) => {
+  
   // UseEffect hook to focus the input field when isSwap is true
   useEffect(() => {
     if (isSwap) {
@@ -22,6 +20,12 @@ const SearchInput = ({ isSwap, setIsSwap, OnValueChange }) => {
 
   // if click out of field then collapse
   useClickOutside(inputRef,setIsSwap)
+  useEffect(()=> {
+    if(!isSwap){
+      inputRef.current.value = ""
+      OnValueChange("")
+    }
+  },[isSwap])
 
 
   return (
