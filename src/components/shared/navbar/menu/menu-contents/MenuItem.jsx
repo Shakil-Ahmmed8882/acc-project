@@ -29,7 +29,7 @@ const MenuItem = ({ path, label, isBrand, className }) => {
        hover:text-standard-gold before:content-['']
         hover:before:bg-standard-gold transition-all duration-200
          before:h-[2px] before:mt-[30px] md:before:mt-[49px] before:absolute before:transition-all before:duration-300 before:ease-linear
-       hover:before:w-[100px] md:hover:before:w-full smooth-transition`}
+       hover:before:w-[100px] md:hover:before:w-full smooth-transition font-riviera`}
       href={path}
     >
       {label}
