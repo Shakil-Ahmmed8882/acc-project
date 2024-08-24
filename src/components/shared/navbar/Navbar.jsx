@@ -20,7 +20,8 @@ export const navbarContext = createContext(null);
 const isClient = () => typeof window !== "undefined";
 
 const Navbar = () => {
-  const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } = useGlobalContext();
+  const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } =
+    useGlobalContext();
   const pathname = usePathname();
   const isAdminRoute =
     pathname.startsWith("/admin") ||
@@ -35,9 +36,8 @@ const Navbar = () => {
   const router = useRouter(); // Ensure useRouter is correctly imported from next/navigation
 
   const [trigger, setTrigger] = useState("");
-  const [isSwap, setIsSwap] = useState(false); 
+  const [isSwap, setIsSwap] = useState(false);
   const inputRef = useRef(null);
-
 
   const headerVariants = {
     initial: { opacity: 1, translateY: 0 },
@@ -45,13 +45,17 @@ const Navbar = () => {
     scrollingUp: { opacity: 1, translateY: 0 },
   };
 
-
-
   const getHeaderVariant = () => {
-    if (isScrollBeyondParallax) {
+    const isHomePage = pathname === "/";
+
+    if (isHomePage) {
+      if (isScrollBeyondParallax) {
+        return isScrollingUp ? "scrollingUp" : "scrollingDown";
+      }
+      return "initial";
+    } else {
       return isScrollingUp ? "scrollingUp" : "scrollingDown";
     }
-    return "initial";
   };
 
   const getClassNames = () => {
@@ -69,27 +73,22 @@ const Navbar = () => {
     isMenuOpen,
   };
 
-  
-
   const { products } = useGetSearchedProducts(trigger);
 
   const handleSearch = (value) => {
     setTrigger(value);
   };
 
+  // Define the keydown handler
+  const handleKeyDown = () => {
+    if (isSwap) {
+      router.push(`/search?type=${trigger}`);
+      setIsSwap(false);
+    }
+  };
 
-  
-    // Define the keydown handler
-    const handleKeyDown = () => {
-      if (isSwap) {
-        router.push(`/search?type=${trigger}`);
-        setIsSwap(false);
-      }
-    };
-  
-    // Use the custom hook for keydown event
-    useKeydown(handleKeyDown, [isSwap, router, trigger]);
-  
+  // Use the custom hook for keydown event
+  useKeydown(handleKeyDown, [isSwap, router, trigger]);
 
   return (
     <navbarContext.Provider value={navInfo}>
@@ -98,7 +97,7 @@ const Navbar = () => {
         className={`
           ${isAdminRoute ? "hidden" : "block"}
           ${getClassNames()}
-          fixed w-full right-0   top-0 transition-all duration-700
+          fixed w-full right-0 top-0 transition-all duration-700
           `}
         initial="initial"
         animate={getHeaderVariant()}
@@ -107,7 +106,7 @@ const Navbar = () => {
       >
         <div
           className={`max-w-[1920px] mx-auto ${
-            isMenuOpen && "bg-[#0e0e0e33] backdropShadow"
+            isMenuOpen && "bg-[#0e0e0e33] backdropShadow z-50"
           }`}
         >
           <Container isNavbar={true} className="">
@@ -116,7 +115,10 @@ const Navbar = () => {
               <Logo />
               <SearchBar {...{ handleSearch, isSwap, setIsSwap, inputRef }} />
 
-              <SearchResults {...{ products, setIsSwap, trigger }} isSearch={isSwap} />
+              <SearchResults
+                {...{ products, setIsSwap, trigger }}
+                isSearch={isSwap}
+              />
             </div>
           </Container>
           <Container isNavbar={true}>

@@ -7,7 +7,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import acclogo from "@/assets/img/shared/navbar/acc.png";
 import searchicon from "@/assets/img/shared/navbar/searchicon.png";
-import noDataFound from "@/assets/img/shared/not-found/not-found.png";
 import { useGetSearchedProducts } from "@/hooks/useGetSearchedProducts";
 
 const navigationItems = [
@@ -61,7 +60,11 @@ const Search = () => {
           className="w-full rounded-lg py-8 overflow-y-auto"
         >
           <div className="bg-black flex items-center gap-1 pl-4 mt-10 md:mt-14">
-            <Image src={searchicon} className="opacity-80 w-4 sm:w-5 md:w-auto" />
+            <Image
+              src={searchicon}
+              alt="product"
+              className="opacity-80 w-4 sm:w-5 md:w-auto"
+            />
             <input
               ref={inputRef} // Attach the ref to the input element
               onChange={(e) => setTrigger(e.target.value)}
@@ -71,10 +74,18 @@ const Search = () => {
             />
           </div>
 
-          <div className={`mt-8 ${products?.length && "grid"}  sm:grid-cols-2 gap-8`}>
+          <div
+            className={`mt-8 ${
+              products?.length && "grid"
+            }  sm:grid-cols-2 gap-8`}
+          >
             {products?.length ? (
               products.map((product) => (
-                <motion.div key={product._id} initial="hidden" animate="visible">
+                <motion.div
+                  key={product._id}
+                  initial="hidden"
+                  animate="visible"
+                >
                   <Link href={`/product/cigar/${product?._id}`}>
                     <div className="flex py-6 items-start gap-4 pb-6 hover:bg-[#1a1919c5] transition-all duration-500 cursor-pointer">
                       <div>
@@ -88,10 +99,10 @@ const Search = () => {
                       </div>
                       <div>
                         <h2 className="font-bold text-[18px] sm:text-[20px] md:text-[23px] pb-3">
-                          {product?.productType}
+                          {product.name}
                         </h2>
                         <p className="text-[#c5c5c5] text-[14px] sm:text-[15px] md:text-[18px] pt-1">
-                          From {product.name}
+                          {product?.productType}
                         </p>
                       </div>
                     </div>
@@ -100,14 +111,10 @@ const Search = () => {
                 </motion.div>
               ))
             ) : (
-              <div className="grid grid-cols-1 items-center  justify-center w-full">
-                <Image
-                  width={500}
-                  height={500}
-                  className=" mx-auto mix-blend-multiply scroll-smooth  flex justify-center object-cover"
-                  src={noDataFound}
-                  alt="No data found"
-                />
+              <div className="text-center w-full mt-16">
+                <p className="text-xl text-[#c5c5c5]">
+                  No products found. Please try searching with a different term.
+                </p>
               </div>
             )}
           </div>
