@@ -8,7 +8,7 @@ import { fetchSingleProduct } from "@/utils";
 import { useParams } from "next/navigation";
 
 import { useEffect, useState } from "react";
-import FindAcc from "./FindAcc";
+
 
 
 const ProductDetailsPage = () => {
@@ -28,7 +28,7 @@ const ProductDetailsPage = () => {
 
   return (
     <>
-      <Container bgClr={"bg-[#121212] -mt-44"}>
+      <Container bgClr={"bg-[#121212] -mt-36"}>
         <ProductDetails product={product} />
       </Container>
       {product?.video && <VideoPlayer videoUrl={product?.video} />}
