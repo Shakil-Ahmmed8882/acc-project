@@ -1,5 +1,5 @@
 import Banner from "@/components/Banner/Banner";
-import img from "@/assets/img/heritage/hero/hero1.png";
+import img from "@/assets/img/footerPage/terms.jpg";
 import Container from "@/components/shared/container/Container";
 import ContactUs from "@/components/shared/FooterPages/contactUs/ContactUs";
 import Information from "@/components/shared/FooterPages/Information/Information";
@@ -126,7 +126,7 @@ const page = () => {
 
   return (
     <div className="bg-black">
-      <Banner title={"Terms & Policy"} imageUrl={img} />
+      <Banner title={"Terms & Conditions"} imageUrl={img} />
       <Container className={"sm:px-10 lg:px-36 font-riviera mt-20"}>
         <AccUpdate des="Welcome to Achievement Cigar Company. These Terms and Conditions govern your use of our website, products, and services. By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services." />
         <Information data={data} />

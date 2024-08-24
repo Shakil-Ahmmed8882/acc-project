@@ -1,5 +1,5 @@
 import Banner from "@/components/Banner/Banner";
-import img from "@/assets/img/heritage/hero/hero1.png";
+import img from "@/assets/img/footerPage/privacy.jpg";
 import Container from "@/components/shared/container/Container";
 import ContactUs from "@/components/shared/FooterPages/contactUs/ContactUs";
 import Information from "@/components/shared/FooterPages/Information/Information";

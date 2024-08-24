@@ -6,7 +6,7 @@ const Banner = ({ title, imageUrl }) => {
         src={imageUrl}
         width={1500}
         height={1240}
-        className="h-full w-full object-cover relative"
+        className="h-full w-full object-cover relative blur-sm brightness-200"
         alt="bannerI"
       />
       <div className="bg-[#00000099] h-screen absolute inset-0"></div>

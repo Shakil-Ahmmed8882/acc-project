@@ -5,7 +5,6 @@ import { CrossIcon, Menu } from "lucide-react";
 import { useState } from "react";
 import SidebarFooterRoutes from "./SidebarFooterRoutes";
 import SidebarNavRoutes from "./SidebarNavRoutes";
-import Link from "next/link";
 // import Profile from "./Profile";
 
 const Sidebar = () => {
@@ -35,9 +34,9 @@ const Sidebar = () => {
       >
         <div className="flex flex-col h-full">
           <div className="mt-6 mb-11 px-4">
-            <Link href="/">
+            <a href="/">
               <Image width={100} height={100} src={accLogo} alt="logo" />
-            </Link>
+            </a>
           </div>
           <div className="flex-1 flex flex-col h-full overflow-auto">
             <SidebarNavRoutes />
