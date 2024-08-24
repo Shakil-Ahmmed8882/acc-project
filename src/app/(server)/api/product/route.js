@@ -33,23 +33,26 @@ export async function POST(request) {
 // get a single product or all products
 export async function GET(request) {
   await dbConnect();
+  const url = new URL(request.url, 'http://localhost')
   try {
     // Step 1: Get product id and search term
     const productId = getSearchParams(request, "id");
-    const searchTerm = getSearchParams(request, "q");
+    const searchTerm = url.searchParams.get('q') || '';
     const bestSeller = getSearchParams(request, "bestSeller");
 
     let query = {};
 
+
+    if (searchTerm) {
+      // Use a case-insensitive regex to match productType
+      const regex = new RegExp(searchTerm, "i");
+      query = { productType: regex };
+    }
     if (productId) {
       // If productId is present, fetch a single product
       isValidObjectId(productId);
       query = { _id: productId };
-    } else if (searchTerm) {
-      // If searchTerm is present, perform search
-      const regex = new RegExp(searchTerm, "i");
-      query = { name: regex };
-    } else if (bestSeller) {
+    }  else if (bestSeller) {
       // If bestSeller is present, filter by bestSeller
       query = { bestSeller: bestSeller === "true" };
     }
@@ -76,6 +79,7 @@ export async function GET(request) {
 // update  product
 export async function PATCH(request) {
   await dbConnect();
+  
   try {
     // Step 1: Get URL and search query
     const productId = getSearchParams(request, "id");

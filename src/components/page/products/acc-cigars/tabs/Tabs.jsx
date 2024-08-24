@@ -22,7 +22,7 @@ const Tabs = () => {
       ${showTabs ? "block" : "hidden"}
       ${isMenuOpen ? "invisible opacity-0 text-[#c2c2c200]" : "text-[#c2c2c2]"}
       duration-700 transition-all
-      absolute top-24 md:top-28 lg:top-32
+      absolute top-24 md:top-28 lg:top-44
       ml-4
       `}
     >

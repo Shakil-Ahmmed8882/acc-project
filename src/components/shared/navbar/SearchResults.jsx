@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import noDataFound from "@/assets/img/shared/not-found/not-found.png";
 
-const SearchResults = ({ isSearch, setIsSwap, inputRef, filteredProducts }) => {
-  console.log(filteredProducts);
+const SearchResults = ({ isSearch, inputRef, products,trigger }) => {
 
   useEffect(() => {
     if (isSearch) {
@@ -43,6 +42,8 @@ const SearchResults = ({ isSearch, setIsSwap, inputRef, filteredProducts }) => {
     },
   };
 
+
+
   return (
     <motion.section
       ref={inputRef}
@@ -51,17 +52,20 @@ const SearchResults = ({ isSearch, setIsSwap, inputRef, filteredProducts }) => {
       animate={isSearch ? "visible" : "hidden"}
       exit="exit"
       className={`${
+        
         isSearch ? "visible" : "invisible"
-      } absolute w-full md:w-1/2 bg-[white] rounded-lg h-[75vh] top-28 lg:top-32 overflow-x-hidden  right-0 md:right-8 z-50 p-4 py-8 overflow-y-auto`}
+      } absolute w-full md:w-1/2 bg-[#111111] rounded-lg h-[75vh] top-28 lg:top-32 overflow-x-hidden  right-0 md:right-8 z-50 p-4 py-8 overflow-y-auto
+      
+      `}
     >
-      {filteredProducts?.length && (
-        <div className="bg-[#F2F2F2] h-8 w-full">
-          <>Results {filteredProducts[0]?.productType}</>
+      {products?.length && (
+        <div className="bg-[#181717] text-white py-4 px-2 felx items-center w-full">
+          <>Results from <span className="text-[#03bc03] font-bold">{trigger?trigger:"all"}</span></>
         </div>
       )}
       <div className="space-y-6 mt-8">
-        {filteredProducts?.length ? (
-          filteredProducts.map((product) => (
+        {products?.length ? (
+          products.map((product) => (
             <motion.div
               key={product._id}
               variants={itemVariants}
@@ -69,7 +73,7 @@ const SearchResults = ({ isSearch, setIsSwap, inputRef, filteredProducts }) => {
               animate="visible"
             >
               <Link href={`/product/cigar/${product?._id}`}>
-                <div className="flex border-b border-[#e4e2e2] items-start gap-4 pb-2 hover:bg-[#efeeee] transition-all duration-500 cursor-pointer">
+                <div className="flex items-start gap-4 pb-4  hover:bg-[#1a1919c5] transition-all duration-500 cursor-pointer">
                   <div>
                     <Image
                       width={100}
@@ -79,13 +83,14 @@ const SearchResults = ({ isSearch, setIsSwap, inputRef, filteredProducts }) => {
                     />
                   </div>
                   <div className="">
-                    <h2 className="font-bold">{product.productType}</h2>
-                    <p className="text-[gray] pt-1">
-                      From {product.productType}
+                    <h2 className="font-bold text-white">{product.productType}</h2>
+                    <p className="text-[#c5c5c5] pt-1">
+                      From {product.name}
                     </p>
                   </div>
                 </div>
               </Link>
+              <div className=" border-b border-[#3b3a3a]"></div>
             </motion.div>
           ))
         ) : (
@@ -93,7 +98,7 @@ const SearchResults = ({ isSearch, setIsSwap, inputRef, filteredProducts }) => {
             <h1 className="text-3xl text-[#686868] text-center">No items match <br/> your search</h1>
               <Image
                 width={500}
-                height={500}
+                height={500}n
                 className="absolute w-64 mix-blend-multiply scroll-smooth top-24 right-0 left-[30%] flex justify-center opacity-15 object-cover"
                 src={noDataFound}
                 alt=""

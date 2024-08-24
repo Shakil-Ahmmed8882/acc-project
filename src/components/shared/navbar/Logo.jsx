@@ -14,11 +14,11 @@ const Logo = ({ width = 100, height = 100 }) => {
     <Link
       href="/"
       className={`relative  flex justify-center  transition-all duration-700 ${
-        scrollUp ? "h-[105px]" : "h-[95px] md:h-[95px]"
+        scrollUp ? "h-[105px]" : "h-[95px] md:h-[90px]"
       }`}
     >
       <Image
-        className={`absolute  min-w-11 top-4 sm:top-3 md:top-1  lg:top-auto  w-28 md:w-32 lg:w-44 transition-all duration-1000 ${
+        className={`absolute  min-w-11 top-4 sm:top-3 md:top-1  lg:top-auto  w-28 md:w-32 lg:w-40 transition-all duration-1000 ${
           scrollUp ? "opacity-100 transform" : "opacity-0 transform"
         }`}
         // width={width}
