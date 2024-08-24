@@ -1,7 +1,7 @@
-const Information = ({ privacyPolicyData }) => {
+const Information = ({ data }) => {
   return (
     <div>
-      {privacyPolicyData.map((section, index) => (
+      {data.map((section, index) => (
         <Info key={index} title={section.title} sections={section.sections} />
       ))}
     </div>
@@ -10,7 +10,7 @@ const Information = ({ privacyPolicyData }) => {
 
 const Info = ({ title, sections }) => {
   return (
-    <div className="mb-8">
+    <div className="">
       <h2 className="text-2xl font-semibold mb-10 text-white font-riviera text-justify uppercase">
         {title}
       </h2>

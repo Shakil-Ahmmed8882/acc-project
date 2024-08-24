@@ -1,12 +1,12 @@
-import Banner from "@/components/Banner/banner";
+import Banner from "@/components/Banner/Banner";
 import img from "@/assets/img/heritage/hero/hero1.png";
 import Container from "@/components/shared/container/Container";
-import PolicyUpdate from "@/components/privacy-policy/PolicyUpdate";
-import ContactUs from "@/components/shared/contactUs/ContactUs";
-import Information from "@/components/shared/Information/Information";
+import ContactUs from "@/components/shared/FooterPages/contactUs/ContactUs";
+import Information from "@/components/shared/FooterPages/Information/Information";
+import AccUpdate from "@/components/shared/FooterPages/Information/AccUpdate";
 
 const page = () => {
-  const privacyPolicyData = [
+  const data = [
     {
       title: "Information We Collect",
       sections: [
@@ -118,8 +118,14 @@ const page = () => {
     <div className="bg-black">
       <Banner title={"Privacy Policy"} imageUrl={img} />
       <Container className={"sm:px-10 lg:px-36 font-riviera mt-20"}>
-        <PolicyUpdate />
-        <Information privacyPolicyData={privacyPolicyData} />
+        <AccUpdate
+          des="At Achievement Cigar Company, your privacy is a top priority. This
+        Privacy Policy outlines how we collect, use, and protect your personal
+        information when you interact with our website and services, including
+        our selection of cigars, spirits, accessories, and luxury storage
+        products."
+        />
+        <Information data={data} />
         <ContactUs />
       </Container>
     </div>
