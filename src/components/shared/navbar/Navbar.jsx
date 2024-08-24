@@ -112,7 +112,7 @@
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import Container from "../container/Container";
 import MenuContents from "./menu/menu-contents/MenuContents";
 import SearchBar from "./search/SearchBar";
@@ -122,6 +122,7 @@ import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 import { usePathname } from "next/navigation";
 import useGetAllProducts from "@/hooks/useGetAllProducts";
+import SearchResults from "./SearchResults";
 
 export const navbarContext = createContext(null);
 
@@ -183,6 +184,8 @@ const Navbar = () => {
 
   // Trigger state to store the search value
   const [trigger, setTrigger] = useState("");
+  const [isSwap, setIsSwap] = useState(false); 
+  const inputRef = useRef(null);
 
   // Fetching products with the trigger as a dependency to refetch on search
   const { products } = useGetAllProducts(trigger, trigger);
@@ -193,11 +196,16 @@ const Navbar = () => {
   };
 
   // Filtering products based on the productType matching the trigger value
-  const filteredProducts = products.filter((product) =>
-    product?.productType?.toLowerCase().includes(trigger.toLowerCase())
-  );
+  const filteredProducts = products.filter((product) => {
+    
+    console.log(` productType: '${product?.productType?.toLowerCase().trim()}'`);
+    console.log(`search input value: '${trigger.toLowerCase().trim()}'`);
 
-  // console.log(filteredProducts);
+  return product?.productType?.toLowerCase().trim().includes(trigger.toLowerCase().trim())
+
+  }
+);
+
 
   return (
     <navbarContext.Provider value={navInfo}>
@@ -207,7 +215,7 @@ const Navbar = () => {
           ${isAdminRoute ? "hidden" : "block"}
           ${getClassNames()}
           fixed w-full right-0  top-0 transition-all duration-700
-        `}
+          `}
         initial="initial"
         animate={getHeaderVariant()}
         variants={headerVariants}
@@ -220,14 +228,17 @@ const Navbar = () => {
         >
           {/* <BgOverlay/> */}
           <Container isNavbar={true} className="">
-            <div className="grid  grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 px-8">
+            <div className="grid  grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 relative">
               <MenuIcon label={"MENU"} />
               <Logo />
-              <SearchBar {...{ handleSearch }} />
+              <SearchBar {...{ handleSearch, isSwap, setIsSwap, inputRef }} />
+
+              {/* Searched results  */}
+              <SearchResults {...{filteredProducts, setIsSwap}} isSearch={isSwap} />
             </div>
           </Container>
           <Container isNavbar={true}>
-            <HorizontalLine classNames={"mt-4"} />
+            <HorizontalLine classNames={"mt-2"} />
             <MenuContents isMenuOpen={isMenuOpen} />
             <Tabs />
           </Container>
