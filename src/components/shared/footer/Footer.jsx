@@ -12,7 +12,7 @@ const Footer = () => {
       items: [
         { href: "/heritage", name: "Heritage" },
         { href: "/craftsmanship", name: "Craftsmanship" },
-        { href: "/aging", name: "Aging" },
+        { href: "/brands", name: "Brands" },
       ],
     },
     {
@@ -25,7 +25,7 @@ const Footer = () => {
     {
       items: [
         { href: "/cookies", name: "Cookies" },
-        { href: "/privacy", name: "Privacy" },
+        { href: "/privacy-policy", name: "Privacy" },
         { href: "/terms", name: "Terms & Conditions" },
       ],
     },
