@@ -3,9 +3,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
-import Link from "next/link";
-
-import Button2 from "@/components/shared/button/Button2";
 
 const ProductDetails = ({ product }) => {
   const { name, description, images } = product;
@@ -41,7 +38,7 @@ const ProductDetails = ({ product }) => {
 
   return (
     <>
-      <div className="rounded-md pt-96 md:pt-80 lg:pt-72 pb-32">
+      <div className="rounded-md pt-96 md:pt-80 lg:pt-80 pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 xl:gap-32">
           <div className="flex flex-col justify-center md:justify-end relative">
             <Swiper
