@@ -7,6 +7,8 @@ import {
 } from "../../lib/utils";
 import Product from "../../models/Product";
 
+
+
 // create a product
 export async function POST(request) {
   await dbConnect();

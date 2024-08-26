@@ -11,9 +11,11 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 import { usePathname, useRouter } from "next/navigation";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 import { useGetSearchedProducts } from "@/hooks/useGetSearchedProducts";
 import useKeydown from "@/hooks/useKeydown";
+import SearchResults from "./searchResults/SearchResults";
+import { headerVariants } from "./animation";
 
 export const navbarContext = createContext(null);
 
@@ -39,13 +41,6 @@ const Navbar = () => {
   const inputRef = useRef(null);
 
 
-  const headerVariants = {
-    initial: { opacity: 1, translateY: 0 },
-    scrollingDown: { opacity: 0, translateY: -32 },
-    scrollingUp: { opacity: 1, translateY: 0 },
-  };
-
-
 
   const getHeaderVariant = () => {
     if (isScrollBeyondParallax) {
@@ -54,6 +49,7 @@ const Navbar = () => {
     return "initial";
   };
 
+  
   const getClassNames = () => {
     if (isMenuOpen) {
       return "  bg-[#0000006c]";
@@ -72,23 +68,31 @@ const Navbar = () => {
   
 
   const { products } = useGetSearchedProducts(trigger);
-
   const handleSearch = (value) => {
     setTrigger(value);
   };
-
-
   
-    // Define the keydown handler
-    const handleKeyDown = () => {
+    // Use the custom hook for keydown event
+    // useKeydown(handleKeyDown, [isSwap, router, trigger]);
+
+
+    const handleSearchRedirect = () => {
       if (isSwap) {
         router.push(`/search?type=${trigger}`);
         setIsSwap(false);
       }
     };
-  
-    // Use the custom hook for keydown event
-    useKeydown(handleKeyDown, [isSwap, router, trigger]);
+
+
+    useKeydown(
+      [
+        { key: 'Enter', action: handleSearchRedirect },
+        { key: 'm', ctrlKey: true, action: () => setIsSwap(true) },
+        { key: 'Escape', ctrlKey: false, action: () => setIsSwap(false) }  // Escape key action
+      ],
+      [isSwap, router, trigger]
+    );
+    
   
 
   return (
