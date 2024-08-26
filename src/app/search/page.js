@@ -80,7 +80,7 @@ const Search = () => {
           exit="exit"
           className="w-full rounded-lg py-8 overflow-y-auto"
         >
-          <div className="bg-black   flex items-center gap-1 pl-4 mt-10 md:mt-14">
+          <div className="bg-black  flex items-center gap-1 pl-4 mt-10 md:mt-14">
             <Image
               src={searchicon}
               className="opacity-80 w-4 sm:w-5 md:w-auto"
