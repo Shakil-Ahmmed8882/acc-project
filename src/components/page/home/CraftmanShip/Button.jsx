@@ -6,7 +6,7 @@ const Button = () => {
       className={`group  hover:px-[75px]  hover:bg-[#fafafa] mt-8 text-[16px] flex justify-center items-center gap-2 border hover:border-none rounded-full
        transition-all duration-700 py-3 px-16 relative w-full rounded-gold-border border-pale-gold font-riviera font-semibold`}
     >
-      <span className="group-hover:-translate-x-2 transition-all duration-1000 gradient-text-gold text-transparent bg-clip-text bg-gradient-to-t from-pale-gold via-rich-gold to-deep-goldBorder">
+      <span className="group-hover:-translate-x-2 transition-all duration-1000 gradient-text-gold text-transparent bg-clip-text bg-gradient-to-t from-pale-gold via-rich-gold to-deep-goldBorder font-riviera">
         LEARN MORE{" "}
       </span>
       <MoveRight

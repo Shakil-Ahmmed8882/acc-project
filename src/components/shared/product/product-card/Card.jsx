@@ -44,7 +44,7 @@ const ProductCard = ({ card }) => {
         className="px-9 py-1 md:px-12 text-sm md:py-2 
       hover:bg-white smooth-transition 
       hover:no-underline mt-4 mb-3 rounded-full 
-      inline-block text-yellow-500 "
+      inline-block text-yellow-500 font-riviera"
       >
         LEARN MORE
       </Link>{" "}

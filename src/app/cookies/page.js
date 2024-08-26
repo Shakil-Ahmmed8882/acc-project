@@ -81,7 +81,7 @@ const page = () => {
   return (
     <div className="bg-black">
       <Banner title={"Cookies Policy"} imageUrl={img} />
-      <Container className={"sm:px-10 lg:px-36 font-riviera mt-20"}>
+      <Container className={"sm:px-10 lg:px-36 2xl:px-80 font-riviera mt-20"}>
         <AccUpdate des="Achievement Cigar Company uses cookies and similar tracking technologies on our website to enhance your browsing experience, improve our services, and deliver personalized content and advertisements. This Cookies Policy explains what cookies are, how we use them, and your options for managing them." />
         <Information data={data} />
         {/* how to use Cookies */}

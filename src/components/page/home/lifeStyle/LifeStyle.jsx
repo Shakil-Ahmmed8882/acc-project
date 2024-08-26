@@ -31,7 +31,7 @@ const accLifestyleContent = [
 const AccLifestyle = () => {
   return (
     <div className="bg-black w-full">
-      <Container className="bg-black text-white py-16 px-4">
+      <Container className=" text-white py-16 px-4">
         <h2 className="text-center text-[28px] font-riviera leading-[140%] uppercase mb-4 tracking-[.3rem]">
           Explore ACC Lifestyle
         </h2>

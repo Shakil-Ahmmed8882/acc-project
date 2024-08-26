@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import MenuIcon from "./menu/MenuIcon";
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import Container from "../container/Container";
 import MenuContents from "./menu/menu-contents/MenuContents";
 import SearchBar from "./search/SearchBar";
@@ -41,7 +41,7 @@ const Navbar = () => {
 
   const headerVariants = {
     initial: { opacity: 1, translateY: 0 },
-    scrollingDown: { opacity: 0, translateY: -32 },
+    scrollingDown: { opacity: 0, translateY: -32, display: "none" },
     scrollingUp: { opacity: 1, translateY: 0 },
   };
 
@@ -97,7 +97,7 @@ const Navbar = () => {
         className={`
           ${isAdminRoute ? "hidden" : "block"}
           ${getClassNames()}
-          fixed w-full right-0 top-0 transition-all duration-700
+          fixed w-full right-0 top-0 transition-all duration-700 
           `}
         initial="initial"
         animate={getHeaderVariant()}
@@ -118,6 +118,7 @@ const Navbar = () => {
               <SearchResults
                 {...{ products, setIsSwap, trigger }}
                 isSearch={isSwap}
+                setIsSwap={setIsSwap}
               />
             </div>
           </Container>

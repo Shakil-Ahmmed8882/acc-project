@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
@@ -8,6 +7,7 @@ import { motion } from "framer-motion";
 import acclogo from "@/assets/img/shared/navbar/acc.png";
 import searchicon from "@/assets/img/shared/navbar/searchicon.png";
 import { useGetSearchedProducts } from "@/hooks/useGetSearchedProducts";
+import useClickOutside from "@/hooks/useClickOutSide";
 
 const navigationItems = [
   { path: "/product/cigar", label: "CIGAR" },
@@ -22,32 +22,33 @@ const Search = () => {
   const [trigger, setTrigger] = useState(type);
   const { products } = useGetSearchedProducts(trigger);
 
-  // Create a ref for the input element
   const inputRef = useRef(null);
 
-  // Focus the input when the component mounts
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
   }, []);
 
+  // Ensure click outside hook is used correctly
+  useClickOutside(inputRef, () => setTrigger(""));
+
   return (
-    <section className="text-5xl text-white bg-[#111111] px-3 py-10 ">
-      <div className="max-w-[1122px] mx-auto">
-        <div className=" flex  items-center py-4 justify-between">
-          <Link href={"/"}>
+    <section className="text-5xl text-white bg-[#111111] px-3 py-10">
+      <div className="max-w-[1920px] px-10 lg:px-60 mx-auto">
+        <div className="flex items-center py-4 justify-between">
+          <a href={"/"}>
             <Image
               className="min-w-11 w-24 md:w-32 lg:w-32 transition-all duration-1000"
               src={acclogo}
               alt="logo"
             />
-          </Link>
+          </a>
           <div className="gap-6 hidden md:flex">
             {navigationItems.map((item) => (
               <Link
                 key={item.path}
-                className="text-[13px] text-[#d4d3d3] hover:text-white transition-all duration-500"
+                className="text-[13px] text-[#d4d3d3] hover:text-white transition-all duration-500 font-riviera"
                 href={item.path}
               >
                 {item.label}
@@ -62,22 +63,23 @@ const Search = () => {
           <div className="bg-black flex items-center gap-1 pl-4 mt-10 md:mt-14">
             <Image
               src={searchicon}
-              alt="product"
+              alt="Search icon"
               className="opacity-80 w-4 sm:w-5 md:w-auto"
             />
             <input
-              ref={inputRef} // Attach the ref to the input element
+              ref={inputRef}
               onChange={(e) => setTrigger(e.target.value)}
               type="text"
               placeholder="Search here .."
-              className="w-full bg-transparent focus-within:outline-none px-3 py-5 md:py-6 text-[18px] text-white p-2 border-none rounded"
+              className="w-full bg-transparent focus:outline-none px-3 py-5 md:py-6 text-[18px] text-white border-none rounded"
+              aria-label="Search"
             />
           </div>
 
           <div
             className={`mt-8 ${
-              products?.length && "grid"
-            }  sm:grid-cols-2 gap-8`}
+              products?.length ? "grid" : ""
+            } sm:grid-cols-2 gap-8`}
           >
             {products?.length ? (
               products.map((product) => (
@@ -86,7 +88,7 @@ const Search = () => {
                   initial="hidden"
                   animate="visible"
                 >
-                  <Link href={`/product/cigar/${product?._id}`}>
+                  <Link href={`/product/cigar/${product._id}`}>
                     <div className="flex py-6 items-start gap-4 pb-6 hover:bg-[#1a1919c5] transition-all duration-500 cursor-pointer">
                       <div>
                         <Image
@@ -102,7 +104,7 @@ const Search = () => {
                           {product.name}
                         </h2>
                         <p className="text-[#c5c5c5] text-[14px] sm:text-[15px] md:text-[18px] pt-1">
-                          {product?.productType}
+                          {product.productType}
                         </p>
                       </div>
                     </div>

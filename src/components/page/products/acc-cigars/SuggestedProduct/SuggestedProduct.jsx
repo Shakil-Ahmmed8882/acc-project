@@ -47,7 +47,7 @@ const SuggestedProduct = ({ id, productType }) => {
   return (
     <section className="relative bg-[#00000033]">
       <div
-        className="absolute inset-0 w-full h-full -z-40"
+        className="absolute inset-0 w-full h-full -z-40 -top-16"
         style={{
           backgroundImage: `url(${bgImg.src})`,
           backgroundSize: "cover",

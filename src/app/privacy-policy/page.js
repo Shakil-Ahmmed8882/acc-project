@@ -117,7 +117,7 @@ const page = () => {
   return (
     <div className="bg-black">
       <Banner title={"Privacy Policy"} imageUrl={img} />
-      <Container className={"sm:px-10 lg:px-36 font-riviera mt-20"}>
+      <Container className={"sm:px-10 lg:px-36 2xl:px-80 font-riviera mt-20"}>
         <AccUpdate
           des="At Achievement Cigar Company, your privacy is a top priority. This
         Privacy Policy outlines how we collect, use, and protect your personal
