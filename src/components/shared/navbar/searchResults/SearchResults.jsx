@@ -1,14 +1,13 @@
-// components/SearchResults.js
+
 
 import { motion } from "framer-motion";
 import ProductItem from "./ProductItem";
 import NoDataFound from "./NoDataFound";
-import useBodyScrollLock from "@/hooks/useBodyScrollLock";
 import { containerVariants, itemVariants } from "./animation";
 
+
 const SearchResults = ({ isSearch, inputRef, products, trigger }) => {
-  // lock body when dropdown reveal from search bar
-  useBodyScrollLock(isSearch);
+  
 
   return (
     <motion.section

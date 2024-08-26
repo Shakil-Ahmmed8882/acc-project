@@ -19,12 +19,13 @@ import { headerVariants } from "./animation";
 
 export const navbarContext = createContext(null);
 
-const isClient = () => typeof window !== "undefined";
+
 
 const Navbar = () => {
   const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } =
     useGlobalContext();
   const pathname = usePathname();
+  const homeRoute = pathname.startsWith("/") 
   const isAdminRoute =
     pathname.startsWith("/admin") ||
     pathname.startsWith("/sign-in") ||
@@ -89,14 +90,16 @@ const Navbar = () => {
     };
 
 
-    useKeydown(
-      [
-        { key: 'Enter', action: handleSearchRedirect },
-        { key: 'm', ctrlKey: true, action: () => setIsSwap(true) },
-        { key: 'Escape', ctrlKey: false, action: () => setIsSwap(false) }  // Escape key action
-      ],
-      [isSwap, router, trigger]
-    );
+   
+    homeRoute && useKeydown(
+        [
+          { key: 'Enter', action: handleSearchRedirect },
+          { key: 'm', ctrlKey: true, action: () => setIsSwap(true) },
+          { key: 'Escape', ctrlKey: false, action: () => setIsSwap(false) }  // Escape key action
+        ],
+        [isSwap, router, trigger]
+      );
+
     
   
 
@@ -123,7 +126,7 @@ const Navbar = () => {
             <div className="grid  grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 relative">
               <MenuIcon label={"MENU"} />
               <Logo />
-              <SearchBar {...{ handleSearch, isSwap, setIsSwap, inputRef }} />
+              <SearchBar {...{ handleSearch, isSwap, setIsSwap, inputRef, trigger }} />
 
               <SearchResults
                 {...{ products, setIsSwap, trigger }}
