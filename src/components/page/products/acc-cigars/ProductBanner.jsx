@@ -5,28 +5,26 @@ import storage from "@/assets/img/products/product-banner/storage.webp";
 
 import Image from "next/image";
 const ProductBanner = ({ title }) => {
-
- // Determine which image to use
- // based on the title prop
- let imageUrl;
- switch (title) {
-   case "cigar":
-     imageUrl = cigar;
-     break;
-   case "spirits":
-     imageUrl = spirits;
-     break;
-   case "accessories":
-     imageUrl = accessories;
-     break;
-   case "storage":
-     imageUrl = storage;
-     break;
-   default:
-     imageUrl = storage; 
-     break;
- }
-
+  // Determine which image to use
+  // based on the title prop
+  let imageUrl;
+  switch (title) {
+    case "cigar":
+      imageUrl = cigar;
+      break;
+    case "spirits":
+      imageUrl = spirits;
+      break;
+    case "accessories":
+      imageUrl = accessories;
+      break;
+    case "storage":
+      imageUrl = storage;
+      break;
+    default:
+      imageUrl = storage;
+      break;
+  }
 
   return (
     <div className="relative h-screen overflow-hidden ">
@@ -62,7 +60,7 @@ const VerticalAnimatedProgressbar = ({ className }) => {
         className={` ${className} w-[2px] bg-[#8d8d8d] left-1/2  relative z-40 `}
       >
         <div
-          className={`w-[2px] top-0 bg-[#d1d1d1]  max-h-[120px] animate-progress absolute !z-50 `}
+          className={`w-[2px] top-0 bg-[#d1d1d1]  max-h-[1920px] animate-progress absolute !z-50 `}
         ></div>
       </div>
     </div>

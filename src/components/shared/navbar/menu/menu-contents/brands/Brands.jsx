@@ -42,17 +42,17 @@ const Brands = () => {
       >
         <MenuItem path="/brands" isBrand label="BRANDS" />
       </article>
-    
+
       <article
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={`
            mx-auto
           ${
-          isBrandHover
-            ? " visible -translate-y-[120px] opacity-100 cursor-pointer "
-            : "invisible opacity-0 -translate-y-[200px]"
-        } ease-out bg-red text-9xl h-[50vh] absolute w-full transition-all duration-700 z-10`}
+            isBrandHover
+              ? " visible -translate-y-[1920px] opacity-100 cursor-pointer "
+              : "invisible opacity-0 -translate-y-[200px]"
+          } ease-out bg-red text-9xl h-[50vh] absolute w-full transition-all duration-700 z-10`}
       >
         <div className="bg-[#00000074] absolute -left-32 top-[172px] pl-44 right-0 pb-8">
           <Container className={largeDeviceStyle}>
@@ -84,14 +84,26 @@ const Brands = () => {
       <SmBrandLink isClicked={isClicked} setIsClicked={setIsClicked} />
       <div className={smallDeviceStyle}>
         <ul className={smallDeviceUlStyle}>
-          <SMBrandCollection path={"product/spirits"} title="SPIRITS" img={spirits} />
+          <SMBrandCollection
+            path={"product/spirits"}
+            title="SPIRITS"
+            img={spirits}
+          />
           <SMBrandCollection
             path={"product/cigar"}
             title="CIGAR COLLECTION"
             img={cigar_collection}
           />
-          <SMBrandCollection path={"product/accessories"} title="ACCESSORIES" img={accessories} />
-          <SMBrandCollection path={"product/luxury-storage"} title="LUXURY" img={luxury_storage} />
+          <SMBrandCollection
+            path={"product/accessories"}
+            title="ACCESSORIES"
+            img={accessories}
+          />
+          <SMBrandCollection
+            path={"product/luxury-storage"}
+            title="LUXURY"
+            img={luxury_storage}
+          />
         </ul>
       </div>
     </>

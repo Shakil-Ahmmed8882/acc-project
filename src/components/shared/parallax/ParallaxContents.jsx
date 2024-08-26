@@ -46,7 +46,7 @@ const ParallaxContents = ({ title, page, images,name }) => {
       >
         <TitleComponent title={title} />
         <Link href={`brands#${name}`}>
-          <Button className="relative mt-9 md:mt-11 !z-50" size="eLarge">
+          <Button className="relative mt-9 md:mt-11 !z-50 font-riviera" size="eLarge">
             Discover now
           </Button>
         </Link>

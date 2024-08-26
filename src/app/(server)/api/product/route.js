@@ -35,28 +35,29 @@ export async function POST(request) {
 // get a single product or all products
 export async function GET(request) {
   await dbConnect();
-  const url = new URL(request.url, 'http://localhost')
+  const url = new URL(request.url, "http://localhost");
   try {
     // Step 1: Get product id and search term
     const productId = getSearchParams(request, "id");
-    const searchTerm = url.searchParams.get('q') || '';
+    const searchTerm = url.searchParams.get("q") || "";
     const bestSeller = getSearchParams(request, "bestSeller");
-
     let query = {};
 
-
-    if (searchTerm) {
-      // Use a case-insensitive regex to match productType
-      const regex = new RegExp(searchTerm, "i");
-      query = { productType: regex };
-    }
     if (productId) {
       // If productId is present, fetch a single product
       isValidObjectId(productId);
       query = { _id: productId };
-    }  else if (bestSeller) {
-      // If bestSeller is present, filter by bestSeller
-      query = { bestSeller: bestSeller === "true" };
+    } else {
+      // Step 2: If bestSeller is present, filter by bestSeller
+      if (bestSeller) {
+        query.bestSeller = bestSeller === "true";
+      }
+
+      // Step 3: If searchTerm is present, add search conditions
+      if (searchTerm) {
+        const regex = new RegExp(searchTerm, "i");
+        query.$or = [{ productType: regex }, { name: regex }];
+      }
     }
 
     // Step 4: Find products based on the query
@@ -76,6 +77,7 @@ export async function GET(request) {
     return new Response(JSON.stringify(errorResponse), { status: 500 });
   }
 }
+
 
 
 // update  product

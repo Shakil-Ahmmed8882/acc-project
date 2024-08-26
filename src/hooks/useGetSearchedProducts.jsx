@@ -10,6 +10,7 @@ export const useGetSearchedProducts = (trigger) => {
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, [trigger]);
+   
 
-  return { products };
+return { products };
 };

@@ -28,31 +28,31 @@ const BrandBanner = ({
           src={image}
           width={1920}
           height={1024}
-          className="object-cover h-screen relative"
+          className="object-cover w-full h-screen relative"
           alt="banner"
         />
         {index === 0 && <VerticalAnimatedProgressbar />}
       </div>
       <div className="">
         <div className={`${bgColor} max-h-screen absolute inset-0`}></div>
-        <div className="absolute flex items-center justify-center flex-col max-w-[900px]  inset-0 text-white  mx-auto text-center">
+        <div className="absolute flex items-center justify-center flex-col inset-0 text-white  mx-auto text-center">
           <h1
             className="text-3xl md:text-5xl xl:text-7xl font-normal
           uppercase font-cailyne tracking-[0.08em] leading-[60px]
-          md:leading-[134px]"
+          md:leading-[134px] max-w-[1920px]"
           >
             {title}
           </h1>
           {id !== "brands" && (
             <>
-              <p className="text-white opacity-[80%] font-riviera text-[10px] md:text-[17px] lg:text-xl font-medium md:pt-4">
+              <p className="text-white opacity-[80%] font-riviera text-[10px] md:text-[17px] lg:text-xl font-medium md:pt-4 max-w-[1440px]">
                 {description || ""}
               </p>
               <button
                 onClick={handleDiscoverNow}
                 className="group text-[#8C4C24] mt-6 md:mt-12 bg-pale-gold hover:bg-[#F6DF65]  transition-all duration-500 text-sm md:text-base   py-2 md:py-4 px-8  lg:px-20 rounded-full border"
               >
-                <span className="transition-all duration-500">
+                <span className="transition-all duration-500 font-riviera">
                   DISCOVER NOW
                   {/* <ButtonRightArrow /> */}
                 </span>
@@ -68,10 +68,8 @@ const BrandBanner = ({
 const VerticalAnimatedProgressbar = ({ className }) => {
   return (
     <div className="absolute inset-x-0 hidden md:block md:bottom-28">
-      <div
-        className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative `}
-      >
-        <div className="w-[2px] bottom-0 bg-[#d1d1d1] max-h-[120px] animate-progress absolute !z-50"></div>
+      <div className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative `}>
+        <div className="w-[2px] bottom-0 bg-[#d1d1d1] max-h-[1920px] animate-progress absolute !z-50"></div>
       </div>
     </div>
   );

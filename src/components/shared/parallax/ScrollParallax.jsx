@@ -13,7 +13,7 @@ const ScrollParallax = ({ images, titles }) => {
     images || {};
 
   return (
-    <section className="max-w-[1920px] flex flex-col ">
+    <section className="flex flex-col ">
       <div className="relative">
         {/* parallax 1 */}
         <div

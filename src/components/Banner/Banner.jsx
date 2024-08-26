@@ -26,7 +26,7 @@ const VerticalAnimatedProgressbar = ({ className }) => {
         className={` ${className} w-[2px] bg-[#8d8d8d] left-1/2  relative z-40 `}
       >
         <div
-          className={`w-[2px] top-0 bg-[#d1d1d1]  max-h-[120px] animate-progress absolute !z-50 `}
+          className={`w-[2px] top-0 bg-[#d1d1d1]  max-h-[1920px] animate-progress absolute !z-50 `}
         ></div>
       </div>
     </div>
