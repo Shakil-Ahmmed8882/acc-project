@@ -11,7 +11,6 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 import { usePathname, useRouter } from "next/navigation";
-// import SearchResults from "./SearchResults";
 import { useGetSearchedProducts } from "@/hooks/useGetSearchedProducts";
 import useKeydown from "@/hooks/useKeydown";
 import SearchResults from "./searchResults/SearchResults";
@@ -19,15 +18,11 @@ import { headerVariants } from "./animation";
 
 export const navbarContext = createContext(null);
 
-
-
 const Navbar = () => {
-  const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } =
-    useGlobalContext();
+  const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } = useGlobalContext();
   const pathname = usePathname();
-  const homeRoute = pathname.startsWith("/") 
-  const isAdminRoute =
-    pathname.startsWith("/admin") ||
+  const homeRoute = pathname.startsWith("/");
+  const isAdminRoute = pathname.startsWith("/admin") ||
     pathname.startsWith("/sign-in") ||
     pathname.startsWith("/sign-up") ||
     pathname.startsWith("/search") ||
@@ -35,18 +30,30 @@ const Navbar = () => {
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
   const [hasScrolled, setHasScrolled] = useState(false);
-
-  const router = useRouter(); // Ensure useRouter is correctly imported from next/navigation
-
+  const router = useRouter();
   const [trigger, setTrigger] = useState("");
   const [isSwap, setIsSwap] = useState(false);
   const inputRef = useRef(null);
 
+  // Define keydown handlers
+  const handleSearchRedirect = () => {
+    if (isSwap) {
+      router.push(`/search?type=${trigger}`);
+      setIsSwap(false);
+    }
+  };
 
+  const keydownHandlers = [
+    { key: 'Enter', action: handleSearchRedirect },
+    { key: 'm', ctrlKey: true, action: () => setIsSwap(true) },
+    { key: 'Escape', ctrlKey: false, action: () => setIsSwap(false) }
+  ];
+
+  // Call useKeydown hook unconditionally
+  useKeydown(keydownHandlers, [isSwap, router, trigger]);
 
   const getHeaderVariant = () => {
     const isHomePage = pathname === "/";
-
     if (isHomePage) {
       if (isScrollBeyondParallax) {
         return isScrollingUp ? "scrollingUp" : "scrollingDown";
@@ -57,12 +64,11 @@ const Navbar = () => {
     }
   };
 
-  
   const getClassNames = () => {
     if (isMenuOpen) {
-      return "  bg-[#0000006c]";
+      return "bg-[#0000006c]";
     } else if (hasScrolled) {
-      return isScrollingUp ? " md:bg-[#0000006c]" : "bg-transparent";
+      return isScrollingUp ? "md:bg-[#0000006c]" : "bg-transparent";
     } else {
       return "bg-transparent";
     }
@@ -74,34 +80,10 @@ const Navbar = () => {
   };
 
   const { products } = useGetSearchedProducts(trigger);
+
   const handleSearch = (value) => {
     setTrigger(value);
   };
-  
-    // Use the custom hook for keydown event
-    // useKeydown(handleKeyDown, [isSwap, router, trigger]);
-
-
-    const handleSearchRedirect = () => {
-      if (isSwap) {
-        router.push(`/search?type=${trigger}`);
-        setIsSwap(false);
-      }
-    };
-
-
-   
-    homeRoute && useKeydown(
-        [
-          { key: 'Enter', action: handleSearchRedirect },
-          { key: 'm', ctrlKey: true, action: () => setIsSwap(true) },
-          { key: 'Escape', ctrlKey: false, action: () => setIsSwap(false) }  // Escape key action
-        ],
-        [isSwap, router, trigger]
-      );
-
-    
-  
 
   return (
     <navbarContext.Provider value={navInfo}>
@@ -110,7 +92,7 @@ const Navbar = () => {
         className={`
           ${isAdminRoute ? "hidden" : "block"}
           ${getClassNames()}
-          fixed w-full right-0 top-0 transition-all duration-700 
+          fixed w-full right-0 top-0 transition-all duration-700
           `}
         initial="initial"
         animate={getHeaderVariant()}
@@ -123,11 +105,10 @@ const Navbar = () => {
           }`}
         >
           <Container isNavbar={true} className="">
-            <div className="grid  grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 relative">
+            <div className="grid grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 relative">
               <MenuIcon label={"MENU"} />
               <Logo />
               <SearchBar {...{ handleSearch, isSwap, setIsSwap, inputRef, trigger }} />
-
               <SearchResults
                 {...{ products, setIsSwap, trigger }}
                 isSearch={isSwap}
