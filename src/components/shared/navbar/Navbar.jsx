@@ -11,18 +11,21 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import HorizontalLine from "@/components/ui/visuals/HorizontalLine";
 import Tabs from "@/components/page/products/acc-cigars/tabs/Tabs";
 import { usePathname, useRouter } from "next/navigation";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 import { useGetSearchedProducts } from "@/hooks/useGetSearchedProducts";
 import useKeydown from "@/hooks/useKeydown";
+import SearchResults from "./searchResults/SearchResults";
+import { headerVariants } from "./animation";
 
 export const navbarContext = createContext(null);
 
-const isClient = () => typeof window !== "undefined";
+
 
 const Navbar = () => {
   const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } =
     useGlobalContext();
   const pathname = usePathname();
+  const homeRoute = pathname.startsWith("/") 
   const isAdminRoute =
     pathname.startsWith("/admin") ||
     pathname.startsWith("/sign-in") ||
@@ -38,12 +41,8 @@ const Navbar = () => {
   const [trigger, setTrigger] = useState("");
   const [isSwap, setIsSwap] = useState(false);
   const inputRef = useRef(null);
-  console.log(Boolean(trigger), isSwap);
-  const headerVariants = {
-    initial: { opacity: 1, translateY: 0 },
-    scrollingDown: { opacity: 0, translateY: -32, display: "none" },
-    scrollingUp: { opacity: 1, translateY: 0 },
-  };
+
+
 
   const getHeaderVariant = () => {
     const isHomePage = pathname === "/";
@@ -58,6 +57,7 @@ const Navbar = () => {
     }
   };
 
+  
   const getClassNames = () => {
     if (isMenuOpen) {
       return "  bg-[#0000006c]";
@@ -74,21 +74,34 @@ const Navbar = () => {
   };
 
   const { products } = useGetSearchedProducts(trigger);
-
   const handleSearch = (value) => {
     setTrigger(value);
   };
+  
+    // Use the custom hook for keydown event
+    // useKeydown(handleKeyDown, [isSwap, router, trigger]);
 
-  // Define the keydown handler
-  const handleKeyDown = () => {
-    if (isSwap) {
-      router.push(`/search?type=${trigger}`);
-      setIsSwap(false);
-    }
-  };
 
-  // Use the custom hook for keydown event
-  useKeydown(handleKeyDown, [isSwap, router, trigger]);
+    const handleSearchRedirect = () => {
+      if (isSwap) {
+        router.push(`/search?type=${trigger}`);
+        setIsSwap(false);
+      }
+    };
+
+
+   
+    homeRoute && useKeydown(
+        [
+          { key: 'Enter', action: handleSearchRedirect },
+          { key: 'm', ctrlKey: true, action: () => setIsSwap(true) },
+          { key: 'Escape', ctrlKey: false, action: () => setIsSwap(false) }  // Escape key action
+        ],
+        [isSwap, router, trigger]
+      );
+
+    
+  
 
   return (
     <navbarContext.Provider value={navInfo}>
@@ -113,7 +126,7 @@ const Navbar = () => {
             <div className="grid  grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 relative">
               <MenuIcon label={"MENU"} />
               <Logo />
-              <SearchBar {...{ handleSearch, isSwap, setIsSwap, inputRef }} />
+              <SearchBar {...{ handleSearch, isSwap, setIsSwap, inputRef, trigger }} />
 
               <SearchResults
                 {...{ products, setIsSwap, trigger }}

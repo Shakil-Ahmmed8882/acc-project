@@ -4,11 +4,11 @@ import SearchInput from "./SearchInput";
 // Main component that combines SearchIcon and SearchInput
 // with state management
 
-const SearchBar = ({ handleSearch, isSwap, setIsSwap,inputRef }) => {
+const SearchBar = ({ handleSearch, isSwap, setIsSwap,inputRef, trigger }) => {
   
   return (
     <div className="flex relative items-center justify-end">
-      <SearchIcon isSwap={isSwap} onClick={() => setIsSwap(!isSwap)} />
+      <SearchIcon {...{isSwap, trigger}} onClick={() => setIsSwap(!isSwap)} />
       <span
         onClick={() => setIsSwap(!isSwap)}
         style={{ letterSpacing: 3 }}
