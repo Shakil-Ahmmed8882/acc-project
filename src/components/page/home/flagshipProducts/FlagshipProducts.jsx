@@ -12,11 +12,12 @@ import Loader from "@/components/shared/loader/Loader";
 const FlagshipProducts = () => {
   const { bestSellerProducts, loading, error } = useBestSellerProducts();
 
-  if (loading) return (
-    <div className="relative">
-      <Loader />
-    </div>
-  );
+  if (loading)
+    return (
+      <div className="relative">
+        <Loader />
+      </div>
+    );
   if (error) return <p>Error loading best seller products: {error.message}</p>;
 
   return (
@@ -44,7 +45,10 @@ const FlagshipProductsLeft = () => {
         Flagship products
       </h4>
       <Link href={"brands"}>
-        <Button className="!z-50 !w-[80%] whitespace-nowrap font-riviera" size="eLarge">
+        <Button
+          className="!z-50 !w-[80%] whitespace-nowrap font-riviera"
+          size="eLarge"
+        >
           Discover now
         </Button>
       </Link>

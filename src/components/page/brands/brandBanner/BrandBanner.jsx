@@ -68,10 +68,8 @@ const BrandBanner = ({
 const VerticalAnimatedProgressbar = ({ className }) => {
   return (
     <div className="absolute inset-x-0 hidden md:block md:bottom-28">
-      <div
-        className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative `}
-      >
-        <div className="w-[2px] bottom-0 bg-[#d1d1d1] max-h-[120px] animate-progress absolute !z-50"></div>
+      <div className={`${className} w-[2px] bg-[#8d8d8d] left-1/2 relative `}>
+        <div className="w-[2px] bottom-0 bg-[#d1d1d1] max-h-[1920px] animate-progress absolute !z-50"></div>
       </div>
     </div>
   );

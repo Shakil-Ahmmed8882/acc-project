@@ -8,8 +8,7 @@ const SearchResults = ({
   isSearch,
   inputRef,
   products,
-  trigger,
-  setIsSwap,
+  trigger
 }) => {
   useEffect(() => {
     if (isSearch) {

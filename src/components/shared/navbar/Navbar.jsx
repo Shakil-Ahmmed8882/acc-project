@@ -38,7 +38,7 @@ const Navbar = () => {
   const [trigger, setTrigger] = useState("");
   const [isSwap, setIsSwap] = useState(false);
   const inputRef = useRef(null);
-
+  console.log(Boolean(trigger), isSwap);
   const headerVariants = {
     initial: { opacity: 1, translateY: 0 },
     scrollingDown: { opacity: 0, translateY: -32, display: "none" },
@@ -118,7 +118,6 @@ const Navbar = () => {
               <SearchResults
                 {...{ products, setIsSwap, trigger }}
                 isSearch={isSwap}
-                setIsSwap={setIsSwap}
               />
             </div>
           </Container>
