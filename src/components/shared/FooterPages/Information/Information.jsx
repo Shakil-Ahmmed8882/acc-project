@@ -14,7 +14,7 @@ const Info = ({ title, sections }) => {
       <h2 className="text-2xl font-semibold mb-10 text-white font-riviera text-justify uppercase">
         {title}
       </h2>
-      <div className="pl-4">
+      <div className="md:pl-4">
         {sections.map((subsection, idx) => (
           <div key={idx}>
             {subsection.subtitle && (
@@ -22,7 +22,7 @@ const Info = ({ title, sections }) => {
                 {subsection.subtitle}
               </h3>
             )}
-            <p className="text-base text-white font-riviera text-justify opacity-80 pb-10">
+            <p className="text-base lowercase text-white font-riviera text-justify opacity-80 pb-10">
               {subsection.description}
             </p>
           </div>
