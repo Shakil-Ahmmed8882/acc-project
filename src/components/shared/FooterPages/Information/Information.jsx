@@ -2,30 +2,28 @@ const Information = ({ data }) => {
   return (
     <div>
       {data.map((section, index) => (
-        <Info key={index} title={section.title} sections={section.sections} />
+        <Info key={index} title={section.title} subtitle={section.subtitle} sections={section.sections} />
       ))}
     </div>
   );
 };
 
-const Info = ({ title, sections }) => {
+const Info = ({ title, subtitle, sections }) => {
   return (
     <div className="">
       <h2 className="text-2xl font-semibold mb-10 text-white font-riviera text-justify uppercase">
         {title}
       </h2>
-      <div className="pl-4">
+      <h3 className="text-xl font-medium text-white font-riviera text-justify mb-4">
+        {subtitle}
+      </h3>
+      <div className="">
         {sections.map((subsection, idx) => (
-          <div key={idx}>
-            {subsection.subtitle && (
-              <h3 className="text-xl font-medium text-white font-riviera text-justify mb-4">
-                {subsection.subtitle}
-              </h3>
-            )}
-            <p className="text-base text-white font-riviera text-justify opacity-80 pb-10">
+          <ul key={idx} className="list-disc list-inside">
+            <li className="text-base text-white font-riviera text-justify opacity-80 pb-10 ">
               {subsection.description}
-            </p>
-          </div>
+            </li>
+          </ul>
         ))}
       </div>
     </div>
