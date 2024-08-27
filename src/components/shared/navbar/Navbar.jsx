@@ -85,6 +85,8 @@ const Navbar = () => {
     setTrigger(value);
   };
 
+  
+
   return (
     <navbarContext.Provider value={navInfo}>
       <motion.header
@@ -104,7 +106,7 @@ const Navbar = () => {
             isMenuOpen && "bg-[#0e0e0e33] backdropShadow z-50"
           }`}
         >
-          <Container isNavbar={true} className="">
+          <Container isNavbar={true} isBrand={true} className="">
             <div className="grid grid-cols-3 justify-center items-center h-32 lg:h-auto lg:py-12 relative">
               <MenuIcon label={"MENU"} />
               <Logo />
@@ -115,9 +117,9 @@ const Navbar = () => {
               />
             </div>
           </Container>
-          <Container isNavbar={true}>
+          <Container isNavbar={true} isBrand={true}>
             <HorizontalLine classNames={"mt-2"} />
-            <MenuContents isMenuOpen={isMenuOpen} />
+            <MenuContents isMenuOpen={isMenuOpen}/>
             <Tabs />
           </Container>
         </div>
