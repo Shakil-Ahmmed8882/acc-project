@@ -18,7 +18,7 @@ const Info = ({ title, sections }) => {
         {sections.map((subsection, idx) => (
           <div key={idx}>
             {subsection.subtitle && (
-              <h3 className="text-xl font-medium text-white font-riviera text-justify mb-4">
+              <h3 className="text-xl  font-medium text-white font-riviera text-justify mb-4">
                 {subsection.subtitle}
               </h3>
             )}
