@@ -2,8 +2,8 @@ import Banner from "@/components/Banner/Banner";
 import img from "@/assets/img/footerPage/cookies.jpg";
 import Container from "@/components/shared/container/Container";
 // import ContactUs from "@/components/shared/FooterPages/contactUs/ContactUs";
-import Information from "@/components/shared/FooterPages/Information/Information";
 import AccUpdate from "@/components/shared/FooterPages/Information/AccUpdate";
+import CookieInfo from "@/components/shared/FooterPages/Information/CookieInfo";
 
 const page = () => {
   const data = [
@@ -116,7 +116,7 @@ const page = () => {
         className={"sm:px-10 lg:px-36 2xl:px-80 font-riviera mt-20 pb-32"}
       >
         <AccUpdate des="Achievement Cigar Company uses cookies and similar tracking technologies on our website to enhance your browsing experience, improve our services, and deliver personalized content and advertisements. This Cookies Policy explains what cookies are, how we use them, and your options for managing them." />
-        <Information data={data} />
+        <CookieInfo data={data} />
         {/* how to use Cookies */}
         {/* <div className="mb-10">
           <h2 className="text-2xl font-semibold mb-10 text-white font-riviera text-justify uppercase">
