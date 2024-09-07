@@ -45,9 +45,9 @@ const SuggestedProduct = ({ id, productType }) => {
   }, [id, products]);
 
   return (
-    <section className="relative bg-[#00000033]">
+    <section className="relative bg-[#00000033] pb-32 pt-11">
       <div
-        className="absolute inset-0 w-full h-full -z-40 -top-16"
+        className="absolute inset-0 w-full min-h-full -z-40 -top-16"
         style={{
           backgroundImage: `url(${bgImg.src})`,
           backgroundSize: "cover",
@@ -55,7 +55,7 @@ const SuggestedProduct = ({ id, productType }) => {
           opacity: 0.5,
         }}
       ></div>
-      <Container className="pb-24">
+      <Container className="">
         <h3
           style={{ letterSpacing: 2 }}
           className="text-white py-3 border-b border-[#bfbfbf] inline-block z-50"
