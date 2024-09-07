@@ -1,6 +1,4 @@
-import useMaxHeight from "@/hooks/useMaxHeight";
-import Container from "@/components/shared/container/Container";
-
+// import useMaxHeight from "@/hooks/useMaxHeight";
 import AllProduct from "./AllProduct";
 
 import Image from "next/image";
@@ -8,9 +6,10 @@ import bgImg from "@/assets/img/products/productBg.jpg";
 // import Button2 from "@/components/shared/button/Button2";
 
 const Products = ({ product, isSeeMoreAll }) => {
-  const { containerRef, maxHeight } = useMaxHeight("55000px");
+  // const { containerRef, maxHeight } = useMaxHeight("550000px");
 
   return (
+
     <div className="  relative min-h-screen pb-32  overscroll-auto">
       <div className="absolute bg-[black] top-0 bottom-0 min-h-screen">
         <Image
@@ -25,15 +24,9 @@ const Products = ({ product, isSeeMoreAll }) => {
             opacity: ".6",
           }}
         />
+
+
       </div>
-      <Container className="relative">
-        <AllProduct
-          maxHeight={maxHeight}
-          containerRef={containerRef}
-          product={product}
-          isSeeMore={isSeeMoreAll}
-        />
-      </Container>
     </div>
   );
 };

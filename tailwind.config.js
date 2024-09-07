@@ -10,9 +10,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1600px",
+        "4xl": "2560px",
+      },
       backgroundImage: {
-        "gold-gradient":
-          "linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%)",
+        "gold-gradient": "linear-gradient(180deg, #FFD700 -71%, #AC7C00 100%)",
       },
       colors: {
         // updated color name
@@ -25,7 +28,6 @@ module.exports = {
         "rich-gold": "#e0aa3e" /* Rich Gold */,
         "dark-gold-border": "#b88a44" /* Dark Gold Border */,
         "dark-slate-gray": "#414141" /* Dark Slate Gray */,
-        
       },
       transform: ["hover", "focus"],
       scale: ["hover", "focus"],

@@ -27,11 +27,9 @@ const ProductBanner = ({ title }) => {
   }
 
   return (
-    <div className="relative h-screen overflow-hidden ">
+    <div className="relative h-screen overflow-hidden z-20">
       <Image
         src={imageUrl}
-        width={1500}
-        height={1240}
         className="h-full w-full object-cover relative"
         alt="bannerI"
       />

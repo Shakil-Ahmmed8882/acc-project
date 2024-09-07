@@ -18,7 +18,9 @@ const SliderAction = ({
     >
       {/* Previous Button */}
       <div
-        className={`common-swiper-button-prev-${sliderId} ${isBeginning && "hidden"} absolute bottom-[200px] z-10 left-2`}
+        className={`common-swiper-button-prev-${sliderId} ${
+          isBeginning && "hidden"
+        } absolute bottom-[200px] 3xl:bottom-44 z-10 left-2`}
       >
         <ArrowIconLeft />
       </div>
@@ -32,7 +34,9 @@ const SliderAction = ({
 
       {/* Next Button */}
       <div
-        className={`common-swiper-button-next-${sliderId} ${isEnd && "hidden"} absolute bottom-[200px] z-10 right-2`}
+        className={`common-swiper-button-next-${sliderId} ${
+          isEnd && "hidden"
+        } absolute bottom-[200px] 3xl:bottom-44 z-10 right-2`}
       >
         <ArrowIconRight />
       </div>

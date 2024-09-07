@@ -1,43 +1,30 @@
-import { motion, AnimatePresence } from "framer-motion";
 import ProductCard from "@/components/shared/product/product-card/Card";
 import Title from "../ui/Title";
+import Container from "@/components/shared/container/Container";
 
-const AllProduct = ({ maxHeight, containerRef, product, isSeeMore }) => {
+
+const AllProduct = ({ product }) => {
   const groupedProducts = groupProductsByCategory(product);
 
   return (
-    <AnimatePresence>
-      {isSeeMore && (
-        <motion.div
-          key="all-products"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          transition={{ duration: 0.5 }}
-        >
-          {Object.keys(groupedProducts).map((category) => (
-            <section key={category}>
-              <Title className={"uppercase"} title={category} />
-              <article
-                ref={containerRef}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-11 md:gap-x-20 lg:gap-x-10 xl:gap-x-48 gap-y-14 transition-all duration-1000 ease-in-out "
-                style={{ maxHeight }}
-              >
-                {groupedProducts[category].length === 0 ? (
-                  <div className="col-span-full text-center text-white">
-                    No products are currently available in this category.
-                  </div>
-                ) : (
-                  groupedProducts[category].map((card, index) => (
-                    <ProductCard key={index} card={card} />
-                  ))
-                )}
-              </article>
-            </section>
-          ))}
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <Container className={"relative"}>
+      {Object.keys(groupedProducts).map((category) => (
+        <section key={category}>
+          <Title className={"uppercase"} title={category} />
+          <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-11 md:gap-x-20 lg:gap-x-10 xl:gap-x-48 gap-y-14 transition-all duration-1000 ease-in-out ">
+            {groupedProducts[category].length === 0 ? (
+              <div className="col-span-full text-center text-white font-riviera">
+                No products are currently available in this category.
+              </div>
+            ) : (
+              groupedProducts[category].map((card, index) => (
+                <ProductCard key={index} card={card} />
+              ))
+            )}
+          </article>
+        </section>
+      ))}
+    </Container>
   );
 };
 

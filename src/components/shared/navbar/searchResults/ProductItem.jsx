@@ -24,8 +24,8 @@ const ProductItem = ({ product, itemVariants }) => {
             />
           </div>
           <div>
-            <h2 className="font-bold text-white">{product.productType}</h2>
-            <p className="text-[#c5c5c5] pt-1">From {product.name}</p>
+            <h2 className="font-bold text-white"> {product.name}</h2>
+            <p className="text-[#c5c5c5] pt-1">From {product.productType}</p>
           </div>
         </div>
       </Link>

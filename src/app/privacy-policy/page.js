@@ -8,29 +8,7 @@ import AccUpdate from "@/components/shared/FooterPages/Information/AccUpdate";
 const page = () => {
   const data = [
     {
-      title: "PRIVACY POLICY",
       sections: [
-        {
-          subtitle: null,
-          description: `Last Updated on August 24, 2024.
-  At acc1952.com and Achievement Cigar
-  Co., Inc., we strive every day to build trust
-  with our users. The privacy rights of our
-  users are an integral part of building that
-  trust. This policy explains how we collect,
-  use and share your personal information to
-  better serve you and to improve our own
-  business processes. By using our
-  websites, facilities, services, mobile,
-  telephonic, and other electronic and online
-  applications (collectively, the "Services"), or
-  by your use of any of our programs,
-  content, materials, functionality
-  
-  (collectively, the "Content"), or by providing
-  information to us in other ways, you agree
-  to this policy.`,
-        },
         {
           subtitle: "AGE 21 AND OLDER",
           description: `The Services offered by ACC are not
@@ -50,29 +28,42 @@ const page = () => {
         {
           subtitle: "PERSONAL INFORMATION WE COLLECT",
           description: `Personal information we collect may
-  include:
-  • Contact information, such as name,
+  include:`,
+        },
+        {
+          description: `• Contact information, such as name,
   email address, postal address, phone
-  number
-  • Demographic information, such as age
-  • Information about your interests and
-  preferences
-  • Device identifiers and related
+  number`,
+        },
+        { description: `• Demographic information, such as age` },
+        {
+          description: `• Information about your interests and
+  preferences`,
+        },
+        {
+          description: `• Device identifiers and related
   information including internet protocol
   (IP) addresses, MAC addresses,
   browser and settings information, and
   information about how you interact with
-  our website
-  • Information collected through cookies
-  • Information that may be accessible to
+  our website`,
+        },
+        {
+          description: `• Information collected through cookies
+  `,
+        },
+        {
+          description: `• Information that may be accessible to
   us when you interact with us on social
   
   media sites, such as Facebook,
   Instagram, and Snapchat. Such
   information may include photos, lists of
   social media contacts, and similar
-  information
-  If you disclose any personal information
+  information`,
+        },
+        {
+          description: `If you disclose any personal information
   relating to other people to us or our service
   providers, you represent that you have the
   authority to do so, and to permit us to use
@@ -103,14 +94,19 @@ const page = () => {
   regarding your personal information. On
   acc1952.com contact page you may
   submit a request.
-  In addition, you can:
-  • Ask us to review, update or correct your
-  personal information
-  
-  • Opt-out of sharing your personal
+  In addition, you can:`,
+        },
+        {
+          description: `• Ask us to review, update or correct your
+  personal information`,
+        },
+        {
+          description: `• Opt-out of sharing your personal
   information with third parties for some
-  purposes
-  • Make choices about receiving
+  purposes`,
+        },
+        {
+          description: `• Make choices about receiving
   marketing communications
   Note, if you ask us to delete or stop using
   your personal information, we may not
@@ -516,40 +512,42 @@ contract.
 We may have disclosed or sold the
 following categories of personal
 information:  
-`},
-{
-  subtitle: "",
-  description: `• From third parties that interact with us
+`,
+        },
+        {
+          subtitle: "",
+          description: `• From third parties that interact with us
 in connection with the services we or
 they perform`,
-},
-{
-  subtitle: "Category B: California Customer Records personal information categories",
-  description: `From third parties that interact with us
+        },
+        {
+          subtitle:
+            "Category B: California Customer Records personal information categories",
+          description: `From third parties that interact with us
 in connection with the services we or
 they perform`,
-},
-{
-  subtitle: "",
-  description: `• Category C: Commercial Information`,
-},
-{
-  subtitle: "",
-  description: `• Category D: Internet or other similar
+        },
+        {
+          subtitle: "",
+          description: `• Category C: Commercial Information`,
+        },
+        {
+          subtitle: "",
+          description: `• Category D: Internet or other similar
 network activity`,
-},
-{
-  subtitle: "",
-  description: `• Category E: Geolocation data`,
-},
-{
-  subtitle: "",
-  description: `• Category F: Inferences drawn from
+        },
+        {
+          subtitle: "",
+          description: `• Category E: Geolocation data`,
+        },
+        {
+          subtitle: "",
+          description: `• Category F: Inferences drawn from
   other personal information`,
-},
-{
-  subtitle: "Accessing, Correcting, , or Deleting Personal Information",
-  description: `If you are a California resident, upon our
+        },
+        {
+          subtitle: "Accessing, Correcting, , or Deleting Personal Information",
+          description: `If you are a California resident, upon our
 receipt of a verifiable request from you, you
 can obtain access to the personal
 information about you which we have in our
@@ -557,10 +555,10 @@ files, or which we have used or shared with
 third parties. This section describes your
 CCPA and CPRA rights and explains how
 to exercise those rights.`,
-},
-{
-  subtitle: "Requests to Know and/or Correct",
-  description: `You have the right to request that we
+        },
+        {
+          subtitle: "Requests to Know and/or Correct",
+          description: `You have the right to request that we
 disclose certain information to you about
 our collection and use of your personal
 information, including: the categories and
@@ -568,10 +566,10 @@ specific pieces of personal information we
 have collected about you. You also have a
 right to correct any such personal
 information you believe to be inaccurate.`,
-},
-{
-  subtitle: "Requests to Delete",
-  description: `You have the right to request that we delete
+        },
+        {
+          subtitle: "Requests to Delete",
+          description: `You have the right to request that we delete
 any of your personal information that we
 have collected and retained, subject to
 certain exceptions in the CCPA/CPRA.
@@ -582,73 +580,74 @@ our records, unless an exception applies,
 and we will direct our service providers to
 similarly delete your personal information
 from their records.`,
-},
-{
-  subtitle: "Exercising Your Request to Know, Correct or Delete Rights",
-  description: `In order to submit a verifiable consumer
+        },
+        {
+          subtitle: "Exercising Your Request to Know, Correct or Delete Rights",
+          description: `In order to submit a verifiable consumer
 request to know what personal information
 we may have collected or shared, or to
 correct or request the deletion of any of
 your personal information, you may: use
 one of these two Communication Methods`,
-},
-{
-  subtitle: "",
-  description: `• Email us at info@acc1952.com
-`
-},
-{
-  subtitle: "",
-  description: `• Call our USA toll-free number at +1
-(800) 243-6263.`
-},
-{
-  subtitle: "",
-  description: `• Upon receipt of a request by one of the
+        },
+        {
+          subtitle: "",
+          description: `• Email us at info@acc1952.com
+`,
+        },
+        {
+          subtitle: "",
+          description: `• Call our USA toll-free number at +1
+(800) 243-6263.`,
+        },
+        {
+          subtitle: "",
+          description: `• Upon receipt of a request by one of the
 above methods concerning your personal
 information, we will attempt to verify your
 identity (or authority to make the request)
-by:`
-},
-{
-  subtitle: "",
-  description: `• requesting that you provide personally
+by:`,
+        },
+        {
+          subtitle: "",
+          description: `• requesting that you provide personally
 identifying information, including your
 first name, middle name, last name,
 email address, shipping address and
-telephone number.`
-},
-{
-  subtitle: "",
-  description: `• requesting that you provide additional
-evidence proving your identity such as`
-},
-{
-  subtitle: "your unique customer identification number or details of a recent transaction.",
-  description: `You may make a verifiable consumer
+telephone number.`,
+        },
+        {
+          subtitle: "",
+          description: `• requesting that you provide additional
+evidence proving your identity such as`,
+        },
+        {
+          subtitle:
+            "your unique customer identification number or details of a recent transaction.",
+          description: `You may make a verifiable consumer
 request up to two times within any 12-
 month period. We will not be able to
 respond to more frequent verifiable
-consumer requests.`
-},
-{
-  subtitle: "",
-  description: `• Right to Non-Discrimination for the
+consumer requests.`,
+        },
+        {
+          subtitle: "",
+          description: `• Right to Non-Discrimination for the
 Exercise of Consumer’s Privacy Rights
-`
-},
-{
-  subtitle: "",
-  description: `• You have a right not to receive
+`,
+        },
+        {
+          subtitle: "",
+          description: `• You have a right not to receive
 discriminatory treatment from us for the
 exercise of any of your privacy rights
 conferred by the CCPA. 
 
-`
-},
-{
-  subtitle: "Your Right to Opt-Out",
-  description: `As a California resident, you have the right
+`,
+        },
+        {
+          subtitle: "Your Right to Opt-Out",
+          description: `As a California resident, you have the right
 to limit the personal information that we
 share with or sell to our affiliates or third
 parties. You also have a right to limit the
@@ -681,11 +680,11 @@ As of the effective date of this policy, there
 is no commonly accepted response for Do
 Not Track signals initiated by browsers and,
 therefore, we do not respond to them.
-`
-},
-{
-  subtitle: "Authorized Agent",
-  description: `As a California consumer, you can
+`,
+        },
+        {
+          subtitle: "Authorized Agent",
+          description: `As a California consumer, you can
 designate an authorized agent to make a
 request under the CCPA on your behalf. To
 do so, please write to us at the address
@@ -698,11 +697,11 @@ which you are designating the authorized
 agent. You may revoke the authority of that
 agent at any time by contacting us in
 writing at the address below.
-`
-},
-{
-  subtitle: "Sensitive Personal Information",
-  description: `Unless we request it, we ask that you not
+`,
+        },
+        {
+          subtitle: "Sensitive Personal Information",
+          description: `Unless we request it, we ask that you not
 send or disclose to us any sensitive
 personal information (e.g., social security
 numbers, information related to racial or
@@ -710,11 +709,12 @@ ethnic origin, political opinions, religion or
 other beliefs, health, biometrics or genetic
 characteristics, criminal background, or
 trade union membership) on or through our
-services or otherwise.`
-},
-{
-  subtitle: "Sale or transfer of ACC1952.com or Achievement Cigar Company, Inc.",
-  description: `In the event of any potential or actual
+services or otherwise.`,
+        },
+        {
+          subtitle:
+            "Sale or transfer of ACC1952.com or Achievement Cigar Company, Inc.",
+          description: `In the event of any potential or actual
 reorganization, merger, sale, joint venture,
 assignment, transfer or other disposition of
 all or any portion of our business, assets,
@@ -732,11 +732,11 @@ Disputes
 If you choose to visit any ACC site, your
 visit and any dispute regarding privacy is
 subject to this policy and our Terms of Use.
-`
-},
-{
-  subtitle: "CHANGES TO THIS POLICY",
-  description: `We reserve the right to change, add or
+`,
+        },
+        {
+          subtitle: "CHANGES TO THIS POLICY",
+          description: `We reserve the right to change, add or
 remove portions of this policy at any time.
 You should check this policy periodically to
 see if any recent changes to this policy
@@ -746,15 +746,15 @@ Such modifications shall become effective
 immediately upon posting. By continuing to
 engage with us after this policy has been
 updated, you agree to the updated terms
-of this policy.`
-},
-{
-  subtitle: "CONTACT FOR MORE INFORMATION ",
-  description: `If you have questions or want more
+of this policy.`,
+        },
+        {
+          subtitle: "CONTACT FOR MORE INFORMATION ",
+          description: `If you have questions or want more
 information about our privacy policy or your
 dealings with this site, please contact us at
-info@acc1952.com`
-},
+info@acc1952.com`,
+        },
       ],
     },
   ];
@@ -764,11 +764,22 @@ info@acc1952.com`
       <Banner title={"Privacy Policy"} imageUrl={img} />
       <Container className={"sm:px-10 lg:px-36 2xl:px-80 font-riviera mt-20"}>
         <AccUpdate
-          des="At Achievement Cigar Company, your privacy is a top priority. This
-        Privacy Policy outlines how we collect, use, and protect your personal
-        information when you interact with our website and services, including
-        our selection of cigars, spirits, accessories, and luxury storage
-        products."
+          des={`At acc1952.com and Achievement Cigar
+Co., Inc., we strive every day to build trust
+with our users. The privacy rights of our
+users are an integral part of building that
+trust. This policy explains how we collect,
+use and share your personal information to
+better serve you and to improve our own
+business processes. By using our
+websites, facilities, services, mobile,
+telephonic, and other electronic and online
+applications (collectively, the "Services"), or
+by your use of any of our programs,
+content, materials, functionality
+(collectively, the “Content”), or by providing
+information to us in other ways, you agree
+to this policy. `}
         />
         <Information data={data} />
         <ContactUs />
