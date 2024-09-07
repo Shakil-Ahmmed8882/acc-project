@@ -11,14 +11,16 @@ const Products = ({ product, isSeeMoreAll }) => {
   const { containerRef, maxHeight } = useMaxHeight("55000px");
 
   return (
-    <div className="pb-6 md:pb-10 lg:pb-24 relative">
-      <div className="absolute h-full">
+    <div className="  relative min-h-screen pb-32  overscroll-auto">
+      <div className="absolute bg-[black] top-0 bottom-0 min-h-screen">
         <Image
           width={100000}
           height={100000}
           src={bgImg}
           alt="Background Image"
-          className="sticky md:-top-44 2xl:-top-60 inset-0"
+          // className=" sticky md:-top-44 bottom-0 object-cover 2xl:-top-60 inset-0"
+          className=" sticky min-h-[200vh] md:-top-44 bottom-0 object-cover 2xl: -top-60 inset-0"
+
           style={{
             opacity: ".6",
           }}

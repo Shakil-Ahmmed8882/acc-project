@@ -38,7 +38,7 @@ const ProductDetails = ({ product }) => {
 
   return (
     <>
-      <div className="rounded-md pt-96 md:pt-80 lg:pt-80 pb-32">
+      <div className="rounded-md pt-96 md:pt-80 lg:pt-96 pb-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 xl:gap-32">
           <div className="flex flex-col justify-center md:justify-end relative">
             <Swiper
@@ -68,7 +68,7 @@ const ProductDetails = ({ product }) => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="custom-pagination w-full flex justify-center mt-4 mr-10">
+            <div className="custom-pagination w-full flex justify-center ">
               {images.map((_, index) => (
                 <div
                   key={index}
@@ -80,8 +80,8 @@ const ProductDetails = ({ product }) => {
               ))}
             </div>
           </div>
-          <div className="w-full p-10">
-            <h1 className="text-3xl font-semibold text-white pb-8 xl:pb-16 lg:text-4xl">
+          <div className="w-full md:p-10">
+            <h1 className="text-3xl leading-relaxed pt-8 font-semibold text-white pb-8 xl:pb-16 lg:text-4xl">
               {name}
             </h1>
             <div className="mb-3">
@@ -123,7 +123,7 @@ const ProductDetails = ({ product }) => {
                     variants={descriptionVariants}
                     transition={{ duration: 0.3 }}
                   >
-                    <p className="text-xl text-[#b7b7b7] text-justify pt-6 pb-8 xl:pb-16">
+                    <p className="text-xl text-[#b7b7b7]  leading-loose pt-6 pb-8 xl:pb-16">
                       {description}
                     </p>
                   </motion.div>
