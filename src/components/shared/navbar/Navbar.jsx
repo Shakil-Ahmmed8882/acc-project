@@ -19,14 +19,16 @@ import { headerVariants } from "./animation";
 export const navbarContext = createContext(null);
 
 const Navbar = () => {
+
+
   const { isScrollBeyondParallax, isMenuOpen, setIsMenuOpen } = useGlobalContext();
   const pathname = usePathname();
-  const homeRoute = pathname.startsWith("/");
   const isAdminRoute = pathname.startsWith("/admin") ||
     pathname.startsWith("/sign-in") ||
     pathname.startsWith("/sign-up") ||
-    pathname.startsWith("/search") ||
     pathname.startsWith("/forgot-password");
+
+
   const scrollDirection = useScrollDirection();
   const isScrollingUp = scrollDirection === "up";
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -129,3 +131,14 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+

@@ -16,8 +16,7 @@ const Products = ({ product, isSeeMoreAll }) => {
           <Image
             src={bgImg}
             alt="Background Image"
-            // className="sticky md:-top-44 2xl:-top-60 inset-0 w-full 4xl:h-full"
-             className=" sticky min-h-[200vh] md:-top-44 bottom-0 object-cover 2xl: -top-60 inset-0"
+             className=" sticky min-h-[200vh] left-0  right-0 mx-auto md:-top-44 bottom-0 object-cover 2xl: -top-60 inset-0"
             
             style={{
               opacity: ".6",
