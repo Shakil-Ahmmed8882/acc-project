@@ -7,7 +7,7 @@ const AllProduct = ({ product }) => {
   const groupedProducts = groupProductsByCategory(product);
 
   return (
-    <Container className={"relative"}>
+    <Container className={"relative py-32"}>
       {Object.keys(groupedProducts).map((category) => (
         <section key={category}>
           <Title className={"uppercase"} title={category} />
