@@ -1,3 +1,5 @@
+// change to test
+
 "use client ";
 import Banner from "@/components/page/home/banner/Banner";
 import Craftsmanship from "@/components/page/home/CraftmanShip/CraftmanShip";
