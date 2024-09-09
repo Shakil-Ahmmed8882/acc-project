@@ -47,7 +47,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`pb-10
+      className={`pb-10 relative bg-background-dark z-50
     ${isAdminRoute ? "hidden" : "block"}
     `}
     >
@@ -63,7 +63,7 @@ const Footer = () => {
             />
           </Link>
         </div>
-        <div className=" px-4 md:px-20 lg:px-40 2xl:px-52 md:space-y-0 my-8 py-10 border-t border-b  gap-x-20 md:gap-x-0 grid place-content-stretch grid-cols-2 lg:grid-cols-4">
+        <div className=" px-4 md:px-20 lg:px-40 2xl:px-52 md:space-y-0 my-8 py-10 border-t border-b  gap-x-20 md:gap-x-0 grid place-content-stretch grid-cols-2 lg:grid-cols-4 text-center">
           {footerNavs.map((nav, navIdx) => (
             <ul
               className="space-y-6 mb-5 text-sm text-light-text uppercase"

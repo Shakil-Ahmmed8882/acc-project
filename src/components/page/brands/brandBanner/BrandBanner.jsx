@@ -26,8 +26,8 @@ const BrandBanner = ({
       <div className="relative">
         <Image
           src={image}
-          width={1920}
-          height={1024}
+          width={10000}
+          height={10000}
           className="object-cover w-full h-screen relative"
           alt="banner"
         />

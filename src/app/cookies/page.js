@@ -1,91 +1,124 @@
 import Banner from "@/components/Banner/Banner";
 import img from "@/assets/img/footerPage/cookies.jpg";
 import Container from "@/components/shared/container/Container";
-import ContactUs from "@/components/shared/FooterPages/contactUs/ContactUs";
-import Information from "@/components/shared/FooterPages/Information/Information";
+// import ContactUs from "@/components/shared/FooterPages/contactUs/ContactUs";
 import AccUpdate from "@/components/shared/FooterPages/Information/AccUpdate";
+import CookieInfo from "@/components/shared/FooterPages/Information/CookieInfo";
 
 const page = () => {
   const data = [
     {
       title: "What Are Cookies?",
+      subtitle:
+        "Cookies are small text files that are stored on your device (computer, tablet, or mobile) when you visit a website.",
       sections: [
         {
           description:
-            "Cookies are small text files that are stored on your device (computer, tablet, or mobile phone) when you visit a website. They help the website remember your actions and preferences over a period of time, so you don’t have to re-enter them whenever you come back to the site or browse from one page to another.",
+            "They are widely used to make websites work more efficiently, as well as to provide information to the website owner.",
+        },
+      ],
+    },
+    {
+      title: "How We Use Cookies",
+      subtitle:
+        "We use cookies to enhance your experience on our website, ACC1952.com. Cookies help us to:",
+      sections: [
+        {
+          description: "Recognize your device when you visit our site.",
+        },
+        {
+          description: "Remember your preferences and settings.",
+        },
+        {
+          description: "Understand how you interact with our content.",
+        },
+        {
+          description: "Analyze website traffic to improve our services.",
+        },
+        {
+          description: "Facilitate social media sharing and integration.",
         },
       ],
     },
     {
       title: "Types of Cookies We Use",
+      subtitle: "We use the following types of cookies:",
       sections: [
         {
-          subtitle: "Essential Cookies",
           description:
-            "These cookies are necessary for the operation of our website. They enable you to navigate the site and use its features, such as accessing secure areas and processing payments. Without these cookies, certain services you request cannot be provided.",
+            "Essential Cookies: These are necessary for the website to function correctly. They enable you to navigate our site and use its features.",
         },
         {
-          subtitle: "Performance Cookies",
           description:
-            "These cookies collect information about how visitors use our website, such as which pages are visited most often and if users encounter error messages. The data collected by these cookies is aggregated and anonymous, and it helps us improve the performance and functionality of our site.",
+            "Performance Cookies: These cookies collect information about how visitors use our website, helping us to improve the performance and design of our site.",
         },
         {
-          subtitle: "Functional Cookies",
           description:
-            "Functional cookies allow our website to remember your preferences, such as your username, language, or the region you are in. This enables us to provide you with a more personalized experience and avoid having to re-enter your preferences each time you visit.",
+            "Functional Cookies: These cookies allow the website to remember choices you make (such as your username or language) and provide enhanced, more personalized features.",
         },
         {
-          subtitle: "Targeting/Advertising Cookies",
           description:
-            "These cookies are used to deliver advertisements that are more relevant to you and your interests. They also limit the number of times you see an ad and help measure the effectiveness of advertising campaigns. These cookies may be placed on your device by third-party advertisers with our permission.",
+            "Targeting/Advertising Cookies: These cookies are used to deliver relevant ads to you based on your interests. They also limit the number of times you see an advertisement and help measure the effectiveness of advertising campaigns.",
         },
       ],
     },
-  ];
-  const data2 = [
     {
       title: "Third-Party Cookies",
+      subtitle:
+        "We may also use third-party cookies from service providers like Google Analytics and social media platforms.",
       sections: [
         {
           description:
-            "In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the website and deliver advertisements to and on behalf of these third parties. These third-party cookies are subject to the privacy policies of the respective providers.",
+            "Help us understand how you use our site and deliver relevant content to you.",
         },
       ],
     },
     {
-      title: "Your Choices Regarding Cookies",
+      title: "Managing Cookies",
+      subtitle: "You can control and manage cookies in several ways:",
       sections: [
         {
-          subtitle: "Managing Cookies in Your Browser",
           description:
-            "Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. Be aware that disabling cookies may affect the functionality of certain services and your ability to access certain features.",
+            "Browser Settings: Most browsers allow you to refuse cookies or delete them. Please refer to your browser’s help section for instructions on how to do this.",
         },
         {
-          subtitle: "Opting Out of Targeted Advertising",
           description:
-            "You can opt out of targeted advertising by adjusting your browser settings or by visiting websites like the Network Advertising Initiative (NAI) or the Digital Advertising Alliance (DAA) in your area. Please note that even if you opt out, you may still see advertisements, but they will not be as relevant based on your interests.",
+            "Opt-Out Tools: You can opt out of tracking by Google Analytics by visiting the Google Analytics opt-out page.",
+        },
+        {
+          description:
+            "Please note that disabling cookies may affect the functionality of our website.",
         },
       ],
     },
     {
       title: "Changes to This Cookies Policy",
+      subtitle: "We may update this Cookies Policy from time to time.",
       sections: [
         {
           description:
-            "We may update this Cookies Policy from time to time to reflect changes in our practices or legal obligations. We encourage you to review this policy periodically to stay informed about how we use cookies.",
+            "Any changes will be posted on this page, and the effective date will be updated accordingly.",
         },
       ],
+    },
+    {
+      title: "Contact Us",
+      subtitle:
+        "If you have any questions about this Cookies Policy, please contact us at info@acc1952.com.",
+      sections: [],
     },
   ];
 
   return (
     <div className="bg-black">
       <Banner title={"Cookies Policy"} imageUrl={img} />
-      <Container className={"sm:px-10 lg:px-36 2xl:px-80 font-riviera mt-20"}>
+      <Container
+        className={"sm:px-10 lg:px-36 2xl:px-80 font-riviera mt-20 pb-32"}
+      >
         <AccUpdate des="Achievement Cigar Company uses cookies and similar tracking technologies on our website to enhance your browsing experience, improve our services, and deliver personalized content and advertisements. This Cookies Policy explains what cookies are, how we use them, and your options for managing them." />
-        <Information data={data} />
+        <CookieInfo data={data} />
         {/* how to use Cookies */}
-        <div className="mb-10">
+        {/* <div className="mb-10">
           <h2 className="text-2xl font-semibold mb-10 text-white font-riviera text-justify uppercase">
             How We Use Cookies
           </h2>
@@ -112,9 +145,8 @@ const page = () => {
               </ul>
             </div>
           </div>
-        </div>
-        <Information data={data2} />
-        <ContactUs />
+        </div> */}
+        {/* <ContactUs /> */}
       </Container>
     </div>
   );

@@ -131,10 +131,10 @@ const SlideItem = ({ product }) => {
         alt={product.images[0]}
       />
       <div className="md:mx-0 mx-4">
-        <h5 className="text-base text-light-text font-semibold mt-4 uppercase">
+        <h5 className="text-base text-light-text font-semibold mt-4 uppercase font-riviera">
           {product.productType}
         </h5>
-        <p className="text-[#999999] text-xs mt-3">{product.name}</p>
+        <p className="text-[#999999] text-xs mt-3 font-riviera">{product.name}</p>
       </div>
     </Link>
   );

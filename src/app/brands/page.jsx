@@ -11,7 +11,7 @@ import acc_brands from "@/assets/img/brands/banner/accBrands.png";
 import cigar_collection from "@/assets/img/brands/banner/cigar-collection.jpg";
 import spirits from "@/assets/img/brands/banner/sprits.png";
 import accessories from "@/assets/img/brands/banner/accessories.jpg";
-import luxury_storage from "@/assets/img/brands/banner/luxury-storage.png";
+import luxury_storage from "@/assets/img/brands/banner/luxury-storage.jpeg";
 import Tabs from "@/components/page/brands/Tabs";
 
 

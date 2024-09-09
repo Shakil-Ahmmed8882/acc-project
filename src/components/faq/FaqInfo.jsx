@@ -6,106 +6,29 @@ const FaqInfo = () => {
       section: "Orders and Shipping",
       items: [
         {
-          question: "How do I place an order?",
+          question: "What makes our cigars unique?",
           answer:
-            "To place an order, simply browse our collection of cigars, spirits, accessories, and luxury storage products. Add the desired items to your cart, proceed to checkout, and follow the on-screen instructions to complete your purchase.",
+            "Our cigars are crafted using the finest tobacco leaves, with minimal veins, aged to perfection, and hand-rolled by skilled artisans to deliver a smooth, rich flavor with every puff.",
         },
         {
-          question: "What payment methods do you accept?",
+          question: "How should I store my cigars?",
           answer:
-            "We accept major credit cards, including Visa, MasterCard, American Express, and Discover. We also accept payments via PayPal and Apple Pay.",
+            "To maintain the quality and freshness of your cigars, store them in a humidor at a relative humidity of 65-70% and a temperature of 65-70°F.",
         },
         {
-          question: "How long will it take to receive my order?",
+          question: "What is the proper way to cut a cigar?",
           answer:
-            "Shipping times vary based on your location and the shipping method you select at checkout. Standard shipping typically takes 3-7 business days, while expedited options are available for faster delivery.",
+            "Use a sharp cigar cutter to remove the cap, making a clean cut just above the shoulder of the cigar. This ensures an even draw. A V-cutter and Punch are another option, up to the discretion of the smoker.",
         },
         {
-          question: "Do you ship internationally?",
+          question: "How do I light a cigar properly?",
           answer:
-            "Yes, we offer international shipping to select countries. Please note that shipping rates and delivery times vary depending on your location. Customs fees may apply.",
-        },
-      ],
-    },
-    {
-      section: "Products and Availability",
-      items: [
-        {
-          question: "Are your cigars hand-rolled?",
-          answer:
-            "Yes, all our cigars are hand-rolled by experienced artisans using the finest tobacco leaves. We take pride in offering premium cigars that deliver a superior smoking experience.",
+            "Use a butane lighter or wooden matches. Hold the flame just below the foot of the cigar, rotating it to ensure an even burn, then gently puff as you light.",
         },
         {
-          question: "How do I store my cigars to keep them fresh?",
+          question: "Do you offer international shipping?",
           answer:
-            "To keep your cigars fresh, store them in a humidor with a relative humidity level of 65-70%. Our selection of luxury storage options includes humidors designed to maintain the perfect environment for your cigars.",
-        },
-        {
-          question: "What is the return policy for cigars and accessories?",
-          answer:
-            "Due to the nature of our products, we cannot accept returns on opened bottles of spirits. However, unopened bottles and accessories can be returned within 30 days of purchase for a full refund or exchange. Please see our return policy for more details.",
-        },
-      ],
-    },
-    {
-      section: "Account and Membership",
-      items: [
-        {
-          question: "Do I need an account to place an order?",
-          answer:
-            "No, you can place an order as a guest. However, creating an account allows you to track your orders, save your preferences, and enjoy a faster checkout process in the future.",
-        },
-        {
-          question:
-            "What are the benefits of joining the Membership Cigar Club?",
-          answer:
-            "Members of the Achievement Cigar Club enjoy exclusive benefits, including early access to new products, special discounts, and invitations to members-only events. Sign up today to start enjoying these perks!",
-        },
-        {
-          question: "How do I update my account information?",
-          answer:
-            'To update your account information, log in to your account and go to the "Account Settings" section. Here, you can update your contact details, payment methods, and preferences.',
-        },
-      ],
-    },
-    {
-      section: "Customer Support",
-      items: [
-        {
-          question: "How can I contact customer support?",
-          answer:
-            "You can reach our customer support team by emailing [Email Address] or by calling [Phone Number]. Our team is available Monday to Friday, 9 AM to 5 PM EST.",
-        },
-        {
-          question:
-            "What should I do if I received a damaged or incorrect item?",
-          answer:
-            "If you receive a damaged or incorrect item, please contact our customer support team immediately. We will arrange for a replacement or refund and provide instructions for returning the item.",
-        },
-        {
-          question: "Do you offer gift-wrapping services?",
-          answer:
-            "Yes, we offer gift wrapping for all orders. During checkout, you can select the gift wrapping option and include a personalized message for the recipient.",
-        },
-      ],
-    },
-    {
-      section: "Loyalty and Rewards",
-      items: [
-        {
-          question: "How can I earn points with the Rewards Program?",
-          answer:
-            "Earn points by making purchases, referring friends, and engaging with our brand on social media. Points can be redeemed for discounts on future purchases.",
-        },
-        {
-          question: "Can I combine rewards points with other discounts?",
-          answer:
-            "Yes, you can combine your reward points with other promotions and discounts at checkout. However, some restrictions may apply during special sales events.",
-        },
-        {
-          question: "How do I check my rewards balance?",
-          answer:
-            'To check your reward points balance, log in to your account and navigate to the "Rewards" section. Your current balance and available rewards will be displayed there.',
+            "Yes, we offer international shipping to most countries. Please get in touch with us for quotations.",
         },
       ],
     },

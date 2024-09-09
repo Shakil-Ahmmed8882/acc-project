@@ -80,14 +80,16 @@ const ProductDetails = ({ product }) => {
               ))}
             </div>
           </div>
+
           <div className="w-full md:p-10">
             <h1 className="text-3xl leading-relaxed pt-8 font-semibold text-white pb-8 xl:pb-16 lg:text-4xl">
+
               {name}
             </h1>
             <div className="mb-3">
               <button
                 onClick={handleToggleDescription}
-                className="flex items-center justify-between text-xl text-[#FAFAFA] border-b-2 border-white w-full py-2"
+                className="flex items-center justify-between text-xl text-[#FAFAFA] border-b-2 border-white w-full py-2 font-riviera"
               >
                 Description
                 <span className="rounded-full p-2">
@@ -123,7 +125,9 @@ const ProductDetails = ({ product }) => {
                     variants={descriptionVariants}
                     transition={{ duration: 0.3 }}
                   >
+
                     <p className="text-xl text-[#b7b7b7]  leading-loose pt-6 pb-8 xl:pb-16">
+
                       {description}
                     </p>
                   </motion.div>

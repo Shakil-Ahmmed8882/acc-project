@@ -35,7 +35,7 @@ const ProductCard = ({ card }) => {
       <h3
         style={{ letterSpacing: 2 }}
         className="mt-9 md:mt-6
-      uppercase text-lg"
+      uppercase text-lg font-riviera"
       >
         {name}
       </h3>
