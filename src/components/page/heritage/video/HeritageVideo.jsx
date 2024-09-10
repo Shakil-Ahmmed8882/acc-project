@@ -30,7 +30,7 @@ const HeritageVideo = () => {
       {!isPlaying && (
         <button
           onClick={handlePlayPause}
-          className="absolute inset-0 flex items-center justify-center text-white text-2xl"
+          className="inset-0 flex items-center justify-center text-white text-2xl"
         >
           <div className="rounded-full p-6 bg-[#0404047d]">
             <svg

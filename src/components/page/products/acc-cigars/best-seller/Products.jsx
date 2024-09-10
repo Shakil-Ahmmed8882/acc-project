@@ -12,11 +12,11 @@ const Products = ({ product, isSeeMoreAll }) => {
     <div className=" relative">
       {/*  */}
       <div className="relative flex justify-center items-center z-10 ">
-        <div className="absolute h-full w-full 4xl:overflow-y-hidden">
+        <div className="absolute h-full w-full 4xl:overflow-y-hidden min-h-screen">
           <Image
             src={bgImg}
             alt="Background Image"
-             className=" sticky min-h-[200vh] left-0  right-0 mx-auto md:-top-44 bottom-0 object-cover 2xl: -top-60 inset-0"
+             className=" sticky min-h-[140vh] lg:min-h-100vh] w-[200%] left-0  right-0 mx-auto md:-top-44 bottom-0 object-cover 2xl: -top-60 inset-0"
             
             style={{
               opacity: ".6",
