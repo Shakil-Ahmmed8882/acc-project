@@ -23,6 +23,8 @@ const Search = () => {
   const [trigger, setTrigger] = useState(type || "");
   const { products } = useGetSearchedProducts(trigger);
 
+
+
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -50,7 +52,7 @@ const Search = () => {
   );
 
   return (
-    <section className="text-5xl text-white min-h-screen bg-[#111111] px-3 py-10">
+    <section className="text-5xl text-white relative topStack min-h-screen bg-[#111111] px-3 py-10">
       <div className="max-w-[1122px] mx-auto">
         <div className="flex items-center py-4 justify-between">
           <Link href={"/"}>

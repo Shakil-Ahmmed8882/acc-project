@@ -110,7 +110,7 @@ body {
 
 
 .topStack{
-  z-index: 9999999999999999999999999999999999999 !important;
+  z-index: 99999999 !important;
 }
 
 .backdropShadow{

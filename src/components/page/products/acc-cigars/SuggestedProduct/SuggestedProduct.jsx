@@ -1,3 +1,6 @@
+
+
+
 "use client";
 import ProductCard from "@/components/shared/product/product-card/Card";
 import { useEffect, useState } from "react";
